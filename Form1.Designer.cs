@@ -40,15 +40,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 501);
+            this.panel1.Size = new System.Drawing.Size(230, 476);
             this.panel1.TabIndex = 0;
             // 
             // bottom_panel
             // 
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottom_panel.Location = new System.Drawing.Point(0, 501);
+            this.bottom_panel.Location = new System.Drawing.Point(0, 476);
             this.bottom_panel.Name = "bottom_panel";
-            this.bottom_panel.Size = new System.Drawing.Size(1198, 114);
+            this.bottom_panel.Size = new System.Drawing.Size(1198, 139);
             this.bottom_panel.TabIndex = 1;
             // 
             // panel2
@@ -57,7 +57,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(230, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(968, 501);
+            this.panel2.Size = new System.Drawing.Size(968, 476);
             this.panel2.TabIndex = 2;
             // 
             // panel3
