@@ -16,5 +16,30 @@ namespace DO_AN_LTTQ
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void play_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void next_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void volumn_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
