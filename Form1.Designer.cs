@@ -244,7 +244,7 @@
             // 
             this.name_of_song.AutoSize = true;
             this.name_of_song.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_of_song.Location = new System.Drawing.Point(128, 79);
+            this.name_of_song.Location = new System.Drawing.Point(146, 77);
             this.name_of_song.Name = "name_of_song";
             this.name_of_song.Size = new System.Drawing.Size(88, 20);
             this.name_of_song.TabIndex = 1;
@@ -291,10 +291,10 @@
             // 
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(36, 35);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(42, 36);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(80, 80);
             this.guna2CirclePictureBox1.TabIndex = 10;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
