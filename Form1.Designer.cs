@@ -32,6 +32,10 @@ namespace DO_AN_LTTQ
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2TileButton4 = new Guna.UI2.WinForms.Guna2TileButton();
+            this.guna2TileButton3 = new Guna.UI2.WinForms.Guna2TileButton();
+            this.guna2TileButton2 = new Guna.UI2.WinForms.Guna2TileButton();
+            this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
             this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.searching_textbox = new Sipaa.Framework.STextBox();
             this.bottom_panel = new System.Windows.Forms.Panel();
@@ -48,10 +52,6 @@ namespace DO_AN_LTTQ
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
-            this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.guna2TileButton2 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.guna2TileButton3 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.guna2TileButton4 = new Guna.UI2.WinForms.Guna2TileButton();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,12 +69,96 @@ namespace DO_AN_LTTQ
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-<<<<<<< HEAD
-            this.panel1.Size = new System.Drawing.Size(230, 476);
-=======
-            this.panel1.Size = new System.Drawing.Size(251, 517);
->>>>>>> 34e8f69d32b5a6836ff0f7aef03ec6e4b465ec5a
+            this.panel1.Size = new System.Drawing.Size(253, 517);
             this.panel1.TabIndex = 0;
+            // 
+            // guna2TileButton4
+            // 
+            this.guna2TileButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.guna2TileButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TileButton4.ForeColor = System.Drawing.Color.Black;
+            this.guna2TileButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton4.Image")));
+            this.guna2TileButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton4.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.guna2TileButton4.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2TileButton4.Location = new System.Drawing.Point(13, 267);
+            this.guna2TileButton4.Name = "guna2TileButton4";
+            this.guna2TileButton4.Size = new System.Drawing.Size(225, 40);
+            this.guna2TileButton4.TabIndex = 14;
+            this.guna2TileButton4.Text = "Thư viện";
+            this.guna2TileButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2TileButton4.TextOffset = new System.Drawing.Point(-45, -15);
+            this.guna2TileButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            // 
+            // guna2TileButton3
+            // 
+            this.guna2TileButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.guna2TileButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TileButton3.ForeColor = System.Drawing.Color.Black;
+            this.guna2TileButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton3.Image")));
+            this.guna2TileButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton3.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.guna2TileButton3.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2TileButton3.Location = new System.Drawing.Point(13, 221);
+            this.guna2TileButton3.Name = "guna2TileButton3";
+            this.guna2TileButton3.Size = new System.Drawing.Size(225, 40);
+            this.guna2TileButton3.TabIndex = 13;
+            this.guna2TileButton3.Text = "Thư viện";
+            this.guna2TileButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2TileButton3.TextOffset = new System.Drawing.Point(-45, -15);
+            this.guna2TileButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            // 
+            // guna2TileButton2
+            // 
+            this.guna2TileButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.guna2TileButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TileButton2.ForeColor = System.Drawing.Color.Black;
+            this.guna2TileButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton2.Image")));
+            this.guna2TileButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton2.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.guna2TileButton2.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2TileButton2.Location = new System.Drawing.Point(13, 137);
+            this.guna2TileButton2.Name = "guna2TileButton2";
+            this.guna2TileButton2.Size = new System.Drawing.Size(225, 40);
+            this.guna2TileButton2.TabIndex = 12;
+            this.guna2TileButton2.Text = "Thư viện";
+            this.guna2TileButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2TileButton2.TextOffset = new System.Drawing.Point(-45, -15);
+            this.guna2TileButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            // 
+            // guna2TileButton1
+            // 
+            this.guna2TileButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.guna2TileButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TileButton1.ForeColor = System.Drawing.Color.Black;
+            this.guna2TileButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton1.Image")));
+            this.guna2TileButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton1.ImageOffset = new System.Drawing.Point(0, 15);
+            this.guna2TileButton1.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2TileButton1.Location = new System.Drawing.Point(13, 91);
+            this.guna2TileButton1.Name = "guna2TileButton1";
+            this.guna2TileButton1.Size = new System.Drawing.Size(225, 40);
+            this.guna2TileButton1.TabIndex = 11;
+            this.guna2TileButton1.Text = "Trang chủ";
+            this.guna2TileButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2TileButton1.TextOffset = new System.Drawing.Point(-45, -15);
+            this.guna2TileButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             // 
             // searching_button
             // 
@@ -112,7 +196,6 @@ namespace DO_AN_LTTQ
             this.searching_textbox.TabIndex = 1;
             this.searching_textbox.Texts = "Tìm kiếm";
             this.searching_textbox.UnderlinedStyle = false;
-
             // 
             // bottom_panel
             // 
@@ -128,15 +211,9 @@ namespace DO_AN_LTTQ
             this.bottom_panel.Controls.Add(this.guna2TrackBar1);
             this.bottom_panel.Controls.Add(this.name_of_song);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-<<<<<<< HEAD
-            this.bottom_panel.Location = new System.Drawing.Point(0, 476);
-            this.bottom_panel.Name = "bottom_panel";
-            this.bottom_panel.Size = new System.Drawing.Size(1198, 139);
-=======
             this.bottom_panel.Location = new System.Drawing.Point(0, 517);
             this.bottom_panel.Name = "bottom_panel";
             this.bottom_panel.Size = new System.Drawing.Size(1215, 139);
->>>>>>> 34e8f69d32b5a6836ff0f7aef03ec6e4b465ec5a
             this.bottom_panel.TabIndex = 1;
             // 
             // avatar_button
@@ -166,7 +243,6 @@ namespace DO_AN_LTTQ
             this.volumn_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.volumn_button.Size = new System.Drawing.Size(64, 54);
             this.volumn_button.TabIndex = 9;
-
             // 
             // metroSetTrackBar1
             // 
@@ -233,7 +309,6 @@ namespace DO_AN_LTTQ
             this.next_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.next_button.Size = new System.Drawing.Size(64, 54);
             this.next_button.TabIndex = 5;
-
             // 
             // rewind_button
             // 
@@ -264,7 +339,6 @@ namespace DO_AN_LTTQ
             this.play_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.play_button.Size = new System.Drawing.Size(64, 54);
             this.play_button.TabIndex = 3;
-  
             // 
             // guna2TrackBar1
             // 
@@ -283,7 +357,6 @@ namespace DO_AN_LTTQ
             this.name_of_song.Size = new System.Drawing.Size(88, 20);
             this.name_of_song.TabIndex = 1;
             this.name_of_song.Text = "Tên bài hát";
-
             // 
             // panel2
             // 
@@ -292,15 +365,10 @@ namespace DO_AN_LTTQ
             this.panel2.Controls.Add(this.guna2ComboBox1);
             this.panel2.Controls.Add(this.home_label);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(251, 0);
+            this.panel2.Location = new System.Drawing.Point(253, 0);
             this.panel2.Name = "panel2";
-<<<<<<< HEAD
-            this.panel2.Size = new System.Drawing.Size(968, 476);
-=======
-            this.panel2.Size = new System.Drawing.Size(964, 517);
->>>>>>> 34e8f69d32b5a6836ff0f7aef03ec6e4b465ec5a
+            this.panel2.Size = new System.Drawing.Size(962, 517);
             this.panel2.TabIndex = 2;
-
             // 
             // guna2ComboBox1
             // 
@@ -330,95 +398,6 @@ namespace DO_AN_LTTQ
             this.home_label.Size = new System.Drawing.Size(108, 45);
             this.home_label.TabIndex = 0;
             this.home_label.Text = "Home";
-
-            // 
-            // guna2TileButton1
-            // 
-            this.guna2TileButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2TileButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TileButton1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TileButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton1.Image")));
-            this.guna2TileButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2TileButton1.ImageOffset = new System.Drawing.Point(0, 15);
-            this.guna2TileButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2TileButton1.Location = new System.Drawing.Point(13, 91);
-            this.guna2TileButton1.Name = "guna2TileButton1";
-            this.guna2TileButton1.Size = new System.Drawing.Size(225, 40);
-            this.guna2TileButton1.TabIndex = 11;
-            this.guna2TileButton1.Text = "Trang chủ";
-            this.guna2TileButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton1.TextOffset = new System.Drawing.Point(-45, -15);
-            this.guna2TileButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            // 
-            // guna2TileButton2
-            // 
-            this.guna2TileButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2TileButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TileButton2.ForeColor = System.Drawing.Color.Black;
-            this.guna2TileButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton2.Image")));
-            this.guna2TileButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2TileButton2.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.guna2TileButton2.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2TileButton2.Location = new System.Drawing.Point(13, 137);
-            this.guna2TileButton2.Name = "guna2TileButton2";
-            this.guna2TileButton2.Size = new System.Drawing.Size(225, 40);
-            this.guna2TileButton2.TabIndex = 12;
-            this.guna2TileButton2.Text = "Thư viện";
-            this.guna2TileButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton2.TextOffset = new System.Drawing.Point(-45, -15);
-            this.guna2TileButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            // 
-            // guna2TileButton3
-            // 
-            this.guna2TileButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2TileButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TileButton3.ForeColor = System.Drawing.Color.Black;
-            this.guna2TileButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton3.Image")));
-            this.guna2TileButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2TileButton3.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.guna2TileButton3.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2TileButton3.Location = new System.Drawing.Point(13, 221);
-            this.guna2TileButton3.Name = "guna2TileButton3";
-            this.guna2TileButton3.Size = new System.Drawing.Size(225, 40);
-            this.guna2TileButton3.TabIndex = 13;
-            this.guna2TileButton3.Text = "Thư viện";
-            this.guna2TileButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton3.TextOffset = new System.Drawing.Point(-45, -15);
-            this.guna2TileButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            // 
-            // guna2TileButton4
-            // 
-            this.guna2TileButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2TileButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TileButton4.ForeColor = System.Drawing.Color.Black;
-            this.guna2TileButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton4.Image")));
-            this.guna2TileButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2TileButton4.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.guna2TileButton4.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2TileButton4.Location = new System.Drawing.Point(13, 267);
-            this.guna2TileButton4.Name = "guna2TileButton4";
-            this.guna2TileButton4.Size = new System.Drawing.Size(225, 40);
-            this.guna2TileButton4.TabIndex = 14;
-            this.guna2TileButton4.Text = "Thư viện";
-            this.guna2TileButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton4.TextOffset = new System.Drawing.Point(-45, -15);
-            this.guna2TileButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             // 
             // Form1
             // 
