@@ -58,5 +58,10 @@ namespace DO_AN_LTTQ
         {
 
         }
+
+        private void home_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

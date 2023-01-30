@@ -33,6 +33,7 @@
             this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.searching_textbox = new Sipaa.Framework.STextBox();
             this.bottom_panel = new System.Windows.Forms.Panel();
+            this.avatar_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.volumn_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.metroSetTrackBar1 = new MetroSet_UI.Controls.MetroSetTrackBar();
             this.repeat_button = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -43,9 +44,8 @@
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
             this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.open_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_button = new System.Windows.Forms.Label();
-            this.avatar_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -59,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(288, 497);
+            this.panel1.Size = new System.Drawing.Size(251, 497);
             this.panel1.TabIndex = 0;
             // 
             // searching_button
@@ -117,6 +117,20 @@
             this.bottom_panel.Name = "bottom_panel";
             this.bottom_panel.Size = new System.Drawing.Size(1215, 139);
             this.bottom_panel.TabIndex = 1;
+            // 
+            // avatar_button
+            // 
+            this.avatar_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.avatar_button.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.avatar_button.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.avatar_button.Image = ((System.Drawing.Image)(resources.GetObject("avatar_button.Image")));
+            this.avatar_button.ImageOffset = new System.Drawing.Point(0, 0);
+            this.avatar_button.ImageRotate = 0F;
+            this.avatar_button.Location = new System.Drawing.Point(13, 27);
+            this.avatar_button.Name = "avatar_button";
+            this.avatar_button.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.avatar_button.Size = new System.Drawing.Size(113, 100);
+            this.avatar_button.TabIndex = 2;
             // 
             // volumn_button
             // 
@@ -253,52 +267,43 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.panel2.Controls.Add(this.open_cb);
+            this.panel2.Controls.Add(this.guna2ComboBox1);
             this.panel2.Controls.Add(this.home_button);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(288, 0);
+            this.panel2.Location = new System.Drawing.Point(251, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(927, 497);
+            this.panel2.Size = new System.Drawing.Size(964, 497);
             this.panel2.TabIndex = 2;
-            // 
-            // open_cb
-            // 
-            this.open_cb.BackColor = System.Drawing.Color.Transparent;
-            this.open_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.open_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.open_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.open_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.open_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.open_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.open_cb.ItemHeight = 30;
-            this.open_cb.Location = new System.Drawing.Point(710, 17);
-            this.open_cb.Name = "open_cb";
-            this.open_cb.Size = new System.Drawing.Size(129, 36);
-            this.open_cb.TabIndex = 1;
             // 
             // home_button
             // 
             this.home_button.AutoSize = true;
             this.home_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.home_button.Location = new System.Drawing.Point(22, 11);
+            this.home_button.Location = new System.Drawing.Point(16, 13);
             this.home_button.Name = "home_button";
             this.home_button.Size = new System.Drawing.Size(102, 37);
             this.home_button.TabIndex = 0;
             this.home_button.Text = "Home";
+            this.home_button.Click += new System.EventHandler(this.home_button_Click);
             // 
-            // avatar_button
+            // guna2ComboBox1
             // 
-            this.avatar_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.avatar_button.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.avatar_button.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.avatar_button.Image = ((System.Drawing.Image)(resources.GetObject("avatar_button.Image")));
-            this.avatar_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.avatar_button.ImageRotate = 0F;
-            this.avatar_button.Location = new System.Drawing.Point(13, 27);
-            this.avatar_button.Name = "avatar_button";
-            this.avatar_button.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.avatar_button.Size = new System.Drawing.Size(113, 100);
-            this.avatar_button.TabIndex = 2;
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            "Open file(s)",
+            "Open folder",
+            "Open URL"});
+            this.guna2ComboBox1.Location = new System.Drawing.Point(787, 17);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
+            this.guna2ComboBox1.TabIndex = 1;
             // 
             // Form1
             // 
@@ -336,8 +341,8 @@
         private Sipaa.Framework.STextBox searching_textbox;
         private Guna.UI2.WinForms.Guna2ImageButton searching_button;
         private System.Windows.Forms.Label home_button;
-        private Guna.UI2.WinForms.Guna2ComboBox open_cb;
         private Guna.UI2.WinForms.Guna2ImageButton avatar_button;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }
 
