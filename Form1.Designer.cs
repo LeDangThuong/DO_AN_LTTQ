@@ -45,11 +45,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.open_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_button = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.avatar_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(288, 476);
+            this.panel1.Size = new System.Drawing.Size(288, 497);
             this.panel1.TabIndex = 0;
             // 
             // searching_button
@@ -103,7 +102,7 @@
             // bottom_panel
             // 
             this.bottom_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.bottom_panel.Controls.Add(this.guna2CirclePictureBox1);
+            this.bottom_panel.Controls.Add(this.avatar_button);
             this.bottom_panel.Controls.Add(this.volumn_button);
             this.bottom_panel.Controls.Add(this.metroSetTrackBar1);
             this.bottom_panel.Controls.Add(this.repeat_button);
@@ -114,9 +113,9 @@
             this.bottom_panel.Controls.Add(this.guna2TrackBar1);
             this.bottom_panel.Controls.Add(this.name_of_song);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottom_panel.Location = new System.Drawing.Point(0, 476);
+            this.bottom_panel.Location = new System.Drawing.Point(0, 497);
             this.bottom_panel.Name = "bottom_panel";
-            this.bottom_panel.Size = new System.Drawing.Size(1198, 139);
+            this.bottom_panel.Size = new System.Drawing.Size(1215, 139);
             this.bottom_panel.TabIndex = 1;
             // 
             // volumn_button
@@ -234,9 +233,9 @@
             // 
             // guna2TrackBar1
             // 
-            this.guna2TrackBar1.Location = new System.Drawing.Point(132, 16);
+            this.guna2TrackBar1.Location = new System.Drawing.Point(150, 16);
             this.guna2TrackBar1.Name = "guna2TrackBar1";
-            this.guna2TrackBar1.Size = new System.Drawing.Size(977, 23);
+            this.guna2TrackBar1.Size = new System.Drawing.Size(959, 23);
             this.guna2TrackBar1.TabIndex = 2;
             this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             // 
@@ -259,7 +258,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(288, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(910, 476);
+            this.panel2.Size = new System.Drawing.Size(927, 497);
             this.panel2.TabIndex = 2;
             // 
             // open_cb
@@ -287,22 +286,25 @@
             this.home_button.TabIndex = 0;
             this.home_button.Text = "Home";
             // 
-            // guna2CirclePictureBox1
+            // avatar_button
             // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(42, 36);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.guna2CirclePictureBox1.TabIndex = 10;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.avatar_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.avatar_button.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.avatar_button.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.avatar_button.Image = ((System.Drawing.Image)(resources.GetObject("avatar_button.Image")));
+            this.avatar_button.ImageOffset = new System.Drawing.Point(0, 0);
+            this.avatar_button.ImageRotate = 0F;
+            this.avatar_button.Location = new System.Drawing.Point(13, 27);
+            this.avatar_button.Name = "avatar_button";
+            this.avatar_button.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.avatar_button.Size = new System.Drawing.Size(113, 100);
+            this.avatar_button.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 615);
+            this.ClientSize = new System.Drawing.Size(1215, 636);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottom_panel);
@@ -313,7 +315,6 @@
             this.bottom_panel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,7 +337,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton searching_button;
         private System.Windows.Forms.Label home_button;
         private Guna.UI2.WinForms.Guna2ComboBox open_cb;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2ImageButton avatar_button;
     }
 }
 

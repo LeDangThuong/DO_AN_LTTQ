@@ -53,5 +53,10 @@ namespace DO_AN_LTTQ
         {
             rewind_button.BackColor = Color.FromArgb(249, 249, 249);
         }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
