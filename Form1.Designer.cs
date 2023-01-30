@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.sTextBox1 = new Sipaa.Framework.STextBox();
+            this.searching_textbox = new Sipaa.Framework.STextBox();
             this.bottom_panel = new System.Windows.Forms.Panel();
             this.volumn_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.metroSetTrackBar1 = new MetroSet_UI.Controls.MetroSetTrackBar();
@@ -41,10 +41,11 @@
             this.rewind_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.play_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
+            this.name_of_song = new System.Windows.Forms.Label();
             this.faceUI_btb = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.home_button = new System.Windows.Forms.Label();
+            this.open_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.faceUI_btb)).BeginInit();
@@ -54,7 +55,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.searching_button);
-            this.panel1.Controls.Add(this.sTextBox1);
+            this.panel1.Controls.Add(this.searching_textbox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -75,27 +76,27 @@
             this.searching_button.Size = new System.Drawing.Size(37, 32);
             this.searching_button.TabIndex = 10;
             // 
-            // sTextBox1
+            // searching_textbox
             // 
-            this.sTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.sTextBox1.BorderColor = System.Drawing.Color.Black;
-            this.sTextBox1.BorderFocusColor = System.Drawing.Color.MediumSlateBlue;
-            this.sTextBox1.BorderRadius = 0;
-            this.sTextBox1.BorderSize = 2;
-            this.sTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.sTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.sTextBox1.Location = new System.Drawing.Point(13, 13);
-            this.sTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.sTextBox1.Multiline = false;
-            this.sTextBox1.Name = "sTextBox1";
-            this.sTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.sTextBox1.PasswordChar = false;
-            this.sTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.sTextBox1.PlaceholderText = "";
-            this.sTextBox1.Size = new System.Drawing.Size(225, 35);
-            this.sTextBox1.TabIndex = 1;
-            this.sTextBox1.Texts = "Tìm kiếm";
-            this.sTextBox1.UnderlinedStyle = false;
+            this.searching_textbox.BackColor = System.Drawing.SystemColors.Window;
+            this.searching_textbox.BorderColor = System.Drawing.Color.Black;
+            this.searching_textbox.BorderFocusColor = System.Drawing.Color.MediumSlateBlue;
+            this.searching_textbox.BorderRadius = 0;
+            this.searching_textbox.BorderSize = 2;
+            this.searching_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.searching_textbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.searching_textbox.Location = new System.Drawing.Point(13, 13);
+            this.searching_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.searching_textbox.Multiline = false;
+            this.searching_textbox.Name = "searching_textbox";
+            this.searching_textbox.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.searching_textbox.PasswordChar = false;
+            this.searching_textbox.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.searching_textbox.PlaceholderText = "";
+            this.searching_textbox.Size = new System.Drawing.Size(225, 35);
+            this.searching_textbox.TabIndex = 1;
+            this.searching_textbox.Texts = "Tìm kiếm";
+            this.searching_textbox.UnderlinedStyle = false;
             // 
             // bottom_panel
             // 
@@ -107,7 +108,7 @@
             this.bottom_panel.Controls.Add(this.rewind_button);
             this.bottom_panel.Controls.Add(this.play_button);
             this.bottom_panel.Controls.Add(this.guna2TrackBar1);
-            this.bottom_panel.Controls.Add(this.label1);
+            this.bottom_panel.Controls.Add(this.name_of_song);
             this.bottom_panel.Controls.Add(this.faceUI_btb);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bottom_panel.Location = new System.Drawing.Point(0, 476);
@@ -234,16 +235,16 @@
             this.guna2TrackBar1.TabIndex = 2;
             this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             // 
-            // label1
+            // name_of_song
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(128, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tên bài hát";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.name_of_song.AutoSize = true;
+            this.name_of_song.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_of_song.Location = new System.Drawing.Point(128, 79);
+            this.name_of_song.Name = "name_of_song";
+            this.name_of_song.Size = new System.Drawing.Size(88, 20);
+            this.name_of_song.TabIndex = 1;
+            this.name_of_song.Text = "Tên bài hát";
+            this.name_of_song.Click += new System.EventHandler(this.label1_Click);
             // 
             // faceUI_btb
             // 
@@ -257,20 +258,38 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.open_cb);
+            this.panel2.Controls.Add(this.home_button);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(288, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(910, 476);
             this.panel2.TabIndex = 2;
             // 
-            // panel3
+            // home_button
             // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(910, 100);
-            this.panel3.TabIndex = 0;
+            this.home_button.AutoSize = true;
+            this.home_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.home_button.Location = new System.Drawing.Point(26, 13);
+            this.home_button.Name = "home_button";
+            this.home_button.Size = new System.Drawing.Size(102, 37);
+            this.home_button.TabIndex = 0;
+            this.home_button.Text = "Home";
+            // 
+            // open_cb
+            // 
+            this.open_cb.BackColor = System.Drawing.Color.Transparent;
+            this.open_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.open_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.open_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.open_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.open_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.open_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.open_cb.ItemHeight = 30;
+            this.open_cb.Location = new System.Drawing.Point(718, 24);
+            this.open_cb.Name = "open_cb";
+            this.open_cb.Size = new System.Drawing.Size(129, 36);
+            this.open_cb.TabIndex = 1;
             // 
             // Form1
             // 
@@ -287,6 +306,7 @@
             this.bottom_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.faceUI_btb)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -296,8 +316,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel bottom_panel;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label name_of_song;
         private Guna.UI2.WinForms.Guna2CirclePictureBox faceUI_btb;
         private Guna.UI2.WinForms.Guna2ImageButton play_button;
         private Guna.UI2.WinForms.Guna2TrackBar guna2TrackBar1;
@@ -307,8 +326,10 @@
         private Guna.UI2.WinForms.Guna2ImageButton repeat_button;
         private MetroSet_UI.Controls.MetroSetTrackBar metroSetTrackBar1;
         private Guna.UI2.WinForms.Guna2ImageButton volumn_button;
-        private Sipaa.Framework.STextBox sTextBox1;
+        private Sipaa.Framework.STextBox searching_textbox;
         private Guna.UI2.WinForms.Guna2ImageButton searching_button;
+        private System.Windows.Forms.Label home_button;
+        private Guna.UI2.WinForms.Guna2ComboBox open_cb;
     }
 }
 
