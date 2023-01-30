@@ -41,5 +41,17 @@ namespace DO_AN_LTTQ
         {
 
         }
+
+
+
+        private void rewind_button_MouseEnter(object sender, EventArgs e)
+        {
+            rewind_button.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void rewind_button_MouseLeave(object sender, EventArgs e)
+        {
+            rewind_button.BackColor = Color.FromArgb(249, 249, 249);
+        }
     }
 }

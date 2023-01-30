@@ -44,8 +44,8 @@
             this.name_of_song = new System.Windows.Forms.Label();
             this.faceUI_btb = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.home_button = new System.Windows.Forms.Label();
             this.open_cb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.home_button = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.faceUI_btb)).BeginInit();
@@ -54,26 +54,28 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.panel1.Controls.Add(this.searching_button);
             this.panel1.Controls.Add(this.searching_textbox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(288, 476);
+            this.panel1.Size = new System.Drawing.Size(288, 495);
             this.panel1.TabIndex = 0;
             // 
             // searching_button
             // 
-            this.searching_button.CheckedState.ImageSize = new System.Drawing.Size(35, 35);
-            this.searching_button.HoverState.ImageSize = new System.Drawing.Size(35, 35);
+            this.searching_button.BackColor = System.Drawing.Color.White;
+            this.searching_button.CheckedState.ImageSize = new System.Drawing.Size(28, 28);
+            this.searching_button.HoverState.ImageSize = new System.Drawing.Size(28, 28);
             this.searching_button.Image = ((System.Drawing.Image)(resources.GetObject("searching_button.Image")));
             this.searching_button.ImageOffset = new System.Drawing.Point(0, 0);
             this.searching_button.ImageRotate = 0F;
-            this.searching_button.ImageSize = new System.Drawing.Size(30, 30);
-            this.searching_button.Location = new System.Drawing.Point(245, 12);
+            this.searching_button.ImageSize = new System.Drawing.Size(25, 25);
+            this.searching_button.Location = new System.Drawing.Point(208, 17);
             this.searching_button.Name = "searching_button";
-            this.searching_button.PressedState.ImageSize = new System.Drawing.Size(35, 35);
-            this.searching_button.Size = new System.Drawing.Size(37, 32);
+            this.searching_button.PressedState.ImageSize = new System.Drawing.Size(28, 28);
+            this.searching_button.Size = new System.Drawing.Size(26, 28);
             this.searching_button.TabIndex = 10;
             // 
             // searching_textbox
@@ -100,6 +102,7 @@
             // 
             // bottom_panel
             // 
+            this.bottom_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.bottom_panel.Controls.Add(this.volumn_button);
             this.bottom_panel.Controls.Add(this.metroSetTrackBar1);
             this.bottom_panel.Controls.Add(this.repeat_button);
@@ -111,9 +114,9 @@
             this.bottom_panel.Controls.Add(this.name_of_song);
             this.bottom_panel.Controls.Add(this.faceUI_btb);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottom_panel.Location = new System.Drawing.Point(0, 476);
+            this.bottom_panel.Location = new System.Drawing.Point(0, 495);
             this.bottom_panel.Name = "bottom_panel";
-            this.bottom_panel.Size = new System.Drawing.Size(1198, 139);
+            this.bottom_panel.Size = new System.Drawing.Size(1215, 139);
             this.bottom_panel.TabIndex = 1;
             // 
             // volumn_button
@@ -211,6 +214,8 @@
             this.rewind_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.rewind_button.Size = new System.Drawing.Size(64, 54);
             this.rewind_button.TabIndex = 4;
+            this.rewind_button.MouseEnter += new System.EventHandler(this.rewind_button_MouseEnter);
+            this.rewind_button.MouseLeave += new System.EventHandler(this.rewind_button_MouseLeave);
             // 
             // play_button
             // 
@@ -248,7 +253,10 @@
             // 
             // faceUI_btb
             // 
+            this.faceUI_btb.ErrorImage = global::DO_AN_LTTQ.Properties.Resources.music;
+            this.faceUI_btb.Image = global::DO_AN_LTTQ.Properties.Resources.music;
             this.faceUI_btb.ImageRotate = 0F;
+            this.faceUI_btb.InitialImage = global::DO_AN_LTTQ.Properties.Resources.music;
             this.faceUI_btb.Location = new System.Drawing.Point(31, 47);
             this.faceUI_btb.Name = "faceUI_btb";
             this.faceUI_btb.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -258,23 +266,14 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.panel2.Controls.Add(this.open_cb);
             this.panel2.Controls.Add(this.home_button);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(288, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(910, 476);
+            this.panel2.Size = new System.Drawing.Size(927, 495);
             this.panel2.TabIndex = 2;
-            // 
-            // home_button
-            // 
-            this.home_button.AutoSize = true;
-            this.home_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.home_button.Location = new System.Drawing.Point(26, 13);
-            this.home_button.Name = "home_button";
-            this.home_button.Size = new System.Drawing.Size(102, 37);
-            this.home_button.TabIndex = 0;
-            this.home_button.Text = "Home";
             // 
             // open_cb
             // 
@@ -286,16 +285,26 @@
             this.open_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.open_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.open_cb.ItemHeight = 30;
-            this.open_cb.Location = new System.Drawing.Point(718, 24);
+            this.open_cb.Location = new System.Drawing.Point(708, 17);
             this.open_cb.Name = "open_cb";
             this.open_cb.Size = new System.Drawing.Size(129, 36);
             this.open_cb.TabIndex = 1;
+            // 
+            // home_button
+            // 
+            this.home_button.AutoSize = true;
+            this.home_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.home_button.Location = new System.Drawing.Point(26, 13);
+            this.home_button.Name = "home_button";
+            this.home_button.Size = new System.Drawing.Size(102, 37);
+            this.home_button.TabIndex = 0;
+            this.home_button.Text = "Home";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 615);
+            this.ClientSize = new System.Drawing.Size(1215, 634);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottom_panel);
