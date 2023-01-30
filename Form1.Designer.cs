@@ -108,8 +108,7 @@ namespace DO_AN_LTTQ
             this.searching_textbox.TabIndex = 1;
             this.searching_textbox.Texts = "Tìm kiếm";
             this.searching_textbox.UnderlinedStyle = false;
-            this.searching_textbox._TextChanged += new System.EventHandler(this.searching_textbox__TextChanged);
-            this.searching_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searching_textbox_KeyDown);
+
             // 
             // bottom_panel
             // 
@@ -157,7 +156,7 @@ namespace DO_AN_LTTQ
             this.volumn_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.volumn_button.Size = new System.Drawing.Size(64, 54);
             this.volumn_button.TabIndex = 9;
-            this.volumn_button.Click += new System.EventHandler(this.volumn_button_Click);
+
             // 
             // metroSetTrackBar1
             // 
@@ -224,7 +223,7 @@ namespace DO_AN_LTTQ
             this.next_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.next_button.Size = new System.Drawing.Size(64, 54);
             this.next_button.TabIndex = 5;
-            this.next_button.Click += new System.EventHandler(this.next_button_Click);
+
             // 
             // rewind_button
             // 
@@ -239,8 +238,8 @@ namespace DO_AN_LTTQ
             this.rewind_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.rewind_button.Size = new System.Drawing.Size(64, 54);
             this.rewind_button.TabIndex = 4;
-            this.rewind_button.MouseEnter += new System.EventHandler(this.rewind_button_MouseEnter);
-            this.rewind_button.MouseLeave += new System.EventHandler(this.rewind_button_MouseLeave);
+            this.rewind_button.MouseEnter += new System.EventHandler(this.Rewind_MouseEnter);
+            this.rewind_button.MouseLeave += new System.EventHandler(this.Rewind_MouseLeave);
             // 
             // play_button
             // 
@@ -255,7 +254,7 @@ namespace DO_AN_LTTQ
             this.play_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.play_button.Size = new System.Drawing.Size(64, 54);
             this.play_button.TabIndex = 3;
-            this.play_button.Click += new System.EventHandler(this.play_button_Click);
+  
             // 
             // guna2TrackBar1
             // 
@@ -274,7 +273,7 @@ namespace DO_AN_LTTQ
             this.name_of_song.Size = new System.Drawing.Size(88, 20);
             this.name_of_song.TabIndex = 1;
             this.name_of_song.Text = "Tên bài hát";
-            this.name_of_song.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // panel2
             // 
@@ -287,7 +286,7 @@ namespace DO_AN_LTTQ
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(964, 517);
             this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+
             // 
             // guna2ComboBox1
             // 
@@ -317,7 +316,7 @@ namespace DO_AN_LTTQ
             this.home_label.Size = new System.Drawing.Size(108, 45);
             this.home_label.TabIndex = 0;
             this.home_label.Text = "Home";
-            this.home_label.Click += new System.EventHandler(this.home_button_Click);
+
             // 
             // guna2TileButton1
             // 

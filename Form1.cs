@@ -16,72 +16,14 @@ namespace DO_AN_LTTQ
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void play_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void next_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void volumn_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void rewind_button_MouseEnter(object sender, EventArgs e)
+        private void Rewind_MouseEnter(object sender, EventArgs e)
         {
             rewind_button.BackColor = Color.FromArgb(240, 240, 240);
         }
 
-        private void rewind_button_MouseLeave(object sender, EventArgs e)
+        private void Rewind_MouseLeave(object sender, EventArgs e)
         {
             rewind_button.BackColor = Color.FromArgb(249, 249, 249);
-        }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void home_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void searching_textbox__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void searching_textbox_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
