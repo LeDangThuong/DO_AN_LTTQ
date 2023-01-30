@@ -42,14 +42,14 @@
             this.play_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
             this.name_of_song = new System.Windows.Forms.Label();
-            this.faceUI_btb = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.open_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_button = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.faceUI_btb)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,7 +60,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(288, 495);
+            this.panel1.Size = new System.Drawing.Size(288, 476);
             this.panel1.TabIndex = 0;
             // 
             // searching_button
@@ -103,6 +103,7 @@
             // bottom_panel
             // 
             this.bottom_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.bottom_panel.Controls.Add(this.guna2CirclePictureBox1);
             this.bottom_panel.Controls.Add(this.volumn_button);
             this.bottom_panel.Controls.Add(this.metroSetTrackBar1);
             this.bottom_panel.Controls.Add(this.repeat_button);
@@ -112,11 +113,10 @@
             this.bottom_panel.Controls.Add(this.play_button);
             this.bottom_panel.Controls.Add(this.guna2TrackBar1);
             this.bottom_panel.Controls.Add(this.name_of_song);
-            this.bottom_panel.Controls.Add(this.faceUI_btb);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottom_panel.Location = new System.Drawing.Point(0, 495);
+            this.bottom_panel.Location = new System.Drawing.Point(0, 476);
             this.bottom_panel.Name = "bottom_panel";
-            this.bottom_panel.Size = new System.Drawing.Size(1215, 139);
+            this.bottom_panel.Size = new System.Drawing.Size(1198, 139);
             this.bottom_panel.TabIndex = 1;
             // 
             // volumn_button
@@ -251,19 +251,6 @@
             this.name_of_song.Text = "Tên bài hát";
             this.name_of_song.Click += new System.EventHandler(this.label1_Click);
             // 
-            // faceUI_btb
-            // 
-            this.faceUI_btb.ErrorImage = global::DO_AN_LTTQ.Properties.Resources.music;
-            this.faceUI_btb.Image = global::DO_AN_LTTQ.Properties.Resources.music;
-            this.faceUI_btb.ImageRotate = 0F;
-            this.faceUI_btb.InitialImage = global::DO_AN_LTTQ.Properties.Resources.music;
-            this.faceUI_btb.Location = new System.Drawing.Point(31, 47);
-            this.faceUI_btb.Name = "faceUI_btb";
-            this.faceUI_btb.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.faceUI_btb.Size = new System.Drawing.Size(80, 80);
-            this.faceUI_btb.TabIndex = 0;
-            this.faceUI_btb.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
@@ -272,7 +259,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(288, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(927, 495);
+            this.panel2.Size = new System.Drawing.Size(910, 476);
             this.panel2.TabIndex = 2;
             // 
             // open_cb
@@ -285,7 +272,7 @@
             this.open_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.open_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.open_cb.ItemHeight = 30;
-            this.open_cb.Location = new System.Drawing.Point(708, 17);
+            this.open_cb.Location = new System.Drawing.Point(710, 17);
             this.open_cb.Name = "open_cb";
             this.open_cb.Size = new System.Drawing.Size(129, 36);
             this.open_cb.TabIndex = 1;
@@ -294,17 +281,28 @@
             // 
             this.home_button.AutoSize = true;
             this.home_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.home_button.Location = new System.Drawing.Point(26, 13);
+            this.home_button.Location = new System.Drawing.Point(22, 11);
             this.home_button.Name = "home_button";
             this.home_button.Size = new System.Drawing.Size(102, 37);
             this.home_button.TabIndex = 0;
             this.home_button.Text = "Home";
             // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(36, 35);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.guna2CirclePictureBox1.TabIndex = 10;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1215, 634);
+            this.ClientSize = new System.Drawing.Size(1198, 615);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottom_panel);
@@ -313,9 +311,9 @@
             this.panel1.ResumeLayout(false);
             this.bottom_panel.ResumeLayout(false);
             this.bottom_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.faceUI_btb)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,7 +324,6 @@
         private System.Windows.Forms.Panel bottom_panel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label name_of_song;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox faceUI_btb;
         private Guna.UI2.WinForms.Guna2ImageButton play_button;
         private Guna.UI2.WinForms.Guna2TrackBar guna2TrackBar1;
         private Guna.UI2.WinForms.Guna2ImageButton shuffle_button;
@@ -339,6 +336,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton searching_button;
         private System.Windows.Forms.Label home_button;
         private Guna.UI2.WinForms.Guna2ComboBox open_cb;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
     }
 }
 
