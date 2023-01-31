@@ -57,6 +57,8 @@ namespace DO_AN_LTTQ
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
@@ -208,6 +210,8 @@ namespace DO_AN_LTTQ
             // bottom_panel
             // 
             this.bottom_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.bottom_panel.Controls.Add(this.label2);
+            this.bottom_panel.Controls.Add(this.label1);
             this.bottom_panel.Controls.Add(this.picboxAvatar);
             this.bottom_panel.Controls.Add(this.player);
             this.bottom_panel.Controls.Add(this.volumn_button);
@@ -238,7 +242,7 @@ namespace DO_AN_LTTQ
             // player
             // 
             this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(12, 6);
+            this.player.Location = new System.Drawing.Point(435, 3);
             this.player.Name = "player";
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
             this.player.Size = new System.Drawing.Size(333, 23);
@@ -367,9 +371,9 @@ namespace DO_AN_LTTQ
             // 
             // guna2TrackBar1
             // 
-            this.guna2TrackBar1.Location = new System.Drawing.Point(150, 16);
+            this.guna2TrackBar1.Location = new System.Drawing.Point(235, 16);
             this.guna2TrackBar1.Name = "guna2TrackBar1";
-            this.guna2TrackBar1.Size = new System.Drawing.Size(959, 23);
+            this.guna2TrackBar1.Size = new System.Drawing.Size(874, 23);
             this.guna2TrackBar1.TabIndex = 2;
             this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             // 
@@ -476,6 +480,26 @@ namespace DO_AN_LTTQ
             this.flowPanelMedia.Size = new System.Drawing.Size(1024, 404);
             this.flowPanelMedia.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(189, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 21);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "0:00";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1115, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 21);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "5:00";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,7 +510,6 @@ namespace DO_AN_LTTQ
             this.Controls.Add(this.bottom_panel);
             this.Name = "Form1";
             this.Text = "Form1";
-            
             this.panel1.ResumeLayout(false);
             this.bottom_panel.ResumeLayout(false);
             this.bottom_panel.PerformLayout();
@@ -526,6 +549,8 @@ namespace DO_AN_LTTQ
         public System.Windows.Forms.Label name_of_song;
         private System.Windows.Forms.Button btnAn;
         public System.Windows.Forms.Label lblTacGiaNhac;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
