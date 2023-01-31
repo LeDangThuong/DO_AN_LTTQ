@@ -26,5 +26,50 @@ namespace DO_AN_LTTQ
         {
             rewind_button.BackColor = Color.FromArgb(249, 249, 249);
         }
+
+        string[] files;
+        string filename;
+        private void btnTaiNhac_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Multiselect = true;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                files = ofd.FileNames;
+            }
+
+            MediaItem item;
+            string[] tenBaiHat;
+            string[] tenTacGia;
+
+            foreach(string file in files)
+            {
+                item = new MediaItem();
+                filename = Path.GetFileName(file);
+                item.Tag = file;
+
+                tenBaiHat = filename.Split('-');
+                item.lblTenBaiHat.Text = tenBaiHat[0];
+
+                tenTacGia = tenBaiHat[1].Split('.');
+                item.lblTacGia.Text = tenTacGia[0];
+
+
+                try
+                {
+                    var f = TagLib.File.Create(file);
+                    var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
+                    item.picMediaItem.Image = Image.FromStream(new MemoryStream(bin));
+
+                }
+                catch
+                {
+
+                }
+
+                flowPanelMedia.Controls.Add(item);
+            }
+        }
     }
 }
