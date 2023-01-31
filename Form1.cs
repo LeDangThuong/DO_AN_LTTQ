@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Windows;
 using DO_AN_LTTQ.Properties;
+using System.Resources;
 
 namespace DO_AN_LTTQ
 {
@@ -69,11 +70,11 @@ namespace DO_AN_LTTQ
                     var f = TagLib.File.Create(file);
                     var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                     item.picMediaItem.Image = Image.FromStream(new MemoryStream(bin));
-
+                   
                 }
                 catch
                 {
-
+                    item.picMediaItem.Image = Image.FromFile(@"D:\DOAN IT008\icon\music.png");
                 }
 
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
@@ -98,10 +99,11 @@ namespace DO_AN_LTTQ
                 var f = TagLib.File.Create((string)item.Tag);
                 var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                 picboxAvatar.Image = Image.FromStream(new MemoryStream(bin));
+                
             }
             catch
             {
-
+                picboxAvatar.Image = Image.FromFile(@"D:\DOAN IT008\icon\music.png");
             }
 
             name_of_song.Text = item.lblTenBaiHat.Text;

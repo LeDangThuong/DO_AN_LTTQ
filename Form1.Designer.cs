@@ -234,7 +234,7 @@ namespace DO_AN_LTTQ
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1115, 16);
+            this.label2.Location = new System.Drawing.Point(1130, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 21);
             this.label2.TabIndex = 13;
@@ -244,7 +244,7 @@ namespace DO_AN_LTTQ
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(189, 16);
+            this.label1.Location = new System.Drawing.Point(180, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 21);
             this.label1.TabIndex = 12;
