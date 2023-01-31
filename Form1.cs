@@ -218,7 +218,7 @@ namespace DO_AN_LTTQ
                 //
                 // DỪNG NHẠC
                 //
-                player.Ctlcontrols.stop();
+                player.Ctlcontrols.pause();
                 //
                 check_forplaybutton = 0;
                 timer1.Enabled = false;

@@ -405,7 +405,7 @@ namespace DO_AN_LTTQ
             this.guna2TrackBar1.TabIndex = 2;
             this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.guna2TrackBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2TrackBar1_MouseDown);
-            this.guna2TrackBar1.MouseHover += new System.EventHandler(this.guna2TrackBar1_MouseHover);
+            
             // 
             // lblTacGiaNhac
             // 
