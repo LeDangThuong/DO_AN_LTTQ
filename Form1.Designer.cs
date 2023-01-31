@@ -228,7 +228,7 @@ namespace DO_AN_LTTQ
             this.bottom_panel.Name = "bottom_panel";
             this.bottom_panel.Size = new System.Drawing.Size(1700, 171);
             this.bottom_panel.TabIndex = 1;
-            this.bottom_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.bottom_panel_Paint);
+
             // 
             // picboxAvatar
             // 
