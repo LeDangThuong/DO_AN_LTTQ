@@ -11,6 +11,7 @@ using System.IO;
 using System.Windows;
 using DO_AN_LTTQ.Properties;
 using System.Resources;
+using System.Windows.Media.Animation;
 
 namespace DO_AN_LTTQ
 {
@@ -191,6 +192,8 @@ namespace DO_AN_LTTQ
             }
         }
 
-       
+        private void play_button_Click(object sender, EventArgs e)
+        {  
+        }
     }
 }

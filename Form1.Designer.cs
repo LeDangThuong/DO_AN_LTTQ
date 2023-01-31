@@ -386,6 +386,7 @@ namespace DO_AN_LTTQ
             this.play_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.play_button.Size = new System.Drawing.Size(64, 54);
             this.play_button.TabIndex = 3;
+            this.play_button.Click += new System.EventHandler(this.play_button_Click);
             this.play_button.MouseEnter += new System.EventHandler(this.play_button_MouseEnter);
             this.play_button.MouseLeave += new System.EventHandler(this.play_button_MouseLeave);
             // 
