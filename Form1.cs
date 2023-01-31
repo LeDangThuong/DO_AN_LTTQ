@@ -26,5 +26,10 @@ namespace DO_AN_LTTQ
         {
             rewind_button.BackColor = Color.FromArgb(249, 249, 249);
         }
+
+        private void bottom_panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

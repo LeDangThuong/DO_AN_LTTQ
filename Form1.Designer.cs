@@ -41,7 +41,6 @@ namespace DO_AN_LTTQ
             this.bottom_panel = new System.Windows.Forms.Panel();
             this.timeend_label = new System.Windows.Forms.Label();
             this.timestart_label = new System.Windows.Forms.Label();
-            this.avatar_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.volumn_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.metroSetTrackBar1 = new MetroSet_UI.Controls.MetroSetTrackBar();
             this.repeat_button = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -50,25 +49,12 @@ namespace DO_AN_LTTQ
             this.rewind_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.play_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
-            this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -218,7 +204,6 @@ namespace DO_AN_LTTQ
             this.bottom_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.bottom_panel.Controls.Add(this.timeend_label);
             this.bottom_panel.Controls.Add(this.timestart_label);
-            this.bottom_panel.Controls.Add(this.avatar_button);
             this.bottom_panel.Controls.Add(this.volumn_button);
             this.bottom_panel.Controls.Add(this.metroSetTrackBar1);
             this.bottom_panel.Controls.Add(this.repeat_button);
@@ -227,12 +212,12 @@ namespace DO_AN_LTTQ
             this.bottom_panel.Controls.Add(this.rewind_button);
             this.bottom_panel.Controls.Add(this.play_button);
             this.bottom_panel.Controls.Add(this.guna2TrackBar1);
-            this.bottom_panel.Controls.Add(this.name_of_song);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bottom_panel.Location = new System.Drawing.Point(0, 537);
             this.bottom_panel.Name = "bottom_panel";
             this.bottom_panel.Size = new System.Drawing.Size(1227, 140);
             this.bottom_panel.TabIndex = 1;
+            this.bottom_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.bottom_panel_Paint);
             // 
             // timeend_label
             // 
@@ -253,20 +238,6 @@ namespace DO_AN_LTTQ
             this.timestart_label.Size = new System.Drawing.Size(40, 21);
             this.timestart_label.TabIndex = 11;
             this.timestart_label.Text = "0:00";
-            // 
-            // avatar_button
-            // 
-            this.avatar_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.avatar_button.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.avatar_button.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.avatar_button.Image = ((System.Drawing.Image)(resources.GetObject("avatar_button.Image")));
-            this.avatar_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.avatar_button.ImageRotate = 0F;
-            this.avatar_button.Location = new System.Drawing.Point(12, 14);
-            this.avatar_button.Name = "avatar_button";
-            this.avatar_button.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.avatar_button.Size = new System.Drawing.Size(128, 113);
-            this.avatar_button.TabIndex = 2;
             // 
             // volumn_button
             // 
@@ -386,16 +357,6 @@ namespace DO_AN_LTTQ
             this.guna2TrackBar1.TabIndex = 2;
             this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             // 
-            // name_of_song
-            // 
-            this.name_of_song.AutoSize = true;
-            this.name_of_song.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_of_song.Location = new System.Drawing.Point(160, 77);
-            this.name_of_song.Name = "name_of_song";
-            this.name_of_song.Size = new System.Drawing.Size(88, 20);
-            this.name_of_song.TabIndex = 1;
-            this.name_of_song.Text = "Tên bài hát";
-            // 
             // panel2
             // 
             this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip;
@@ -404,72 +365,12 @@ namespace DO_AN_LTTQ
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.panel2.Controls.Add(this.guna2PictureBox6);
-            this.panel2.Controls.Add(this.guna2PictureBox5);
-            this.panel2.Controls.Add(this.guna2PictureBox4);
-            this.panel2.Controls.Add(this.guna2PictureBox3);
-            this.panel2.Controls.Add(this.guna2PictureBox2);
-            this.panel2.Controls.Add(this.guna2PictureBox1);
             this.panel2.Controls.Add(this.guna2ComboBox1);
             this.panel2.Controls.Add(this.home_label);
             this.panel2.Location = new System.Drawing.Point(251, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(976, 537);
             this.panel2.TabIndex = 2;
-            // 
-            // guna2PictureBox6
-            // 
-            this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(731, 314);
-            this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.Size = new System.Drawing.Size(194, 154);
-            this.guna2PictureBox6.TabIndex = 7;
-            this.guna2PictureBox6.TabStop = false;
-            // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(388, 314);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(194, 154);
-            this.guna2PictureBox5.TabIndex = 6;
-            this.guna2PictureBox5.TabStop = false;
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(49, 314);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(194, 154);
-            this.guna2PictureBox4.TabIndex = 5;
-            this.guna2PictureBox4.TabStop = false;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(733, 91);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(194, 154);
-            this.guna2PictureBox3.TabIndex = 4;
-            this.guna2PictureBox3.TabStop = false;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(388, 91);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(194, 154);
-            this.guna2PictureBox2.TabIndex = 3;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(49, 91);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(194, 154);
-            this.guna2PictureBox1.TabIndex = 2;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // guna2ComboBox1
             // 
@@ -515,12 +416,6 @@ namespace DO_AN_LTTQ
             this.bottom_panel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -530,7 +425,6 @@ namespace DO_AN_LTTQ
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel bottom_panel;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label name_of_song;
         private Guna.UI2.WinForms.Guna2ImageButton play_button;
         private Guna.UI2.WinForms.Guna2TrackBar guna2TrackBar1;
         private Guna.UI2.WinForms.Guna2ImageButton shuffle_button;
@@ -542,7 +436,6 @@ namespace DO_AN_LTTQ
         private Sipaa.Framework.STextBox searching_textbox;
         private Guna.UI2.WinForms.Guna2ImageButton searching_button;
         private System.Windows.Forms.Label home_label;
-        private Guna.UI2.WinForms.Guna2ImageButton avatar_button;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton4;
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton3;
@@ -550,12 +443,6 @@ namespace DO_AN_LTTQ
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton1;
         private System.Windows.Forms.Label timeend_label;
         private System.Windows.Forms.Label timestart_label;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }
 
