@@ -165,6 +165,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\pause.png" />
+    <None Include="Resources\repeat1.png" />
+    <None Include="Resources\repeat_infinity1.png" />
+    <None Include="Resources\repeat-once1.png" />
+    <None Include="Resources\shuffle1.png" />
+    <None Include="Resources\random1.png" />
+    <None Include="Resources\play-rounded-button1.png" />
+    <None Include="Resources\pause1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

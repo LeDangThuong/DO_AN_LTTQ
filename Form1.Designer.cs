@@ -30,6 +30,7 @@ namespace DO_AN_LTTQ
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2TileButton4 = new Guna.UI2.WinForms.Guna2TileButton();
@@ -59,6 +60,7 @@ namespace DO_AN_LTTQ
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
@@ -306,8 +308,9 @@ namespace DO_AN_LTTQ
             this.metroSetTrackBar1.Text = "metroSetTrackBar1";
             this.metroSetTrackBar1.ThemeAuthor = "Narwin";
             this.metroSetTrackBar1.ThemeName = "MetroLite";
-            this.metroSetTrackBar1.Value = 50;
+            this.metroSetTrackBar1.Value = 30;
             this.metroSetTrackBar1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
+            this.metroSetTrackBar1.Scroll += new MetroSet_UI.Controls.MetroSetTrackBar.ScrollEventHandler(this.metroSetTrackBar1_Scroll);
             // 
             // repeat_button
             // 
@@ -322,6 +325,7 @@ namespace DO_AN_LTTQ
             this.repeat_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.repeat_button.Size = new System.Drawing.Size(64, 54);
             this.repeat_button.TabIndex = 7;
+            this.repeat_button.Click += new System.EventHandler(this.repeat_button_Click);
             this.repeat_button.MouseEnter += new System.EventHandler(this.repeat_button_MouseEnter);
             this.repeat_button.MouseLeave += new System.EventHandler(this.repeat_button_MouseLeave);
             // 
@@ -338,6 +342,7 @@ namespace DO_AN_LTTQ
             this.shuffle_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.shuffle_button.Size = new System.Drawing.Size(64, 54);
             this.shuffle_button.TabIndex = 6;
+            this.shuffle_button.Click += new System.EventHandler(this.shuffle_button_Click);
             this.shuffle_button.MouseEnter += new System.EventHandler(this.shuffle_button_MouseEnter);
             this.shuffle_button.MouseLeave += new System.EventHandler(this.shuffle_button_MouseLeave);
             // 
@@ -370,6 +375,7 @@ namespace DO_AN_LTTQ
             this.rewind_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.rewind_button.Size = new System.Drawing.Size(64, 54);
             this.rewind_button.TabIndex = 4;
+            this.rewind_button.Click += new System.EventHandler(this.rewind_button_Click);
             this.rewind_button.MouseEnter += new System.EventHandler(this.Rewind_MouseEnter);
             this.rewind_button.MouseLeave += new System.EventHandler(this.Rewind_MouseLeave);
             // 
@@ -393,10 +399,13 @@ namespace DO_AN_LTTQ
             // guna2TrackBar1
             // 
             this.guna2TrackBar1.Location = new System.Drawing.Point(235, 16);
+            this.guna2TrackBar1.Maximum = 500;
             this.guna2TrackBar1.Name = "guna2TrackBar1";
             this.guna2TrackBar1.Size = new System.Drawing.Size(874, 23);
             this.guna2TrackBar1.TabIndex = 2;
             this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
+            this.guna2TrackBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2TrackBar1_MouseDown);
+            this.guna2TrackBar1.MouseHover += new System.EventHandler(this.guna2TrackBar1_MouseHover);
             // 
             // lblTacGiaNhac
             // 
@@ -501,6 +510,11 @@ namespace DO_AN_LTTQ
             this.flowPanelMedia.Size = new System.Drawing.Size(1024, 404);
             this.flowPanelMedia.TabIndex = 2;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,6 +566,7 @@ namespace DO_AN_LTTQ
         public System.Windows.Forms.Label lblTacGiaNhac;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
