@@ -39,6 +39,8 @@ namespace DO_AN_LTTQ
             this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.searching_textbox = new Sipaa.Framework.STextBox();
             this.bottom_panel = new System.Windows.Forms.Panel();
+            this.picboxAvatar = new System.Windows.Forms.PictureBox();
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.volumn_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.metroSetTrackBar1 = new MetroSet_UI.Controls.MetroSetTrackBar();
             this.repeat_button = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -49,18 +51,15 @@ namespace DO_AN_LTTQ
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
             this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-
+            this.btnTaiNhac = new System.Windows.Forms.Button();
+            this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
-            this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnTaiNhac = new System.Windows.Forms.Button();
-            this.player = new AxWMPLib.AxWindowsMediaPlayer();
-            this.picboxAvatar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,7 +74,7 @@ namespace DO_AN_LTTQ
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(345, 636);
+            this.panel1.Size = new System.Drawing.Size(345, 517);
             this.panel1.TabIndex = 0;
             // 
             // guna2TileButton4
@@ -191,7 +190,7 @@ namespace DO_AN_LTTQ
             this.searching_textbox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.searching_textbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.searching_textbox.Location = new System.Drawing.Point(13, 13);
-            this.searching_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searching_textbox.Margin = new System.Windows.Forms.Padding(4);
             this.searching_textbox.Multiline = false;
             this.searching_textbox.Name = "searching_textbox";
             this.searching_textbox.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -222,6 +221,24 @@ namespace DO_AN_LTTQ
             this.bottom_panel.Name = "bottom_panel";
             this.bottom_panel.Size = new System.Drawing.Size(1215, 139);
             this.bottom_panel.TabIndex = 1;
+            // 
+            // picboxAvatar
+            // 
+            this.picboxAvatar.Location = new System.Drawing.Point(27, 36);
+            this.picboxAvatar.Name = "picboxAvatar";
+            this.picboxAvatar.Size = new System.Drawing.Size(139, 123);
+            this.picboxAvatar.TabIndex = 11;
+            this.picboxAvatar.TabStop = false;
+            // 
+            // player
+            // 
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(12, 6);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(333, 23);
+            this.player.TabIndex = 10;
+            this.player.Visible = false;
             // 
             // volumn_button
             // 
@@ -345,7 +362,7 @@ namespace DO_AN_LTTQ
             // 
             this.name_of_song.AutoSize = true;
             this.name_of_song.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_of_song.Location = new System.Drawing.Point(146, 77);
+            this.name_of_song.Location = new System.Drawing.Point(172, 81);
             this.name_of_song.Name = "name_of_song";
             this.name_of_song.Size = new System.Drawing.Size(88, 20);
             this.name_of_song.TabIndex = 1;
@@ -361,9 +378,9 @@ namespace DO_AN_LTTQ
             this.panel2.Controls.Add(this.home_label);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(345, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1275, 636);
+            this.panel2.Size = new System.Drawing.Size(870, 517);
             this.panel2.TabIndex = 2;
             // 
             // btnTaiNhac
@@ -371,10 +388,10 @@ namespace DO_AN_LTTQ
             this.btnTaiNhac.BackColor = System.Drawing.Color.Gray;
             this.btnTaiNhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiNhac.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnTaiNhac.Location = new System.Drawing.Point(660, 17);
-            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTaiNhac.Location = new System.Drawing.Point(880, 21);
+            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaiNhac.Name = "btnTaiNhac";
-            this.btnTaiNhac.Size = new System.Drawing.Size(100, 34);
+            this.btnTaiNhac.Size = new System.Drawing.Size(134, 42);
             this.btnTaiNhac.TabIndex = 3;
             this.btnTaiNhac.Text = "Tải Nhạc";
             this.btnTaiNhac.UseVisualStyleBackColor = false;
@@ -384,10 +401,10 @@ namespace DO_AN_LTTQ
             // 
             this.flowPanelMedia.AutoScroll = true;
             this.flowPanelMedia.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowPanelMedia.Location = new System.Drawing.Point(0, 91);
-            this.flowPanelMedia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowPanelMedia.Location = new System.Drawing.Point(0, -7);
+            this.flowPanelMedia.Margin = new System.Windows.Forms.Padding(2);
             this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(965, 426);
+            this.flowPanelMedia.Size = new System.Drawing.Size(870, 524);
             this.flowPanelMedia.TabIndex = 2;
             // 
             // guna2ComboBox1
@@ -419,46 +436,6 @@ namespace DO_AN_LTTQ
             this.home_label.TabIndex = 0;
             this.home_label.Text = "Home";
             // 
-            // flowPanelMedia
-            // 
-            this.flowPanelMedia.AutoScroll = true;
-            this.flowPanelMedia.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowPanelMedia.Location = new System.Drawing.Point(0, 112);
-            this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(1275, 524);
-            this.flowPanelMedia.TabIndex = 2;
-            // 
-            // btnTaiNhac
-            // 
-            this.btnTaiNhac.BackColor = System.Drawing.Color.Gray;
-            this.btnTaiNhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaiNhac.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnTaiNhac.Location = new System.Drawing.Point(880, 21);
-            this.btnTaiNhac.Name = "btnTaiNhac";
-            this.btnTaiNhac.Size = new System.Drawing.Size(134, 42);
-            this.btnTaiNhac.TabIndex = 3;
-            this.btnTaiNhac.Text = "Tải Nhạc";
-            this.btnTaiNhac.UseVisualStyleBackColor = false;
-            this.btnTaiNhac.Click += new System.EventHandler(this.btnTaiNhac_Click);
-            // 
-            // player
-            // 
-            this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(12, 6);
-            this.player.Name = "player";
-            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(333, 23);
-            this.player.TabIndex = 10;
-            this.player.Visible = false;
-            // 
-            // picboxAvatar
-            // 
-            this.picboxAvatar.Location = new System.Drawing.Point(27, 36);
-            this.picboxAvatar.Name = "picboxAvatar";
-            this.picboxAvatar.Size = new System.Drawing.Size(139, 123);
-            this.picboxAvatar.TabIndex = 11;
-            this.picboxAvatar.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,10 +449,10 @@ namespace DO_AN_LTTQ
             this.panel1.ResumeLayout(false);
             this.bottom_panel.ResumeLayout(false);
             this.bottom_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
