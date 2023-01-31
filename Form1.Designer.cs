@@ -98,9 +98,9 @@ namespace DO_AN_LTTQ
             this.guna2TileButton4.Name = "guna2TileButton4";
             this.guna2TileButton4.Size = new System.Drawing.Size(225, 40);
             this.guna2TileButton4.TabIndex = 14;
-            this.guna2TileButton4.Text = "Thư viện";
+            this.guna2TileButton4.Text = "Danh sách yêu thích";
             this.guna2TileButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton4.TextOffset = new System.Drawing.Point(-45, -15);
+            this.guna2TileButton4.TextOffset = new System.Drawing.Point(0, -15);
             this.guna2TileButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             // 
             // guna2TileButton3
@@ -120,9 +120,9 @@ namespace DO_AN_LTTQ
             this.guna2TileButton3.Name = "guna2TileButton3";
             this.guna2TileButton3.Size = new System.Drawing.Size(225, 40);
             this.guna2TileButton3.TabIndex = 13;
-            this.guna2TileButton3.Text = "Thư viện";
+            this.guna2TileButton3.Text = "Album của bạn";
             this.guna2TileButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton3.TextOffset = new System.Drawing.Point(-45, -15);
+            this.guna2TileButton3.TextOffset = new System.Drawing.Point(-20, -15);
             this.guna2TileButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             // 
             // guna2TileButton2
@@ -144,7 +144,7 @@ namespace DO_AN_LTTQ
             this.guna2TileButton2.TabIndex = 12;
             this.guna2TileButton2.Text = "Thư viện";
             this.guna2TileButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton2.TextOffset = new System.Drawing.Point(-45, -15);
+            this.guna2TileButton2.TextOffset = new System.Drawing.Point(-43, -15);
             this.guna2TileButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             // 
             // guna2TileButton1
@@ -166,7 +166,7 @@ namespace DO_AN_LTTQ
             this.guna2TileButton1.TabIndex = 11;
             this.guna2TileButton1.Text = "Trang chủ";
             this.guna2TileButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton1.TextOffset = new System.Drawing.Point(-45, -15);
+            this.guna2TileButton1.TextOffset = new System.Drawing.Point(-40, -15);
             this.guna2TileButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             // 
             // searching_button
