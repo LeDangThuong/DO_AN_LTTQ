@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DO_AN_LTTQ.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,9 +22,6 @@ namespace DO_AN_LTTQ
             InitializeComponent();
         }
 
-        
-
-        
         private void mediaItem_Click(object sender, EventArgs e)
         {
             if (MediaItem_Click != null)
@@ -38,7 +36,8 @@ namespace DO_AN_LTTQ
             if(PicMediaItem_Click != null)
             {
                 PicMediaItem_Click.Invoke(this,e);
-            }    
+            }
+           
         }
 
         private void lblTenBaiHat_Click(object sender, EventArgs e)

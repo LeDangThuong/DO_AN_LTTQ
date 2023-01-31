@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Windows;
+using DO_AN_LTTQ.Properties;
 
 namespace DO_AN_LTTQ
 {
@@ -78,7 +79,7 @@ namespace DO_AN_LTTQ
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
-
+                item.Dock = DockStyle.Top;
                 flowPanelMedia.Controls.Add(item);
                 mediaItems.Add(item);
             }
@@ -97,7 +98,8 @@ namespace DO_AN_LTTQ
                 var f = TagLib.File.Create((string)item.Tag);
                 var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                 picboxAvatar.Image = Image.FromStream(new MemoryStream(bin));
-            }catch
+            }
+            catch
             {
 
             }
