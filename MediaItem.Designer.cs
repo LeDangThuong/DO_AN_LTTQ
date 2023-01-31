@@ -42,6 +42,7 @@
             this.picMediaItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picMediaItem.TabIndex = 0;
             this.picMediaItem.TabStop = false;
+            this.picMediaItem.Click += new System.EventHandler(this.picMediaItem_Click);
             // 
             // lblTenBaiHat
             // 
@@ -57,6 +58,7 @@
             this.lblTenBaiHat.Text = "Tên bài hát";
             this.lblTenBaiHat.ThemeAuthor = "Narwin";
             this.lblTenBaiHat.ThemeName = "MetroLite";
+            this.lblTenBaiHat.Click += new System.EventHandler(this.lblTenBaiHat_Click);
             // 
             // lblTacGia
             // 
@@ -67,6 +69,7 @@
             this.lblTacGia.Size = new System.Drawing.Size(56, 18);
             this.lblTacGia.TabIndex = 2;
             this.lblTacGia.Text = "Tác giả";
+            this.lblTacGia.Click += new System.EventHandler(this.lblTenBaiHat_Click);
             // 
             // MediaItem
             // 
@@ -79,6 +82,7 @@
             this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "MediaItem";
             this.Size = new System.Drawing.Size(348, 97);
+            this.Click += new System.EventHandler(this.MediaItem_Click);
             ((System.ComponentModel.ISupportInitialize)(this.picMediaItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

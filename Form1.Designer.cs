@@ -39,7 +39,6 @@ namespace DO_AN_LTTQ
             this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.searching_textbox = new Sipaa.Framework.STextBox();
             this.bottom_panel = new System.Windows.Forms.Panel();
-            this.avatar_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.volumn_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.metroSetTrackBar1 = new MetroSet_UI.Controls.MetroSetTrackBar();
             this.repeat_button = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -54,9 +53,13 @@ namespace DO_AN_LTTQ
             this.home_label = new System.Windows.Forms.Label();
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTaiNhac = new System.Windows.Forms.Button();
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
+            this.picboxAvatar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,7 +75,7 @@ namespace DO_AN_LTTQ
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(307, 636);
+            this.panel1.Size = new System.Drawing.Size(345, 636);
             this.panel1.TabIndex = 0;
             // 
             // guna2TileButton4
@@ -208,7 +211,8 @@ namespace DO_AN_LTTQ
             // bottom_panel
             // 
             this.bottom_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.bottom_panel.Controls.Add(this.avatar_button);
+            this.bottom_panel.Controls.Add(this.picboxAvatar);
+            this.bottom_panel.Controls.Add(this.player);
             this.bottom_panel.Controls.Add(this.volumn_button);
             this.bottom_panel.Controls.Add(this.metroSetTrackBar1);
             this.bottom_panel.Controls.Add(this.repeat_button);
@@ -224,21 +228,6 @@ namespace DO_AN_LTTQ
             this.bottom_panel.Name = "bottom_panel";
             this.bottom_panel.Size = new System.Drawing.Size(1620, 171);
             this.bottom_panel.TabIndex = 1;
-            // 
-            // avatar_button
-            // 
-            this.avatar_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.avatar_button.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.avatar_button.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.avatar_button.Image = ((System.Drawing.Image)(resources.GetObject("avatar_button.Image")));
-            this.avatar_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.avatar_button.ImageRotate = 0F;
-            this.avatar_button.Location = new System.Drawing.Point(17, 33);
-            this.avatar_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.avatar_button.Name = "avatar_button";
-            this.avatar_button.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.avatar_button.Size = new System.Drawing.Size(151, 123);
-            this.avatar_button.TabIndex = 2;
             // 
             // volumn_button
             // 
@@ -386,10 +375,10 @@ namespace DO_AN_LTTQ
             this.panel2.Controls.Add(this.guna2ComboBox1);
             this.panel2.Controls.Add(this.home_label);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(307, 0);
+            this.panel2.Location = new System.Drawing.Point(345, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1313, 636);
+            this.panel2.Size = new System.Drawing.Size(1275, 636);
             this.panel2.TabIndex = 2;
             // 
             // guna2ComboBox1
@@ -429,7 +418,7 @@ namespace DO_AN_LTTQ
             this.flowPanelMedia.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowPanelMedia.Location = new System.Drawing.Point(0, 112);
             this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(1313, 524);
+            this.flowPanelMedia.Size = new System.Drawing.Size(1275, 524);
             this.flowPanelMedia.TabIndex = 2;
             // 
             // btnTaiNhac
@@ -444,6 +433,24 @@ namespace DO_AN_LTTQ
             this.btnTaiNhac.Text = "Tải Nhạc";
             this.btnTaiNhac.UseVisualStyleBackColor = false;
             this.btnTaiNhac.Click += new System.EventHandler(this.btnTaiNhac_Click);
+            // 
+            // player
+            // 
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(12, 6);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(333, 23);
+            this.player.TabIndex = 10;
+            this.player.Visible = false;
+            // 
+            // picboxAvatar
+            // 
+            this.picboxAvatar.Location = new System.Drawing.Point(27, 36);
+            this.picboxAvatar.Name = "picboxAvatar";
+            this.picboxAvatar.Size = new System.Drawing.Size(139, 123);
+            this.picboxAvatar.TabIndex = 11;
+            this.picboxAvatar.TabStop = false;
             // 
             // Form1
             // 
@@ -461,6 +468,8 @@ namespace DO_AN_LTTQ
             this.bottom_panel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,7 +479,6 @@ namespace DO_AN_LTTQ
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel bottom_panel;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label name_of_song;
         private Guna.UI2.WinForms.Guna2ImageButton play_button;
         private Guna.UI2.WinForms.Guna2TrackBar guna2TrackBar1;
         private Guna.UI2.WinForms.Guna2ImageButton shuffle_button;
@@ -482,7 +490,6 @@ namespace DO_AN_LTTQ
         private Sipaa.Framework.STextBox searching_textbox;
         private Guna.UI2.WinForms.Guna2ImageButton searching_button;
         private System.Windows.Forms.Label home_label;
-        private Guna.UI2.WinForms.Guna2ImageButton avatar_button;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton4;
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton3;
@@ -490,6 +497,9 @@ namespace DO_AN_LTTQ
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton1;
         private System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
         private System.Windows.Forms.Button btnTaiNhac;
+        public AxWMPLib.AxWindowsMediaPlayer player;
+        public System.Windows.Forms.PictureBox picboxAvatar;
+        public System.Windows.Forms.Label name_of_song;
     }
 }
 

@@ -47,7 +47,7 @@ namespace DO_AN_LTTQ
             {
                 item = new MediaItem();
                 filename = Path.GetFileName(file);
-                item.Tag = file;
+                
 
                 tenBaiHat = filename.Split('-');
                 item.lblTenBaiHat.Text = tenBaiHat[0];
@@ -55,6 +55,10 @@ namespace DO_AN_LTTQ
                 tenTacGia = tenBaiHat[1].Split('.');
                 item.lblTacGia.Text = tenTacGia[0];
 
+                item.Tag = file;
+                item.picMediaItem.Tag = file;
+                item.lblTenBaiHat.Tag = file;
+                item.lblTacGia.Tag = file;
 
                 try
                 {
@@ -70,6 +74,8 @@ namespace DO_AN_LTTQ
 
                 flowPanelMedia.Controls.Add(item);
             }
+
+            
         }
     }
 }
