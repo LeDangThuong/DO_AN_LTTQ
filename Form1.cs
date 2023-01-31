@@ -13,8 +13,10 @@ namespace DO_AN_LTTQ
 {
     public partial class Form1 : Form
     {
+        List<MediaItem> mediaItems = new List<MediaItem>();
         public Form1()
         {
+            
             InitializeComponent();
         }
         private void Rewind_MouseEnter(object sender, EventArgs e)
@@ -72,10 +74,56 @@ namespace DO_AN_LTTQ
 
                 }
 
+                item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
+                item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
+                item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
+
                 flowPanelMedia.Controls.Add(item);
+                mediaItems.Add(item);
             }
 
             
         }
+
+        private void item_MediaItem_Click(object sender, EventArgs e)
+        {
+            MediaItem item = (MediaItem)sender;
+            player.URL = (string)item.Tag;
+            player.Ctlcontrols.play();
+
+            try
+            {
+                var f = TagLib.File.Create((string)item.Tag);
+                var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
+                picboxAvatar.Image = Image.FromStream(new MemoryStream(bin));
+            }catch
+            {
+
+            }
+
+            name_of_song.Text = item.lblTenBaiHat.Text;
+            lblTacGiaNhac.Text = item.lblTacGia.Text;
+
+            MediaItem itemOld = (MediaItem)player.Tag;
+            if (itemOld != null)
+                itemOld.BackColor = SystemColors.ControlLight;
+
+            item.BackColor = Color.Gray;
+
+            player.Tag = item;
+        }
+
+        private void btnAn_Click(object sender, EventArgs e)
+        {
+            foreach(MediaItem item in mediaItems)
+            {
+                if(item.Visible == true)     
+                    item.Visible = false;
+                else 
+                    item.Visible = true;
+            }   
+        }
+
+        
     }
 }

@@ -82,7 +82,7 @@
             this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "MediaItem";
             this.Size = new System.Drawing.Size(348, 97);
-            this.Click += new System.EventHandler(this.MediaItem_Click);
+            this.Click += new System.EventHandler(this.mediaItem_Click);
             ((System.ComponentModel.ISupportInitialize)(this.picMediaItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
