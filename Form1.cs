@@ -77,5 +77,23 @@ namespace DO_AN_LTTQ
 
             
         }
+
+        private void searching_textbox_Enter(object sender, EventArgs e)
+        {
+            if (searching_textbox.Texts.ToString() == "Tìm kiếm")
+            {
+                searching_textbox.Texts = "";
+                searching_textbox.ForeColor = Color.Black;
+            }
+        }
+
+        private void searching_textbox_Leave(object sender, EventArgs e)
+        {
+            if (searching_textbox.Texts.ToString() == "")
+            {
+                searching_textbox.Texts = "Tìm kiếm";
+                searching_textbox.ForeColor = Color.Silver;
+            }
+        }
     }
 }

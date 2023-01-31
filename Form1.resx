@@ -380,7 +380,7 @@
   <data name="guna2TileButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        0QAADdEBwivf4wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADs/SURBVHhe7d0J
+        0AAADdABEGw9BwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADs/SURBVHhe7d0J
         /H5jnf/xfpsffvjZ9yWEoU3StKeRtEgRKpMmk1KjbZQWLUOLGCk0qRQtE0VU2kcrrSOlRQlFEVEiu7LN
         /3XV7T+XMx/8vvf3Pudc57pf78fj+ZjHXBXXOdd1n/P53vc513Wv//mf/5EkSYUia+CZeB/OS/9/9N+b
         qbBRkiT1g6yKXXEUfo7UmFsz+t/NVNgoSZK6QVbCTjgSP8XtyG/4TRYAkiQNDVmMHfFOnIXbkN/g74kF
@@ -639,7 +639,7 @@
   <data name="guna2TileButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        0gAADdIBb5L+jgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADs/SURBVHhe7d0J
+        0AAADdABEGw9BwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADs/SURBVHhe7d0J
         /H5jnf/xfpsffvjZ9yWEoU3StKeRtEgRKpMmk1KjbZQWLUOLGCk0qRQtE0VU2kcrrSOlRQlFEVEiu7LN
         /3XV7T+XMx/8vvf3Pudc57pf78fj+ZjHXBXXOdd1n/P53vc513Wv//mf/5EkSYUia+CZeB/OS/9/9N+b
         qbBRkiT1g6yKXXEUfo7UmFsz+t/NVNgoSZK6QVbCTjgSP8XtyG/4TRYAkiQNDVmMHfFOnIXbkN/g74kF
@@ -898,7 +898,7 @@
   <data name="guna2TileButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACYxSURBVHhe7d13
+        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACYxSURBVHhe7d13
         tPVXQebxAEIGUmgJASSBEHozlEBoEUKNSJHedLl0xBmxzZo1snTpoI4uy4yjzJrRcea/AURSKBMjVQSM
         9F4ChN5LCiEJJZo482zI1bCz3zfvvveUvc/5fNb6rqUh5X3POff8nvfec/Y5CAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJbr2umodJcrK/93+WsAwIY5JP1M
@@ -1217,17 +1217,6 @@
         AGbgYumgdHD69XT3dLt0nbRPAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFipXXb5/3WqYO7UuLfKAAAA
         AElFTkSuQmCC
-</value>
-  </data>
-  <data name="player.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAtwAAAAIB
-        AAAAAQAAAAAAAAAAAAAAAKIAAAABAwAACAAAAAAABQAAAAAAAADwPwMAAAAAAAUAAAAAAAAAAAAIAAIA
-        AAAAAAMAAQAAAAsA//8DAAAAAAALAP//CAACAAAAAAADADIAAAALAAAACAAKAAAAZgB1AGwAbAAAAAsA
-        AAALAAAACwD//wsA//8LAAAACAACAAAAAAAIAAIAAAAAAAgAAgAAAAAACAACAAAAAAALAAAANAYAAOcB
-        AAAL
 </value>
   </data>
   <data name="volumn_button.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -2243,6 +2232,17 @@
         4z7HfY/HEI8lHlM8tniM8VjjMS+4YwJgNmwRQLso8WZGX5FvynclPl/+TvmhxFvU/lR+LvHudfF/1Mfk
         NxIL8B8lPqkuFuT35EP5WOJ6eoj/jlp8Lb4nvjd+Jn42biNuK24zbjt+R/yu+J3xu+M+xH2J+xT3Le4j
         b6IDtN6/q/8PAUoJiUQyT1UAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="player.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAtwAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAKIAAAABAwAACAAAAAAABQAAAAAAAADwPwMAAAAAAAUAAAAAAAAAAAAIAAIA
+        AAAAAAMAAQAAAAsA//8DAAAAAAALAP//CAACAAAAAAADADIAAAALAAAACAAKAAAAZgB1AGwAbAAAAAsA
+        AAALAAAACwD//wsA//8LAAAACAACAAAAAAAIAAIAAAAAAAgAAgAAAAAACAACAAAAAAALAAAANAYAAOcB
+        AAAL
 </value>
   </data>
 </root>
