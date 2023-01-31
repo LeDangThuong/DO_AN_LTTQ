@@ -27,7 +27,7 @@ namespace DO_AN_LTTQ
             rewind_button.BackColor = Color.FromArgb(249, 249, 249);
         }
 
-        private void guna2TileButton1_Click(object sender, EventArgs e)
+        private void searching_textbox__TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -164,7 +164,6 @@ namespace DO_AN_LTTQ
             this.guna2TileButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2TileButton1.TextOffset = new System.Drawing.Point(-45, -15);
             this.guna2TileButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.guna2TileButton1.Click += new System.EventHandler(this.guna2TileButton1_Click);
             // 
             // searching_button
             // 
@@ -203,6 +202,7 @@ namespace DO_AN_LTTQ
             this.searching_textbox.TabIndex = 1;
             this.searching_textbox.Texts = "Tìm kiếm";
             this.searching_textbox.UnderlinedStyle = false;
+            this.searching_textbox._TextChanged += new System.EventHandler(this.searching_textbox__TextChanged);
             // 
             // bottom_panel
             // 
