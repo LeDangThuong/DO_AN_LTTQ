@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows;
 
 namespace DO_AN_LTTQ
 {
@@ -106,7 +107,7 @@ namespace DO_AN_LTTQ
 
             MediaItem itemOld = (MediaItem)player.Tag;
             if (itemOld != null)
-                itemOld.BackColor = SystemColors.ControlLight;
+                itemOld.BackColor = System.Drawing.SystemColors.ControlLight;
 
             item.BackColor = Color.Gray;
 
@@ -124,6 +125,68 @@ namespace DO_AN_LTTQ
             }   
         }
 
-        
+        private void next_button_MouseEnter(object sender, EventArgs e)
+        {
+            next_button.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void next_button_MouseLeave(object sender, EventArgs e)
+        {
+            next_button.BackColor = Color.FromArgb(249, 249, 249);
+        }
+
+        private void play_button_MouseEnter(object sender, EventArgs e)
+        {
+            play_button.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void play_button_MouseLeave(object sender, EventArgs e)
+        {
+            play_button.BackColor = Color.FromArgb(249, 249, 249);
+        }
+
+        private void shuffle_button_MouseEnter(object sender, EventArgs e)
+        {
+            shuffle_button.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void shuffle_button_MouseLeave(object sender, EventArgs e)
+        {
+            shuffle_button.BackColor = Color.FromArgb(249, 249, 249);
+        }
+
+        private void repeat_button_MouseEnter(object sender, EventArgs e)
+        {
+            repeat_button.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void repeat_button_MouseLeave(object sender, EventArgs e)
+        {
+            repeat_button.BackColor = Color.FromArgb(249, 249, 249);
+        }
+
+        private void volumn_button_MouseEnter(object sender, EventArgs e)
+        {
+            volumn_button.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void volumn_button_MouseLeave(object sender, EventArgs e)
+        {
+            volumn_button.BackColor = Color.FromArgb(249, 249, 249);
+        }
+
+        // Xử lý khi click vào textbox, xóa chữ bên trong textbox;
+        bool checking = false;
+        private void searching_textbox_Click(object sender, EventArgs e)
+        {
+            String b = searching_textbox.Texts;
+            if (!checking)
+            {
+                searching_textbox.Texts = String.Empty;
+                checking = true;
+            }
+        }
+
+       
     }
 }
