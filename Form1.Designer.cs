@@ -51,7 +51,7 @@ namespace DO_AN_LTTQ
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
             this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAn = new System.Windows.Forms.Button();
+            
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
@@ -394,7 +394,7 @@ namespace DO_AN_LTTQ
             // 
             this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.panel2.Controls.Add(this.btnAn);
+            
             this.panel2.Controls.Add(this.btnTaiNhac);
             this.panel2.Controls.Add(this.guna2ComboBox1);
             this.panel2.Controls.Add(this.home_label);
@@ -408,18 +408,7 @@ namespace DO_AN_LTTQ
             // 
             // btnAn
             // 
-            this.btnAn.BackColor = System.Drawing.Color.Gray;
-            this.btnAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAn.Location = new System.Drawing.Point(420, 16);
-            this.btnAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAn.Name = "btnAn";
-            this.btnAn.Size = new System.Drawing.Size(179, 52);
-            this.btnAn.TabIndex = 3;
-            this.btnAn.Text = "Ẩn/Hiện";
-            this.btnAn.UseVisualStyleBackColor = false;
-            this.btnAn.Click += new System.EventHandler(this.btnAn_Click);
-            // 
+           
             // btnTaiNhac
             // 
             this.btnTaiNhac.BackColor = System.Drawing.Color.Gray;
@@ -534,7 +523,7 @@ namespace DO_AN_LTTQ
         public AxWMPLib.AxWindowsMediaPlayer player;
         public System.Windows.Forms.PictureBox picboxAvatar;
         public System.Windows.Forms.Label name_of_song;
-        private System.Windows.Forms.Button btnAn;
+       
         public System.Windows.Forms.Label lblTacGiaNhac;
     }
 }

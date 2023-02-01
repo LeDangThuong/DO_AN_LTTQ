@@ -98,7 +98,8 @@ namespace DO_AN_LTTQ
                 picboxAvatar.Image = Image.FromStream(new MemoryStream(bin));
             }catch
             {
-
+                
+                
             }
 
             name_of_song.Text = item.lblTenBaiHat.Text;
@@ -113,16 +114,7 @@ namespace DO_AN_LTTQ
             player.Tag = item;
         }
 
-        private void btnAn_Click(object sender, EventArgs e)
-        {
-            foreach(MediaItem item in mediaItems)
-            {
-                if(item.Visible == true)     
-                    item.Visible = false;
-                else 
-                    item.Visible = true;
-            }   
-        }
+        
 
         
     }
