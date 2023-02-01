@@ -94,12 +94,13 @@ namespace DO_AN_LTTQ
             this.guna2TileButton4.Location = new System.Drawing.Point(17, 287);
             this.guna2TileButton4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TileButton4.Name = "guna2TileButton4";
-            this.guna2TileButton4.Size = new System.Drawing.Size(300, 49);
+            this.guna2TileButton4.Size = new System.Drawing.Size(279, 49);
             this.guna2TileButton4.TabIndex = 14;
             this.guna2TileButton4.Text = "Album";
             this.guna2TileButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2TileButton4.TextOffset = new System.Drawing.Point(-45, -15);
             this.guna2TileButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.guna2TileButton4.Click += new System.EventHandler(this.guna2TileButton4_Click);
             // 
             // guna2TileButton3
             // 
@@ -117,12 +118,13 @@ namespace DO_AN_LTTQ
             this.guna2TileButton3.Location = new System.Drawing.Point(17, 230);
             this.guna2TileButton3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TileButton3.Name = "guna2TileButton3";
-            this.guna2TileButton3.Size = new System.Drawing.Size(300, 49);
+            this.guna2TileButton3.Size = new System.Drawing.Size(295, 49);
             this.guna2TileButton3.TabIndex = 13;
             this.guna2TileButton3.Text = "Yêu thích";
             this.guna2TileButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2TileButton3.TextOffset = new System.Drawing.Point(-45, -15);
             this.guna2TileButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.guna2TileButton3.Click += new System.EventHandler(this.guna2TileButton3_Click);
             // 
             // guna2TileButton2
             // 
@@ -140,12 +142,13 @@ namespace DO_AN_LTTQ
             this.guna2TileButton2.Location = new System.Drawing.Point(17, 171);
             this.guna2TileButton2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TileButton2.Name = "guna2TileButton2";
-            this.guna2TileButton2.Size = new System.Drawing.Size(300, 49);
+            this.guna2TileButton2.Size = new System.Drawing.Size(295, 49);
             this.guna2TileButton2.TabIndex = 12;
             this.guna2TileButton2.Text = "Thư viện";
             this.guna2TileButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2TileButton2.TextOffset = new System.Drawing.Point(-45, -15);
             this.guna2TileButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.guna2TileButton2.Click += new System.EventHandler(this.guna2TileButton2_Click);
             // 
             // guna2TileButton1
             // 
@@ -169,6 +172,7 @@ namespace DO_AN_LTTQ
             this.guna2TileButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2TileButton1.TextOffset = new System.Drawing.Point(-45, -15);
             this.guna2TileButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.guna2TileButton1.Click += new System.EventHandler(this.guna2TileButton1_Click);
             // 
             // searching_button
             // 
@@ -185,6 +189,7 @@ namespace DO_AN_LTTQ
             this.searching_button.PressedState.ImageSize = new System.Drawing.Size(28, 28);
             this.searching_button.Size = new System.Drawing.Size(35, 34);
             this.searching_button.TabIndex = 10;
+            this.searching_button.Click += new System.EventHandler(this.searching_button_Click);
             // 
             // searching_textbox
             // 

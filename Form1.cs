@@ -13,6 +13,11 @@ namespace DO_AN_LTTQ
 {
     public partial class Form1 : Form
     {
+        //Tao tug list cho moi trang
+        List<MediaItem> mediaItems = new List<MediaItem>();
+        List<MediaItem> mediaItemsLove = new List<MediaItem>();
+        List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
+        List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
         public Form1()
         {
             InitializeComponent();
@@ -71,13 +76,13 @@ namespace DO_AN_LTTQ
                 {
 
                 }
-
+                mediaItems.Add(item);
                 flowPanelMedia.Controls.Add(item);
             }
 
             
         }
-
+        // Tim kiem doi mau
         private void searching_textbox_Enter(object sender, EventArgs e)
         {
             if (searching_textbox.Texts.ToString() == "Tìm kiếm")
@@ -93,6 +98,55 @@ namespace DO_AN_LTTQ
             {
                 searching_textbox.Texts = "Tìm kiếm";
                 searching_textbox.ForeColor = Color.Silver;
+            }
+        }
+        // Thu Vien Click
+        private void guna2TileButton2_Click(object sender, EventArgs e)
+        {
+            home_label.Text = "Thư viện";
+            flowPanelMedia.Controls.Clear();
+            searching_textbox.Texts = "Tìm kiếm";
+        }
+        // Yeu Thich Click
+        private void guna2TileButton3_Click(object sender, EventArgs e)
+        {
+            home_label.Text = "Yêu thích";
+            flowPanelMedia.Controls.Clear();
+            searching_textbox.Texts = "Tìm kiếm";
+        }
+        // Album Click
+        private void guna2TileButton4_Click(object sender, EventArgs e)
+        {
+            home_label.Text = "Album";
+            flowPanelMedia.Controls.Clear();
+            searching_textbox.Texts = "Tìm kiếm";
+        }
+        // Trang Chu Click
+        private void guna2TileButton1_Click(object sender, EventArgs e)
+        {
+            home_label.Text = "Home";
+            flowPanelMedia.Controls.Clear();
+            foreach( MediaItem i in mediaItems)
+            {
+                flowPanelMedia.Controls.Add(i);
+            }
+        }
+        // Su Kien Tim Kiem
+        private void searching_button_Click(object sender, EventArgs e)
+        {
+            home_label.Text = "Kết quả tìm kiếm";
+            flowPanelMedia.Controls.Clear();
+            foreach(MediaItem i in mediaItems)
+            {
+                if(string.Compare(i.lblTacGia.Text,searching_textbox.Texts) == 0)
+                {
+                    flowPanelMedia.Controls.Add(i);
+                }
+                else
+                {
+                    if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0)
+                        flowPanelMedia.Controls.Add(i);
+                }
             }
         }
     }
