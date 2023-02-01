@@ -164,6 +164,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\volume_white1.png" />
+    <None Include="Resources\volume-mute.png" />
     <None Include="Resources\musical-note.png" />
     <None Include="Resources\home11.png" />
     <Content Include="Resources\pause.png" />

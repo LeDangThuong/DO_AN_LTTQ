@@ -37,6 +37,7 @@ namespace DO_AN_LTTQ
             this.bottom_panel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.metroSetTrackBar1 = new MetroSet_UI.Controls.MetroSetTrackBar();
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@ namespace DO_AN_LTTQ
             this.home_label = new System.Windows.Forms.Label();
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.guna2TileButton4 = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2TileButton3 = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2TileButton2 = new Guna.UI2.WinForms.Guna2TileButton();
@@ -63,8 +63,8 @@ namespace DO_AN_LTTQ
             this.play_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,6 +149,16 @@ namespace DO_AN_LTTQ
             this.label1.TabIndex = 12;
             this.label1.Text = "0:00";
             // 
+            // player
+            // 
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(435, 3);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(333, 23);
+            this.player.TabIndex = 10;
+            this.player.Visible = false;
+            // 
             // metroSetTrackBar1
             // 
             this.metroSetTrackBar1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
@@ -173,6 +183,7 @@ namespace DO_AN_LTTQ
             this.metroSetTrackBar1.Value = 30;
             this.metroSetTrackBar1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.metroSetTrackBar1.Scroll += new MetroSet_UI.Controls.MetroSetTrackBar.ScrollEventHandler(this.metroSetTrackBar1_Scroll);
+            this.metroSetTrackBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.metroSetTrackBar1_MouseDown);
             // 
             // guna2TrackBar1
             // 
@@ -183,6 +194,7 @@ namespace DO_AN_LTTQ
             this.guna2TrackBar1.TabIndex = 2;
             this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.guna2TrackBar1.Value = 0;
+            this.guna2TrackBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.guna2TrackBar1_Scroll);
             this.guna2TrackBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2TrackBar1_MouseDown);
             // 
             // lblTacGiaNhac
@@ -292,16 +304,6 @@ namespace DO_AN_LTTQ
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // player
-            // 
-            this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(435, 3);
-            this.player.Name = "player";
-            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(333, 23);
-            this.player.TabIndex = 10;
-            this.player.Visible = false;
             // 
             // guna2TileButton4
             // 
@@ -419,7 +421,7 @@ namespace DO_AN_LTTQ
             // 
             this.volumn_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
             this.volumn_button.HoverState.ImageSize = new System.Drawing.Size(40, 40);
-            this.volumn_button.Image = ((System.Drawing.Image)(resources.GetObject("volumn_button.Image")));
+            this.volumn_button.Image = global::DO_AN_LTTQ.Properties.Resources.volume_white;
             this.volumn_button.ImageOffset = new System.Drawing.Point(0, 0);
             this.volumn_button.ImageRotate = 0F;
             this.volumn_button.ImageSize = new System.Drawing.Size(32, 32);
@@ -528,9 +530,9 @@ namespace DO_AN_LTTQ
             this.panel1.ResumeLayout(false);
             this.bottom_panel.ResumeLayout(false);
             this.bottom_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).EndInit();
             this.ResumeLayout(false);
 

@@ -14,6 +14,7 @@ using System.Resources;
 using System.Windows.Media.Animation;
 using System.Windows.Controls;
 using AxWMPLib;
+using System.Media;
 
 namespace DO_AN_LTTQ
 {
@@ -92,18 +93,19 @@ namespace DO_AN_LTTQ
             
         }
         int check_forplaybutton = 0;
+        
         private void item_MediaItem_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
             player.URL = (string)item.Tag;
             player.Ctlcontrols.play();
+            timer1.Enabled = true;
 
-            
             try
             {
                 play_button.Image = Properties.Resources.pause;
                 check_forplaybutton = 1;
-                timer1.Enabled = true;
+                
                 if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
                     guna2TrackBar1.Maximum = (int)player.Ctlcontrols.currentItem.duration;
@@ -139,7 +141,7 @@ namespace DO_AN_LTTQ
 
             player.Tag = item;
         }
-
+        
         private void btnAn_Click(object sender, EventArgs e)
         {
             foreach(MediaItem item in mediaItems)
@@ -150,7 +152,7 @@ namespace DO_AN_LTTQ
                     item.Visible = true;
             }   
         }
-
+        
         private void next_button_MouseEnter(object sender, EventArgs e)
         {
             next_button.BackColor = Color.FromArgb(240, 240, 240);
@@ -316,20 +318,29 @@ namespace DO_AN_LTTQ
                     
             }
         }
-
+        //
+        // CHỈNH VOLUMN 
+        //
         private void metroSetTrackBar1_Scroll(object sender)
         {
             player.settings.volume = metroSetTrackBar1.Value;
         }
 
+
+        // CHỈNH THANH TRACK_BAR CÓ THỂ NHẤN ĐƯỢC
         private void guna2TrackBar1_MouseDown(object sender, MouseEventArgs e)
         {
             player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / guna2TrackBar1.Width;
         }
 
-        private void guna2TrackBar1_MouseHover(object sender, MouseEventArgs e)
+        private void guna2TrackBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / guna2TrackBar1.Width;
+            player.Ctlcontrols.currentPosition = e.NewValue;
+        }
+
+        private void metroSetTrackBar1_MouseDown(object sender, MouseEventArgs e)
+        {
+            player.Ctlcontrols.currentPosition = player.settings.volume * e.X / metroSetTrackBar1.Width;
         }
     }
 }
