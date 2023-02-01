@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DO_AN_LTTQ.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,33 +14,38 @@ namespace DO_AN_LTTQ
 {
     public partial class MediaItem : UserControl
     {
+        public event EventHandler MediaItem_Click;
+        public event EventHandler PicMediaItem_Click;
+        public event EventHandler LblTenBaiHat_Click;
         public MediaItem()
         {
             InitializeComponent();
         }
 
-        static Form1 frm1 = new Form1();
-        private void MediaItem_Click(object sender, EventArgs e)
+        private void mediaItem_Click(object sender, EventArgs e)
         {
-            MediaItem item = (MediaItem)sender;
-            frm1.player.URL = (string) item.Tag;
-            frm1.player.Ctlcontrols.play();
+            if (MediaItem_Click != null)
+            {
+                MediaItem_Click.Invoke(this, e);
+            }    
 
-            
         }
 
         private void picMediaItem_Click(object sender, EventArgs e)
         {
-            PictureBox pictureBox = (PictureBox)sender;
-            frm1.player.URL = (string)pictureBox.Tag;
-            frm1.player.Ctlcontrols.play();
+            if(PicMediaItem_Click != null)
+            {
+                PicMediaItem_Click.Invoke(this,e);
+            }
+           
         }
 
         private void lblTenBaiHat_Click(object sender, EventArgs e)
         {
-            Label lbl = (Label)sender;
-            frm1.player.URL = (string)lbl.Tag;
-            frm1.player.Ctlcontrols.play();
+            if(LblTenBaiHat_Click != null)
+            {
+                LblTenBaiHat_Click.Invoke(this, e);
+            }    
         }
     }
 }
