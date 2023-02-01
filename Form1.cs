@@ -16,30 +16,31 @@ using System.Windows.Controls;
 using AxWMPLib;
 using System.Media;
 using WMPLib;
+using System.Runtime.CompilerServices;
 
 namespace DO_AN_LTTQ
 {
     public partial class Form1 : Form
     {
-        List<MediaItem> mediaItems = new List<MediaItem>();
+        private List<MediaItem> mediaItems = new List<MediaItem>();
+        private List<int> listIndex = new List<int>();
+        string[] files;
+        string filename;
+        string[] paths;
+        private int iOfListIndex;
+        private List<MediaItem> songsNowPlaying = new List<MediaItem>();
+
+
         public Form1()
         {
             
             InitializeComponent();
         }
-        private void Rewind_MouseEnter(object sender, EventArgs e)
-        {
-            rewind_button.BackColor = Color.FromArgb(240, 240, 240);
-        }
+        
 
-        private void Rewind_MouseLeave(object sender, EventArgs e)
-        {
-            rewind_button.BackColor = Color.FromArgb(249, 249, 249);
-        }
+        
 
-        string[] files;
-        string filename;
-        string[] paths;
+        #region SETTINGS_SONG
         private void btnTaiNhac_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -89,6 +90,7 @@ namespace DO_AN_LTTQ
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
+                
                 item.Dock = DockStyle.Top;
                 flowPanelMedia.Controls.Add(item);
                 mediaItems.Add(item);      
@@ -154,7 +156,8 @@ namespace DO_AN_LTTQ
                     item.Visible = true;
             }   
         }
-        
+        #endregion
+        #region SETTING_COLORBACK
         private void next_button_MouseEnter(object sender, EventArgs e)
         {
             next_button.BackColor = Color.FromArgb(240, 240, 240);
@@ -204,6 +207,17 @@ namespace DO_AN_LTTQ
         {
             volumn_button.BackColor = Color.FromArgb(249, 249, 249);
         }
+        private void Rewind_MouseEnter(object sender, EventArgs e)
+        {
+            rewind_button.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void Rewind_MouseLeave(object sender, EventArgs e)
+        {
+            rewind_button.BackColor = Color.FromArgb(249, 249, 249);
+        }
+        #endregion
+
 
         // Xử lý khi click vào textbox, xóa chữ bên trong textbox;
         bool checking = false;
@@ -217,11 +231,67 @@ namespace DO_AN_LTTQ
             }
         }
 
+        #region Next and Previous
+        //
+        //HÀM BIẾN NEXT AND PREVIOUS
+        //
+        private void Shuff()
+        {
+            iOfListIndex = 0;
+            listIndex.Clear();
+            for (int i = 0; i < songsNowPlaying.Count; i++)
+                listIndex.Add(i);
+            listIndex.Sort(Sort.iRanDom.Compare);
+            GC.Collect();
+        }
+        private void NextSong()
+        {
+            switch (btnShuffle.Tag as string)
+            {
+                case "On":
+                    if (iOfListIndex + 1 >= listIndex.Count)
+                    {
+                        indexNow = listIndex[0];
+                        iOfListIndex = 0;
+                    }
+                    else
+                    {
+                        indexNow = listIndex[++iOfListIndex];
+                    }
+                    break;
+                default:
+                    indexNow = (indexNow + 1 >= songsNowPlaying.Count) ? 0 : indexNow + 1;
+                    break;
+            }
+        }
+        private void PreviousSong()
+        {
+            switch (btnShuffle.Tag as string)
+            {
+                case "On":
+                    if (iOfListIndex - 1 < 0)
+                    {
+                        iOfListIndex = listIndex.Count - 1;
+                        indexNow = listIndex[iOfListIndex];
+
+                    }
+                    else
+                    {
+                        indexNow = listIndex[--iOfListIndex];
+                    }
+                    break;
+                default:
+                    indexNow = (indexNow - 1 < 0) ? songsNowPlaying.Count - 1 : indexNow - 1;
+                    break;
+            }
+        }
+
+        #endregion
 
         //
         // ĐỔI ICON PLAY BUTTON
         //
-        
+        #region SETTING_BUTTON
         private void play_button_Click(object sender, EventArgs e)
         {
             
@@ -316,6 +386,9 @@ namespace DO_AN_LTTQ
             }    
         }
 
+        #endregion
+
+        #region Time_of_Song
         /// <summary>
         /// THỜI GIAN NHẠC CHẠY 
         /// </summary>
@@ -338,9 +411,12 @@ namespace DO_AN_LTTQ
                     
             }
         }
+        #endregion
         //
         // CHỈNH THANH ÂM NHẠC
         //
+
+        #region MUSIC_TRACKBAR AND VOLUME
         private void metroSetTrackBar1_Scroll(object sender)
         {
             player.settings.volume = metroSetTrackBar1.Value;
@@ -368,8 +444,8 @@ namespace DO_AN_LTTQ
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
         {
             player.URL = paths[track_list.SelectedIndex];
-            item_MediaItem_Click(sender, e);
             player.Ctlcontrols.play();
         }
+        #endregion
     }
 }

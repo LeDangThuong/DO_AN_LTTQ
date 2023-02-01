@@ -1,6 +1,6 @@
 ﻿namespace DO_AN_LTTQ
 {
-    partial class Libary
+    partial class Album_Playlist
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // Libary
+            // Album_Playlist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "Libary";
-            this.Size = new System.Drawing.Size(1073, 613);
+            this.Name = "Album_Playlist";
+            this.Size = new System.Drawing.Size(355, 298);
             this.ResumeLayout(false);
 
         }

@@ -34,24 +34,12 @@ namespace DO_AN_LTTQ
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.track_list = new System.Windows.Forms.ListBox();
-            this.guna2TileButton4 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.guna2TileButton3 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.guna2TileButton2 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.searching_textbox = new Sipaa.Framework.STextBox();
             this.bottom_panel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.picboxAvatar = new System.Windows.Forms.PictureBox();
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
-            this.volumn_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.metroSetTrackBar1 = new MetroSet_UI.Controls.MetroSetTrackBar();
-            this.repeat_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.shuffle_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.next_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.rewind_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.play_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
@@ -62,11 +50,23 @@ namespace DO_AN_LTTQ
             this.home_label = new System.Windows.Forms.Label();
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.guna2TileButton4 = new Guna.UI2.WinForms.Guna2TileButton();
+            this.guna2TileButton3 = new Guna.UI2.WinForms.Guna2TileButton();
+            this.guna2TileButton2 = new Guna.UI2.WinForms.Guna2TileButton();
+            this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
+            this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.picboxAvatar = new System.Windows.Forms.PictureBox();
+            this.volumn_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.repeat_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.shuffle_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.next_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.rewind_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.play_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,109 +93,6 @@ namespace DO_AN_LTTQ
             this.track_list.Size = new System.Drawing.Size(121, 121);
             this.track_list.TabIndex = 0;
             this.track_list.SelectedIndexChanged += new System.EventHandler(this.track_list_SelectedIndexChanged);
-            // 
-            // guna2TileButton4
-            // 
-            this.guna2TileButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2TileButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TileButton4.ForeColor = System.Drawing.Color.Black;
-            this.guna2TileButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton4.Image")));
-            this.guna2TileButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2TileButton4.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.guna2TileButton4.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2TileButton4.Location = new System.Drawing.Point(13, 246);
-            this.guna2TileButton4.Name = "guna2TileButton4";
-            this.guna2TileButton4.Size = new System.Drawing.Size(225, 40);
-            this.guna2TileButton4.TabIndex = 14;
-            this.guna2TileButton4.Text = "Danh sách yêu thích";
-            this.guna2TileButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton4.TextOffset = new System.Drawing.Point(0, -15);
-            this.guna2TileButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            // 
-            // guna2TileButton3
-            // 
-            this.guna2TileButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2TileButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TileButton3.ForeColor = System.Drawing.Color.Black;
-            this.guna2TileButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton3.Image")));
-            this.guna2TileButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2TileButton3.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.guna2TileButton3.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2TileButton3.Location = new System.Drawing.Point(13, 200);
-            this.guna2TileButton3.Name = "guna2TileButton3";
-            this.guna2TileButton3.Size = new System.Drawing.Size(225, 40);
-            this.guna2TileButton3.TabIndex = 13;
-            this.guna2TileButton3.Text = "Album của bạn";
-            this.guna2TileButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton3.TextOffset = new System.Drawing.Point(-20, -15);
-            this.guna2TileButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            // 
-            // guna2TileButton2
-            // 
-            this.guna2TileButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2TileButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TileButton2.ForeColor = System.Drawing.Color.Black;
-            this.guna2TileButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton2.Image")));
-            this.guna2TileButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2TileButton2.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.guna2TileButton2.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2TileButton2.Location = new System.Drawing.Point(13, 139);
-            this.guna2TileButton2.Name = "guna2TileButton2";
-            this.guna2TileButton2.Size = new System.Drawing.Size(225, 40);
-            this.guna2TileButton2.TabIndex = 12;
-            this.guna2TileButton2.Text = "Thư viện";
-            this.guna2TileButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton2.TextOffset = new System.Drawing.Point(-43, -15);
-            this.guna2TileButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            // 
-            // guna2TileButton1
-            // 
-            this.guna2TileButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2TileButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TileButton1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TileButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton1.Image")));
-            this.guna2TileButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2TileButton1.ImageOffset = new System.Drawing.Point(0, 15);
-            this.guna2TileButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2TileButton1.Location = new System.Drawing.Point(13, 91);
-            this.guna2TileButton1.Name = "guna2TileButton1";
-            this.guna2TileButton1.Size = new System.Drawing.Size(225, 40);
-            this.guna2TileButton1.TabIndex = 11;
-            this.guna2TileButton1.Text = "Trang chủ";
-            this.guna2TileButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2TileButton1.TextOffset = new System.Drawing.Point(-40, -15);
-            this.guna2TileButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            // 
-            // searching_button
-            // 
-            this.searching_button.BackColor = System.Drawing.Color.White;
-            this.searching_button.CheckedState.ImageSize = new System.Drawing.Size(28, 28);
-            this.searching_button.HoverState.ImageSize = new System.Drawing.Size(28, 28);
-            this.searching_button.Image = ((System.Drawing.Image)(resources.GetObject("searching_button.Image")));
-            this.searching_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.searching_button.ImageRotate = 0F;
-            this.searching_button.ImageSize = new System.Drawing.Size(25, 25);
-            this.searching_button.Location = new System.Drawing.Point(208, 17);
-            this.searching_button.Name = "searching_button";
-            this.searching_button.PressedState.ImageSize = new System.Drawing.Size(28, 28);
-            this.searching_button.Size = new System.Drawing.Size(26, 28);
-            this.searching_button.TabIndex = 10;
             // 
             // searching_textbox
             // 
@@ -263,15 +160,6 @@ namespace DO_AN_LTTQ
             this.label1.TabIndex = 12;
             this.label1.Text = "0:00";
             // 
-            // picboxAvatar
-            // 
-            this.picboxAvatar.Location = new System.Drawing.Point(27, 36);
-            this.picboxAvatar.Name = "picboxAvatar";
-            this.picboxAvatar.Size = new System.Drawing.Size(92, 93);
-            this.picboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picboxAvatar.TabIndex = 11;
-            this.picboxAvatar.TabStop = false;
-            // 
             // player
             // 
             this.player.Enabled = true;
@@ -281,22 +169,6 @@ namespace DO_AN_LTTQ
             this.player.Size = new System.Drawing.Size(333, 23);
             this.player.TabIndex = 10;
             this.player.Visible = false;
-            // 
-            // volumn_button
-            // 
-            this.volumn_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.volumn_button.HoverState.ImageSize = new System.Drawing.Size(40, 40);
-            this.volumn_button.Image = global::DO_AN_LTTQ.Properties.Resources.volume_white;
-            this.volumn_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.volumn_button.ImageRotate = 0F;
-            this.volumn_button.ImageSize = new System.Drawing.Size(32, 32);
-            this.volumn_button.Location = new System.Drawing.Point(968, 62);
-            this.volumn_button.Name = "volumn_button";
-            this.volumn_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.volumn_button.Size = new System.Drawing.Size(64, 54);
-            this.volumn_button.TabIndex = 9;
-            this.volumn_button.MouseEnter += new System.EventHandler(this.volumn_button_MouseEnter);
-            this.volumn_button.MouseLeave += new System.EventHandler(this.volumn_button_MouseLeave);
             // 
             // metroSetTrackBar1
             // 
@@ -323,91 +195,6 @@ namespace DO_AN_LTTQ
             this.metroSetTrackBar1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.metroSetTrackBar1.Scroll += new MetroSet_UI.Controls.MetroSetTrackBar.ScrollEventHandler(this.metroSetTrackBar1_Scroll);
             this.metroSetTrackBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.metroSetTrackBar1_MouseDown);
-            // 
-            // repeat_button
-            // 
-            this.repeat_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.repeat_button.HoverState.ImageSize = new System.Drawing.Size(40, 40);
-            this.repeat_button.Image = ((System.Drawing.Image)(resources.GetObject("repeat_button.Image")));
-            this.repeat_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.repeat_button.ImageRotate = 0F;
-            this.repeat_button.ImageSize = new System.Drawing.Size(33, 33);
-            this.repeat_button.Location = new System.Drawing.Point(769, 62);
-            this.repeat_button.Name = "repeat_button";
-            this.repeat_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.repeat_button.Size = new System.Drawing.Size(64, 54);
-            this.repeat_button.TabIndex = 7;
-            this.repeat_button.Click += new System.EventHandler(this.repeat_button_Click);
-            this.repeat_button.MouseEnter += new System.EventHandler(this.repeat_button_MouseEnter);
-            this.repeat_button.MouseLeave += new System.EventHandler(this.repeat_button_MouseLeave);
-            // 
-            // shuffle_button
-            // 
-            this.shuffle_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.shuffle_button.HoverState.ImageSize = new System.Drawing.Size(40, 40);
-            this.shuffle_button.Image = ((System.Drawing.Image)(resources.GetObject("shuffle_button.Image")));
-            this.shuffle_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.shuffle_button.ImageRotate = 0F;
-            this.shuffle_button.ImageSize = new System.Drawing.Size(32, 32);
-            this.shuffle_button.Location = new System.Drawing.Point(376, 62);
-            this.shuffle_button.Name = "shuffle_button";
-            this.shuffle_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.shuffle_button.Size = new System.Drawing.Size(64, 54);
-            this.shuffle_button.TabIndex = 6;
-            this.shuffle_button.Click += new System.EventHandler(this.shuffle_button_Click);
-            this.shuffle_button.MouseEnter += new System.EventHandler(this.shuffle_button_MouseEnter);
-            this.shuffle_button.MouseLeave += new System.EventHandler(this.shuffle_button_MouseLeave);
-            // 
-            // next_button
-            // 
-            this.next_button.CheckedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.next_button.HoverState.ImageSize = new System.Drawing.Size(48, 48);
-            this.next_button.Image = ((System.Drawing.Image)(resources.GetObject("next_button.Image")));
-            this.next_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.next_button.ImageRotate = 0F;
-            this.next_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.next_button.Location = new System.Drawing.Point(665, 62);
-            this.next_button.Name = "next_button";
-            this.next_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.next_button.Size = new System.Drawing.Size(64, 54);
-            this.next_button.TabIndex = 5;
-            this.next_button.Click += new System.EventHandler(this.next_button_Click);
-            this.next_button.MouseEnter += new System.EventHandler(this.next_button_MouseEnter);
-            this.next_button.MouseLeave += new System.EventHandler(this.next_button_MouseLeave);
-            // 
-            // rewind_button
-            // 
-            this.rewind_button.CheckedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.rewind_button.HoverState.ImageSize = new System.Drawing.Size(48, 48);
-            this.rewind_button.Image = ((System.Drawing.Image)(resources.GetObject("rewind_button.Image")));
-            this.rewind_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.rewind_button.ImageRotate = 0F;
-            this.rewind_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.rewind_button.Location = new System.Drawing.Point(477, 62);
-            this.rewind_button.Name = "rewind_button";
-            this.rewind_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.rewind_button.Size = new System.Drawing.Size(64, 54);
-            this.rewind_button.TabIndex = 4;
-            this.rewind_button.Click += new System.EventHandler(this.rewind_button_Click);
-            this.rewind_button.MouseEnter += new System.EventHandler(this.Rewind_MouseEnter);
-            this.rewind_button.MouseLeave += new System.EventHandler(this.Rewind_MouseLeave);
-            // 
-            // play_button
-            // 
-            this.play_button.CheckedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.play_button.HoverState.ImageSize = new System.Drawing.Size(48, 48);
-            this.play_button.Image = ((System.Drawing.Image)(resources.GetObject("play_button.Image")));
-            this.play_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.play_button.ImageRotate = 0F;
-            this.play_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.play_button.Location = new System.Drawing.Point(570, 62);
-            this.play_button.Name = "play_button";
-            this.play_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.play_button.Size = new System.Drawing.Size(64, 54);
-            this.play_button.TabIndex = 3;
-            this.play_button.Click += new System.EventHandler(this.play_button_Click);
-            this.play_button.MouseEnter += new System.EventHandler(this.play_button_MouseEnter);
-            this.play_button.MouseLeave += new System.EventHandler(this.play_button_MouseLeave);
             // 
             // guna2TrackBar1
             // 
@@ -529,6 +316,220 @@ namespace DO_AN_LTTQ
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // guna2TileButton4
+            // 
+            this.guna2TileButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.guna2TileButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TileButton4.ForeColor = System.Drawing.Color.Black;
+            this.guna2TileButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton4.Image")));
+            this.guna2TileButton4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton4.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.guna2TileButton4.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2TileButton4.Location = new System.Drawing.Point(13, 246);
+            this.guna2TileButton4.Name = "guna2TileButton4";
+            this.guna2TileButton4.Size = new System.Drawing.Size(225, 40);
+            this.guna2TileButton4.TabIndex = 14;
+            this.guna2TileButton4.Text = "Danh sách yêu thích";
+            this.guna2TileButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2TileButton4.TextOffset = new System.Drawing.Point(0, -15);
+            this.guna2TileButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            // 
+            // guna2TileButton3
+            // 
+            this.guna2TileButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.guna2TileButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TileButton3.ForeColor = System.Drawing.Color.Black;
+            this.guna2TileButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton3.Image")));
+            this.guna2TileButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton3.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.guna2TileButton3.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2TileButton3.Location = new System.Drawing.Point(13, 200);
+            this.guna2TileButton3.Name = "guna2TileButton3";
+            this.guna2TileButton3.Size = new System.Drawing.Size(225, 40);
+            this.guna2TileButton3.TabIndex = 13;
+            this.guna2TileButton3.Text = "Album của bạn";
+            this.guna2TileButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2TileButton3.TextOffset = new System.Drawing.Point(-20, -15);
+            this.guna2TileButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            // 
+            // guna2TileButton2
+            // 
+            this.guna2TileButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.guna2TileButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TileButton2.ForeColor = System.Drawing.Color.Black;
+            this.guna2TileButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton2.Image")));
+            this.guna2TileButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton2.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.guna2TileButton2.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2TileButton2.Location = new System.Drawing.Point(13, 139);
+            this.guna2TileButton2.Name = "guna2TileButton2";
+            this.guna2TileButton2.Size = new System.Drawing.Size(225, 40);
+            this.guna2TileButton2.TabIndex = 12;
+            this.guna2TileButton2.Text = "Thư viện";
+            this.guna2TileButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2TileButton2.TextOffset = new System.Drawing.Point(-43, -15);
+            this.guna2TileButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            // 
+            // guna2TileButton1
+            // 
+            this.guna2TileButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.guna2TileButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TileButton1.ForeColor = System.Drawing.Color.Black;
+            this.guna2TileButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2TileButton1.Image")));
+            this.guna2TileButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2TileButton1.ImageOffset = new System.Drawing.Point(0, 15);
+            this.guna2TileButton1.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2TileButton1.Location = new System.Drawing.Point(13, 91);
+            this.guna2TileButton1.Name = "guna2TileButton1";
+            this.guna2TileButton1.Size = new System.Drawing.Size(225, 40);
+            this.guna2TileButton1.TabIndex = 11;
+            this.guna2TileButton1.Text = "Trang chủ";
+            this.guna2TileButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2TileButton1.TextOffset = new System.Drawing.Point(-40, -15);
+            this.guna2TileButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            // 
+            // searching_button
+            // 
+            this.searching_button.BackColor = System.Drawing.Color.White;
+            this.searching_button.CheckedState.ImageSize = new System.Drawing.Size(28, 28);
+            this.searching_button.HoverState.ImageSize = new System.Drawing.Size(28, 28);
+            this.searching_button.Image = ((System.Drawing.Image)(resources.GetObject("searching_button.Image")));
+            this.searching_button.ImageOffset = new System.Drawing.Point(0, 0);
+            this.searching_button.ImageRotate = 0F;
+            this.searching_button.ImageSize = new System.Drawing.Size(25, 25);
+            this.searching_button.Location = new System.Drawing.Point(208, 17);
+            this.searching_button.Name = "searching_button";
+            this.searching_button.PressedState.ImageSize = new System.Drawing.Size(28, 28);
+            this.searching_button.Size = new System.Drawing.Size(26, 28);
+            this.searching_button.TabIndex = 10;
+            // 
+            // picboxAvatar
+            // 
+            this.picboxAvatar.ErrorImage = null;
+            this.picboxAvatar.Location = new System.Drawing.Point(27, 36);
+            this.picboxAvatar.Name = "picboxAvatar";
+            this.picboxAvatar.Size = new System.Drawing.Size(92, 93);
+            this.picboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxAvatar.TabIndex = 11;
+            this.picboxAvatar.TabStop = false;
+            // 
+            // volumn_button
+            // 
+            this.volumn_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.volumn_button.HoverState.ImageSize = new System.Drawing.Size(40, 40);
+            this.volumn_button.Image = global::DO_AN_LTTQ.Properties.Resources.volume_white;
+            this.volumn_button.ImageOffset = new System.Drawing.Point(0, 0);
+            this.volumn_button.ImageRotate = 0F;
+            this.volumn_button.ImageSize = new System.Drawing.Size(32, 32);
+            this.volumn_button.Location = new System.Drawing.Point(968, 62);
+            this.volumn_button.Name = "volumn_button";
+            this.volumn_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.volumn_button.Size = new System.Drawing.Size(64, 54);
+            this.volumn_button.TabIndex = 9;
+            this.volumn_button.MouseEnter += new System.EventHandler(this.volumn_button_MouseEnter);
+            this.volumn_button.MouseLeave += new System.EventHandler(this.volumn_button_MouseLeave);
+            // 
+            // repeat_button
+            // 
+            this.repeat_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.repeat_button.HoverState.ImageSize = new System.Drawing.Size(40, 40);
+            this.repeat_button.Image = ((System.Drawing.Image)(resources.GetObject("repeat_button.Image")));
+            this.repeat_button.ImageOffset = new System.Drawing.Point(0, 0);
+            this.repeat_button.ImageRotate = 0F;
+            this.repeat_button.ImageSize = new System.Drawing.Size(33, 33);
+            this.repeat_button.Location = new System.Drawing.Point(769, 62);
+            this.repeat_button.Name = "repeat_button";
+            this.repeat_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.repeat_button.Size = new System.Drawing.Size(64, 54);
+            this.repeat_button.TabIndex = 7;
+            this.repeat_button.Click += new System.EventHandler(this.repeat_button_Click);
+            this.repeat_button.MouseEnter += new System.EventHandler(this.repeat_button_MouseEnter);
+            this.repeat_button.MouseLeave += new System.EventHandler(this.repeat_button_MouseLeave);
+            // 
+            // shuffle_button
+            // 
+            this.shuffle_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.shuffle_button.HoverState.ImageSize = new System.Drawing.Size(40, 40);
+            this.shuffle_button.Image = ((System.Drawing.Image)(resources.GetObject("shuffle_button.Image")));
+            this.shuffle_button.ImageOffset = new System.Drawing.Point(0, 0);
+            this.shuffle_button.ImageRotate = 0F;
+            this.shuffle_button.ImageSize = new System.Drawing.Size(32, 32);
+            this.shuffle_button.Location = new System.Drawing.Point(376, 62);
+            this.shuffle_button.Name = "shuffle_button";
+            this.shuffle_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.shuffle_button.Size = new System.Drawing.Size(64, 54);
+            this.shuffle_button.TabIndex = 6;
+            this.shuffle_button.Click += new System.EventHandler(this.shuffle_button_Click);
+            this.shuffle_button.MouseEnter += new System.EventHandler(this.shuffle_button_MouseEnter);
+            this.shuffle_button.MouseLeave += new System.EventHandler(this.shuffle_button_MouseLeave);
+            // 
+            // next_button
+            // 
+            this.next_button.CheckedState.ImageSize = new System.Drawing.Size(48, 48);
+            this.next_button.HoverState.ImageSize = new System.Drawing.Size(48, 48);
+            this.next_button.Image = ((System.Drawing.Image)(resources.GetObject("next_button.Image")));
+            this.next_button.ImageOffset = new System.Drawing.Point(0, 0);
+            this.next_button.ImageRotate = 0F;
+            this.next_button.ImageSize = new System.Drawing.Size(40, 40);
+            this.next_button.Location = new System.Drawing.Point(665, 62);
+            this.next_button.Name = "next_button";
+            this.next_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
+            this.next_button.Size = new System.Drawing.Size(64, 54);
+            this.next_button.TabIndex = 5;
+            this.next_button.Click += new System.EventHandler(this.next_button_Click);
+            this.next_button.MouseEnter += new System.EventHandler(this.next_button_MouseEnter);
+            this.next_button.MouseLeave += new System.EventHandler(this.next_button_MouseLeave);
+            // 
+            // rewind_button
+            // 
+            this.rewind_button.CheckedState.ImageSize = new System.Drawing.Size(48, 48);
+            this.rewind_button.HoverState.ImageSize = new System.Drawing.Size(48, 48);
+            this.rewind_button.Image = ((System.Drawing.Image)(resources.GetObject("rewind_button.Image")));
+            this.rewind_button.ImageOffset = new System.Drawing.Point(0, 0);
+            this.rewind_button.ImageRotate = 0F;
+            this.rewind_button.ImageSize = new System.Drawing.Size(40, 40);
+            this.rewind_button.Location = new System.Drawing.Point(477, 62);
+            this.rewind_button.Name = "rewind_button";
+            this.rewind_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
+            this.rewind_button.Size = new System.Drawing.Size(64, 54);
+            this.rewind_button.TabIndex = 4;
+            this.rewind_button.Click += new System.EventHandler(this.rewind_button_Click);
+            this.rewind_button.MouseEnter += new System.EventHandler(this.Rewind_MouseEnter);
+            this.rewind_button.MouseLeave += new System.EventHandler(this.Rewind_MouseLeave);
+            // 
+            // play_button
+            // 
+            this.play_button.CheckedState.ImageSize = new System.Drawing.Size(48, 48);
+            this.play_button.HoverState.ImageSize = new System.Drawing.Size(48, 48);
+            this.play_button.Image = ((System.Drawing.Image)(resources.GetObject("play_button.Image")));
+            this.play_button.ImageOffset = new System.Drawing.Point(0, 0);
+            this.play_button.ImageRotate = 0F;
+            this.play_button.ImageSize = new System.Drawing.Size(40, 40);
+            this.play_button.Location = new System.Drawing.Point(570, 62);
+            this.play_button.Name = "play_button";
+            this.play_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
+            this.play_button.Size = new System.Drawing.Size(64, 54);
+            this.play_button.TabIndex = 3;
+            this.play_button.Click += new System.EventHandler(this.play_button_Click);
+            this.play_button.MouseEnter += new System.EventHandler(this.play_button_MouseEnter);
+            this.play_button.MouseLeave += new System.EventHandler(this.play_button_MouseLeave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -542,10 +543,10 @@ namespace DO_AN_LTTQ
             this.panel1.ResumeLayout(false);
             this.bottom_panel.ResumeLayout(false);
             this.bottom_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
