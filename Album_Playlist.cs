@@ -32,11 +32,11 @@ namespace DO_AN_LTTQ
         {
             get
             {
-                return labelPlaylistName.Text;
+                return lblPlaylist.Text;
             }
             set
             {
-                labelPlaylistName.Text = value;
+                lblPlaylist.Text = value;
             }
         }
         private void btnImage_Click(object sender, EventArgs e)
