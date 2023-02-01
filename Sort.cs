@@ -33,9 +33,9 @@ namespace DO_AN_LTTQ
                 return x.SongName.CompareTo(y.SongName);
             }
         }
-        public class ISortSongFromZToA : IComparer<uSong>
+        public class ISortSongFromZToA : IComparer<MediaItem>
         {
-            public int Compare(uSong a, uSong b)
+            public int Compare(MediaItem a, MediaItem b)
             {
                 return b.SongName.CompareTo(a.SongName);
             }
@@ -50,9 +50,9 @@ namespace DO_AN_LTTQ
                 return a.PlaylistName.CompareTo(b.PlaylistName);
             }
         }
-        public class ISortArtistZtoA : IComparer<uMyplaylist>
+        public class ISortArtistZtoA : IComparer<Album_Playlistt>
         {
-            public int Compare(uMyplaylist a, uMyplaylist b)
+            public int Compare(Album_Playlist a, Album_Playlist b)
             {
                 return b.PlaylistName.CompareTo(a.PlaylistName);
             }
@@ -60,9 +60,9 @@ namespace DO_AN_LTTQ
         #endregion
 
         #region Albums
-        public class ISortAlbumAtoZ : IComparer<uMyplaylist>
+        public class ISortAlbumAtoZ : IComparer<Album_Playlist>
         {
-            public int Compare(uMyplaylist a, uMyplaylist b)
+            public int Compare(Album_Playlistt a, Album_Playlist b)
             {
                 return a.PlaylistName.CompareTo(b.PlaylistName);
             }
