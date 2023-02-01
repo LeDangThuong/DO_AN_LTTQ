@@ -32,7 +32,7 @@ namespace DO_AN_LTTQ
             set
             {
                 image.Image = value;
-                background.BackgroundImage = new Bitmap(uPlaylistDetail.CropImage(value));
+                background.BackgroundImage = new Bitmap(PlaylistDetails.CropImage(value));
             }
         }
         public string NameFull

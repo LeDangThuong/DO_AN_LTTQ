@@ -43,14 +43,14 @@ namespace DO_AN_LTTQ
         #endregion
 
         #region Artist
-        public class ISortArtistAtoZ : IComparer<uMyplaylist>
+        public class ISortArtistAtoZ : IComparer<Album_Playlist>
         {
-            public int Compare(uMyplaylist a, uMyplaylist b)
+            public int Compare(Album_Playlist a, Album_Playlist b)
             {
                 return a.PlaylistName.CompareTo(b.PlaylistName);
             }
         }
-        public class ISortArtistZtoA : IComparer<Album_Playlistt>
+        public class ISortArtistZtoA : IComparer<Album_Playlist>
         {
             public int Compare(Album_Playlist a, Album_Playlist b)
             {
@@ -62,14 +62,14 @@ namespace DO_AN_LTTQ
         #region Albums
         public class ISortAlbumAtoZ : IComparer<Album_Playlist>
         {
-            public int Compare(Album_Playlistt a, Album_Playlist b)
+            public int Compare(Album_Playlist a, Album_Playlist b)
             {
                 return a.PlaylistName.CompareTo(b.PlaylistName);
             }
         }
-        public class ISortAlbumZtoA : IComparer<uMyplaylist>
+        public class ISortAlbumZtoA : IComparer<Album_Playlist>
         {
-            public int Compare(uMyplaylist a, uMyplaylist b)
+            public int Compare(Album_Playlist a, Album_Playlist b)
             {
                 return b.PlaylistName.CompareTo(a.PlaylistName);
             }

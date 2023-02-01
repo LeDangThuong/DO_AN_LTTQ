@@ -17,6 +17,8 @@ namespace DO_AN_LTTQ
         public event EventHandler MediaItem_Click;
         public event EventHandler PicMediaItem_Click;
         public event EventHandler LblTenBaiHat_Click;
+
+        public event MouseEventHandler Mouse_Click;
         public MediaItem()
         {
             InitializeComponent();
@@ -66,7 +68,7 @@ namespace DO_AN_LTTQ
         {
             if (MediaItem_Click != null)
             {
-                MediaItem_Click.Invoke(this, e);
+                MediaItem_Click?.Invoke(this, e);
             }    
 
         }
@@ -75,7 +77,7 @@ namespace DO_AN_LTTQ
         {
             if(PicMediaItem_Click != null)
             {
-                PicMediaItem_Click.Invoke(this,e);
+                PicMediaItem_Click?.Invoke(this,e);
             }
            
         }
@@ -84,8 +86,13 @@ namespace DO_AN_LTTQ
         {
             if(LblTenBaiHat_Click != null)
             {
-                LblTenBaiHat_Click.Invoke(this, e);
+                LblTenBaiHat_Click?.Invoke(this, e);
             }    
+        }
+
+        private void picMediaItem_MouseDown(object sender, MouseEventArgs e)
+        {
+            Mouse_Click?.Invoke(this, e);   
         }
     }
 }

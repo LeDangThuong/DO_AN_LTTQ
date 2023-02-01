@@ -93,6 +93,7 @@ namespace DO_AN_LTTQ
             this.track_list.Size = new System.Drawing.Size(121, 121);
             this.track_list.TabIndex = 0;
             this.track_list.SelectedIndexChanged += new System.EventHandler(this.track_list_SelectedIndexChanged);
+            this.track_list.Hide();
             // 
             // searching_textbox
             // 

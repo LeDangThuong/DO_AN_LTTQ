@@ -23,11 +23,13 @@ namespace DO_AN_LTTQ
     public partial class Form1 : Form
     {
         private List<MediaItem> mediaItems = new List<MediaItem>();
-        private List<int> listIndex = new List<int>();
+        
         string[] files;
         string filename;
         string[] paths;
         private int iOfListIndex;
+        private List<int> listIndex = new List<int>();
+        private int indexNow = -1;
         private List<MediaItem> songsNowPlaying = new List<MediaItem>();
 
 
@@ -246,7 +248,7 @@ namespace DO_AN_LTTQ
         }
         private void NextSong()
         {
-            switch (btnShuffle.Tag as string)
+            switch (shuffle_button.Tag as string)
             {
                 case "On":
                     if (iOfListIndex + 1 >= listIndex.Count)
@@ -266,7 +268,7 @@ namespace DO_AN_LTTQ
         }
         private void PreviousSong()
         {
-            switch (btnShuffle.Tag as string)
+            switch (shuffle_button.Tag as string)
             {
                 case "On":
                     if (iOfListIndex - 1 < 0)

@@ -38,13 +38,14 @@ namespace DO_AN_LTTQ
             // picMediaItem
             // 
             this.picMediaItem.Location = new System.Drawing.Point(2, 2);
-            this.picMediaItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picMediaItem.Margin = new System.Windows.Forms.Padding(2);
             this.picMediaItem.Name = "picMediaItem";
             this.picMediaItem.Size = new System.Drawing.Size(68, 73);
             this.picMediaItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picMediaItem.TabIndex = 0;
             this.picMediaItem.TabStop = false;
             this.picMediaItem.Click += new System.EventHandler(this.picMediaItem_Click);
+            this.picMediaItem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picMediaItem_MouseDown);
             // 
             // lblTenBaiHat
             // 
@@ -83,7 +84,7 @@ namespace DO_AN_LTTQ
             this.Controls.Add(this.lblTacGia);
             this.Controls.Add(this.lblTenBaiHat);
             this.Controls.Add(this.picMediaItem);
-            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "MediaItem";
             this.Size = new System.Drawing.Size(261, 79);
             this.Click += new System.EventHandler(this.mediaItem_Click);
