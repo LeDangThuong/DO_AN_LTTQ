@@ -121,8 +121,7 @@ namespace DO_AN_LTTQ
                 var f = TagLib.File.Create((string)item.Tag);
                 var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                 picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
-
-                
+ 
             }
             catch
             {
