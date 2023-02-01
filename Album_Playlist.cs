@@ -18,10 +18,7 @@ namespace DO_AN_LTTQ
         public List<MediaItem> Songs { get => songs; }
         private AlbumDetails albumDetails = new AlbumDetails();
         public AlbumDetails fDetails { get { albumDetails.TotalSong = songs.Count; return albumDetails; } }
-        public uMyplaylist()
-        {
-            InitializeComponent();
-        }
+        
         #endregion
 
         #region Method
@@ -58,20 +55,20 @@ namespace DO_AN_LTTQ
         }
         public static Album_Playlist CreateArtist(MediaItem song)
         {
-            uMyplaylist artist = new uMyplaylist();
+            Album_Playlist artist = new Album_Playlist();
             artist.songs.Add(song);
-            artist.labelPlaylistName.Text = song.ArtistName;
+            artist.lblPlaylist.Text = song.ArtistName;
             artist.btnImage.BackgroundImage = song.ImageSong;
             artist.albumDetails.ImageShow = song.ImageSong;
             artist.albumDetails.NameFull = song.ArtistName;
             return artist;
         }
 
-        public static uMyplaylist CreateAlbum(uSong song)
+        public static Album_Playlist CreateAlbum(MediaItem song)
         {
-            uMyplaylist album = new uMyplaylist();
+            Album_Playlist album = new Album_Playlist();
             album.songs.Add(song);
-            album.labelPlaylistName.Text = song.Album;
+            album.lblPlaylist.Text = song.Album;
             album.btnImage.BackgroundImage = song.ImageSong;
             album.albumDetails.ImageShow = song.ImageSong;
             album.albumDetails.NameFull = song.ArtistName;
