@@ -898,7 +898,7 @@
   <data name="guna2TileButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACYxSURBVHhe7d13
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACYxSURBVHhe7d13
         tPVXQebxAEIGUmgJASSBEHozlEBoEUKNSJHedLl0xBmxzZo1snTpoI4uy4yjzJrRcea/AURSKBMjVQSM
         9F4ChN5LCiEJJZo482zI1bCz3zfvvveUvc/5fNb6rqUh5X3POff8nvfec/Y5CAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJbr2umodJcrK/93+WsAwIY5JP1M
@@ -2245,4 +2245,7 @@
         b6IDtN6/q/8PAUoJiUQyT1UAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
