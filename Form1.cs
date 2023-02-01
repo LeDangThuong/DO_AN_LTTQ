@@ -78,7 +78,7 @@ namespace DO_AN_LTTQ
                 }
                 catch
                 {
-                    
+                    item.picMediaItem.Image = Properties.Resources.musical_note;
                 }
 
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
@@ -125,7 +125,7 @@ namespace DO_AN_LTTQ
             }
             catch
             {
-                
+                picboxAvatar.Image = Properties.Resources.musical_note;
             }
 
             name_of_song.Text = item.lblTenBaiHat.Text;
