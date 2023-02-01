@@ -310,14 +310,6 @@ namespace DO_AN_LTTQ
         {
             player.settings.volume = metroSetTrackBar1.Value;
         }
-                }
-                catch
-                {
-
-                }
-                mediaItems.Add(item);
-                flowPanelMedia.Controls.Add(item);
-            }
 
         private void guna2TrackBar1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -349,33 +341,54 @@ namespace DO_AN_LTTQ
         // Thu Vien Click
         private void guna2TileButton2_Click(object sender, EventArgs e)
         {
+            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
+            ThuVien_Button.FillColor =  Color.LightGray;
+            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
+            Album_Button.FillColor = System.Drawing.SystemColors.Control;
             home_label.Text = "Thư viện";
             flowPanelMedia.Controls.Clear();
             searching_textbox.Texts = "Tìm kiếm";
+            searching_textbox.ForeColor = Color.Silver;
         }
         // Yeu Thich Click
         private void guna2TileButton3_Click(object sender, EventArgs e)
         {
+            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
+            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
+            YeuThich_Button.FillColor =  Color.LightGray;
+            Album_Button.FillColor = System.Drawing.SystemColors.Control;
             home_label.Text = "Yêu thích";
             flowPanelMedia.Controls.Clear();
             searching_textbox.Texts = "Tìm kiếm";
+            searching_textbox.ForeColor = Color.Silver;
         }
         // Album Click
         private void guna2TileButton4_Click(object sender, EventArgs e)
         {
+            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
+            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
+            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
+            Album_Button.FillColor = Color.LightGray;
             home_label.Text = "Album";
             flowPanelMedia.Controls.Clear();
             searching_textbox.Texts = "Tìm kiếm";
+            searching_textbox.ForeColor = Color.Silver;
         }
         // Trang Chu Click
         private void guna2TileButton1_Click(object sender, EventArgs e)
         {
-            home_label.Text = "Home";
+            TrangChu_Button.FillColor = Color.LightGray;
+            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
+            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
+            Album_Button.FillColor = System.Drawing.SystemColors.Control;
+            home_label.Text = "Trang Chủ";
             flowPanelMedia.Controls.Clear();
             foreach( MediaItem i in mediaItems)
             {
                 flowPanelMedia.Controls.Add(i);
             }
+            searching_textbox.Texts = "Tìm kiếm";
+            searching_textbox.ForeColor = Color.Silver;
         }
         // Su Kien Tim Kiem
         private void searching_button_Click(object sender, EventArgs e)
@@ -394,6 +407,11 @@ namespace DO_AN_LTTQ
                         flowPanelMedia.Controls.Add(i);
                 }
             }
+        }
+
+        private void flowPanelMedia_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
