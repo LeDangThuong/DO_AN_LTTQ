@@ -13,6 +13,19 @@ namespace DO_AN_LTTQ
 {
     public partial class Album_Playlist : UserControl
     {
+        #region Propeties
+        private List<MediaItem> songs = new List<MediaItem>();
+        public List<MediaItem> Songs { get => songs; }
+        private AlbumDetails albumDetails = new AlbumDetails();
+        public AlbumDetails fDetails { get { albumDetails.TotalSong = songs.Count; return albumDetails; } }
+        public uMyplaylist()
+        {
+            InitializeComponent();
+        }
+        #endregion
+
+        #region Method
+        public event EventHandler BtnImage_Click;
         public Album_Playlist()
         {
             InitializeComponent();
@@ -43,7 +56,7 @@ namespace DO_AN_LTTQ
         {
             BtnImage_Click?.Invoke(this, e);
         }
-        public static uMyplaylist CreateArtist(uSong song)
+        public static Album_Playlist CreateArtist(MediaItem song)
         {
             uMyplaylist artist = new uMyplaylist();
             artist.songs.Add(song);

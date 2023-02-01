@@ -86,6 +86,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlbumDetails.Designer.cs">
+      <DependentUpon>AlbumDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Album_Playlist.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlbumDetails.resx">
+      <DependentUpon>AlbumDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Album_Playlist.resx">
       <DependentUpon>Album_Playlist.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +193,9 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\previous1.png" />
+    <None Include="Resources\play12.png" />
+    <None Include="Resources\play11.png" />
     <None Include="Resources\volume_white1.png" />
     <None Include="Resources\volume-mute.png" />
     <None Include="Resources\musical-note.png" />
