@@ -249,6 +249,11 @@ namespace DO_AN_LTTQ
         // TUA NHANH ĐI 10s nhạc
         //
         int check_rewindbutton = 0;
+
+
+        //
+        // LÙI NHẠC LẠI 10s
+        //
         private void rewind_button_Click(object sender, EventArgs e)
         {
             
@@ -319,7 +324,7 @@ namespace DO_AN_LTTQ
             }
         }
         //
-        // CHỈNH VOLUMN 
+        // CHỈNH THANH ÂM NHẠC
         //
         private void metroSetTrackBar1_Scroll(object sender)
         {
@@ -338,9 +343,12 @@ namespace DO_AN_LTTQ
             player.Ctlcontrols.currentPosition = e.NewValue;
         }
 
+        //
+        // CHỈNH VOLUME
+        //
         private void metroSetTrackBar1_MouseDown(object sender, MouseEventArgs e)
         {
-            player.Ctlcontrols.currentPosition = player.settings.volume * e.X / metroSetTrackBar1.Width;
+            
         }
     }
 }
