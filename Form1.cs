@@ -14,6 +14,7 @@ using System.Resources;
 using System.Windows.Media.Animation;
 using System.Windows.Controls;
 using AxWMPLib;
+using System.Web.UI;
 
 namespace DO_AN_LTTQ
 {
@@ -341,6 +342,8 @@ namespace DO_AN_LTTQ
         // Thu Vien Click
         private void guna2TileButton2_Click(object sender, EventArgs e)
         {
+            
+            
             TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
             ThuVien_Button.FillColor =  Color.LightGray;
             YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
@@ -353,6 +356,8 @@ namespace DO_AN_LTTQ
         // Yeu Thich Click
         private void guna2TileButton3_Click(object sender, EventArgs e)
         {
+            
+            
             TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
             ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
             YeuThich_Button.FillColor =  Color.LightGray;
@@ -365,18 +370,23 @@ namespace DO_AN_LTTQ
         // Album Click
         private void guna2TileButton4_Click(object sender, EventArgs e)
         {
+            
             TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
             ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
             YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
             Album_Button.FillColor = Color.LightGray;
             home_label.Text = "Album";
-            flowPanelMedia.Controls.Clear();
+            //flowPanelMedia.Controls.Clear();
+            
+            //flowPanelMedia.Visible = false;
             searching_textbox.Texts = "Tìm kiếm";
             searching_textbox.ForeColor = Color.Silver;
         }
         // Trang Chu Click
         private void guna2TileButton1_Click(object sender, EventArgs e)
         {
+            
+            
             TrangChu_Button.FillColor = Color.LightGray;
             ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
             YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
@@ -410,6 +420,11 @@ namespace DO_AN_LTTQ
         }
 
         private void flowPanelMedia_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void userControl11_Load(object sender, EventArgs e)
         {
 
         }
