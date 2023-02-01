@@ -73,11 +73,12 @@ namespace DO_AN_LTTQ
                     var f = TagLib.File.Create(file);
                     var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                     item.picMediaItem.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
-                   
+
+                    
                 }
                 catch
                 {
-                    item.picMediaItem.Image = System.Drawing.Image.FromFile(@"D:\DOAN IT008\icon\music.png");
+                    
                 }
 
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
@@ -90,23 +91,42 @@ namespace DO_AN_LTTQ
 
             
         }
-
+        int check_forplaybutton = 0;
         private void item_MediaItem_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
             player.URL = (string)item.Tag;
             player.Ctlcontrols.play();
 
+            
             try
             {
+                play_button.Image = Properties.Resources.pause;
+                check_forplaybutton = 1;
+                timer1.Enabled = true;
+                if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                {
+                    guna2TrackBar1.Maximum = (int)player.Ctlcontrols.currentItem.duration;
+                    guna2TrackBar1.Value = (int)player.Ctlcontrols.currentPosition;
+                }
+                try
+                {
+                    label1.Text = player.Ctlcontrols.currentPositionString;
+                    label2.Text = player.Ctlcontrols.currentItem.durationString.ToString();
+                }
+                catch
+                {
+
+                }
                 var f = TagLib.File.Create((string)item.Tag);
                 var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                 picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+
                 
             }
             catch
             {
-                picboxAvatar.Image = System.Drawing.Image.FromFile(@"D:\DOAN IT008\icon\music.png");
+                
             }
 
             name_of_song.Text = item.lblTenBaiHat.Text;
@@ -198,7 +218,7 @@ namespace DO_AN_LTTQ
         //
         // ĐỔI ICON PLAY BUTTON
         //
-        int check_forplaybutton = 0;
+        
         private void play_button_Click(object sender, EventArgs e)
         {
             
@@ -222,11 +242,7 @@ namespace DO_AN_LTTQ
                 //
                 check_forplaybutton = 0;
                 timer1.Enabled = false;
-            }
-
-
-            
-            
+            } 
         }
         //
         // TUA NHANH ĐI 10s nhạc

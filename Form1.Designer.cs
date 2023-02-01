@@ -399,13 +399,13 @@ namespace DO_AN_LTTQ
             // guna2TrackBar1
             // 
             this.guna2TrackBar1.Location = new System.Drawing.Point(235, 16);
-            this.guna2TrackBar1.Maximum = 500;
+            this.guna2TrackBar1.Maximum = 300;
             this.guna2TrackBar1.Name = "guna2TrackBar1";
             this.guna2TrackBar1.Size = new System.Drawing.Size(874, 23);
             this.guna2TrackBar1.TabIndex = 2;
             this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
+            this.guna2TrackBar1.Value = 0;
             this.guna2TrackBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2TrackBar1_MouseDown);
-            
             // 
             // lblTacGiaNhac
             // 
