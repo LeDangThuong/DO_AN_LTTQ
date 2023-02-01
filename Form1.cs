@@ -20,6 +20,7 @@ namespace DO_AN_LTTQ
     public partial class Form1 : Form
     {
         List<MediaItem> mediaItems = new List<MediaItem>();
+
         public Form1()
         {
             
@@ -330,6 +331,52 @@ namespace DO_AN_LTTQ
         private void guna2TrackBar1_MouseHover(object sender, MouseEventArgs e)
         {
             player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / guna2TrackBar1.Width;
+        }
+        private int iOfListIndex;
+        private List<int> listIndex = new List<int>();
+        private int indexNow = -1;
+        private List<MediaItem> songsNowPlaying = new List<MediaItem>();
+
+        private void NextSong()
+        {
+            switch (shuffle_button.Tag as string)
+            {
+                case "On":
+                    if (iOfListIndex + 1 >= listIndex.Count)
+                    {
+                        indexNow = listIndex[0];
+                        iOfListIndex = 0;
+                    }
+                    else
+                    {
+                        indexNow = listIndex[++iOfListIndex];
+                    }
+                    break;
+                default:
+                    indexNow = (indexNow + 1 >= songsNowPlaying.Count) ? 0 : indexNow + 1;
+                    break;
+            }
+        }
+        private void PreviousSong()
+        {
+            switch (shuffle_button.Tag as string)
+            {
+                case "On":
+                    if (iOfListIndex - 1 < 0)
+                    {
+                        iOfListIndex = listIndex.Count - 1;
+                        indexNow = listIndex[iOfListIndex];
+
+                    }
+                    else
+                    {
+                        indexNow = listIndex[--iOfListIndex];
+                    }
+                    break;
+                default:
+                    indexNow = (indexNow - 1 < 0) ? songsNowPlaying.Count - 1 : indexNow - 1;
+                    break;
+            }
         }
     }
 }
