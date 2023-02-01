@@ -1,4 +1,5 @@
-﻿namespace DO_AN_LTTQ
+﻿using System.Drawing;
+namespace DO_AN_LTTQ
 {
     partial class MediaItem
     {

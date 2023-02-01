@@ -21,7 +21,47 @@ namespace DO_AN_LTTQ
         {
             InitializeComponent();
         }
+        internal string SongName
+        {
+            get
+            {
+                return lblTenBaiHat.Text;
+            }
+            set
+            {
+                lblTenBaiHat.Text = value;
+            }
+        }
+        internal string ArtistName
+        {
+            get
+            {
+                return lblTenBaiHat.Text;
+            }
+            set
+            {
+                lblTacGia.Text = value;
+            }
 
+        }
+        
+        
+        internal Image ImageSong
+        {
+            get
+            {
+                return picMediaItem.Image;
+            }
+            set
+            {
+                picMediaItem.Image = value;
+            }
+        }
+        
+        internal string Album
+        {
+            get; set;
+        }
         private void mediaItem_Click(object sender, EventArgs e)
         {
             if (MediaItem_Click != null)

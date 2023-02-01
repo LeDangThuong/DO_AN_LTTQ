@@ -15,6 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Controls;
 using AxWMPLib;
 using System.Media;
+using WMPLib;
 
 namespace DO_AN_LTTQ
 {
@@ -38,6 +39,7 @@ namespace DO_AN_LTTQ
 
         string[] files;
         string filename;
+        string[] paths;
         private void btnTaiNhac_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -46,8 +48,13 @@ namespace DO_AN_LTTQ
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 files = ofd.FileNames;
+                paths = ofd.FileNames;
+                for (int x = 0; x < files.Length; x++)
+                {
+                    track_list.Items.Add(files[x]);
+                }
             }
-
+                
             MediaItem item;
             string[] tenBaiHat;
             string[] tenTacGia;
@@ -73,24 +80,19 @@ namespace DO_AN_LTTQ
                 {
                     var f = TagLib.File.Create(file);
                     var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
-                    item.picMediaItem.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
-
-                    
+                    item.picMediaItem.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));     
                 }
                 catch
                 {
                     
                 }
-
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 item.Dock = DockStyle.Top;
                 flowPanelMedia.Controls.Add(item);
-                mediaItems.Add(item);
+                mediaItems.Add(item);      
             }
-
-            
         }
         int check_forplaybutton = 0;
         
@@ -252,13 +254,26 @@ namespace DO_AN_LTTQ
 
 
         //
-        // LÙI NHẠC LẠI 10s
+        // LÙI NHẠC LẠI 1 bài
         //
         private void rewind_button_Click(object sender, EventArgs e)
         {
-            if()
+            if(track_list.SelectedIndex>0)
+            {
+                track_list.SelectedIndex = track_list.SelectedIndex - 1;
+                
+            }    
         }
-
+        //
+        // TIẾN NHẠC 1 bài
+        //
+        private void next_button_Click(object sender, EventArgs e)
+        {
+            if(track_list.SelectedIndex < track_list.Items.Count - 1)
+            {
+                track_list.SelectedIndex = track_list.SelectedIndex + 1;
+            }    
+        }
         //
         // THAY ĐỔI ICON SHUFFLE
         //
@@ -342,13 +357,19 @@ namespace DO_AN_LTTQ
         {
             player.Ctlcontrols.currentPosition = e.NewValue;
         }
-
         //
         // CHỈNH VOLUME
         //
         private void metroSetTrackBar1_MouseDown(object sender, MouseEventArgs e)
         {
             
+        }
+
+        private void track_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            player.URL = paths[track_list.SelectedIndex];
+            item_MediaItem_Click(sender, e);
+            player.Ctlcontrols.play();
         }
     }
 }
