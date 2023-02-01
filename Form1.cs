@@ -256,7 +256,7 @@ namespace DO_AN_LTTQ
         //
         private void rewind_button_Click(object sender, EventArgs e)
         {
-            
+            if()
         }
 
         //
