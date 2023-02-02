@@ -55,6 +55,7 @@ namespace DO_AN_LTTQ
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.MusicPanel = new System.Windows.Forms.Panel();
             this.btnAn = new System.Windows.Forms.Button();
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -62,12 +63,13 @@ namespace DO_AN_LTTQ
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
-            this.MusicPanel = new System.Windows.Forms.Panel();
+            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.panel2.SuspendLayout();
+            this.MusicPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -454,6 +456,14 @@ namespace DO_AN_LTTQ
             this.panel2.Size = new System.Drawing.Size(968, 517);
             this.panel2.TabIndex = 2;
             // 
+            // MusicPanel
+            // 
+            this.MusicPanel.Controls.Add(this.myMusic1);
+            this.MusicPanel.Location = new System.Drawing.Point(0, 75);
+            this.MusicPanel.Name = "MusicPanel";
+            this.MusicPanel.Size = new System.Drawing.Size(968, 442);
+            this.MusicPanel.TabIndex = 4;
+            // 
             // btnAn
             // 
             this.btnAn.BackColor = System.Drawing.Color.Gray;
@@ -520,12 +530,12 @@ namespace DO_AN_LTTQ
             // 
             this.autoNextSongTimer.Tick += new System.EventHandler(this.autoNextSongTimer_Tick);
             // 
-            // MusicPanel
+            // myMusic1
             // 
-            this.MusicPanel.Location = new System.Drawing.Point(0, 75);
-            this.MusicPanel.Name = "MusicPanel";
-            this.MusicPanel.Size = new System.Drawing.Size(968, 442);
-            this.MusicPanel.TabIndex = 4;
+            this.myMusic1.Location = new System.Drawing.Point(3, 3);
+            this.myMusic1.Name = "myMusic1";
+            this.myMusic1.Size = new System.Drawing.Size(962, 439);
+            this.myMusic1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -545,6 +555,7 @@ namespace DO_AN_LTTQ
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.MusicPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -583,6 +594,7 @@ namespace DO_AN_LTTQ
         private System.Windows.Forms.Timer autoNextSongTimer;
         private System.Windows.Forms.Timer rotateTimer;
         private System.Windows.Forms.Panel MusicPanel;
+        private MyMusic myMusic1;
     }
 }
 
