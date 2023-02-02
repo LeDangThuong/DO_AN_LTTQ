@@ -119,13 +119,20 @@ namespace DO_AN_LTTQ
             song.TenTacGia = info.TacGia;
             
             song.Duration = info.Duration;
-            
+            song.TotalTime = Form1.ConvertToMinute(song.Duration);
             song.BackColor = (i % 2 == 0) ? Color.Silver : Color.Gainsboro;
             song.ButtonPlay_Click += click;
             song.Mouse_Click += mouseClick;
             song.ContextMenuStrip = menuStripSong;
             song.Album = info.Album;
             return song;
+        }
+        #endregion
+
+        #region Mouse
+        private void pictureBoxSong_MouseDown(object sender, MouseEventArgs e)
+        {
+            Mouse_Click?.Invoke(this, e);
         }
         #endregion
     }

@@ -241,12 +241,19 @@ namespace DO_AN_LTTQ
                 checking = true;
             }
         }
+        public static string ConvertToMinute(double Second)
+        {
+            int minute = (int)Second / 60;
+            int second = (int)Second % 60;
+            return minute.ToString("00") + ":" + second.ToString("00");
+        }
+
 
         #region Next and Previous
         //
         //HÀM BIẾN NEXT AND PREVIOUS
         //
-     
+
         private void NextSong()
         {
             switch (next_button.Tag as string)

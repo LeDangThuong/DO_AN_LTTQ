@@ -113,6 +113,7 @@
             this.pictureBoxSong.Size = new System.Drawing.Size(104, 95);
             this.pictureBoxSong.TabIndex = 0;
             this.pictureBoxSong.TabStop = false;
+            this.pictureBoxSong.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSong_MouseDown);
             // 
             // SongItem
             // 
