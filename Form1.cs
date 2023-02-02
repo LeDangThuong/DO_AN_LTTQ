@@ -33,10 +33,7 @@ namespace DO_AN_LTTQ
         private int indexNow = -1;
         private List<MediaItem> songsNowPlaying = new List<MediaItem>();
 
-        private MediaItem SongNow = null;
-        private MediaItem SongPlaying = null;
-        private MediaItem PreSong = null;
-
+        private float angles = 0;
         private List<MediaItem> mediaItemsLove = new List<MediaItem>();
         private List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
         private List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
@@ -56,10 +53,7 @@ namespace DO_AN_LTTQ
             {
                 files = ofd.FileNames;
                 paths = ofd.FileNames;
-                for (int x = 0; x < files.Length; x++)
-                {
-                    track_list.Items.Add(files[x]);
-                }
+                
             }
                 
             MediaItem item;
@@ -241,10 +235,7 @@ namespace DO_AN_LTTQ
         //
         //HÀM BIẾN NEXT AND PREVIOUS
         //
-        private void Shuff()
-        {
-            
-        }
+     
         private void NextSong()
         {
             switch (next_button.Tag as string)
@@ -326,21 +317,23 @@ namespace DO_AN_LTTQ
             //
         private void rewind_button_Click(object sender, EventArgs e)
         {
-            if(track_list.SelectedIndex>0)
-            {
-                track_list.SelectedIndex = track_list.SelectedIndex - 1;
-                
-            }    
+            if (indexNow == -1) return;
+            PreviousSong(); // set index song next
+            autoNextSongTimer.Start();
+            timer1.Start();
+            angles = 0;
         }
         //
         // TIẾN NHẠC 1 bài
         //
         private void next_button_Click(object sender, EventArgs e)
         {
-            if(track_list.SelectedIndex < track_list.Items.Count - 1)
-            {
-                track_list.SelectedIndex = track_list.SelectedIndex + 1;
-            }    
+            if (indexNow == -1) return;
+            // song pre
+            NextSong();
+            autoNextSongTimer.Start();
+            timer1.Start();
+            angles = 0;
         }
         //
         // THAY ĐỔI ICON SHUFFLE
@@ -434,16 +427,7 @@ namespace DO_AN_LTTQ
         //
         // CHỈNH VOLUME
         //
-        private void metroSetTrackBar1_MouseDown(object sender, MouseEventArgs e)
-        {
-            
-        }
-
-        private void track_list_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            player.URL = paths[track_list.SelectedIndex];
-            player.Ctlcontrols.play();
-        }
+  
         #endregion
         // Tim kiem doi mau
         private void searching_textbox_Enter(object sender, EventArgs e)
@@ -463,93 +447,14 @@ namespace DO_AN_LTTQ
                 searching_textbox.ForeColor = System.Drawing.Color.Silver;
             }
         }
+
+        private void autoNextSongTimer_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+
         // Thu Vien Click
-        private void guna2TileButton2_Click(object sender, EventArgs e)
-        {
-            
-            
-            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
-            ThuVien_Button.FillColor =  System.Drawing.Color.LightGray;
-            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
-            Album_Button.FillColor = System.Drawing.SystemColors.Control;
-            home_label.Text = "Thư viện";
-            flowPanelMedia.Controls.Clear();
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = System.Drawing.Color.Silver;
-        }
-        // Yeu Thich Click
-        private void guna2TileButton3_Click(object sender, EventArgs e)
-        {
-            
-            
-            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
-            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
-            YeuThich_Button.FillColor =  System.Drawing.Color.LightGray;
-            Album_Button.FillColor = System.Drawing.SystemColors.Control;
-            home_label.Text = "Yêu thích";
-            flowPanelMedia.Controls.Clear();
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = System.Drawing.Color.Silver;
-        }
-        // Album Click
-        private void guna2TileButton4_Click(object sender, EventArgs e)
-        {
-            
-            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
-            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
-            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
-            Album_Button.FillColor = System.Drawing.Color.LightGray;
-            home_label.Text = "Album";
-            //flowPanelMedia.Controls.Clear();
-            
-            //flowPanelMedia.Visible = false;
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = System.Drawing.Color.Silver;
-        }
-        // Trang Chu Click
-        private void guna2TileButton1_Click(object sender, EventArgs e)
-        {
-    
-            TrangChu_Button.FillColor = System.Drawing.Color.LightGray;
-            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
-            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
-            Album_Button.FillColor = System.Drawing.SystemColors.Control;
-            home_label.Text = "Trang Chủ";
-            flowPanelMedia.Controls.Clear();
-            foreach( MediaItem i in mediaItems)
-            {
-                flowPanelMedia.Controls.Add(i);
-            }
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = System.Drawing.Color.Silver;
-        }
-        // Su Kien Tim Kiem
-        private void searching_button_Click(object sender, EventArgs e)
-        {
-            home_label.Text = "Kết quả tìm kiếm";
-            flowPanelMedia.Controls.Clear();
-            foreach(MediaItem i in mediaItems)
-            {
-                if(string.Compare(i.lblTacGia.Text,searching_textbox.Texts) == 0)
-                {
-                    flowPanelMedia.Controls.Add(i);
-                }
-                else
-                {
-                    if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0)
-                        flowPanelMedia.Controls.Add(i);
-                }
-            }
-        }
 
-        private void flowPanelMedia_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void userControl11_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

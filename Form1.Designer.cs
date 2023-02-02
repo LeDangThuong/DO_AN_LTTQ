@@ -39,7 +39,6 @@ namespace DO_AN_LTTQ
             this.ThuVien_Button = new Guna.UI2.WinForms.Guna2TileButton();
             this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.searching_textbox = new Sipaa.Framework.STextBox();
-            this.track_list = new System.Windows.Forms.ListBox();
             this.bottom_panel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,7 +81,7 @@ namespace DO_AN_LTTQ
             this.panel1.Controls.Add(this.searching_textbox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(307, 517);
             this.panel1.TabIndex = 0;
@@ -102,7 +101,7 @@ namespace DO_AN_LTTQ
             this.TrangChu_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.TrangChu_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.TrangChu_Button.Location = new System.Drawing.Point(17, 112);
-            this.TrangChu_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TrangChu_Button.Margin = new System.Windows.Forms.Padding(4);
             this.TrangChu_Button.Name = "TrangChu_Button";
             this.TrangChu_Button.Padding = new System.Windows.Forms.Padding(0, 0, 4, 4);
             this.TrangChu_Button.Size = new System.Drawing.Size(226, 49);
@@ -110,7 +109,6 @@ namespace DO_AN_LTTQ
             this.TrangChu_Button.Text = "Trang chủ";
             this.TrangChu_Button.TextOffset = new System.Drawing.Point(0, -10);
             this.TrangChu_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.TrangChu_Button.Click += new System.EventHandler(this.guna2TileButton1_Click);
             // 
             // Album_Button
             // 
@@ -126,7 +124,7 @@ namespace DO_AN_LTTQ
             this.Album_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.Album_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.Album_Button.Location = new System.Drawing.Point(17, 287);
-            this.Album_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Album_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Album_Button.Name = "Album_Button";
             this.Album_Button.Padding = new System.Windows.Forms.Padding(0, 0, 4, 4);
             this.Album_Button.Size = new System.Drawing.Size(226, 49);
@@ -134,7 +132,6 @@ namespace DO_AN_LTTQ
             this.Album_Button.Text = "Album";
             this.Album_Button.TextOffset = new System.Drawing.Point(0, -10);
             this.Album_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.Album_Button.Click += new System.EventHandler(this.guna2TileButton4_Click);
             // 
             // YeuThich_Button
             // 
@@ -150,7 +147,7 @@ namespace DO_AN_LTTQ
             this.YeuThich_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.YeuThich_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.YeuThich_Button.Location = new System.Drawing.Point(17, 230);
-            this.YeuThich_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.YeuThich_Button.Margin = new System.Windows.Forms.Padding(4);
             this.YeuThich_Button.Name = "YeuThich_Button";
             this.YeuThich_Button.Padding = new System.Windows.Forms.Padding(0, 0, 4, 4);
             this.YeuThich_Button.Size = new System.Drawing.Size(226, 49);
@@ -158,7 +155,6 @@ namespace DO_AN_LTTQ
             this.YeuThich_Button.Text = "Yêu thích";
             this.YeuThich_Button.TextOffset = new System.Drawing.Point(0, -10);
             this.YeuThich_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.YeuThich_Button.Click += new System.EventHandler(this.guna2TileButton3_Click);
             // 
             // ThuVien_Button
             // 
@@ -174,7 +170,7 @@ namespace DO_AN_LTTQ
             this.ThuVien_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.ThuVien_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.ThuVien_Button.Location = new System.Drawing.Point(17, 171);
-            this.ThuVien_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ThuVien_Button.Margin = new System.Windows.Forms.Padding(4);
             this.ThuVien_Button.Name = "ThuVien_Button";
             this.ThuVien_Button.Padding = new System.Windows.Forms.Padding(0, 0, 4, 4);
             this.ThuVien_Button.Size = new System.Drawing.Size(226, 49);
@@ -182,7 +178,6 @@ namespace DO_AN_LTTQ
             this.ThuVien_Button.Text = "Thư viện";
             this.ThuVien_Button.TextOffset = new System.Drawing.Point(0, -10);
             this.ThuVien_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.ThuVien_Button.Click += new System.EventHandler(this.guna2TileButton2_Click);
             // 
             // searching_button
             // 
@@ -194,12 +189,11 @@ namespace DO_AN_LTTQ
             this.searching_button.ImageRotate = 0F;
             this.searching_button.ImageSize = new System.Drawing.Size(25, 25);
             this.searching_button.Location = new System.Drawing.Point(260, 19);
-            this.searching_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searching_button.Margin = new System.Windows.Forms.Padding(4);
             this.searching_button.Name = "searching_button";
             this.searching_button.PressedState.ImageSize = new System.Drawing.Size(28, 28);
             this.searching_button.Size = new System.Drawing.Size(26, 28);
             this.searching_button.TabIndex = 10;
-            this.searching_button.Click += new System.EventHandler(this.searching_button_Click);
             // 
             // searching_textbox
             // 
@@ -211,7 +205,7 @@ namespace DO_AN_LTTQ
             this.searching_textbox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.searching_textbox.ForeColor = System.Drawing.Color.Silver;
             this.searching_textbox.Location = new System.Drawing.Point(17, 16);
-            this.searching_textbox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.searching_textbox.Margin = new System.Windows.Forms.Padding(5);
             this.searching_textbox.Multiline = false;
             this.searching_textbox.Name = "searching_textbox";
             this.searching_textbox.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -224,15 +218,6 @@ namespace DO_AN_LTTQ
             this.searching_textbox.UnderlinedStyle = false;
             this.searching_textbox.Enter += new System.EventHandler(this.searching_textbox_Enter);
             this.searching_textbox.Leave += new System.EventHandler(this.searching_textbox_Leave);
-            // 
-            // track_list
-            // 
-            this.track_list.FormattingEnabled = true;
-            this.track_list.Location = new System.Drawing.Point(61, 319);
-            this.track_list.Name = "track_list";
-            this.track_list.Size = new System.Drawing.Size(121, 121);
-            this.track_list.TabIndex = 0;
-            this.track_list.SelectedIndexChanged += new System.EventHandler(this.track_list_SelectedIndexChanged);
             // 
             // bottom_panel
             // 
@@ -464,7 +449,7 @@ namespace DO_AN_LTTQ
             this.panel2.Controls.Add(this.flowPanelMedia);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(307, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(968, 517);
             this.panel2.TabIndex = 2;
@@ -475,7 +460,7 @@ namespace DO_AN_LTTQ
             this.btnAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAn.Location = new System.Drawing.Point(315, 13);
-            this.btnAn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAn.Margin = new System.Windows.Forms.Padding(2);
             this.btnAn.Name = "btnAn";
             this.btnAn.Size = new System.Drawing.Size(134, 42);
             this.btnAn.TabIndex = 3;
@@ -489,7 +474,7 @@ namespace DO_AN_LTTQ
             this.btnTaiNhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiNhac.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnTaiNhac.Location = new System.Drawing.Point(465, 13);
-            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaiNhac.Name = "btnTaiNhac";
             this.btnTaiNhac.Size = new System.Drawing.Size(134, 42);
             this.btnTaiNhac.TabIndex = 3;
@@ -531,17 +516,20 @@ namespace DO_AN_LTTQ
             this.flowPanelMedia.AutoScroll = true;
             this.flowPanelMedia.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowPanelMedia.Location = new System.Drawing.Point(0, 113);
-            this.flowPanelMedia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowPanelMedia.Margin = new System.Windows.Forms.Padding(2);
             this.flowPanelMedia.Name = "flowPanelMedia";
             this.flowPanelMedia.Padding = new System.Windows.Forms.Padding(4, 7, 0, 0);
             this.flowPanelMedia.Size = new System.Drawing.Size(968, 404);
             this.flowPanelMedia.TabIndex = 2;
-            this.flowPanelMedia.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanelMedia_Paint);
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // autoNextSongTimer
+            // 
+            this.autoNextSongTimer.Tick += new System.EventHandler(this.autoNextSongTimer_Tick);
             // 
             // Form1
             // 
@@ -551,7 +539,7 @@ namespace DO_AN_LTTQ
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottom_panel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -596,7 +584,7 @@ namespace DO_AN_LTTQ
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ListBox track_list;
+       
         private System.Windows.Forms.Timer autoNextSongTimer;
         private System.Windows.Forms.Timer rotateTimer;
     }
