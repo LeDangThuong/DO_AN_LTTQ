@@ -34,7 +34,7 @@ namespace DO_AN_LTTQ
             }
         }
 
-        public string TenTacGia
+        public string TacGia
         {
             get
             {
@@ -46,7 +46,7 @@ namespace DO_AN_LTTQ
             }
         }
 
-        public string Song
+        public string BaiHat
         {
             get
             {
