@@ -243,12 +243,7 @@ namespace DO_AN_LTTQ
         //
         private void Shuff()
         {
-            iOfListIndex = 0;
-            listIndex.Clear();
-            for (int i = 0; i < songsNowPlaying.Count; i++)
-                listIndex.Add(i);
-            listIndex.Sort(Sort.iRanDom.Compare);
-            GC.Collect();
+            
         }
         private void NextSong()
         {
@@ -301,35 +296,7 @@ namespace DO_AN_LTTQ
         private void play_button_Click(object sender, EventArgs e)
         {
 
-            if (indexNow == -1) return;
-            if (play_button.Image == Properties.Resources.pause)
-            {
-                play_button.Image = Properties.Resources.play1;
-
-
-                MediaPlayer.Instance.Pause();
-                timer1.Stop();
-                autoNextSongTimer.Stop();
-                rotateTimer.Stop();
-            }
-            else
-            {
-                if (MediaPlayer.Instance.GetPlayState() == "wmppsPaused")
-                {
-                    MediaPlayer.Instance.Play();
-                }
-                else
-                {
-                    SongNow = songsNowPlaying[indexNow];
-                  
-                    MediaPlayer.Instance.Play(SongNow.Path);
-                }
-                play_button.Image = Properties.Resources.pause;
-
-                timer1.Start();
-                autoNextSongTimer.Start();
-                //rotateTimer.Start();
-            }
+            
         }
             //
             // TUA NHANH ĐI 10s nhạc
