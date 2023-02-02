@@ -22,9 +22,14 @@ namespace DO_AN_LTTQ
     {
         //Tao tug list cho moi trang
         List<MediaItem> mediaItems = new List<MediaItem>();
-        List<MediaItem> mediaItemsLove = new List<MediaItem>();
-        List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
-        List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
+
+        MediaItem itemPlay = new MediaItem();
+        MediaItem itemPlayed = new MediaItem();
+        int iPlay;
+        string getFilename = null;
+        string[] divideFilename = new string[2];
+
+
         public Form1()
         {
             
@@ -41,11 +46,12 @@ namespace DO_AN_LTTQ
         }
 
         string[] files;
-        string filename;
         private void btnTaiNhac_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Multiselect = true;
+
+           
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -56,33 +62,36 @@ namespace DO_AN_LTTQ
             string[] tenBaiHat;
             string[] tenTacGia;
 
+            int i = -1;
             foreach(string file in files)
             {
                 item = new MediaItem();
-                filename = Path.GetFileName(file);
+                getFilename = Path.GetFileName(file);
                 
 
-                tenBaiHat = filename.Split('-');
+                tenBaiHat = getFilename.Split('-');
                 item.lblTenBaiHat.Text = tenBaiHat[0];
 
                 tenTacGia = tenBaiHat[1].Split('.');
                 item.lblTacGia.Text = tenTacGia[0];
 
-                item.Tag = file;
-                item.picMediaItem.Tag = file;
-                item.lblTenBaiHat.Tag = file;
-                item.lblTacGia.Tag = file;
+                i++;
+                item.Tag = (string) file + "|" +i;
+                item.picMediaItem.Tag = (string)file + "|" + i;
+                item.lblTenBaiHat.Tag = (string)file + "|" + i;
+                item.lblTacGia.Tag = (string)file + "|" + i;
 
                 try
                 {
                     var f = TagLib.File.Create(file);
                     var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                     item.picMediaItem.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
-                   
+
+                    
                 }
                 catch
                 {
-                    item.picMediaItem.Image = System.Drawing.Image.FromFile(@"D:\DOAN IT008\icon\music.png");
+                    item.picMediaItem.Image = Properties.Resources.musical_note;
                 }
 
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
@@ -91,27 +100,51 @@ namespace DO_AN_LTTQ
                 item.Dock = DockStyle.Top;
                 flowPanelMedia.Controls.Add(item);
                 mediaItems.Add(item);
+         
             }
 
             
         }
-
+        int check_forplaybutton = 0;
         private void item_MediaItem_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
-            player.URL = (string)item.Tag;
+
+            string filename = (string)item.Tag;
+            string[] part;
+            part = filename.Split('|');
+            player.URL = part[0];
             player.Ctlcontrols.play();
 
+            
             try
             {
-                var f = TagLib.File.Create((string)item.Tag);
+                play_button.Image = Properties.Resources.pause;
+                check_forplaybutton = 1;
+                timer1.Enabled = true;
+                if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                {
+                    guna2TrackBar1.Maximum = (int)player.Ctlcontrols.currentItem.duration;
+                    guna2TrackBar1.Value = (int)player.Ctlcontrols.currentPosition;
+                }
+                try
+                {
+                    label1.Text = player.Ctlcontrols.currentPositionString;
+                    label2.Text = player.Ctlcontrols.currentItem.durationString.ToString();
+                }
+                catch
+                {
+
+                }
+                //var f = TagLib.File.Create((string)item.Tag);
+                var f = TagLib.File.Create(part[0]);
                 var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                 picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
-                
+ 
             }
             catch
             {
-                picboxAvatar.Image = System.Drawing.Image.FromFile(@"D:\DOAN IT008\icon\music.png");
+                picboxAvatar.Image = Properties.Resources.musical_note;
             }
 
             name_of_song.Text = item.lblTenBaiHat.Text;
@@ -203,7 +236,7 @@ namespace DO_AN_LTTQ
         //
         // ĐỔI ICON PLAY BUTTON
         //
-        int check_forplaybutton = 0;
+        
         private void play_button_Click(object sender, EventArgs e)
         {
             
@@ -227,20 +260,13 @@ namespace DO_AN_LTTQ
                 //
                 check_forplaybutton = 0;
                 timer1.Enabled = false;
-            }
-
-
-            
-            
+            } 
         }
         //
         // TUA NHANH ĐI 10s nhạc
         //
         int check_rewindbutton = 0;
-        private void rewind_button_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         //
         // THAY ĐỔI ICON SHUFFLE
@@ -321,112 +347,112 @@ namespace DO_AN_LTTQ
         {
             player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / guna2TrackBar1.Width;
         }
-        // Tim kiem doi mau
-        private void searching_textbox_Enter(object sender, EventArgs e)
+       
+        
+
+
+        #region Tiến Nhạc
+        private void next_button_Click(object sender, EventArgs e)
         {
-            if (searching_textbox.Texts.ToString() == "Tìm kiếm")
+            itemPlayed = (MediaItem) player.Tag;
+
+            getFilename = (string)itemPlayed.Tag;
+
+            divideFilename = getFilename.Split('|');
+
+            iPlay = Int32.Parse(divideFilename[1]);
+
+            if (iPlay < mediaItems.Count - 1)
             {
-                searching_textbox.Texts = "";
-                searching_textbox.ForeColor = Color.Black;
+                itemPlay = mediaItems[++iPlay];
             }
-        }
-
-        private void searching_textbox_Leave(object sender, EventArgs e)
-        {
-            if (searching_textbox.Texts.ToString() == "")
+            else
             {
-                searching_textbox.Texts = "Tìm kiếm";
-                searching_textbox.ForeColor = Color.Silver;
+                itemPlay = mediaItems[0];
             }
-        }
-        // Thu Vien Click
-        private void guna2TileButton2_Click(object sender, EventArgs e)
-        {
-            
-            
-            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
-            ThuVien_Button.FillColor =  Color.LightGray;
-            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
-            Album_Button.FillColor = System.Drawing.SystemColors.Control;
-            home_label.Text = "Thư viện";
-            flowPanelMedia.Controls.Clear();
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
-        }
-        // Yeu Thich Click
-        private void guna2TileButton3_Click(object sender, EventArgs e)
-        {
-            
-            
-            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
-            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
-            YeuThich_Button.FillColor =  Color.LightGray;
-            Album_Button.FillColor = System.Drawing.SystemColors.Control;
-            home_label.Text = "Yêu thích";
-            flowPanelMedia.Controls.Clear();
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
-        }
-        // Album Click
-        private void guna2TileButton4_Click(object sender, EventArgs e)
-        {
-            
-            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
-            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
-            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
-            Album_Button.FillColor = Color.LightGray;
-            home_label.Text = "Album";
-            //flowPanelMedia.Controls.Clear();
-            
-            //flowPanelMedia.Visible = false;
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
-        }
-        // Trang Chu Click
-        private void guna2TileButton1_Click(object sender, EventArgs e)
-        {
-            
-            
-            TrangChu_Button.FillColor = Color.LightGray;
-            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
-            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
-            Album_Button.FillColor = System.Drawing.SystemColors.Control;
-            home_label.Text = "Trang Chủ";
-            flowPanelMedia.Controls.Clear();
-            foreach( MediaItem i in mediaItems)
+
+            getFilename = (string)itemPlay.Tag;
+            divideFilename = getFilename.Split('|');
+
+            player.URL = (string)divideFilename[0];
+            player.Ctlcontrols.play();
+
+
+            name_of_song.Text = itemPlay.lblTenBaiHat.Text;
+            lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
+
+            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
+            itemPlay.BackColor = Color.Gray;
+
+            try
             {
-                flowPanelMedia.Controls.Add(i);
+                
+                //var f = TagLib.File.Create((string)item.Tag);
+                var f = TagLib.File.Create(divideFilename[0]);
+                var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
+                picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+
             }
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
-        }
-        // Su Kien Tim Kiem
-        private void searching_button_Click(object sender, EventArgs e)
-        {
-            home_label.Text = "Kết quả tìm kiếm";
-            flowPanelMedia.Controls.Clear();
-            foreach(MediaItem i in mediaItems)
+            catch
             {
-                if(string.Compare(i.lblTacGia.Text,searching_textbox.Texts) == 0)
-                {
-                    flowPanelMedia.Controls.Add(i);
-                }
-                else
-                {
-                    if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0)
-                        flowPanelMedia.Controls.Add(i);
-                }
+                picboxAvatar.Image = Properties.Resources.musical_note;
             }
+
+            player.Tag = itemPlay;
         }
 
-        private void flowPanelMedia_Paint(object sender, PaintEventArgs e)
+        #endregion
+
+        #region Lùi Nhạc
+        private void rewind_button_Click(object sender, EventArgs e)
         {
+            itemPlayed = (MediaItem)player.Tag;
 
+            getFilename = (string)itemPlayed.Tag;
+
+            divideFilename = getFilename.Split('|');
+
+            iPlay = Int32.Parse(divideFilename[1]);
+
+            if (iPlay > 0)
+            {
+                itemPlay = mediaItems[--iPlay];
+            }
+            else
+            {
+                itemPlay = mediaItems[mediaItems.Count - 1];
+            }
+
+            getFilename = (string)itemPlay.Tag;
+            divideFilename = getFilename.Split('|');
+
+            player.URL = (string)divideFilename[0];
+            player.Ctlcontrols.play();
+
+
+            name_of_song.Text = itemPlay.lblTenBaiHat.Text;
+            lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
+
+            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
+            itemPlay.BackColor = Color.Gray;
+
+            try
+            {
+
+                //var f = TagLib.File.Create((string)item.Tag);
+                var f = TagLib.File.Create(divideFilename[0]);
+                var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
+                picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+
+            }
+            catch
+            {
+                picboxAvatar.Image = Properties.Resources.musical_note;
+            }
+
+            player.Tag = itemPlay;
         }
 
-        private void userControl11_Load(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }
