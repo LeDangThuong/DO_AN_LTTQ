@@ -46,7 +46,7 @@
             // 
             this.PanelSong.Location = new System.Drawing.Point(8, 28);
             this.PanelSong.Name = "PanelSong";
-            this.PanelSong.Size = new System.Drawing.Size(712, 292);
+            this.PanelSong.Size = new System.Drawing.Size(530, 215);
             this.PanelSong.TabIndex = 1;
             // 
             // MyMusic
@@ -56,7 +56,7 @@
             this.Controls.Add(this.PanelSong);
             this.Controls.Add(this.label1);
             this.Name = "MyMusic";
-            this.Size = new System.Drawing.Size(723, 323);
+            this.Size = new System.Drawing.Size(546, 250);
             this.ResumeLayout(false);
             this.PerformLayout();
 

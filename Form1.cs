@@ -103,7 +103,7 @@ namespace DO_AN_LTTQ
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 
                 item.Dock = DockStyle.Top;
-                My_Music.Controls.Add(item);
+                MusicPanel.Controls.Add(item);
                 mediaItems.Add(item);      
             }
         }
