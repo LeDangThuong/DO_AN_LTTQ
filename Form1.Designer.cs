@@ -40,9 +40,9 @@ namespace DO_AN_LTTQ
             this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.searching_textbox = new Sipaa.Framework.STextBox();
             this.bottom_panel = new System.Windows.Forms.Panel();
+            this.picboxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.volumn_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.metroSetTrackBar1 = new MetroSet_UI.Controls.MetroSetTrackBar();
             this.repeat_button = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -59,12 +59,12 @@ namespace DO_AN_LTTQ
             this.home_label = new System.Windows.Forms.Label();
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.picboxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,7 +78,7 @@ namespace DO_AN_LTTQ
             this.panel1.Controls.Add(this.searching_textbox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 636);
             this.panel1.TabIndex = 0;
@@ -97,7 +97,7 @@ namespace DO_AN_LTTQ
             this.guna2TileButton4.ImageOffset = new System.Drawing.Point(-3, 20);
             this.guna2TileButton4.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2TileButton4.Location = new System.Drawing.Point(17, 303);
-            this.guna2TileButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TileButton4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TileButton4.Name = "guna2TileButton4";
             this.guna2TileButton4.Size = new System.Drawing.Size(300, 49);
             this.guna2TileButton4.TabIndex = 14;
@@ -120,7 +120,7 @@ namespace DO_AN_LTTQ
             this.guna2TileButton3.ImageOffset = new System.Drawing.Point(-3, 20);
             this.guna2TileButton3.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2TileButton3.Location = new System.Drawing.Point(17, 246);
-            this.guna2TileButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TileButton3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TileButton3.Name = "guna2TileButton3";
             this.guna2TileButton3.Size = new System.Drawing.Size(300, 49);
             this.guna2TileButton3.TabIndex = 13;
@@ -143,7 +143,7 @@ namespace DO_AN_LTTQ
             this.guna2TileButton2.ImageOffset = new System.Drawing.Point(-3, 20);
             this.guna2TileButton2.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2TileButton2.Location = new System.Drawing.Point(17, 171);
-            this.guna2TileButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TileButton2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TileButton2.Name = "guna2TileButton2";
             this.guna2TileButton2.Size = new System.Drawing.Size(300, 49);
             this.guna2TileButton2.TabIndex = 12;
@@ -166,7 +166,7 @@ namespace DO_AN_LTTQ
             this.guna2TileButton1.ImageOffset = new System.Drawing.Point(0, 15);
             this.guna2TileButton1.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2TileButton1.Location = new System.Drawing.Point(17, 112);
-            this.guna2TileButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TileButton1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TileButton1.Name = "guna2TileButton1";
             this.guna2TileButton1.Size = new System.Drawing.Size(300, 49);
             this.guna2TileButton1.TabIndex = 11;
@@ -185,7 +185,7 @@ namespace DO_AN_LTTQ
             this.searching_button.ImageRotate = 0F;
             this.searching_button.ImageSize = new System.Drawing.Size(25, 25);
             this.searching_button.Location = new System.Drawing.Point(277, 21);
-            this.searching_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searching_button.Margin = new System.Windows.Forms.Padding(4);
             this.searching_button.Name = "searching_button";
             this.searching_button.PressedState.ImageSize = new System.Drawing.Size(28, 28);
             this.searching_button.Size = new System.Drawing.Size(35, 34);
@@ -201,7 +201,7 @@ namespace DO_AN_LTTQ
             this.searching_textbox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.searching_textbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.searching_textbox.Location = new System.Drawing.Point(17, 16);
-            this.searching_textbox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.searching_textbox.Margin = new System.Windows.Forms.Padding(5);
             this.searching_textbox.Multiline = false;
             this.searching_textbox.Name = "searching_textbox";
             this.searching_textbox.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
@@ -233,10 +233,21 @@ namespace DO_AN_LTTQ
             this.bottom_panel.Controls.Add(this.name_of_song);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bottom_panel.Location = new System.Drawing.Point(0, 636);
-            this.bottom_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bottom_panel.Margin = new System.Windows.Forms.Padding(4);
             this.bottom_panel.Name = "bottom_panel";
             this.bottom_panel.Size = new System.Drawing.Size(1700, 171);
             this.bottom_panel.TabIndex = 1;
+            // 
+            // picboxAvatar
+            // 
+            this.picboxAvatar.ImageRotate = 0F;
+            this.picboxAvatar.Location = new System.Drawing.Point(38, 20);
+            this.picboxAvatar.Name = "picboxAvatar";
+            this.picboxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picboxAvatar.Size = new System.Drawing.Size(145, 145);
+            this.picboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxAvatar.TabIndex = 14;
+            this.picboxAvatar.TabStop = false;
             // 
             // label2
             // 
@@ -260,17 +271,6 @@ namespace DO_AN_LTTQ
             this.label1.TabIndex = 12;
             this.label1.Text = "0:00";
             // 
-            // player
-            // 
-            this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(435, 3);
-            this.player.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.player.Name = "player";
-            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(333, 23);
-            this.player.TabIndex = 10;
-            this.player.Visible = false;
-            // 
             // volumn_button
             // 
             this.volumn_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
@@ -280,7 +280,7 @@ namespace DO_AN_LTTQ
             this.volumn_button.ImageRotate = 0F;
             this.volumn_button.ImageSize = new System.Drawing.Size(32, 32);
             this.volumn_button.Location = new System.Drawing.Point(1291, 76);
-            this.volumn_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.volumn_button.Margin = new System.Windows.Forms.Padding(4);
             this.volumn_button.Name = "volumn_button";
             this.volumn_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.volumn_button.Size = new System.Drawing.Size(85, 66);
@@ -299,7 +299,7 @@ namespace DO_AN_LTTQ
             this.metroSetTrackBar1.HandlerColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.metroSetTrackBar1.IsDerivedStyle = true;
             this.metroSetTrackBar1.Location = new System.Drawing.Point(1384, 100);
-            this.metroSetTrackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroSetTrackBar1.Margin = new System.Windows.Forms.Padding(4);
             this.metroSetTrackBar1.Maximum = 100;
             this.metroSetTrackBar1.Minimum = 0;
             this.metroSetTrackBar1.Name = "metroSetTrackBar1";
@@ -323,7 +323,7 @@ namespace DO_AN_LTTQ
             this.repeat_button.ImageRotate = 0F;
             this.repeat_button.ImageSize = new System.Drawing.Size(33, 33);
             this.repeat_button.Location = new System.Drawing.Point(1025, 76);
-            this.repeat_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.repeat_button.Margin = new System.Windows.Forms.Padding(4);
             this.repeat_button.Name = "repeat_button";
             this.repeat_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.repeat_button.Size = new System.Drawing.Size(85, 66);
@@ -341,7 +341,7 @@ namespace DO_AN_LTTQ
             this.shuffle_button.ImageRotate = 0F;
             this.shuffle_button.ImageSize = new System.Drawing.Size(32, 32);
             this.shuffle_button.Location = new System.Drawing.Point(501, 76);
-            this.shuffle_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.shuffle_button.Margin = new System.Windows.Forms.Padding(4);
             this.shuffle_button.Name = "shuffle_button";
             this.shuffle_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.shuffle_button.Size = new System.Drawing.Size(85, 66);
@@ -359,11 +359,12 @@ namespace DO_AN_LTTQ
             this.next_button.ImageRotate = 0F;
             this.next_button.ImageSize = new System.Drawing.Size(40, 40);
             this.next_button.Location = new System.Drawing.Point(887, 76);
-            this.next_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.next_button.Margin = new System.Windows.Forms.Padding(4);
             this.next_button.Name = "next_button";
             this.next_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.next_button.Size = new System.Drawing.Size(85, 66);
             this.next_button.TabIndex = 5;
+            this.next_button.Click += new System.EventHandler(this.next_button_Click);
             this.next_button.MouseEnter += new System.EventHandler(this.next_button_MouseEnter);
             this.next_button.MouseLeave += new System.EventHandler(this.next_button_MouseLeave);
             // 
@@ -376,7 +377,7 @@ namespace DO_AN_LTTQ
             this.rewind_button.ImageRotate = 0F;
             this.rewind_button.ImageSize = new System.Drawing.Size(40, 40);
             this.rewind_button.Location = new System.Drawing.Point(636, 76);
-            this.rewind_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rewind_button.Margin = new System.Windows.Forms.Padding(4);
             this.rewind_button.Name = "rewind_button";
             this.rewind_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.rewind_button.Size = new System.Drawing.Size(85, 66);
@@ -394,7 +395,7 @@ namespace DO_AN_LTTQ
             this.play_button.ImageRotate = 0F;
             this.play_button.ImageSize = new System.Drawing.Size(40, 40);
             this.play_button.Location = new System.Drawing.Point(760, 76);
-            this.play_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.play_button.Margin = new System.Windows.Forms.Padding(4);
             this.play_button.Name = "play_button";
             this.play_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.play_button.Size = new System.Drawing.Size(85, 66);
@@ -406,7 +407,7 @@ namespace DO_AN_LTTQ
             // guna2TrackBar1
             // 
             this.guna2TrackBar1.Location = new System.Drawing.Point(313, 20);
-            this.guna2TrackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TrackBar1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TrackBar1.Maximum = 300;
             this.guna2TrackBar1.Name = "guna2TrackBar1";
             this.guna2TrackBar1.Size = new System.Drawing.Size(1165, 28);
@@ -447,7 +448,7 @@ namespace DO_AN_LTTQ
             this.panel2.Controls.Add(this.flowPanelMedia);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(335, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1365, 636);
             this.panel2.TabIndex = 2;
@@ -481,7 +482,7 @@ namespace DO_AN_LTTQ
             "Open folder",
             "Open URL"});
             this.guna2ComboBox1.Location = new System.Drawing.Point(851, 21);
-            this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.Size = new System.Drawing.Size(185, 36);
             this.guna2ComboBox1.TabIndex = 1;
@@ -512,16 +513,16 @@ namespace DO_AN_LTTQ
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // picboxAvatar
+            // player
             // 
-            this.picboxAvatar.ImageRotate = 0F;
-            this.picboxAvatar.Location = new System.Drawing.Point(38, 20);
-            this.picboxAvatar.Name = "picboxAvatar";
-            this.picboxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picboxAvatar.Size = new System.Drawing.Size(145, 145);
-            this.picboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picboxAvatar.TabIndex = 14;
-            this.picboxAvatar.TabStop = false;
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(435, 3);
+            this.player.Margin = new System.Windows.Forms.Padding(4);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(333, 23);
+            this.player.TabIndex = 10;
+            this.player.Visible = false;
             // 
             // Form1
             // 
@@ -531,16 +532,16 @@ namespace DO_AN_LTTQ
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottom_panel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.bottom_panel.ResumeLayout(false);
             this.bottom_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
 
         }

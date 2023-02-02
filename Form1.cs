@@ -21,6 +21,13 @@ namespace DO_AN_LTTQ
     {
         List<MediaItem> mediaItems = new List<MediaItem>();
 
+        MediaItem itemPlay = new MediaItem();
+        MediaItem itemPlayed = new MediaItem();
+        int iPlay;
+        string getFilename = null;
+        string[] divideFilename = new string[2];
+
+
         public Form1()
         {
             
@@ -37,11 +44,12 @@ namespace DO_AN_LTTQ
         }
 
         string[] files;
-        string filename;
         private void btnTaiNhac_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Multiselect = true;
+
+           
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -52,22 +60,24 @@ namespace DO_AN_LTTQ
             string[] tenBaiHat;
             string[] tenTacGia;
 
+            int i = -1;
             foreach(string file in files)
             {
                 item = new MediaItem();
-                filename = Path.GetFileName(file);
+                getFilename = Path.GetFileName(file);
                 
 
-                tenBaiHat = filename.Split('-');
+                tenBaiHat = getFilename.Split('-');
                 item.lblTenBaiHat.Text = tenBaiHat[0];
 
                 tenTacGia = tenBaiHat[1].Split('.');
                 item.lblTacGia.Text = tenTacGia[0];
 
-                item.Tag = file;
-                item.picMediaItem.Tag = file;
-                item.lblTenBaiHat.Tag = file;
-                item.lblTacGia.Tag = file;
+                i++;
+                item.Tag = (string) file + "|" +i;
+                item.picMediaItem.Tag = (string)file + "|" + i;
+                item.lblTenBaiHat.Tag = (string)file + "|" + i;
+                item.lblTacGia.Tag = (string)file + "|" + i;
 
                 try
                 {
@@ -88,6 +98,7 @@ namespace DO_AN_LTTQ
                 item.Dock = DockStyle.Top;
                 flowPanelMedia.Controls.Add(item);
                 mediaItems.Add(item);
+         
             }
 
             
@@ -96,7 +107,11 @@ namespace DO_AN_LTTQ
         private void item_MediaItem_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
-            player.URL = (string)item.Tag;
+
+            string filename = (string)item.Tag;
+            string[] part;
+            part = filename.Split('|');
+            player.URL = part[0];
             player.Ctlcontrols.play();
 
             
@@ -119,7 +134,8 @@ namespace DO_AN_LTTQ
                 {
 
                 }
-                var f = TagLib.File.Create((string)item.Tag);
+                //var f = TagLib.File.Create((string)item.Tag);
+                var f = TagLib.File.Create(part[0]);
                 var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                 picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
  
@@ -248,10 +264,7 @@ namespace DO_AN_LTTQ
         // TUA NHANH ĐI 10s nhạc
         //
         int check_rewindbutton = 0;
-        private void rewind_button_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         //
         // THAY ĐỔI ICON SHUFFLE
@@ -332,51 +345,112 @@ namespace DO_AN_LTTQ
         {
             player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / guna2TrackBar1.Width;
         }
-        private int iOfListIndex;
-        private List<int> listIndex = new List<int>();
-        private int indexNow = -1;
-        private List<MediaItem> songsNowPlaying = new List<MediaItem>();
+       
+        
 
-        private void NextSong()
-        {
-            switch (shuffle_button.Tag as string)
-            {
-                case "On":
-                    if (iOfListIndex + 1 >= listIndex.Count)
-                    {
-                        indexNow = listIndex[0];
-                        iOfListIndex = 0;
-                    }
-                    else
-                    {
-                        indexNow = listIndex[++iOfListIndex];
-                    }
-                    break;
-                default:
-                    indexNow = (indexNow + 1 >= songsNowPlaying.Count) ? 0 : indexNow + 1;
-                    break;
-            }
-        }
-        private void PreviousSong()
-        {
-            switch (shuffle_button.Tag as string)
-            {
-                case "On":
-                    if (iOfListIndex - 1 < 0)
-                    {
-                        iOfListIndex = listIndex.Count - 1;
-                        indexNow = listIndex[iOfListIndex];
 
-                    }
-                    else
-                    {
-                        indexNow = listIndex[--iOfListIndex];
-                    }
-                    break;
-                default:
-                    indexNow = (indexNow - 1 < 0) ? songsNowPlaying.Count - 1 : indexNow - 1;
-                    break;
+        #region Tiến Nhạc
+        private void next_button_Click(object sender, EventArgs e)
+        {
+            itemPlayed = (MediaItem) player.Tag;
+
+            getFilename = (string)itemPlayed.Tag;
+
+            divideFilename = getFilename.Split('|');
+
+            iPlay = Int32.Parse(divideFilename[1]);
+
+            if (iPlay < mediaItems.Count - 1)
+            {
+                itemPlay = mediaItems[++iPlay];
             }
+            else
+            {
+                itemPlay = mediaItems[0];
+            }
+
+            getFilename = (string)itemPlay.Tag;
+            divideFilename = getFilename.Split('|');
+
+            player.URL = (string)divideFilename[0];
+            player.Ctlcontrols.play();
+
+
+            name_of_song.Text = itemPlay.lblTenBaiHat.Text;
+            lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
+
+            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
+            itemPlay.BackColor = Color.Gray;
+
+            try
+            {
+                
+                //var f = TagLib.File.Create((string)item.Tag);
+                var f = TagLib.File.Create(divideFilename[0]);
+                var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
+                picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+
+            }
+            catch
+            {
+                picboxAvatar.Image = Properties.Resources.musical_note;
+            }
+
+            player.Tag = itemPlay;
         }
+
+        #endregion
+
+        #region Lùi Nhạc
+        private void rewind_button_Click(object sender, EventArgs e)
+        {
+            itemPlayed = (MediaItem)player.Tag;
+
+            getFilename = (string)itemPlayed.Tag;
+
+            divideFilename = getFilename.Split('|');
+
+            iPlay = Int32.Parse(divideFilename[1]);
+
+            if (iPlay > 0)
+            {
+                itemPlay = mediaItems[--iPlay];
+            }
+            else
+            {
+                itemPlay = mediaItems[mediaItems.Count - 1];
+            }
+
+            getFilename = (string)itemPlay.Tag;
+            divideFilename = getFilename.Split('|');
+
+            player.URL = (string)divideFilename[0];
+            player.Ctlcontrols.play();
+
+
+            name_of_song.Text = itemPlay.lblTenBaiHat.Text;
+            lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
+
+            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
+            itemPlay.BackColor = Color.Gray;
+
+            try
+            {
+
+                //var f = TagLib.File.Create((string)item.Tag);
+                var f = TagLib.File.Create(divideFilename[0]);
+                var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
+                picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+
+            }
+            catch
+            {
+                picboxAvatar.Image = Properties.Resources.musical_note;
+            }
+
+            player.Tag = itemPlay;
+        }
+
+        #endregion
     }
 }
