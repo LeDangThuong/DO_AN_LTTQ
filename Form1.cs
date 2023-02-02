@@ -295,8 +295,28 @@ namespace DO_AN_LTTQ
         #region SETTING_BUTTON
         private void play_button_Click(object sender, EventArgs e)
         {
+            if (check_forplaybutton == 0)
+            {
+                play_button.Image = Properties.Resources.pause;
+                //
+                // CHẠY NHẠC 
+                //
+                player.Ctlcontrols.play();
+                check_forplaybutton = 1;
+                timer1.Enabled = true;
+            }
+            else if (check_forplaybutton == 1)
+            {
+                play_button.Image = Properties.Resources.play_rounded_button;
+                //
+                // DỪNG NHẠC
+                //
+                player.Ctlcontrols.pause();
+                //
+                check_forplaybutton = 0;
+                timer1.Enabled = false;
+            }
 
-            
         }
             //
             // TUA NHANH ĐI 10s nhạc
