@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelSong = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -42,18 +42,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Các bài hát được tải lên";
             // 
-            // panel1
+            // PanelSong
             // 
-            this.panel1.Location = new System.Drawing.Point(8, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(712, 292);
-            this.panel1.TabIndex = 1;
+            this.PanelSong.Location = new System.Drawing.Point(8, 28);
+            this.PanelSong.Name = "PanelSong";
+            this.PanelSong.Size = new System.Drawing.Size(712, 292);
+            this.PanelSong.TabIndex = 1;
             // 
             // MyMusic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PanelSong);
             this.Controls.Add(this.label1);
             this.Name = "MyMusic";
             this.Size = new System.Drawing.Size(723, 323);
@@ -65,6 +65,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelSong;
     }
 }

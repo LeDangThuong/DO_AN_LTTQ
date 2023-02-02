@@ -62,6 +62,7 @@ namespace DO_AN_LTTQ
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
+            this.MusicPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
@@ -441,6 +442,7 @@ namespace DO_AN_LTTQ
             // 
             this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.panel2.Controls.Add(this.MusicPanel);
             this.panel2.Controls.Add(this.btnAn);
             this.panel2.Controls.Add(this.btnTaiNhac);
             this.panel2.Controls.Add(this.guna2ComboBox1);
@@ -518,6 +520,13 @@ namespace DO_AN_LTTQ
             // 
             this.autoNextSongTimer.Tick += new System.EventHandler(this.autoNextSongTimer_Tick);
             // 
+            // MusicPanel
+            // 
+            this.MusicPanel.Location = new System.Drawing.Point(0, 75);
+            this.MusicPanel.Name = "MusicPanel";
+            this.MusicPanel.Size = new System.Drawing.Size(968, 442);
+            this.MusicPanel.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,6 +582,7 @@ namespace DO_AN_LTTQ
         private MyMusic My_Music;
         private System.Windows.Forms.Timer autoNextSongTimer;
         private System.Windows.Forms.Timer rotateTimer;
+        private System.Windows.Forms.Panel MusicPanel;
     }
 }
 
