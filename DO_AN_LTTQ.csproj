@@ -106,6 +106,12 @@
     <Compile Include="uAbout.Designer.cs">
       <DependentUpon>uAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="uAlbum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uAlbum.Designer.cs">
+      <DependentUpon>uAlbum.cs</DependentUpon>
+    </Compile>
     <Compile Include="uCaiDat.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uAbout.resx">
       <DependentUpon>uAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uAlbum.resx">
+      <DependentUpon>uAlbum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uCaiDat.resx">
       <DependentUpon>uCaiDat.cs</DependentUpon>
