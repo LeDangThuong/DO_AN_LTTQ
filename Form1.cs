@@ -48,10 +48,14 @@ namespace DO_AN_LTTQ
         private List<MediaItem> mediaItemsLove = new List<MediaItem>();
         private List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
         private List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
+
+        
         public Form1()
         {
             
             InitializeComponent();
+            
+            
         }
 
         #region SETTINGS_SONG
@@ -469,6 +473,18 @@ namespace DO_AN_LTTQ
         private void autoNextSongTimer_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void Open_button_Click(object sender, EventArgs e)
+        {
+            switch(guna2ComboBox1.SelectedText) 
+            {
+                case "Open file(s)":
+                    this.Hide();
+                    LocalFiles localfiles = new LocalFiles();
+                    localfiles.Show();
+                    break;
+            }
         }
 
 
