@@ -33,6 +33,9 @@ namespace DO_AN_LTTQ
         private List<MediaItem> songsNowPlaying = new List<MediaItem>();
 
 
+        List<MediaItem> mediaItemsLove = new List<MediaItem>();
+        List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
+        List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
         public Form1()
         {
             
@@ -448,6 +451,112 @@ namespace DO_AN_LTTQ
             player.URL = paths[track_list.SelectedIndex];
             player.Ctlcontrols.play();
         }
-        #endregion
+        // Tim kiem doi mau
+        private void searching_textbox_Enter(object sender, EventArgs e)
+        {
+            if (searching_textbox.Texts.ToString() == "Tìm kiếm")
+            {
+                searching_textbox.Texts = "";
+                searching_textbox.ForeColor = Color.Black;
+            }
+        }
+
+        private void searching_textbox_Leave(object sender, EventArgs e)
+        {
+            if (searching_textbox.Texts.ToString() == "")
+            {
+                searching_textbox.Texts = "Tìm kiếm";
+                searching_textbox.ForeColor = Color.Silver;
+            }
+        }
+        // Thu Vien Click
+        private void guna2TileButton2_Click(object sender, EventArgs e)
+        {
+            
+            
+            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
+            ThuVien_Button.FillColor =  Color.LightGray;
+            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
+            Album_Button.FillColor = System.Drawing.SystemColors.Control;
+            home_label.Text = "Thư viện";
+            flowPanelMedia.Controls.Clear();
+            searching_textbox.Texts = "Tìm kiếm";
+            searching_textbox.ForeColor = Color.Silver;
+        }
+        // Yeu Thich Click
+        private void guna2TileButton3_Click(object sender, EventArgs e)
+        {
+            
+            
+            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
+            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
+            YeuThich_Button.FillColor =  Color.LightGray;
+            Album_Button.FillColor = System.Drawing.SystemColors.Control;
+            home_label.Text = "Yêu thích";
+            flowPanelMedia.Controls.Clear();
+            searching_textbox.Texts = "Tìm kiếm";
+            searching_textbox.ForeColor = Color.Silver;
+        }
+        // Album Click
+        private void guna2TileButton4_Click(object sender, EventArgs e)
+        {
+            
+            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
+            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
+            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
+            Album_Button.FillColor = Color.LightGray;
+            home_label.Text = "Album";
+            //flowPanelMedia.Controls.Clear();
+            
+            //flowPanelMedia.Visible = false;
+            searching_textbox.Texts = "Tìm kiếm";
+            searching_textbox.ForeColor = Color.Silver;
+        }
+        // Trang Chu Click
+        private void guna2TileButton1_Click(object sender, EventArgs e)
+        {
+            
+            
+            TrangChu_Button.FillColor = Color.LightGray;
+            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
+            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
+            Album_Button.FillColor = System.Drawing.SystemColors.Control;
+            home_label.Text = "Trang Chủ";
+            flowPanelMedia.Controls.Clear();
+            foreach( MediaItem i in mediaItems)
+            {
+                flowPanelMedia.Controls.Add(i);
+            }
+            searching_textbox.Texts = "Tìm kiếm";
+            searching_textbox.ForeColor = Color.Silver;
+        }
+        // Su Kien Tim Kiem
+        private void searching_button_Click(object sender, EventArgs e)
+        {
+            home_label.Text = "Kết quả tìm kiếm";
+            flowPanelMedia.Controls.Clear();
+            foreach(MediaItem i in mediaItems)
+            {
+                if(string.Compare(i.lblTacGia.Text,searching_textbox.Texts) == 0)
+                {
+                    flowPanelMedia.Controls.Add(i);
+                }
+                else
+                {
+                    if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0)
+                        flowPanelMedia.Controls.Add(i);
+                }
+            }
+        }
+
+        private void flowPanelMedia_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void userControl11_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
