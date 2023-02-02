@@ -98,6 +98,7 @@
     <Compile Include="Album_Playlist.Designer.cs">
       <DependentUpon>Album_Playlist.cs</DependentUpon>
     </Compile>
+    <Compile Include="MediaPlayer.cs" />
     <Compile Include="PlaylistDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>

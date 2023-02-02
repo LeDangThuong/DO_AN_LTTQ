@@ -33,13 +33,25 @@ namespace DO_AN_LTTQ
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.track_list = new System.Windows.Forms.ListBox();
+            this.TrangChu_Button = new Guna.UI2.WinForms.Guna2TileButton();
+            this.Album_Button = new Guna.UI2.WinForms.Guna2TileButton();
+            this.YeuThich_Button = new Guna.UI2.WinForms.Guna2TileButton();
+            this.ThuVien_Button = new Guna.UI2.WinForms.Guna2TileButton();
+            this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.searching_textbox = new Sipaa.Framework.STextBox();
+            this.track_list = new System.Windows.Forms.ListBox();
             this.bottom_panel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.picboxAvatar = new System.Windows.Forms.PictureBox();
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
+            this.volumn_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.metroSetTrackBar1 = new MetroSet_UI.Controls.MetroSetTrackBar();
+            this.repeat_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.shuffle_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.next_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.rewind_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.play_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
@@ -50,26 +62,13 @@ namespace DO_AN_LTTQ
             this.home_label = new System.Windows.Forms.Label();
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.player = new AxWMPLib.AxWindowsMediaPlayer();
-            this.TrangChu_Button = new Guna.UI2.WinForms.Guna2TileButton();
-            this.Album_Button = new Guna.UI2.WinForms.Guna2TileButton();
-            this.YeuThich_Button = new Guna.UI2.WinForms.Guna2TileButton();
-            this.ThuVien_Button = new Guna.UI2.WinForms.Guna2TileButton();
-            this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.picboxAvatar = new System.Windows.Forms.PictureBox();
-            this.volumn_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.repeat_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.shuffle_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.next_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.rewind_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.play_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
+            this.rotateTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,20 +82,124 @@ namespace DO_AN_LTTQ
             this.panel1.Controls.Add(this.searching_textbox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(409, 636);
+            this.panel1.Size = new System.Drawing.Size(307, 517);
             this.panel1.TabIndex = 0;
             // 
-            // track_list
+            // TrangChu_Button
             // 
-            this.track_list.FormattingEnabled = true;
-            this.track_list.Location = new System.Drawing.Point(61, 319);
-            this.track_list.Name = "track_list";
-            this.track_list.Size = new System.Drawing.Size(121, 121);
-            this.track_list.TabIndex = 0;
-            this.track_list.SelectedIndexChanged += new System.EventHandler(this.track_list_SelectedIndexChanged);
-            this.track_list.Hide();
+            this.TrangChu_Button.BackColor = System.Drawing.Color.White;
+            this.TrangChu_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.TrangChu_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.TrangChu_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.TrangChu_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.TrangChu_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.TrangChu_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrangChu_Button.ForeColor = System.Drawing.Color.Black;
+            this.TrangChu_Button.Image = ((System.Drawing.Image)(resources.GetObject("TrangChu_Button.Image")));
+            this.TrangChu_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TrangChu_Button.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.TrangChu_Button.ImageSize = new System.Drawing.Size(30, 30);
+            this.TrangChu_Button.Location = new System.Drawing.Point(17, 112);
+            this.TrangChu_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TrangChu_Button.Name = "TrangChu_Button";
+            this.TrangChu_Button.Padding = new System.Windows.Forms.Padding(0, 0, 4, 4);
+            this.TrangChu_Button.Size = new System.Drawing.Size(226, 49);
+            this.TrangChu_Button.TabIndex = 11;
+            this.TrangChu_Button.Text = "Trang chủ";
+            this.TrangChu_Button.TextOffset = new System.Drawing.Point(0, -10);
+            this.TrangChu_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.TrangChu_Button.Click += new System.EventHandler(this.guna2TileButton1_Click);
+            // 
+            // Album_Button
+            // 
+            this.Album_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Album_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Album_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Album_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Album_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Album_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Album_Button.ForeColor = System.Drawing.Color.Black;
+            this.Album_Button.Image = ((System.Drawing.Image)(resources.GetObject("Album_Button.Image")));
+            this.Album_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Album_Button.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.Album_Button.ImageSize = new System.Drawing.Size(30, 30);
+            this.Album_Button.Location = new System.Drawing.Point(17, 287);
+            this.Album_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Album_Button.Name = "Album_Button";
+            this.Album_Button.Padding = new System.Windows.Forms.Padding(0, 0, 4, 4);
+            this.Album_Button.Size = new System.Drawing.Size(226, 49);
+            this.Album_Button.TabIndex = 14;
+            this.Album_Button.Text = "Album";
+            this.Album_Button.TextOffset = new System.Drawing.Point(0, -10);
+            this.Album_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.Album_Button.Click += new System.EventHandler(this.guna2TileButton4_Click);
+            // 
+            // YeuThich_Button
+            // 
+            this.YeuThich_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.YeuThich_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.YeuThich_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.YeuThich_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.YeuThich_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.YeuThich_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.YeuThich_Button.ForeColor = System.Drawing.Color.Black;
+            this.YeuThich_Button.Image = ((System.Drawing.Image)(resources.GetObject("YeuThich_Button.Image")));
+            this.YeuThich_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.YeuThich_Button.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.YeuThich_Button.ImageSize = new System.Drawing.Size(30, 30);
+            this.YeuThich_Button.Location = new System.Drawing.Point(17, 230);
+            this.YeuThich_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.YeuThich_Button.Name = "YeuThich_Button";
+            this.YeuThich_Button.Padding = new System.Windows.Forms.Padding(0, 0, 4, 4);
+            this.YeuThich_Button.Size = new System.Drawing.Size(226, 49);
+            this.YeuThich_Button.TabIndex = 13;
+            this.YeuThich_Button.Text = "Yêu thích";
+            this.YeuThich_Button.TextOffset = new System.Drawing.Point(0, -10);
+            this.YeuThich_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.YeuThich_Button.Click += new System.EventHandler(this.guna2TileButton3_Click);
+            // 
+            // ThuVien_Button
+            // 
+            this.ThuVien_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ThuVien_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ThuVien_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ThuVien_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
+            this.ThuVien_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.ThuVien_Button.ForeColor = System.Drawing.Color.Black;
+            this.ThuVien_Button.Image = ((System.Drawing.Image)(resources.GetObject("ThuVien_Button.Image")));
+            this.ThuVien_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ThuVien_Button.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.ThuVien_Button.ImageSize = new System.Drawing.Size(30, 30);
+            this.ThuVien_Button.Location = new System.Drawing.Point(17, 171);
+            this.ThuVien_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ThuVien_Button.Name = "ThuVien_Button";
+            this.ThuVien_Button.Padding = new System.Windows.Forms.Padding(0, 0, 4, 4);
+            this.ThuVien_Button.Size = new System.Drawing.Size(226, 49);
+            this.ThuVien_Button.TabIndex = 12;
+            this.ThuVien_Button.Text = "Thư viện";
+            this.ThuVien_Button.TextOffset = new System.Drawing.Point(0, -10);
+            this.ThuVien_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.ThuVien_Button.Click += new System.EventHandler(this.guna2TileButton2_Click);
+            // 
+            // searching_button
+            // 
+            this.searching_button.BackColor = System.Drawing.Color.White;
+            this.searching_button.CheckedState.ImageSize = new System.Drawing.Size(28, 28);
+            this.searching_button.HoverState.ImageSize = new System.Drawing.Size(28, 28);
+            this.searching_button.Image = ((System.Drawing.Image)(resources.GetObject("searching_button.Image")));
+            this.searching_button.ImageOffset = new System.Drawing.Point(0, 0);
+            this.searching_button.ImageRotate = 0F;
+            this.searching_button.ImageSize = new System.Drawing.Size(25, 25);
+            this.searching_button.Location = new System.Drawing.Point(260, 19);
+            this.searching_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searching_button.Name = "searching_button";
+            this.searching_button.PressedState.ImageSize = new System.Drawing.Size(28, 28);
+            this.searching_button.Size = new System.Drawing.Size(26, 28);
+            this.searching_button.TabIndex = 10;
+            this.searching_button.Click += new System.EventHandler(this.searching_button_Click);
             // 
             // searching_textbox
             // 
@@ -107,20 +210,29 @@ namespace DO_AN_LTTQ
             this.searching_textbox.BorderSize = 2;
             this.searching_textbox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.searching_textbox.ForeColor = System.Drawing.Color.Silver;
-            this.searching_textbox.Location = new System.Drawing.Point(23, 20);
-            this.searching_textbox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.searching_textbox.Location = new System.Drawing.Point(17, 16);
+            this.searching_textbox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.searching_textbox.Multiline = false;
             this.searching_textbox.Name = "searching_textbox";
-            this.searching_textbox.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.searching_textbox.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.searching_textbox.PasswordChar = false;
             this.searching_textbox.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.searching_textbox.PlaceholderText = "";
-            this.searching_textbox.Size = new System.Drawing.Size(372, 50);
+            this.searching_textbox.Size = new System.Drawing.Size(279, 36);
             this.searching_textbox.TabIndex = 35;
             this.searching_textbox.Texts = "Tìm kiếm";
             this.searching_textbox.UnderlinedStyle = false;
             this.searching_textbox.Enter += new System.EventHandler(this.searching_textbox_Enter);
             this.searching_textbox.Leave += new System.EventHandler(this.searching_textbox_Leave);
+            // 
+            // track_list
+            // 
+            this.track_list.FormattingEnabled = true;
+            this.track_list.Location = new System.Drawing.Point(61, 319);
+            this.track_list.Name = "track_list";
+            this.track_list.Size = new System.Drawing.Size(121, 121);
+            this.track_list.TabIndex = 0;
+            this.track_list.SelectedIndexChanged += new System.EventHandler(this.track_list_SelectedIndexChanged);
             // 
             // bottom_panel
             // 
@@ -140,20 +252,18 @@ namespace DO_AN_LTTQ
             this.bottom_panel.Controls.Add(this.lblTacGiaNhac);
             this.bottom_panel.Controls.Add(this.name_of_song);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottom_panel.Location = new System.Drawing.Point(0, 636);
-            this.bottom_panel.Margin = new System.Windows.Forms.Padding(4);
+            this.bottom_panel.Location = new System.Drawing.Point(0, 517);
             this.bottom_panel.Name = "bottom_panel";
-            this.bottom_panel.Size = new System.Drawing.Size(1700, 171);
+            this.bottom_panel.Size = new System.Drawing.Size(1275, 139);
             this.bottom_panel.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1507, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(1130, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 31);
+            this.label2.Size = new System.Drawing.Size(40, 21);
             this.label2.TabIndex = 13;
             this.label2.Text = "5:00";
             // 
@@ -161,10 +271,9 @@ namespace DO_AN_LTTQ
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(240, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(180, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 31);
+            this.label1.Size = new System.Drawing.Size(40, 21);
             this.label1.TabIndex = 12;
             this.label1.Text = "0:00";
             // 
@@ -213,12 +322,11 @@ namespace DO_AN_LTTQ
             this.metroSetTrackBar1.DisabledValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.metroSetTrackBar1.HandlerColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.metroSetTrackBar1.IsDerivedStyle = true;
-            this.metroSetTrackBar1.Location = new System.Drawing.Point(1384, 100);
-            this.metroSetTrackBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroSetTrackBar1.Location = new System.Drawing.Point(1038, 81);
             this.metroSetTrackBar1.Maximum = 100;
             this.metroSetTrackBar1.Minimum = 0;
             this.metroSetTrackBar1.Name = "metroSetTrackBar1";
-            this.metroSetTrackBar1.Size = new System.Drawing.Size(95, 16);
+            this.metroSetTrackBar1.Size = new System.Drawing.Size(71, 16);
             this.metroSetTrackBar1.Style = MetroSet_UI.Enums.Style.Light;
             this.metroSetTrackBar1.StyleManager = null;
             this.metroSetTrackBar1.TabIndex = 8;
@@ -315,11 +423,10 @@ namespace DO_AN_LTTQ
             // 
             // guna2TrackBar1
             // 
-            this.guna2TrackBar1.Location = new System.Drawing.Point(313, 20);
-            this.guna2TrackBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2TrackBar1.Location = new System.Drawing.Point(235, 16);
             this.guna2TrackBar1.Maximum = 500;
             this.guna2TrackBar1.Name = "guna2TrackBar1";
-            this.guna2TrackBar1.Size = new System.Drawing.Size(1165, 28);
+            this.guna2TrackBar1.Size = new System.Drawing.Size(874, 23);
             this.guna2TrackBar1.TabIndex = 2;
             this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.guna2TrackBar1.Value = 0;
@@ -330,10 +437,9 @@ namespace DO_AN_LTTQ
             // 
             this.lblTacGiaNhac.AutoSize = true;
             this.lblTacGiaNhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTacGiaNhac.Location = new System.Drawing.Point(217, 100);
-            this.lblTacGiaNhac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTacGiaNhac.Location = new System.Drawing.Point(163, 81);
             this.lblTacGiaNhac.Name = "lblTacGiaNhac";
-            this.lblTacGiaNhac.Size = new System.Drawing.Size(133, 29);
+            this.lblTacGiaNhac.Size = new System.Drawing.Size(88, 20);
             this.lblTacGiaNhac.TabIndex = 1;
             this.lblTacGiaNhac.Text = "Tên bài hát";
             // 
@@ -341,10 +447,9 @@ namespace DO_AN_LTTQ
             // 
             this.name_of_song.AutoSize = true;
             this.name_of_song.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_of_song.Location = new System.Drawing.Point(203, 66);
-            this.name_of_song.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.name_of_song.Location = new System.Drawing.Point(152, 54);
             this.name_of_song.Name = "name_of_song";
-            this.name_of_song.Size = new System.Drawing.Size(133, 29);
+            this.name_of_song.Size = new System.Drawing.Size(88, 20);
             this.name_of_song.TabIndex = 1;
             this.name_of_song.Text = "Tên bài hát";
             // 
@@ -358,10 +463,10 @@ namespace DO_AN_LTTQ
             this.panel2.Controls.Add(this.home_label);
             this.panel2.Controls.Add(this.flowPanelMedia);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(409, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5);
+            this.panel2.Location = new System.Drawing.Point(307, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1291, 636);
+            this.panel2.Size = new System.Drawing.Size(968, 517);
             this.panel2.TabIndex = 2;
             // 
             // btnAn
@@ -369,10 +474,10 @@ namespace DO_AN_LTTQ
             this.btnAn.BackColor = System.Drawing.Color.Gray;
             this.btnAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAn.Location = new System.Drawing.Point(420, 16);
-            this.btnAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAn.Location = new System.Drawing.Point(315, 13);
+            this.btnAn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAn.Name = "btnAn";
-            this.btnAn.Size = new System.Drawing.Size(179, 52);
+            this.btnAn.Size = new System.Drawing.Size(134, 42);
             this.btnAn.TabIndex = 3;
             this.btnAn.Text = "Ẩn/Hiện";
             this.btnAn.UseVisualStyleBackColor = false;
@@ -383,10 +488,10 @@ namespace DO_AN_LTTQ
             this.btnTaiNhac.BackColor = System.Drawing.Color.Gray;
             this.btnTaiNhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiNhac.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnTaiNhac.Location = new System.Drawing.Point(620, 16);
-            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTaiNhac.Location = new System.Drawing.Point(465, 13);
+            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTaiNhac.Name = "btnTaiNhac";
-            this.btnTaiNhac.Size = new System.Drawing.Size(179, 52);
+            this.btnTaiNhac.Size = new System.Drawing.Size(134, 42);
             this.btnTaiNhac.TabIndex = 3;
             this.btnTaiNhac.Text = "Tải Nhạc";
             this.btnTaiNhac.UseVisualStyleBackColor = false;
@@ -406,20 +511,18 @@ namespace DO_AN_LTTQ
             "Open file(s)",
             "Open folder",
             "Open URL"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(851, 21);
-            this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ComboBox1.Location = new System.Drawing.Point(638, 17);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(185, 36);
+            this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
             this.guna2ComboBox1.TabIndex = 1;
             // 
             // home_label
             // 
             this.home_label.AutoSize = true;
             this.home_label.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.home_label.Location = new System.Drawing.Point(21, 16);
-            this.home_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.home_label.Location = new System.Drawing.Point(16, 13);
             this.home_label.Name = "home_label";
-            this.home_label.Size = new System.Drawing.Size(233, 61);
+            this.home_label.Size = new System.Drawing.Size(169, 45);
             this.home_label.TabIndex = 0;
             this.home_label.Text = "Trang Chủ";
             // 
@@ -427,11 +530,11 @@ namespace DO_AN_LTTQ
             // 
             this.flowPanelMedia.AutoScroll = true;
             this.flowPanelMedia.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowPanelMedia.Location = new System.Drawing.Point(0, 139);
-            this.flowPanelMedia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowPanelMedia.Location = new System.Drawing.Point(0, 113);
+            this.flowPanelMedia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Padding = new System.Windows.Forms.Padding(5, 9, 0, 0);
-            this.flowPanelMedia.Size = new System.Drawing.Size(1291, 497);
+            this.flowPanelMedia.Padding = new System.Windows.Forms.Padding(4, 7, 0, 0);
+            this.flowPanelMedia.Size = new System.Drawing.Size(968, 404);
             this.flowPanelMedia.TabIndex = 2;
             this.flowPanelMedia.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanelMedia_Paint);
             // 
@@ -440,258 +543,15 @@ namespace DO_AN_LTTQ
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // player
-            // 
-            this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(435, 3);
-            this.player.Margin = new System.Windows.Forms.Padding(4);
-            this.player.Name = "player";
-            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(333, 23);
-            this.player.TabIndex = 10;
-            this.player.Visible = false;
-            // 
-            // TrangChu_Button
-            // 
-            this.TrangChu_Button.BackColor = System.Drawing.Color.White;
-            this.TrangChu_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.TrangChu_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.TrangChu_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.TrangChu_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.TrangChu_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.TrangChu_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TrangChu_Button.ForeColor = System.Drawing.Color.Black;
-            this.TrangChu_Button.Image = ((System.Drawing.Image)(resources.GetObject("TrangChu_Button.Image")));
-            this.TrangChu_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TrangChu_Button.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.TrangChu_Button.ImageSize = new System.Drawing.Size(30, 30);
-            this.TrangChu_Button.Location = new System.Drawing.Point(23, 138);
-            this.TrangChu_Button.Margin = new System.Windows.Forms.Padding(5);
-            this.TrangChu_Button.Name = "TrangChu_Button";
-            this.TrangChu_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.TrangChu_Button.Size = new System.Drawing.Size(302, 60);
-            this.TrangChu_Button.TabIndex = 11;
-            this.TrangChu_Button.Text = "Trang chủ";
-            this.TrangChu_Button.TextOffset = new System.Drawing.Point(0, -10);
-            this.TrangChu_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.TrangChu_Button.Click += new System.EventHandler(this.guna2TileButton1_Click);
-            // 
-            // Album_Button
-            // 
-            this.Album_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Album_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Album_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Album_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Album_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.Album_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Album_Button.ForeColor = System.Drawing.Color.Black;
-            this.Album_Button.Image = ((System.Drawing.Image)(resources.GetObject("Album_Button.Image")));
-            this.Album_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Album_Button.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.Album_Button.ImageSize = new System.Drawing.Size(30, 30);
-            this.Album_Button.Location = new System.Drawing.Point(23, 353);
-            this.Album_Button.Margin = new System.Windows.Forms.Padding(5);
-            this.Album_Button.Name = "Album_Button";
-            this.Album_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.Album_Button.Size = new System.Drawing.Size(302, 60);
-            this.Album_Button.TabIndex = 14;
-            this.Album_Button.Text = "Album";
-            this.Album_Button.TextOffset = new System.Drawing.Point(0, -10);
-            this.Album_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.Album_Button.Click += new System.EventHandler(this.guna2TileButton4_Click);
-            // 
-            // YeuThich_Button
-            // 
-            this.YeuThich_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.YeuThich_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.YeuThich_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.YeuThich_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.YeuThich_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.YeuThich_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.YeuThich_Button.ForeColor = System.Drawing.Color.Black;
-            this.YeuThich_Button.Image = ((System.Drawing.Image)(resources.GetObject("YeuThich_Button.Image")));
-            this.YeuThich_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.YeuThich_Button.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.YeuThich_Button.ImageSize = new System.Drawing.Size(30, 30);
-            this.YeuThich_Button.Location = new System.Drawing.Point(23, 283);
-            this.YeuThich_Button.Margin = new System.Windows.Forms.Padding(5);
-            this.YeuThich_Button.Name = "YeuThich_Button";
-            this.YeuThich_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.YeuThich_Button.Size = new System.Drawing.Size(302, 60);
-            this.YeuThich_Button.TabIndex = 13;
-            this.YeuThich_Button.Text = "Yêu thích";
-            this.YeuThich_Button.TextOffset = new System.Drawing.Point(0, -10);
-            this.YeuThich_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.YeuThich_Button.Click += new System.EventHandler(this.guna2TileButton3_Click);
-            // 
-            // ThuVien_Button
-            // 
-            this.ThuVien_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ThuVien_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ThuVien_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ThuVien_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
-            this.ThuVien_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.ThuVien_Button.ForeColor = System.Drawing.Color.Black;
-            this.ThuVien_Button.Image = ((System.Drawing.Image)(resources.GetObject("ThuVien_Button.Image")));
-            this.ThuVien_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.ThuVien_Button.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.ThuVien_Button.ImageSize = new System.Drawing.Size(30, 30);
-            this.ThuVien_Button.Location = new System.Drawing.Point(23, 210);
-            this.ThuVien_Button.Margin = new System.Windows.Forms.Padding(5);
-            this.ThuVien_Button.Name = "ThuVien_Button";
-            this.ThuVien_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.ThuVien_Button.Size = new System.Drawing.Size(302, 60);
-            this.ThuVien_Button.TabIndex = 12;
-            this.ThuVien_Button.Text = "Thư viện";
-            this.ThuVien_Button.TextOffset = new System.Drawing.Point(0, -10);
-            this.ThuVien_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.ThuVien_Button.Click += new System.EventHandler(this.guna2TileButton2_Click);
-            // 
-            // searching_button
-            // 
-            this.searching_button.BackColor = System.Drawing.Color.White;
-            this.searching_button.CheckedState.ImageSize = new System.Drawing.Size(28, 28);
-            this.searching_button.HoverState.ImageSize = new System.Drawing.Size(28, 28);
-            this.searching_button.Image = ((System.Drawing.Image)(resources.GetObject("searching_button.Image")));
-            this.searching_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.searching_button.ImageRotate = 0F;
-            this.searching_button.ImageSize = new System.Drawing.Size(25, 25);
-            this.searching_button.Location = new System.Drawing.Point(347, 23);
-            this.searching_button.Margin = new System.Windows.Forms.Padding(5);
-            this.searching_button.Name = "searching_button";
-            this.searching_button.PressedState.ImageSize = new System.Drawing.Size(28, 28);
-            this.searching_button.Size = new System.Drawing.Size(35, 34);
-            this.searching_button.TabIndex = 10;
-            this.searching_button.Click += new System.EventHandler(this.searching_button_Click);
-            // 
-            // picboxAvatar
-            // 
-            this.picboxAvatar.Location = new System.Drawing.Point(36, 44);
-            this.picboxAvatar.Margin = new System.Windows.Forms.Padding(4);
-            this.picboxAvatar.Name = "picboxAvatar";
-            this.picboxAvatar.Size = new System.Drawing.Size(123, 114);
-            this.picboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picboxAvatar.TabIndex = 11;
-            this.picboxAvatar.TabStop = false;
-            // 
-            // volumn_button
-            // 
-            this.volumn_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.volumn_button.HoverState.ImageSize = new System.Drawing.Size(40, 40);
-            this.volumn_button.Image = ((System.Drawing.Image)(resources.GetObject("volumn_button.Image")));
-            this.volumn_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.volumn_button.ImageRotate = 0F;
-            this.volumn_button.ImageSize = new System.Drawing.Size(32, 32);
-            this.volumn_button.Location = new System.Drawing.Point(1291, 76);
-            this.volumn_button.Margin = new System.Windows.Forms.Padding(4);
-            this.volumn_button.Name = "volumn_button";
-            this.volumn_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.volumn_button.Size = new System.Drawing.Size(85, 66);
-            this.volumn_button.TabIndex = 9;
-            this.volumn_button.MouseEnter += new System.EventHandler(this.volumn_button_MouseEnter);
-            this.volumn_button.MouseLeave += new System.EventHandler(this.volumn_button_MouseLeave);
-            // 
-            // repeat_button
-            // 
-            this.repeat_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.repeat_button.HoverState.ImageSize = new System.Drawing.Size(40, 40);
-            this.repeat_button.Image = ((System.Drawing.Image)(resources.GetObject("repeat_button.Image")));
-            this.repeat_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.repeat_button.ImageRotate = 0F;
-            this.repeat_button.ImageSize = new System.Drawing.Size(33, 33);
-            this.repeat_button.Location = new System.Drawing.Point(1025, 76);
-            this.repeat_button.Margin = new System.Windows.Forms.Padding(4);
-            this.repeat_button.Name = "repeat_button";
-            this.repeat_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.repeat_button.Size = new System.Drawing.Size(85, 66);
-            this.repeat_button.TabIndex = 7;
-            this.repeat_button.Click += new System.EventHandler(this.repeat_button_Click);
-            this.repeat_button.MouseEnter += new System.EventHandler(this.repeat_button_MouseEnter);
-            this.repeat_button.MouseLeave += new System.EventHandler(this.repeat_button_MouseLeave);
-            // 
-            // shuffle_button
-            // 
-            this.shuffle_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.shuffle_button.HoverState.ImageSize = new System.Drawing.Size(40, 40);
-            this.shuffle_button.Image = ((System.Drawing.Image)(resources.GetObject("shuffle_button.Image")));
-            this.shuffle_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.shuffle_button.ImageRotate = 0F;
-            this.shuffle_button.ImageSize = new System.Drawing.Size(32, 32);
-            this.shuffle_button.Location = new System.Drawing.Point(501, 76);
-            this.shuffle_button.Margin = new System.Windows.Forms.Padding(4);
-            this.shuffle_button.Name = "shuffle_button";
-            this.shuffle_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.shuffle_button.Size = new System.Drawing.Size(85, 66);
-            this.shuffle_button.TabIndex = 6;
-            this.shuffle_button.Click += new System.EventHandler(this.shuffle_button_Click);
-            this.shuffle_button.MouseEnter += new System.EventHandler(this.shuffle_button_MouseEnter);
-            this.shuffle_button.MouseLeave += new System.EventHandler(this.shuffle_button_MouseLeave);
-            // 
-            // next_button
-            // 
-            this.next_button.CheckedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.next_button.HoverState.ImageSize = new System.Drawing.Size(48, 48);
-            this.next_button.Image = ((System.Drawing.Image)(resources.GetObject("next_button.Image")));
-            this.next_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.next_button.ImageRotate = 0F;
-            this.next_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.next_button.Location = new System.Drawing.Point(887, 76);
-            this.next_button.Margin = new System.Windows.Forms.Padding(4);
-            this.next_button.Name = "next_button";
-            this.next_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.next_button.Size = new System.Drawing.Size(85, 66);
-            this.next_button.TabIndex = 5;
-            this.next_button.MouseEnter += new System.EventHandler(this.next_button_MouseEnter);
-            this.next_button.MouseLeave += new System.EventHandler(this.next_button_MouseLeave);
-            // 
-            // rewind_button
-            // 
-            this.rewind_button.CheckedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.rewind_button.HoverState.ImageSize = new System.Drawing.Size(48, 48);
-            this.rewind_button.Image = ((System.Drawing.Image)(resources.GetObject("rewind_button.Image")));
-            this.rewind_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.rewind_button.ImageRotate = 0F;
-            this.rewind_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.rewind_button.Location = new System.Drawing.Point(636, 76);
-            this.rewind_button.Margin = new System.Windows.Forms.Padding(4);
-            this.rewind_button.Name = "rewind_button";
-            this.rewind_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.rewind_button.Size = new System.Drawing.Size(85, 66);
-            this.rewind_button.TabIndex = 4;
-            this.rewind_button.Click += new System.EventHandler(this.rewind_button_Click);
-            this.rewind_button.MouseEnter += new System.EventHandler(this.Rewind_MouseEnter);
-            this.rewind_button.MouseLeave += new System.EventHandler(this.Rewind_MouseLeave);
-            // 
-            // play_button
-            // 
-            this.play_button.CheckedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.play_button.HoverState.ImageSize = new System.Drawing.Size(48, 48);
-            this.play_button.Image = ((System.Drawing.Image)(resources.GetObject("play_button.Image")));
-            this.play_button.ImageOffset = new System.Drawing.Point(0, 0);
-            this.play_button.ImageRotate = 0F;
-            this.play_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.play_button.Location = new System.Drawing.Point(760, 76);
-            this.play_button.Margin = new System.Windows.Forms.Padding(4);
-            this.play_button.Name = "play_button";
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).EndInit();
-            this.play_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
-            this.play_button.Size = new System.Drawing.Size(85, 66);
-            this.play_button.TabIndex = 3;
-            this.play_button.Click += new System.EventHandler(this.play_button_Click);
-            this.play_button.MouseEnter += new System.EventHandler(this.play_button_MouseEnter);
-            this.play_button.MouseLeave += new System.EventHandler(this.play_button_MouseLeave);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1700, 807);
+            this.ClientSize = new System.Drawing.Size(1275, 656);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottom_panel);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -737,6 +597,8 @@ namespace DO_AN_LTTQ
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ListBox track_list;
+        private System.Windows.Forms.Timer autoNextSongTimer;
+        private System.Windows.Forms.Timer rotateTimer;
     }
 }
 

@@ -17,6 +17,7 @@ using AxWMPLib;
 using System.Media;
 using WMPLib;
 using System.Runtime.CompilerServices;
+using System.Windows.Media;
 
 namespace DO_AN_LTTQ
 {
@@ -32,18 +33,18 @@ namespace DO_AN_LTTQ
         private int indexNow = -1;
         private List<MediaItem> songsNowPlaying = new List<MediaItem>();
 
+        private MediaItem SongNow = null;
+        private MediaItem SongPlaying = null;
+        private MediaItem PreSong = null;
 
-        List<MediaItem> mediaItemsLove = new List<MediaItem>();
-        List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
-        List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
+        private List<MediaItem> mediaItemsLove = new List<MediaItem>();
+        private List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
+        private List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
         public Form1()
         {
             
             InitializeComponent();
         }
-        
-
-        
 
         #region SETTINGS_SONG
         private void btnTaiNhac_Click(object sender, EventArgs e)
@@ -146,7 +147,7 @@ namespace DO_AN_LTTQ
             if (itemOld != null)
                 itemOld.BackColor = System.Drawing.SystemColors.ControlLight;
 
-            item.BackColor = Color.Gray;
+            item.BackColor = System.Drawing.Color.Gray;
 
             player.Tag = item;
         }
@@ -165,61 +166,61 @@ namespace DO_AN_LTTQ
         #region SETTING_COLORBACK
         private void next_button_MouseEnter(object sender, EventArgs e)
         {
-            next_button.BackColor = Color.FromArgb(240, 240, 240);
+            next_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void next_button_MouseLeave(object sender, EventArgs e)
         {
-            next_button.BackColor = Color.FromArgb(249, 249, 249);
+            next_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
         }
 
         private void play_button_MouseEnter(object sender, EventArgs e)
         {
-            play_button.BackColor = Color.FromArgb(240, 240, 240);
+            play_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void play_button_MouseLeave(object sender, EventArgs e)
         {
-            play_button.BackColor = Color.FromArgb(249, 249, 249);
+            play_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
         }
 
         private void shuffle_button_MouseEnter(object sender, EventArgs e)
         {
-            shuffle_button.BackColor = Color.FromArgb(240, 240, 240);
+            shuffle_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void shuffle_button_MouseLeave(object sender, EventArgs e)
         {
-            shuffle_button.BackColor = Color.FromArgb(249, 249, 249);
+            shuffle_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
         }
 
         private void repeat_button_MouseEnter(object sender, EventArgs e)
         {
-            repeat_button.BackColor = Color.FromArgb(240, 240, 240);
+            repeat_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void repeat_button_MouseLeave(object sender, EventArgs e)
         {
-            repeat_button.BackColor = Color.FromArgb(249, 249, 249);
+            repeat_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
         }
 
         private void volumn_button_MouseEnter(object sender, EventArgs e)
         {
-            volumn_button.BackColor = Color.FromArgb(240, 240, 240);
+            volumn_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void volumn_button_MouseLeave(object sender, EventArgs e)
         {
-            volumn_button.BackColor = Color.FromArgb(249, 249, 249);
+            volumn_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
         }
         private void Rewind_MouseEnter(object sender, EventArgs e)
         {
-            rewind_button.BackColor = Color.FromArgb(240, 240, 240);
+            rewind_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void Rewind_MouseLeave(object sender, EventArgs e)
         {
-            rewind_button.BackColor = Color.FromArgb(249, 249, 249);
+            rewind_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
         }
         #endregion
 
@@ -251,7 +252,7 @@ namespace DO_AN_LTTQ
         }
         private void NextSong()
         {
-            switch (shuffle_button.Tag as string)
+            switch (next_button.Tag as string)
             {
                 case "On":
                     if (iOfListIndex + 1 >= listIndex.Count)
@@ -271,7 +272,7 @@ namespace DO_AN_LTTQ
         }
         private void PreviousSong()
         {
-            switch (shuffle_button.Tag as string)
+            switch (rewind_button.Tag as string)
             {
                 case "On":
                     if (iOfListIndex - 1 < 0)
@@ -299,38 +300,43 @@ namespace DO_AN_LTTQ
         #region SETTING_BUTTON
         private void play_button_Click(object sender, EventArgs e)
         {
-            
-            if (check_forplaybutton == 0)
+
+            if (indexNow == -1) return;
+            if (play_button.Image == Properties.Resources.pause)
             {
+                play_button.Image = Properties.Resources.play1;
+
+
+                MediaPlayer.Instance.Pause();
+                timer1.Stop();
+                autoNextSongTimer.Stop();
+                rotateTimer.Stop();
+            }
+            else
+            {
+                if (MediaPlayer.Instance.GetPlayState() == "wmppsPaused")
+                {
+                    MediaPlayer.Instance.Play();
+                }
+                else
+                {
+                    SongNow = songsNowPlaying[indexNow];
+                  
+                    MediaPlayer.Instance.Play(SongNow.Path);
+                }
                 play_button.Image = Properties.Resources.pause;
-                //
-                // CHẠY NHẠC 
-                //
-                player.Ctlcontrols.play();
-                check_forplaybutton = 1;
-                timer1.Enabled = true;
-            }    
-            else if(check_forplaybutton == 1)
-            {
-                play_button.Image = Properties.Resources.play_rounded_button;
-                //
-                // DỪNG NHẠC
-                //
-                player.Ctlcontrols.pause();
-                //
-                check_forplaybutton = 0;
-                timer1.Enabled = false;
-            } 
+
+                timer1.Start();
+                autoNextSongTimer.Start();
+                //rotateTimer.Start();
+            }
         }
-        //
-        // TUA NHANH ĐI 10s nhạc
-        //
-        int check_rewindbutton = 0;
-
-
-        //
-        // LÙI NHẠC LẠI 1 bài
-        //
+            //
+            // TUA NHANH ĐI 10s nhạc
+            //
+            //
+            // LÙI NHẠC LẠI 1 bài
+            //
         private void rewind_button_Click(object sender, EventArgs e)
         {
             if(track_list.SelectedIndex>0)
@@ -451,13 +457,14 @@ namespace DO_AN_LTTQ
             player.URL = paths[track_list.SelectedIndex];
             player.Ctlcontrols.play();
         }
+        #endregion
         // Tim kiem doi mau
         private void searching_textbox_Enter(object sender, EventArgs e)
         {
             if (searching_textbox.Texts.ToString() == "Tìm kiếm")
             {
                 searching_textbox.Texts = "";
-                searching_textbox.ForeColor = Color.Black;
+                searching_textbox.ForeColor = System.Drawing.Color.Black;
             }
         }
 
@@ -466,7 +473,7 @@ namespace DO_AN_LTTQ
             if (searching_textbox.Texts.ToString() == "")
             {
                 searching_textbox.Texts = "Tìm kiếm";
-                searching_textbox.ForeColor = Color.Silver;
+                searching_textbox.ForeColor = System.Drawing.Color.Silver;
             }
         }
         // Thu Vien Click
@@ -475,13 +482,13 @@ namespace DO_AN_LTTQ
             
             
             TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
-            ThuVien_Button.FillColor =  Color.LightGray;
+            ThuVien_Button.FillColor =  System.Drawing.Color.LightGray;
             YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
             Album_Button.FillColor = System.Drawing.SystemColors.Control;
             home_label.Text = "Thư viện";
             flowPanelMedia.Controls.Clear();
             searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
+            searching_textbox.ForeColor = System.Drawing.Color.Silver;
         }
         // Yeu Thich Click
         private void guna2TileButton3_Click(object sender, EventArgs e)
@@ -490,12 +497,12 @@ namespace DO_AN_LTTQ
             
             TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
             ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
-            YeuThich_Button.FillColor =  Color.LightGray;
+            YeuThich_Button.FillColor =  System.Drawing.Color.LightGray;
             Album_Button.FillColor = System.Drawing.SystemColors.Control;
             home_label.Text = "Yêu thích";
             flowPanelMedia.Controls.Clear();
             searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
+            searching_textbox.ForeColor = System.Drawing.Color.Silver;
         }
         // Album Click
         private void guna2TileButton4_Click(object sender, EventArgs e)
@@ -504,20 +511,19 @@ namespace DO_AN_LTTQ
             TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
             ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
             YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
-            Album_Button.FillColor = Color.LightGray;
+            Album_Button.FillColor = System.Drawing.Color.LightGray;
             home_label.Text = "Album";
             //flowPanelMedia.Controls.Clear();
             
             //flowPanelMedia.Visible = false;
             searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
+            searching_textbox.ForeColor = System.Drawing.Color.Silver;
         }
         // Trang Chu Click
         private void guna2TileButton1_Click(object sender, EventArgs e)
         {
-            
-            
-            TrangChu_Button.FillColor = Color.LightGray;
+    
+            TrangChu_Button.FillColor = System.Drawing.Color.LightGray;
             ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
             YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
             Album_Button.FillColor = System.Drawing.SystemColors.Control;
@@ -528,7 +534,7 @@ namespace DO_AN_LTTQ
                 flowPanelMedia.Controls.Add(i);
             }
             searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
+            searching_textbox.ForeColor = System.Drawing.Color.Silver;
         }
         // Su Kien Tim Kiem
         private void searching_button_Click(object sender, EventArgs e)
