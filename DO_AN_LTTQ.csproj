@@ -100,6 +100,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uAbout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uAbout.Designer.cs">
+      <DependentUpon>uAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uCaiDat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uCaiDat.Designer.cs">
+      <DependentUpon>uCaiDat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uMyMusic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uMyMusic.Designer.cs">
+      <DependentUpon>uMyMusic.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -111,6 +129,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uAbout.resx">
+      <DependentUpon>uAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uCaiDat.resx">
+      <DependentUpon>uCaiDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uMyMusic.resx">
+      <DependentUpon>uMyMusic.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -164,7 +191,11 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\moonlight.png" />
+    <None Include="Resources\crescent-moon.png" />
     <Content Include="Resources\pause.png" />
+    <None Include="Resources\question.png" />
+    <None Include="Resources\setting.png" />
     <None Include="Resources\repeat1.png" />
     <None Include="Resources\repeat_infinity1.png" />
     <None Include="Resources\repeat-once1.png" />

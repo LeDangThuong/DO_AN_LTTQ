@@ -15,6 +15,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Controls;
 using AxWMPLib;
 using System.Web.UI;
+using Guna.UI2.WinForms;
+using Krypton.Toolkit;
 
 namespace DO_AN_LTTQ
 {
@@ -89,7 +91,8 @@ namespace DO_AN_LTTQ
                 item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 item.Dock = DockStyle.Top;
-                flowPanelMedia.Controls.Add(item);
+                uMyMusic.Controls.Add(item);
+                uMyMusic.BringToFront();
                 mediaItems.Add(item);
             }
 
@@ -343,90 +346,126 @@ namespace DO_AN_LTTQ
         private void guna2TileButton2_Click(object sender, EventArgs e)
         {
             
-            
-            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
-            ThuVien_Button.FillColor =  Color.LightGray;
-            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
-            Album_Button.FillColor = System.Drawing.SystemColors.Control;
             home_label.Text = "Thư viện";
-            flowPanelMedia.Controls.Clear();
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
+            //flowPanelMedia.Controls.Clear();
+            SetSearch();
+            ChangeNormalColorOnPanelLeft(sender);
         }
         // Yeu Thich Click
         private void guna2TileButton3_Click(object sender, EventArgs e)
         {
             
-            
-            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
-            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
-            YeuThich_Button.FillColor =  Color.LightGray;
-            Album_Button.FillColor = System.Drawing.SystemColors.Control;
             home_label.Text = "Yêu thích";
-            flowPanelMedia.Controls.Clear();
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
+            //flowPanelMedia.Controls.Clear();
+            SetSearch();
+            ChangeNormalColorOnPanelLeft(sender);
         }
         // Album Click
         private void guna2TileButton4_Click(object sender, EventArgs e)
         {
             
-            TrangChu_Button.FillColor = System.Drawing.SystemColors.Control; ;
-            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
-            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
-            Album_Button.FillColor = Color.LightGray;
             home_label.Text = "Album";
-            //flowPanelMedia.Controls.Clear();
-            
+            uMyMusic.Controls.Clear();
+
+
             //flowPanelMedia.Visible = false;
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
+            SetSearch();
+            ChangeNormalColorOnPanelLeft(sender);
         }
         // Trang Chu Click
         private void guna2TileButton1_Click(object sender, EventArgs e)
         {
             
-            
-            TrangChu_Button.FillColor = Color.LightGray;
-            ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
-            YeuThich_Button.FillColor = System.Drawing.SystemColors.Control;
-            Album_Button.FillColor = System.Drawing.SystemColors.Control;
-            home_label.Text = "Trang Chủ";
-            flowPanelMedia.Controls.Clear();
+            home_label.Text = TrangChu_Button.Text;
+            uMyMusic.Controls.Clear();
             foreach( MediaItem i in mediaItems)
             {
-                flowPanelMedia.Controls.Add(i);
+                uMyMusic.Controls.Add(i);
             }
-            searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
+            uMyMusic.BringToFront();
+            SetSearch();
+            ChangeNormalColorOnPanelLeft(sender);
         }
         // Su Kien Tim Kiem
         private void searching_button_Click(object sender, EventArgs e)
         {
             home_label.Text = "Kết quả tìm kiếm";
-            flowPanelMedia.Controls.Clear();
+            uMyMusic.Controls.Clear();
             foreach(MediaItem i in mediaItems)
             {
                 if(string.Compare(i.lblTacGia.Text,searching_textbox.Texts) == 0)
                 {
-                    flowPanelMedia.Controls.Add(i);
+                    uMyMusic.Controls.Add(i);
                 }
                 else
                 {
                     if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0)
-                        flowPanelMedia.Controls.Add(i);
+                        uMyMusic.Controls.Add(i);
                 }
             }
         }
-
-        private void flowPanelMedia_Paint(object sender, PaintEventArgs e)
+        //Mau Button
+        Color ColorButton = new Color();
+        
+        
+        private void CaiDat_Button_Click(object sender, EventArgs e)
         {
+            home_label.Text = CaiDat_Button.Text;
+            ChangeNormalColorOnPanelLeft(sender);
+            SetSearch();
+        }
+        public void ChangeNormalColorOnPanelLeft(object sender)
+        {
+            Guna2TileButton btn = sender as Guna2TileButton;
+            btn.FillColor = ColorButton;
+            foreach (Guna2TileButton item in panel3.Controls)
+            {
+                if (item.Name != btn.Name && item.FillColor != Color.Gainsboro)
+                {
+                    Guna2TileButton btn1 = item as Guna2TileButton;
+                    btn1.FillColor = Color.Gainsboro;
+                }
+            }
+        }
+        private void SetSearch()
+        {
+            searching_textbox.Texts = "Tìm kiếm";
+            searching_textbox.ForeColor = Color.Silver;
+        }
+        private void About_Button_Click(object sender, EventArgs e)
+        {
+            home_label.Text = About_Button.Text;
 
+            uAbout.BringToFront();
+            ChangeNormalColorOnPanelLeft(sender);
         }
 
-        private void userControl11_Load(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
+            if(panel1.BackColor == System.Drawing.SystemColors.Control)
+            {
+                panel1.BackColor = Color.DimGray;
+                bottom_panel.BackColor = Color.DimGray;
+                panel2.BackColor = Color.DimGray;
+                panel3.BackColor = Color.DimGray;
+                pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
+                ColorButton = Color.White;
+            }
+            else
+            {
+                panel1.BackColor = System.Drawing.SystemColors.Control;
+                bottom_panel.BackColor = System.Drawing.SystemColors.Control;
+                
+                panel2.BackColor = System.Drawing.SystemColors.Control;
+                panel3.BackColor = System.Drawing.SystemColors.Control;
+                pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
+                ColorButton = Color.DarkGray;
+            }
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ColorButton = Color.DarkGray;
         }
     }
 }
