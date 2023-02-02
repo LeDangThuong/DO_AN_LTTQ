@@ -570,7 +570,7 @@ namespace DO_AN_LTTQ
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
-       
+        private MyMusic My_Music;
         private System.Windows.Forms.Timer autoNextSongTimer;
         private System.Windows.Forms.Timer rotateTimer;
     }
