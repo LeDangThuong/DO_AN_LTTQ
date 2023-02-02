@@ -57,13 +57,13 @@ namespace DO_AN_LTTQ
             this.panel2 = new System.Windows.Forms.Panel();
             this.MusicPanel = new System.Windows.Forms.Panel();
             this.myMusic1 = new DO_AN_LTTQ.MyMusic();
-            this.btnAn = new System.Windows.Forms.Button();
-            this.btnTaiNhac = new System.Windows.Forms.Button();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
+            this.btnAn = new System.Windows.Forms.Button();
+            this.btnTaiNhac = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
@@ -472,34 +472,6 @@ namespace DO_AN_LTTQ
             this.myMusic1.Size = new System.Drawing.Size(968, 442);
             this.myMusic1.TabIndex = 0;
             // 
-            // btnAn
-            // 
-            this.btnAn.BackColor = System.Drawing.Color.Gray;
-            this.btnAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAn.Location = new System.Drawing.Point(315, 13);
-            this.btnAn.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAn.Name = "btnAn";
-            this.btnAn.Size = new System.Drawing.Size(134, 42);
-            this.btnAn.TabIndex = 3;
-            this.btnAn.Text = "Ẩn/Hiện";
-            this.btnAn.UseVisualStyleBackColor = false;
-            this.btnAn.Click += new System.EventHandler(this.btnAn_Click);
-            // 
-            // btnTaiNhac
-            // 
-            this.btnTaiNhac.BackColor = System.Drawing.Color.Gray;
-            this.btnTaiNhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaiNhac.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnTaiNhac.Location = new System.Drawing.Point(465, 13);
-            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTaiNhac.Name = "btnTaiNhac";
-            this.btnTaiNhac.Size = new System.Drawing.Size(134, 42);
-            this.btnTaiNhac.TabIndex = 3;
-            this.btnTaiNhac.Text = "Tải Nhạc";
-            this.btnTaiNhac.UseVisualStyleBackColor = false;
-            this.btnTaiNhac.Click += new System.EventHandler(this.btnTaiNhac_Click);
-            // 
             // guna2ComboBox1
             // 
             this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
@@ -537,6 +509,34 @@ namespace DO_AN_LTTQ
             // autoNextSongTimer
             // 
             this.autoNextSongTimer.Tick += new System.EventHandler(this.autoNextSongTimer_Tick);
+            // 
+            // btnAn
+            // 
+            this.btnAn.BackColor = System.Drawing.Color.Gray;
+            this.btnAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAn.Location = new System.Drawing.Point(315, 13);
+            this.btnAn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAn.Name = "btnAn";
+            this.btnAn.Size = new System.Drawing.Size(134, 42);
+            this.btnAn.TabIndex = 3;
+            this.btnAn.Text = "Ẩn/Hiện";
+            this.btnAn.UseVisualStyleBackColor = false;
+            this.btnAn.Click += new System.EventHandler(this.btnAn_Click);
+            // 
+            // btnTaiNhac
+            // 
+            this.btnTaiNhac.BackColor = System.Drawing.Color.Gray;
+            this.btnTaiNhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaiNhac.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnTaiNhac.Location = new System.Drawing.Point(465, 13);
+            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTaiNhac.Name = "btnTaiNhac";
+            this.btnTaiNhac.Size = new System.Drawing.Size(134, 42);
+            this.btnTaiNhac.TabIndex = 3;
+            this.btnTaiNhac.Text = "Tải Nhạc";
+            this.btnTaiNhac.UseVisualStyleBackColor = false;
+            this.btnTaiNhac.Click += new System.EventHandler(this.btnTaiNhac_Click);
             // 
             // Form1
             // 
@@ -582,11 +582,9 @@ namespace DO_AN_LTTQ
         private Guna.UI2.WinForms.Guna2TileButton YeuThich_Button;
         private Guna.UI2.WinForms.Guna2TileButton ThuVien_Button;
         private Guna.UI2.WinForms.Guna2TileButton TrangChu_Button;
-        private System.Windows.Forms.Button btnTaiNhac;
         public AxWMPLib.AxWindowsMediaPlayer player;
         public System.Windows.Forms.PictureBox picboxAvatar;
         public System.Windows.Forms.Label name_of_song;
-        private System.Windows.Forms.Button btnAn;
         public System.Windows.Forms.Label lblTacGiaNhac;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -596,6 +594,8 @@ namespace DO_AN_LTTQ
         private System.Windows.Forms.Timer rotateTimer;
         private System.Windows.Forms.Panel MusicPanel;
         private MyMusic myMusic1;
+        private System.Windows.Forms.Button btnAn;
+        private System.Windows.Forms.Button btnTaiNhac;
     }
 }
 

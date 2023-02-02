@@ -64,7 +64,7 @@ namespace DO_AN_LTTQ
             {
                 files = ofd.FileNames;
                 paths = ofd.FileNames;
-                
+
             }
                 
             MediaItem item;
@@ -103,7 +103,7 @@ namespace DO_AN_LTTQ
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 
                 item.Dock = DockStyle.Top;
-                My_Music.Controls.Add(item);
+                myMusic1.Controls.Add(item);
                 mediaItems.Add(item);      
             }
         }
