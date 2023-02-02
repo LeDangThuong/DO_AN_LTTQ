@@ -59,7 +59,6 @@ namespace DO_AN_LTTQ
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
-            this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
@@ -446,7 +445,6 @@ namespace DO_AN_LTTQ
             this.panel2.Controls.Add(this.btnTaiNhac);
             this.panel2.Controls.Add(this.guna2ComboBox1);
             this.panel2.Controls.Add(this.home_label);
-            this.panel2.Controls.Add(this.flowPanelMedia);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(307, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -511,17 +509,6 @@ namespace DO_AN_LTTQ
             this.home_label.TabIndex = 0;
             this.home_label.Text = "Trang Chủ";
             // 
-            // flowPanelMedia
-            // 
-            this.flowPanelMedia.AutoScroll = true;
-            this.flowPanelMedia.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowPanelMedia.Location = new System.Drawing.Point(0, 113);
-            this.flowPanelMedia.Margin = new System.Windows.Forms.Padding(2);
-            this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Padding = new System.Windows.Forms.Padding(4, 7, 0, 0);
-            this.flowPanelMedia.Size = new System.Drawing.Size(968, 404);
-            this.flowPanelMedia.TabIndex = 2;
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -574,7 +561,6 @@ namespace DO_AN_LTTQ
         private Guna.UI2.WinForms.Guna2TileButton YeuThich_Button;
         private Guna.UI2.WinForms.Guna2TileButton ThuVien_Button;
         private Guna.UI2.WinForms.Guna2TileButton TrangChu_Button;
-        private System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
         private System.Windows.Forms.Button btnTaiNhac;
         public AxWMPLib.AxWindowsMediaPlayer player;
         public System.Windows.Forms.PictureBox picboxAvatar;

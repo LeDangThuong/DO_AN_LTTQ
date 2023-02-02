@@ -25,15 +25,26 @@ namespace DO_AN_LTTQ
     {
         private List<MediaItem> mediaItems = new List<MediaItem>();
         
+        // LẤY TÊN FILE
         string[] files;
         string filename;
         string[] paths;
-        private int iOfListIndex;
-        private List<int> listIndex = new List<int>();
-        private int indexNow = -1;
-        private List<MediaItem> songsNowPlaying = new List<MediaItem>();
 
+        // LẤY GIÁ TRỊ INDEX CỦA FILE
+        private int iOfListIndex;
+        private int indexNow = -1;
         private float angles = 0;
+        private int status;
+        
+        private List<MediaItem> FullNhac = new List<MediaItem>();
+        private List<MediaItem> NhacDangChay = new List<MediaItem>();
+        private List<MediaItem> NhacTaiLen = new List<MediaItem>();
+        private List<MediaItem> NhacDaNghe = new List<MediaItem>();
+        private List<MediaItem> NhacDuocChon = new List<MediaItem>();  
+        private List<string> DanhSach = new List<string>();
+        private List<int> listIndex = new List<int>();
+
+
         private List<MediaItem> mediaItemsLove = new List<MediaItem>();
         private List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
         private List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
@@ -92,7 +103,7 @@ namespace DO_AN_LTTQ
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 
                 item.Dock = DockStyle.Top;
-                flowPanelMedia.Controls.Add(item);
+                MyMusic.Controls.Add(item);
                 mediaItems.Add(item);      
             }
         }
@@ -252,7 +263,7 @@ namespace DO_AN_LTTQ
                     }
                     break;
                 default:
-                    indexNow = (indexNow + 1 >= songsNowPlaying.Count) ? 0 : indexNow + 1;
+                    indexNow = (indexNow + 1 >= NhacDangChay.Count) ? 0 : indexNow + 1;
                     break;
             }
         }
@@ -273,7 +284,7 @@ namespace DO_AN_LTTQ
                     }
                     break;
                 default:
-                    indexNow = (indexNow - 1 < 0) ? songsNowPlaying.Count - 1 : indexNow - 1;
+                    indexNow = (indexNow - 1 < 0) ? NhacDangChay.Count - 1 : indexNow - 1;
                     break;
             }
         }
