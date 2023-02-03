@@ -121,15 +121,19 @@ namespace DO_AN_LTTQ
         private void item_MediaItem_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
-            player.URL = (string)item.Tag;
+
+            string filename = (string)item.Tag;
+            string[] part;
+            part = filename.Split('|');
+            player.URL = part[0];
             player.Ctlcontrols.play();
-            timer1.Enabled = true;
+
 
             try
             {
                 play_button.Image = Properties.Resources.pause;
                 check_forplaybutton = 1;
-                
+                timer1.Enabled = true;
                 if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
                     guna2TrackBar1.Maximum = (int)player.Ctlcontrols.currentItem.duration;
@@ -144,14 +148,15 @@ namespace DO_AN_LTTQ
                 {
 
                 }
-                var f = TagLib.File.Create((string)item.Tag);
+                //var f = TagLib.File.Create((string)item.Tag);
+                var f = TagLib.File.Create(part[0]);
                 var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                 picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
- 
+
             }
             catch
             {
-                
+                picboxAvatar.Image = Properties.Resources.musical_note;
             }
 
             name_of_song.Text = item.lblTenBaiHat.Text;
