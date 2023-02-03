@@ -64,51 +64,56 @@ namespace DO_AN_LTTQ
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Multiselect = true;
 
+
+
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 files = ofd.FileNames;
-                paths = ofd.FileNames;
-
             }
-                
+
             MediaItem item;
             string[] tenBaiHat;
             string[] tenTacGia;
 
-            foreach(string file in files)
+            int i = -1;
+            foreach (string file in files)
             {
                 item = new MediaItem();
-                filename = Path.GetFileName(file);
-                
+                getFilename = Path.GetFileName(file);
 
-                tenBaiHat = filename.Split('-');
+
+                tenBaiHat = getFilename.Split('-');
                 item.lblTenBaiHat.Text = tenBaiHat[0];
 
                 tenTacGia = tenBaiHat[1].Split('.');
                 item.lblTacGia.Text = tenTacGia[0];
 
-                item.Tag = file;
-                item.picMediaItem.Tag = file;
-                item.lblTenBaiHat.Tag = file;
-                item.lblTacGia.Tag = file;
+                i++;
+                item.Tag = (string)file + "|" + i;
+                item.picMediaItem.Tag = (string)file + "|" + i;
+                item.lblTenBaiHat.Tag = (string)file + "|" + i;
+                item.lblTacGia.Tag = (string)file + "|" + i;
 
                 try
                 {
                     var f = TagLib.File.Create(file);
                     var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
-                    item.picMediaItem.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));     
+                    item.picMediaItem.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+
+
                 }
                 catch
                 {
-                    
+                    item.picMediaItem.Image = Properties.Resources.musical_note;
                 }
+
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
-                
                 item.Dock = DockStyle.Top;
-                FlowpanelMusic.Controls.Add(item);
-                mediaItems.Add(item);      
+                flowPanelMedia.Controls.Add(item);
+                mediaItems.Add(item);
+
             }
         }
         int check_forplaybutton = 0;
