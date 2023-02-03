@@ -59,12 +59,11 @@ namespace DO_AN_LTTQ
             this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.btnAn = new System.Windows.Forms.Button();
             this.btnTaiNhac = new System.Windows.Forms.Button();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
@@ -445,11 +444,9 @@ namespace DO_AN_LTTQ
             // 
             this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.MusicPanel);
             this.panel2.Controls.Add(this.btnAn);
             this.panel2.Controls.Add(this.btnTaiNhac);
-            this.panel2.Controls.Add(this.guna2ComboBox1);
             this.panel2.Controls.Add(this.home_label);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(307, 0);
@@ -460,6 +457,7 @@ namespace DO_AN_LTTQ
             // 
             // MusicPanel
             // 
+            this.MusicPanel.Controls.Add(this.flowLayoutPanel1);
             this.MusicPanel.Controls.Add(this.myMusic1);
             this.MusicPanel.Location = new System.Drawing.Point(0, 75);
             this.MusicPanel.Name = "MusicPanel";
@@ -502,25 +500,6 @@ namespace DO_AN_LTTQ
             this.btnTaiNhac.UseVisualStyleBackColor = false;
             this.btnTaiNhac.Click += new System.EventHandler(this.btnTaiNhac_Click);
             // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Open file(s)",
-            "Open folder",
-            "Open URL"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(638, 17);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
-            this.guna2ComboBox1.TabIndex = 1;
-            // 
             // home_label
             // 
             this.home_label.AutoSize = true;
@@ -540,19 +519,12 @@ namespace DO_AN_LTTQ
             // 
             this.autoNextSongTimer.Tick += new System.EventHandler(this.autoNextSongTimer_Tick);
             // 
-            // button1
+            // flowLayoutPanel1
             // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(809, 13);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 42);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Open";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Open_button_Click);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(968, 452);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // Form1
             // 
@@ -593,7 +565,6 @@ namespace DO_AN_LTTQ
         private Sipaa.Framework.STextBox searching_textbox;
         private Guna.UI2.WinForms.Guna2ImageButton searching_button;
         private System.Windows.Forms.Label home_label;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2TileButton Album_Button;
         private Guna.UI2.WinForms.Guna2TileButton YeuThich_Button;
         private Guna.UI2.WinForms.Guna2TileButton ThuVien_Button;
@@ -612,7 +583,7 @@ namespace DO_AN_LTTQ
         private MyMusic myMusic1;
         private System.Windows.Forms.Button btnAn;
         private System.Windows.Forms.Button btnTaiNhac;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 

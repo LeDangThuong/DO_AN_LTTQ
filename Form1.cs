@@ -475,17 +475,7 @@ namespace DO_AN_LTTQ
 
         }
 
-        private void Open_button_Click(object sender, EventArgs e)
-        {
-            switch(guna2ComboBox1.SelectedText) 
-            {
-                case "Open file(s)":
-                    this.Hide();
-                    LocalFiles localfiles = new LocalFiles();
-                    localfiles.Show();
-                    break;
-            }
-        }
+
 
 
         // Thu Vien Click
