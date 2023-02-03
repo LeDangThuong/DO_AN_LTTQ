@@ -63,7 +63,7 @@ namespace DO_AN_LTTQ
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.FlowpanelMusic = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
@@ -457,7 +457,7 @@ namespace DO_AN_LTTQ
             // 
             // MusicPanel
             // 
-            this.MusicPanel.Controls.Add(this.flowLayoutPanel1);
+            this.MusicPanel.Controls.Add(this.FlowpanelMusic);
             this.MusicPanel.Controls.Add(this.myMusic1);
             this.MusicPanel.Location = new System.Drawing.Point(0, 75);
             this.MusicPanel.Name = "MusicPanel";
@@ -519,12 +519,12 @@ namespace DO_AN_LTTQ
             // 
             this.autoNextSongTimer.Tick += new System.EventHandler(this.autoNextSongTimer_Tick);
             // 
-            // flowLayoutPanel1
+            // FlowpanelMusic
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(968, 452);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.FlowpanelMusic.Location = new System.Drawing.Point(0, 0);
+            this.FlowpanelMusic.Name = "FlowpanelMusic";
+            this.FlowpanelMusic.Size = new System.Drawing.Size(968, 452);
+            this.FlowpanelMusic.TabIndex = 1;
             // 
             // Form1
             // 
@@ -583,7 +583,7 @@ namespace DO_AN_LTTQ
         private MyMusic myMusic1;
         private System.Windows.Forms.Button btnAn;
         private System.Windows.Forms.Button btnTaiNhac;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel FlowpanelMusic;
     }
 }
 
