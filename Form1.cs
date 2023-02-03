@@ -18,6 +18,8 @@ using System.Media;
 using WMPLib;
 using System.Runtime.CompilerServices;
 using System.Windows.Media;
+using System.Web.UI;
+using TagLib;
 
 namespace DO_AN_LTTQ
 {
@@ -30,6 +32,7 @@ namespace DO_AN_LTTQ
         string filename;
         string[] paths;
 
+        private string getFilename = null;
         // LẤY GIÁ TRỊ INDEX CỦA FILE
         private int iOfListIndex;
         private int indexNow = -1;
@@ -263,51 +266,106 @@ namespace DO_AN_LTTQ
         }
 
 
-        #region Next and Previous
-        //
-        //HÀM BIẾN NEXT AND PREVIOUS
-        //
-
-        private void NextSong()
+        #region Tiến Nhạc
+        private void next_button_Click(object sender, EventArgs e)
         {
-            switch (next_button.Tag as string)
+            itemPlayed = (MediaItem)player.Tag;
+
+            getFilename = (string)itemPlayed.Tag;
+
+            divideFilename = getFilename.Split('|');
+
+            iPlay = Int32.Parse(divideFilename[1]);
+
+            if (iPlay < mediaItems.Count - 1)
             {
-                case "On":
-                    if (iOfListIndex + 1 >= listIndex.Count)
-                    {
-                        indexNow = listIndex[0];
-                        iOfListIndex = 0;
-                    }
-                    else
-                    {
-                        indexNow = listIndex[++iOfListIndex];
-                    }
-                    break;
-                default:
-                    indexNow = (indexNow + 1 >= NhacDangChay.Count) ? 0 : indexNow + 1;
-                    break;
+                itemPlay = mediaItems[++iPlay];
             }
+            else
+            {
+                itemPlay = mediaItems[0];
+            }
+
+            getFilename = (string)itemPlay.Tag;
+            divideFilename = getFilename.Split('|');
+
+            player.URL = (string)divideFilename[0];
+            player.Ctlcontrols.play();
+
+
+            name_of_song.Text = itemPlay.lblTenBaiHat.Text;
+            lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
+
+            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
+            itemPlay.BackColor = Color.Gray;
+
+            try
+            {
+
+                //var f = TagLib.File.Create((string)item.Tag);
+                var f = TagLib.File.Create(divideFilename[0]);
+                var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
+                picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+
+            }
+            catch
+            {
+                picboxAvatar.Image = Properties.Resources.musical_note;
+            }
+
+            player.Tag = itemPlay;
         }
-        private void PreviousSong()
-        {
-            switch (rewind_button.Tag as string)
-            {
-                case "On":
-                    if (iOfListIndex - 1 < 0)
-                    {
-                        iOfListIndex = listIndex.Count - 1;
-                        indexNow = listIndex[iOfListIndex];
 
-                    }
-                    else
-                    {
-                        indexNow = listIndex[--iOfListIndex];
-                    }
-                    break;
-                default:
-                    indexNow = (indexNow - 1 < 0) ? NhacDangChay.Count - 1 : indexNow - 1;
-                    break;
+        #endregion
+
+        #region Lùi Nhạc
+        private void rewind_button_Click(object sender, EventArgs e)
+        {
+            itemPlayed = (MediaItem)player.Tag;
+
+            getFilename = (string)itemPlayed.Tag;
+
+            divideFilename = getFilename.Split('|');
+
+            iPlay = Int32.Parse(divideFilename[1]);
+
+            if (iPlay > 0)
+            {
+                itemPlay = mediaItems[--iPlay];
             }
+            else
+            {
+                itemPlay = mediaItems[mediaItems.Count - 1];
+            }
+
+            getFilename = (string)itemPlay.Tag;
+            divideFilename = getFilename.Split('|');
+
+            player.URL = (string)divideFilename[0];
+            player.Ctlcontrols.play();
+
+
+            name_of_song.Text = itemPlay.lblTenBaiHat.Text;
+            lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
+
+            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
+            itemPlay.BackColor = Color.Gray;
+
+            try
+            {
+
+                //var f = TagLib.File.Create((string)item.Tag);
+                var f = TagLib.File.Create(divideFilename[0]);
+                var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
+                picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+
+            }
+            catch
+            {
+                picboxAvatar.Image = Properties.Resources.musical_note;
+            }
+
+            player.Tag = itemPlay;
         }
 
         #endregion
@@ -341,32 +399,8 @@ namespace DO_AN_LTTQ
             }
 
         }
-            //
-            // TUA NHANH ĐI 10s nhạc
-            //
-            //
-            // LÙI NHẠC LẠI 1 bài
-            //
-        private void rewind_button_Click(object sender, EventArgs e)
-        {
-            if (indexNow == -1) return;
-            PreviousSong(); // set index song next
-            autoNextSongTimer.Start();
-            timer1.Start();
-            angles = 0;
-        }
-        //
-        // TIẾN NHẠC 1 bài
-        //
-        private void next_button_Click(object sender, EventArgs e)
-        {
-            if (indexNow == -1) return;
-            // song pre
-            NextSong();
-            autoNextSongTimer.Start();
-            timer1.Start();
-            angles = 0;
-        }
+   //
+  
         //
         // THAY ĐỔI ICON SHUFFLE
         //
