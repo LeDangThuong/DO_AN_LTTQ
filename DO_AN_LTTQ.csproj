@@ -200,14 +200,11 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <None Include="Resources\moonlight.png" />
     <None Include="Resources\crescent-moon.png" />
     <None Include="Resources\add.png" />
-=======
     <None Include="Resources\musical-note.png" />
     <None Include="Resources\home11.png" />
->>>>>>> efd01e75880b1fbb2281cf47e307922c01ddb018
     <Content Include="Resources\pause.png" />
     <None Include="Resources\question.png" />
     <None Include="Resources\setting.png" />

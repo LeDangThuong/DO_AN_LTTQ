@@ -25,12 +25,12 @@ namespace DO_AN_LTTQ
         #region Properties 
         //Tao tug list cho moi trang
         List<MediaItem> mediaItems = new List<MediaItem>();
-<<<<<<< HEAD
+
         List<MediaItem> mediaItemsLove = new List<MediaItem>();
         List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
         List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
         #endregion
-=======
+
 
         MediaItem itemPlay = new MediaItem();
         MediaItem itemPlayed = new MediaItem();
@@ -39,7 +39,7 @@ namespace DO_AN_LTTQ
         string[] divideFilename = new string[2];
 
 
->>>>>>> efd01e75880b1fbb2281cf47e307922c01ddb018
+
         public Form1()
         {
             
@@ -101,7 +101,7 @@ namespace DO_AN_LTTQ
                 }
                 catch
                 {
-                    item.picMediaItem.Image = Properties.Resources.musical_note;
+                    item.picMediaItem.Image = Properties.Resources.setting;
                 }
 
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
@@ -154,7 +154,7 @@ namespace DO_AN_LTTQ
             }
             catch
             {
-                picboxAvatar.Image = Properties.Resources.musical_note;
+                picboxAvatar.Image = Properties.Resources.repeat;
             }
 
             name_of_song.Text = item.lblTenBaiHat.Text;
@@ -357,7 +357,7 @@ namespace DO_AN_LTTQ
         {
             player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / guna2TrackBar1.Width;
         }
-<<<<<<< HEAD
+
         // Tim kiem doi mau
         private void searching_textbox_Enter(object sender, EventArgs e)
         {
@@ -442,12 +442,7 @@ namespace DO_AN_LTTQ
         Color ColorButton = new Color();
         
         
-        private void CaiDat_Button_Click(object sender, EventArgs e)
-        {
-            home_label.Text = CaiDat_Button.Text;
-            ChangeNormalColorOnPanelLeft(sender);
-            SetSearch();
-        }
+     
         public void ChangeNormalColorOnPanelLeft(object sender)
         {
             Guna2TileButton btn = sender as Guna2TileButton;
@@ -466,13 +461,7 @@ namespace DO_AN_LTTQ
             searching_textbox.Texts = "Tìm kiếm";
             searching_textbox.ForeColor = Color.Silver;
         }
-        private void About_Button_Click(object sender, EventArgs e)
-        {
-            home_label.Text = About_Button.Text;
-
-            uAbout.BringToFront();
-            ChangeNormalColorOnPanelLeft(sender);
-        }
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -501,10 +490,6 @@ namespace DO_AN_LTTQ
         {
             ColorButton = Color.DarkGray;
         }
-=======
-       
-        
-
 
         #region Tiến Nhạc
         private void next_button_Click(object sender, EventArgs e)
@@ -602,13 +587,13 @@ namespace DO_AN_LTTQ
             }
             catch
             {
-                picboxAvatar.Image = Properties.Resources.musical_note;
+                picboxAvatar.Image = Properties.Resources.repeat;
             }
 
             player.Tag = itemPlay;
         }
 
         #endregion
->>>>>>> efd01e75880b1fbb2281cf47e307922c01ddb018
+
     }
 }
