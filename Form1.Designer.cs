@@ -56,14 +56,15 @@ namespace DO_AN_LTTQ
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
+            this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
+            this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
+            this.uMyMusic1 = new DO_AN_LTTQ.uMyMusic();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.uAbout = new DO_AN_LTTQ.uAbout();
-            this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
@@ -457,10 +458,12 @@ namespace DO_AN_LTTQ
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.panel2.Controls.Add(this.uMyMusic);
             this.panel2.Controls.Add(this.btnTaiNhac);
             this.panel2.Controls.Add(this.guna2ComboBox1);
             this.panel2.Controls.Add(this.home_label);
+            this.panel2.Controls.Add(this.uMyMusic);
+            this.panel2.Controls.Add(this.uMyMusic1);
+            this.panel2.Controls.Add(this.uAlbum1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(251, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -468,13 +471,13 @@ namespace DO_AN_LTTQ
             this.panel2.Size = new System.Drawing.Size(884, 512);
             this.panel2.TabIndex = 2;
             // 
-            // uMyMusic
+            // uAlbum1
             // 
-            this.uMyMusic.Location = new System.Drawing.Point(2, 80);
-            this.uMyMusic.Margin = new System.Windows.Forms.Padding(2);
-            this.uMyMusic.Name = "uMyMusic";
-            this.uMyMusic.Size = new System.Drawing.Size(880, 432);
-            this.uMyMusic.TabIndex = 7;
+            this.uAlbum1.Location = new System.Drawing.Point(0, 80);
+            this.uAlbum1.Margin = new System.Windows.Forms.Padding(2);
+            this.uAlbum1.Name = "uAlbum1";
+            this.uAlbum1.Size = new System.Drawing.Size(884, 432);
+            this.uAlbum1.TabIndex = 9;
             // 
             // btnTaiNhac
             // 
@@ -519,6 +522,23 @@ namespace DO_AN_LTTQ
             this.home_label.TabIndex = 0;
             this.home_label.Text = "Trang chủ";
             // 
+            // uMyMusic
+            // 
+            this.uMyMusic.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.uMyMusic.Location = new System.Drawing.Point(0, 80);
+            this.uMyMusic.Margin = new System.Windows.Forms.Padding(2);
+            this.uMyMusic.Name = "uMyMusic";
+            this.uMyMusic.Size = new System.Drawing.Size(884, 432);
+            this.uMyMusic.TabIndex = 7;
+            // 
+            // uMyMusic1
+            // 
+            this.uMyMusic1.Location = new System.Drawing.Point(0, 76);
+            this.uMyMusic1.Margin = new System.Windows.Forms.Padding(2);
+            this.uMyMusic1.Name = "uMyMusic1";
+            this.uMyMusic1.Size = new System.Drawing.Size(882, 436);
+            this.uMyMusic1.TabIndex = 8;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(828, 19);
@@ -544,15 +564,6 @@ namespace DO_AN_LTTQ
             this.uAbout.Size = new System.Drawing.Size(1135, 625);
             this.uAbout.TabIndex = 5;
             // 
-            // uAlbum1
-            // 
-            this.uAlbum1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uAlbum1.Location = new System.Drawing.Point(0, 0);
-            this.uAlbum1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.uAlbum1.Name = "uAlbum1";
-            this.uAlbum1.Size = new System.Drawing.Size(1135, 625);
-            this.uAlbum1.TabIndex = 6;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -562,7 +573,6 @@ namespace DO_AN_LTTQ
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottom_panel);
             this.Controls.Add(this.uAbout);
-            this.Controls.Add(this.uAlbum1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -611,10 +621,10 @@ namespace DO_AN_LTTQ
         private uAbout uAbout;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private uAlbum uAlbum1;
         private uMyMusic uMyMusic;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picboxAvatar;
-
+        private uMyMusic uMyMusic1;
+        private uAlbum uAlbum1;
     }
 }
 

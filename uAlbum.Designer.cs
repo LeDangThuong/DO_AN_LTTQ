@@ -48,10 +48,10 @@
             this.NewAlbum_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.NewAlbum_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.NewAlbum_Button.Location = new System.Drawing.Point(0, 0);
-            this.NewAlbum_Button.Margin = new System.Windows.Forms.Padding(5);
+            this.NewAlbum_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NewAlbum_Button.Name = "NewAlbum_Button";
-            this.NewAlbum_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.NewAlbum_Button.Size = new System.Drawing.Size(302, 54);
+            this.NewAlbum_Button.Padding = new System.Windows.Forms.Padding(0, 0, 4, 4);
+            this.NewAlbum_Button.Size = new System.Drawing.Size(226, 44);
             this.NewAlbum_Button.TabIndex = 14;
             this.NewAlbum_Button.Text = "Tạo Album";
             this.NewAlbum_Button.TextOffset = new System.Drawing.Point(0, -10);
@@ -62,26 +62,29 @@
             this.panelalbumtile.Controls.Add(this.NewAlbum_Button);
             this.panelalbumtile.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelalbumtile.Location = new System.Drawing.Point(0, 0);
+            this.panelalbumtile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelalbumtile.Name = "panelalbumtile";
-            this.panelalbumtile.Size = new System.Drawing.Size(1106, 55);
+            this.panelalbumtile.Size = new System.Drawing.Size(830, 45);
             this.panelalbumtile.TabIndex = 15;
             // 
             // panelalbum
             // 
             this.panelalbum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelalbum.Location = new System.Drawing.Point(0, 55);
+            this.panelalbum.Location = new System.Drawing.Point(0, 45);
+            this.panelalbum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelalbum.Name = "panelalbum";
-            this.panelalbum.Size = new System.Drawing.Size(1106, 482);
+            this.panelalbum.Size = new System.Drawing.Size(830, 391);
             this.panelalbum.TabIndex = 16;
             // 
             // uAlbum
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelalbum);
             this.Controls.Add(this.panelalbumtile);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "uAlbum";
-            this.Size = new System.Drawing.Size(1106, 537);
+            this.Size = new System.Drawing.Size(830, 436);
             this.panelalbumtile.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -90,7 +93,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2TileButton NewAlbum_Button;
-        private System.Windows.Forms.Panel panelalbumtile;
         private System.Windows.Forms.Panel panelalbum;
+        public System.Windows.Forms.Panel panelalbumtile;
     }
 }

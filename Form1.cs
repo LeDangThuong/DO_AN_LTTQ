@@ -401,7 +401,6 @@ namespace DO_AN_LTTQ
             home_label.Text = "Album";
             uMyMusic.Controls.Clear();
 
-
             //flowPanelMedia.Visible = false;
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
