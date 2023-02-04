@@ -56,17 +56,17 @@ namespace DO_AN_LTTQ
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.uYeuThich1 = new DO_AN_LTTQ.uYeuThich();
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.home_label = new System.Windows.Forms.Label();
-            this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
-            this.uMyMusic1 = new DO_AN_LTTQ.uMyMusic();
-            this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
+            this.uYeuThich1 = new DO_AN_LTTQ.uYeuThich();
+            this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
+            this.uMyMusic1 = new DO_AN_LTTQ.uMyMusic();
+            this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
             this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -494,13 +494,6 @@ namespace DO_AN_LTTQ
             this.panel2.Size = new System.Drawing.Size(1193, 630);
             this.panel2.TabIndex = 2;
             // 
-            // uYeuThich1
-            // 
-            this.uYeuThich1.Location = new System.Drawing.Point(0, 94);
-            this.uYeuThich1.Name = "uYeuThich1";
-            this.uYeuThich1.Size = new System.Drawing.Size(1190, 537);
-            this.uYeuThich1.TabIndex = 10;
-            // 
             // btnTaiNhac
             // 
             this.btnTaiNhac.BackColor = System.Drawing.Color.Gray;
@@ -526,6 +519,36 @@ namespace DO_AN_LTTQ
             this.home_label.TabIndex = 0;
             this.home_label.Text = "Trang chủ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(828, 19);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // flowPanelMedia
+            // 
+            this.flowPanelMedia.Location = new System.Drawing.Point(0, 0);
+            this.flowPanelMedia.Name = "flowPanelMedia";
+            this.flowPanelMedia.Size = new System.Drawing.Size(200, 100);
+            this.flowPanelMedia.TabIndex = 0;
+            // 
+            // uYeuThich1
+            // 
+            this.uYeuThich1.Location = new System.Drawing.Point(0, 94);
+            this.uYeuThich1.Name = "uYeuThich1";
+            this.uYeuThich1.Size = new System.Drawing.Size(1190, 537);
+            this.uYeuThich1.TabIndex = 10;
+            // 
             // uMyMusic
             // 
             this.uMyMusic.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -550,29 +573,6 @@ namespace DO_AN_LTTQ
             this.uAlbum1.Name = "uAlbum1";
             this.uAlbum1.Size = new System.Drawing.Size(1179, 532);
             this.uAlbum1.TabIndex = 9;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(828, 19);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // flowPanelMedia
-            // 
-            this.flowPanelMedia.Location = new System.Drawing.Point(0, 0);
-            this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(200, 100);
-            this.flowPanelMedia.TabIndex = 0;
             // 
             // myMusic1
             // 

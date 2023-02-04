@@ -139,24 +139,93 @@ namespace DO_AN_LTTQ
         private void item_picboxYeuThich_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
-            item.picboxYeuThich.Image = Properties.Resources.heart_red;
 
+            if(item.checkYeuThich.Checked)
+            {
+                item.picboxYeuThich.Image = Properties.Resources.heart_white;
+                item.checkYeuThich.Checked = false;
 
-            MediaItem itemYeuThich = new MediaItem();
+                string str1, str2;
 
-            itemYeuThich.picMediaItem.Image = item.picMediaItem.Image;
-            itemYeuThich.picboxYeuThich.Image = item.picboxYeuThich.Image;
-            itemYeuThich.lblTenBaiHat.Text = item.lblTenBaiHat.Text;
-            itemYeuThich.lblTacGia.Text = item.lblTacGia.Text;
-            itemYeuThich.MediaItem_Click += new EventHandler(item_MediaItem_Click);
-            itemYeuThich.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
-            itemYeuThich.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
-            itemYeuThich.Tag = item.Tag;
+                str1 = (string)item.Tag;
 
-            uYeuThich1.flowPnelYeuThich.Controls.Add(itemYeuThich);
-            mediaItemsLove.Add(itemYeuThich);
+                foreach (MediaItem i in mediaItemsLove)
+                {
+                    str2 = (string)i.Tag;
 
+                    if (String.Compare(str1, str2, true) == 0)
+                    {
+                        mediaItemsLove.Remove(i);
+                        uYeuThich1.flowPnelYeuThich.Controls.Remove(i);
+                        break;
+                    }    
+                    
+                }    
+
+            }
+            else
+            {
+
+                item.picboxYeuThich.Image = Properties.Resources.heart_red;
+                item.checkYeuThich.Checked = true;
+
+                MediaItem itemYeuThich = new MediaItem();
+
+                itemYeuThich.picMediaItem.Image = item.picMediaItem.Image;
+                itemYeuThich.picboxYeuThich.Image = item.picboxYeuThich.Image;
+                itemYeuThich.lblTenBaiHat.Text = item.lblTenBaiHat.Text;
+                itemYeuThich.lblTacGia.Text = item.lblTacGia.Text;
+                itemYeuThich.MediaItem_Click += new EventHandler(item_MediaItem_Click);
+                itemYeuThich.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
+                itemYeuThich.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
+
+                itemYeuThich.PicboxYeuThich_Click += new EventHandler(picbox_itemYeuThich_Click);
+                itemYeuThich.checkYeuThich.Checked = true;
+                itemYeuThich.Tag = item.Tag;
+
+                uYeuThich1.flowPnelYeuThich.Controls.Add(itemYeuThich);
+                mediaItemsLove.Add(itemYeuThich);
+            }
+            
+            
+            if(mediaItemsLove.Count ==0)
+            {
+                uYeuThich1.lblTrong.Visible = true;
+            }    
         }
+
+        private void picbox_itemYeuThich_Click(object sender, EventArgs e)
+        {
+            MediaItem item = (MediaItem)sender;
+
+            if (item.checkYeuThich.Checked)
+            {
+                item.picboxYeuThich.Image = Properties.Resources.heart_white;
+                mediaItemsLove.Remove(item);
+                uYeuThich1.flowPnelYeuThich.Controls.Remove(item);
+
+                string str1, str2;
+
+                str1 = (string)item.Tag;
+
+                foreach(MediaItem i in mediaItems)
+                {
+                    str2 = (string)i.Tag;
+
+                    if(String.Compare(str1,str2,true) == 0)
+                    {
+                        i.picboxYeuThich.Image = Properties.Resources.heart_white;
+                        i.checkYeuThich.Checked = false;
+                    }    
+                }    
+            }
+
+            if (mediaItemsLove.Count == 0)
+            {
+                uYeuThich1.lblTrong.Visible = true;
+            }
+        }
+
         #region SETTING 
 
         int check_forplaybutton = 0;
@@ -214,6 +283,7 @@ namespace DO_AN_LTTQ
             player.Tag = item;
         }
 
+      
         private void btnAn_Click(object sender, EventArgs e)
         {
             foreach (MediaItem item in mediaItems)
@@ -575,6 +645,15 @@ namespace DO_AN_LTTQ
             home_label.Text = "Yêu thích";
             //flowPanelMedia.Controls.Clear();
             uYeuThich1.BringToFront();
+
+            if (mediaItemsLove.Count == 0)
+            {
+                uYeuThich1.lblTrong.Visible = true;
+            }
+            else
+            {
+                uYeuThich1.lblTrong.Visible = false;
+            }
 
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);

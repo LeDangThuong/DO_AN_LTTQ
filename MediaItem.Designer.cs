@@ -33,6 +33,7 @@ namespace DO_AN_LTTQ
             this.lblTacGia = new System.Windows.Forms.Label();
             this.picboxYeuThich = new System.Windows.Forms.PictureBox();
             this.picMediaItem = new System.Windows.Forms.PictureBox();
+            this.checkYeuThich = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picboxYeuThich)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMediaItem)).BeginInit();
             this.SuspendLayout();
@@ -85,11 +86,22 @@ namespace DO_AN_LTTQ
             this.picMediaItem.Click += new System.EventHandler(this.picMediaItem_Click);
             this.picMediaItem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picMediaItem_MouseDown);
             // 
+            // checkYeuThich
+            // 
+            this.checkYeuThich.AutoSize = true;
+            this.checkYeuThich.Location = new System.Drawing.Point(366, 65);
+            this.checkYeuThich.Name = "checkYeuThich";
+            this.checkYeuThich.Size = new System.Drawing.Size(18, 17);
+            this.checkYeuThich.TabIndex = 4;
+            this.checkYeuThich.UseVisualStyleBackColor = true;
+            this.checkYeuThich.Visible = false;
+            // 
             // MediaItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Controls.Add(this.checkYeuThich);
             this.Controls.Add(this.picboxYeuThich);
             this.Controls.Add(this.lblTacGia);
             this.Controls.Add(this.lblTenBaiHat);
@@ -101,6 +113,7 @@ namespace DO_AN_LTTQ
             ((System.ComponentModel.ISupportInitialize)(this.picboxYeuThich)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMediaItem)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,5 +123,6 @@ namespace DO_AN_LTTQ
         public MetroSet_UI.Controls.MetroSetLabel lblTenBaiHat;
         public System.Windows.Forms.Label lblTacGia;
         public System.Windows.Forms.PictureBox picboxYeuThich;
+        public System.Windows.Forms.CheckBox checkYeuThich;
     }
 }
