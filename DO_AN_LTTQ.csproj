@@ -144,6 +144,12 @@
     <Compile Include="SongItem.Designer.cs">
       <DependentUpon>SongItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="uYeuThich.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uYeuThich.Designer.cs">
+      <DependentUpon>uYeuThich.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SongItem.resx">
       <DependentUpon>SongItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uYeuThich.resx">
+      <DependentUpon>uYeuThich.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -243,6 +252,9 @@
     <None Include="Resources\albumIcon2.png" />
     <None Include="Resources\options-list.png" />
     <None Include="Resources\DefaultMusic1.png" />
+    <None Include="Resources\heart_white.png" />
+    <None Include="Resources\heart_white1.png" />
+    <None Include="Resources\heart_red.png" />
     <Content Include="Resources\pause.png" />
     <None Include="Resources\question.png" />
     <None Include="Resources\setting.png" />

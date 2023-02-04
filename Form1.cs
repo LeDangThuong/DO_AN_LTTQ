@@ -41,6 +41,7 @@ namespace DO_AN_LTTQ
         // SANG
         MediaItem itemPlay = new MediaItem();
         MediaItem itemPlayed = new MediaItem();
+
         int iPlay;
         private string getFilename = null;
         string[] divideFilename = new string[2];
@@ -121,13 +122,41 @@ namespace DO_AN_LTTQ
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
+
+                //item.picboxYeuThich.Tag = item;
+                item.PicboxYeuThich_Click += new EventHandler(item_picboxYeuThich_Click);
+
                 item.Dock = DockStyle.Top;
                 uMyMusic.flowPanelMedia.Controls.Add(item);
                 mediaItems.Add(item);
 
             }
         }
+
+
         #endregion
+
+        private void item_picboxYeuThich_Click(object sender, EventArgs e)
+        {
+            MediaItem item = (MediaItem)sender;
+            item.picboxYeuThich.Image = Properties.Resources.heart_red;
+
+
+            MediaItem itemYeuThich = new MediaItem();
+
+            itemYeuThich.picMediaItem.Image = item.picMediaItem.Image;
+            itemYeuThich.picboxYeuThich.Image = item.picboxYeuThich.Image;
+            itemYeuThich.lblTenBaiHat.Text = item.lblTenBaiHat.Text;
+            itemYeuThich.lblTacGia.Text = item.lblTacGia.Text;
+            itemYeuThich.MediaItem_Click += new EventHandler(item_MediaItem_Click);
+            itemYeuThich.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
+            itemYeuThich.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
+            itemYeuThich.Tag = item.Tag;
+
+            uYeuThich1.flowPnelYeuThich.Controls.Add(itemYeuThich);
+            mediaItemsLove.Add(itemYeuThich);
+
+        }
         #region SETTING 
 
         int check_forplaybutton = 0;
@@ -545,6 +574,8 @@ namespace DO_AN_LTTQ
 
             home_label.Text = "Yêu thích";
             //flowPanelMedia.Controls.Clear();
+            uYeuThich1.BringToFront();
+
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
         }
@@ -566,12 +597,12 @@ namespace DO_AN_LTTQ
         {
 
             home_label.Text = TrangChu_Button.Text;
-            uMyMusic.Controls.Clear();
-            foreach (MediaItem i in mediaItems)
+            //uMyMusic.Controls.Clear();
+           /* foreach (MediaItem i in mediaItems)
             {
                 
                 flowPanelMedia.Controls.Add(i);
-            }
+            }*/
             uMyMusic.BringToFront();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
@@ -650,7 +681,7 @@ namespace DO_AN_LTTQ
             ColorButton = System.Drawing.Color.DarkGray;
         }
 
-        
+
 
 
         #endregion
