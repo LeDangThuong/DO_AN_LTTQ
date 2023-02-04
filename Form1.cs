@@ -121,7 +121,7 @@ namespace DO_AN_LTTQ
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 item.Dock = DockStyle.Top;
                 flowPanelMedia.Controls.Add(item);
-                myMusic1.Controls.Add(item);
+                
                 mediaItems.Add(item);
 
             }
@@ -556,6 +556,11 @@ namespace DO_AN_LTTQ
         }
 
         private void myMusic1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bottom_panel_Paint(object sender, PaintEventArgs e)
         {
 
         }
