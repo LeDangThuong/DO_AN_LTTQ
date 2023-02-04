@@ -56,6 +56,7 @@ namespace DO_AN_LTTQ
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@ namespace DO_AN_LTTQ
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.uAbout = new DO_AN_LTTQ.uAbout();
             this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
-            this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
@@ -217,7 +217,7 @@ namespace DO_AN_LTTQ
             this.searching_textbox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.searching_textbox.ForeColor = System.Drawing.Color.Silver;
             this.searching_textbox.Location = new System.Drawing.Point(13, 13);
-            this.searching_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searching_textbox.Margin = new System.Windows.Forms.Padding(4);
             this.searching_textbox.Multiline = false;
             this.searching_textbox.Name = "searching_textbox";
             this.searching_textbox.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -258,7 +258,7 @@ namespace DO_AN_LTTQ
             // 
             this.picboxAvatar.ImageRotate = 0F;
             this.picboxAvatar.Location = new System.Drawing.Point(28, 16);
-            this.picboxAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picboxAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.picboxAvatar.Name = "picboxAvatar";
             this.picboxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picboxAvatar.Size = new System.Drawing.Size(109, 118);
@@ -431,6 +431,7 @@ namespace DO_AN_LTTQ
             this.guna2TrackBar1.TabIndex = 2;
             this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.guna2TrackBar1.Value = 0;
+            this.guna2TrackBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.guna2TrackBar1_Scroll);
             this.guna2TrackBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2TrackBar1_MouseDown);
             // 
             // lblTacGiaNhac
@@ -462,10 +463,18 @@ namespace DO_AN_LTTQ
             this.panel2.Controls.Add(this.home_label);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(251, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(884, 512);
             this.panel2.TabIndex = 2;
+            // 
+            // uMyMusic
+            // 
+            this.uMyMusic.Location = new System.Drawing.Point(2, 80);
+            this.uMyMusic.Margin = new System.Windows.Forms.Padding(2);
+            this.uMyMusic.Name = "uMyMusic";
+            this.uMyMusic.Size = new System.Drawing.Size(880, 432);
+            this.uMyMusic.TabIndex = 7;
             // 
             // btnTaiNhac
             // 
@@ -473,7 +482,7 @@ namespace DO_AN_LTTQ
             this.btnTaiNhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiNhac.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnTaiNhac.Location = new System.Drawing.Point(465, 13);
-            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaiNhac.Name = "btnTaiNhac";
             this.btnTaiNhac.Size = new System.Drawing.Size(134, 42);
             this.btnTaiNhac.TabIndex = 3;
@@ -543,14 +552,6 @@ namespace DO_AN_LTTQ
             this.uAlbum1.Name = "uAlbum1";
             this.uAlbum1.Size = new System.Drawing.Size(1135, 625);
             this.uAlbum1.TabIndex = 6;
-            // 
-            // uMyMusic
-            // 
-            this.uMyMusic.Location = new System.Drawing.Point(2, 80);
-            this.uMyMusic.Margin = new System.Windows.Forms.Padding(2);
-            this.uMyMusic.Name = "uMyMusic";
-            this.uMyMusic.Size = new System.Drawing.Size(880, 432);
-            this.uMyMusic.TabIndex = 7;
             // 
             // Form1
             // 

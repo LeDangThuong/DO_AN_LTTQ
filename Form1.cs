@@ -595,5 +595,11 @@ namespace DO_AN_LTTQ
 
         #endregion
 
+        private void guna2TrackBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            
+                player.Ctlcontrols.currentPosition = e.NewValue;
+            
+        }
     }
 }
