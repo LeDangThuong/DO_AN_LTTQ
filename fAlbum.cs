@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace DO_AN_LTTQ
 {
-    public partial class uAlbum : UserControl
+    public partial class fAlbum : Form
     {
-        public uAlbum()
+        public fAlbum()
         {
             InitializeComponent();
-        }
-
-        private void NewAlbum_Button_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

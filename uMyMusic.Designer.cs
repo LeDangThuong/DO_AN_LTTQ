@@ -33,19 +33,20 @@
             // 
             // flowPanelMedia
             // 
-            this.flowPanelMedia.Location = new System.Drawing.Point(0, 3);
+            this.flowPanelMedia.Location = new System.Drawing.Point(0, 0);
+            this.flowPanelMedia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(827, 430);
+            this.flowPanelMedia.Size = new System.Drawing.Size(1103, 537);
             this.flowPanelMedia.TabIndex = 0;
             // 
             // uMyMusic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowPanelMedia);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "uMyMusic";
-            this.Size = new System.Drawing.Size(830, 436);
+            this.Size = new System.Drawing.Size(1107, 537);
             this.ResumeLayout(false);
 
         }

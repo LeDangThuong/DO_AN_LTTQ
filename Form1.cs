@@ -60,6 +60,7 @@ namespace DO_AN_LTTQ
         private List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
         private List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
 
+        private List<cAlbum> albums = new List<cAlbum>();
         #endregion
         public Form1()
         {
@@ -538,6 +539,7 @@ namespace DO_AN_LTTQ
             //flowPanelMedia.Controls.Clear();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
+         
         }
         // Yeu Thich Click
         private void YeuThich_Button_Click(object sender, EventArgs e)
@@ -547,52 +549,55 @@ namespace DO_AN_LTTQ
             //flowPanelMedia.Controls.Clear();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
+        
         }
         
         // Album Click
 
         private void Album_Button_Click(object sender, EventArgs e)
         {
-            uAlbum1.BringToFront();
+            uAlbum.BringToFront();
             home_label.Text = "Album";
-            uMyMusic.Controls.Clear();
+            //uMyMusic.Controls.Clear();
 
             //flowPanelMedia.Visible = false;
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
+          
         }
         // Trang Chu Click
         private void TrangChu_Button_Click(object sender, EventArgs e)
         {
 
             home_label.Text = TrangChu_Button.Text;
-            uMyMusic.Controls.Clear();
+            uMyMusic.flowPanelMedia.Controls.Clear();
             foreach (MediaItem i in mediaItems)
             {
                 
-                flowPanelMedia.Controls.Add(i);
+                uMyMusic.flowPanelMedia.Controls.Add(i);
             }
             uMyMusic.BringToFront();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
-            
+         
+
         }
 
         // Su Kien Tim Kiem
         private void searching_button_Click(object sender, EventArgs e)
         {
             home_label.Text = "Kết quả tìm kiếm";
-            uMyMusic.Controls.Clear();
+            uMyMusic.flowPanelMedia.Controls.Clear();
             foreach (MediaItem i in mediaItems)
             {
                 if (string.Compare(i.lblTacGia.Text, searching_textbox.Texts) == 0)
                 {
-                    uMyMusic.Controls.Add(i);
+                    uMyMusic.flowPanelMedia.Controls.Clear();
                 }
                 else
                 {
                     if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0)
-                        uMyMusic.Controls.Add(i);
+                        uMyMusic.flowPanelMedia.Controls.Clear();
                 }
             }
         }
@@ -608,10 +613,10 @@ namespace DO_AN_LTTQ
             btn.FillColor = ColorButton;
             foreach (Guna2TileButton item in panel3.Controls)
             {
-                if (item.Name != btn.Name && item.FillColor != System.Drawing.Color.Gainsboro)
+                if (item.Name != btn.Name && item.FillColor != System.Drawing.SystemColors.Control)
                 {
                     Guna2TileButton btn1 = item as Guna2TileButton;
-                    btn1.FillColor = System.Drawing.Color.Gainsboro;
+                    btn1.FillColor = System.Drawing.SystemColors.Control;
                 }
             }
         }
@@ -631,7 +636,7 @@ namespace DO_AN_LTTQ
                 panel2.BackColor = System.Drawing.Color.DimGray;
                 panel3.BackColor = System.Drawing.Color.DimGray;
                 pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
-                ColorButton = System.Drawing.Color.White;
+                ColorButton = System.Drawing.Color.Gray;
             }
             else
             {
@@ -641,16 +646,63 @@ namespace DO_AN_LTTQ
                 panel2.BackColor = System.Drawing.SystemColors.Control;
                 panel3.BackColor = System.Drawing.SystemColors.Control;
                 pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
-                ColorButton = System.Drawing.Color.DarkGray;
+                ColorButton = System.Drawing.Color.Gray;
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ColorButton = System.Drawing.Color.DarkGray;
+            ColorButton = System.Drawing.Color.Gray;
+            uCaiDat.Theme_Switch.CheckedChanged += new System.EventHandler(Theme_Switch_CheckedChanged);
+
         }
 
-        
+        private void uAlbum1_Load(object sender, EventArgs e)
+        {
+
+        }
+        // About Click
+        private void About_Button_Click(object sender, EventArgs e)
+        {
+            home_label.Text = About_Button.Text;
+            uAbout.BringToFront();
+            SetSearch();
+            ChangeNormalColorOnPanelLeft(sender);
+        }
+        // Cai Dat Click
+        private void CaiDat_Button_Click(object sender, EventArgs e)
+        {
+            home_label.Text = CaiDat_Button.Text;
+            uCaiDat.BringToFront();
+            SetSearch();
+            ChangeNormalColorOnPanelLeft(sender);
+
+        }
+
+        private void Theme_Switch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!uCaiDat.Theme_Switch.Checked)
+            {
+                panel1.BackColor = System.Drawing.Color.DimGray;
+                bottom_panel.BackColor = System.Drawing.Color.DimGray;
+                panel2.BackColor = System.Drawing.Color.DimGray;
+                panel3.BackColor = System.Drawing.Color.DimGray;
+                pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
+            }
+            else
+            {
+                panel1.BackColor = System.Drawing.SystemColors.Control;
+                bottom_panel.BackColor = System.Drawing.SystemColors.Control;
+
+                panel2.BackColor = System.Drawing.SystemColors.Control;
+                panel3.BackColor = System.Drawing.SystemColors.Control;
+                pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
+            }
+        }
+
+
+
+
 
 
         #endregion

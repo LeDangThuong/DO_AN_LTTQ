@@ -149,7 +149,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fileLocation);
             this.Name = "uAbout";
-            this.Size = new System.Drawing.Size(1106, 537);
+            this.Size = new System.Drawing.Size(1076, 498);
             this.ResumeLayout(false);
             this.PerformLayout();
 

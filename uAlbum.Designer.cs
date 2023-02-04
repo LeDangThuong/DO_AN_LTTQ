@@ -28,63 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NewAlbum_Button = new Guna.UI2.WinForms.Guna2TileButton();
             this.panelalbumtile = new System.Windows.Forms.Panel();
             this.panelalbum = new System.Windows.Forms.Panel();
+            this.NewAlbum_Button = new Guna.UI2.WinForms.Guna2TileButton();
             this.panelalbumtile.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // NewAlbum_Button
-            // 
-            this.NewAlbum_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.NewAlbum_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.NewAlbum_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.NewAlbum_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.NewAlbum_Button.FillColor = System.Drawing.Color.Gainsboro;
-            this.NewAlbum_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.NewAlbum_Button.ForeColor = System.Drawing.Color.Black;
-            this.NewAlbum_Button.Image = global::DO_AN_LTTQ.Properties.Resources.add;
-            this.NewAlbum_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.NewAlbum_Button.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.NewAlbum_Button.ImageSize = new System.Drawing.Size(30, 30);
-            this.NewAlbum_Button.Location = new System.Drawing.Point(0, 0);
-            this.NewAlbum_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.NewAlbum_Button.Name = "NewAlbum_Button";
-            this.NewAlbum_Button.Padding = new System.Windows.Forms.Padding(0, 0, 4, 4);
-            this.NewAlbum_Button.Size = new System.Drawing.Size(226, 44);
-            this.NewAlbum_Button.TabIndex = 14;
-            this.NewAlbum_Button.Text = "Tạo Album";
-            this.NewAlbum_Button.TextOffset = new System.Drawing.Point(0, -10);
-            this.NewAlbum_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             // 
             // panelalbumtile
             // 
             this.panelalbumtile.Controls.Add(this.NewAlbum_Button);
             this.panelalbumtile.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelalbumtile.Location = new System.Drawing.Point(0, 0);
-            this.panelalbumtile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelalbumtile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelalbumtile.Name = "panelalbumtile";
-            this.panelalbumtile.Size = new System.Drawing.Size(830, 45);
+            this.panelalbumtile.Size = new System.Drawing.Size(1107, 55);
             this.panelalbumtile.TabIndex = 15;
             // 
             // panelalbum
             // 
             this.panelalbum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelalbum.Location = new System.Drawing.Point(0, 45);
-            this.panelalbum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelalbum.Location = new System.Drawing.Point(0, 55);
+            this.panelalbum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelalbum.Name = "panelalbum";
-            this.panelalbum.Size = new System.Drawing.Size(830, 391);
+            this.panelalbum.Size = new System.Drawing.Size(1107, 482);
             this.panelalbum.TabIndex = 16;
+            // 
+            // NewAlbum_Button
+            // 
+            this.NewAlbum_Button.BackColor = System.Drawing.Color.White;
+            this.NewAlbum_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.NewAlbum_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.NewAlbum_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.NewAlbum_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.NewAlbum_Button.FillColor = System.Drawing.Color.White;
+            this.NewAlbum_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.NewAlbum_Button.ForeColor = System.Drawing.Color.DarkRed;
+            this.NewAlbum_Button.Image = global::DO_AN_LTTQ.Properties.Resources.add;
+            this.NewAlbum_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.NewAlbum_Button.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.NewAlbum_Button.ImageSize = new System.Drawing.Size(30, 30);
+            this.NewAlbum_Button.Location = new System.Drawing.Point(0, 0);
+            this.NewAlbum_Button.Margin = new System.Windows.Forms.Padding(5);
+            this.NewAlbum_Button.Name = "NewAlbum_Button";
+            this.NewAlbum_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.NewAlbum_Button.Size = new System.Drawing.Size(301, 54);
+            this.NewAlbum_Button.TabIndex = 14;
+            this.NewAlbum_Button.Text = "Tạo Album";
+            this.NewAlbum_Button.TextOffset = new System.Drawing.Point(0, -10);
+            this.NewAlbum_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.NewAlbum_Button.Click += new System.EventHandler(this.NewAlbum_Button_Click);
             // 
             // uAlbum
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelalbum);
             this.Controls.Add(this.panelalbumtile);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "uAlbum";
-            this.Size = new System.Drawing.Size(830, 436);
+            this.Size = new System.Drawing.Size(1107, 537);
             this.panelalbumtile.ResumeLayout(false);
             this.ResumeLayout(false);
 
