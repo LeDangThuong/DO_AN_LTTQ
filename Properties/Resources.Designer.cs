@@ -63,9 +63,15 @@ namespace DO_AN_LTTQ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap home1 {
+            get {
+                object obj = ResourceManager.GetObject("home1", resourceCulture);
+>>>>>>> efd01e75880b1fbb2281cf47e307922c01ddb018
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,6 +79,7 @@ namespace DO_AN_LTTQ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap crescent_moon {
             get {
                 object obj = ResourceManager.GetObject("crescent-moon", resourceCulture);
@@ -86,6 +93,11 @@ namespace DO_AN_LTTQ.Properties {
         internal static System.Drawing.Bitmap moonlight {
             get {
                 object obj = ResourceManager.GetObject("moonlight", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap musical_note {
+            get {
+                object obj = ResourceManager.GetObject("musical-note", resourceCulture);
+>>>>>>> efd01e75880b1fbb2281cf47e307922c01ddb018
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
