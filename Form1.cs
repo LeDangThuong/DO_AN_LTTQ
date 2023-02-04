@@ -529,7 +529,7 @@ namespace DO_AN_LTTQ
 
         private void ThuVien_Button_Click(object sender, EventArgs e)
         {
-            flowPanelMedia.Controls.Clear();
+            
             myMusic1.Show();
         }
 
