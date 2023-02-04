@@ -17,16 +17,58 @@ namespace DO_AN_LTTQ
         public event EventHandler MediaItem_Click;
         public event EventHandler PicMediaItem_Click;
         public event EventHandler LblTenBaiHat_Click;
+
+        public event MouseEventHandler Mouse_Click;
         public MediaItem()
         {
             InitializeComponent();
         }
+        internal string SongName
+        {
+            get
+            {
+                return lblTenBaiHat.Text;
+            }
+            set
+            {
+                lblTenBaiHat.Text = value;
+            }
+        }
+        internal string ArtistName
+        {
+            get
+            {
+                return lblTenBaiHat.Text;
+            }
+            set
+            {
+                lblTacGia.Text = value;
+            }
 
+        }
+        
+        
+        internal Image ImageSong
+        {
+            get
+            {
+                return picMediaItem.Image;
+            }
+            set
+            {
+                picMediaItem.Image = value;
+            }
+        }
+        
+        internal string Album
+        {
+            get; set;
+        }
         private void mediaItem_Click(object sender, EventArgs e)
         {
             if (MediaItem_Click != null)
             {
-                MediaItem_Click.Invoke(this, e);
+                MediaItem_Click?.Invoke(this, e);
             }    
 
         }
@@ -35,7 +77,7 @@ namespace DO_AN_LTTQ
         {
             if(PicMediaItem_Click != null)
             {
-                PicMediaItem_Click.Invoke(this,e);
+                PicMediaItem_Click?.Invoke(this,e);
             }
            
         }
@@ -44,8 +86,13 @@ namespace DO_AN_LTTQ
         {
             if(LblTenBaiHat_Click != null)
             {
-                LblTenBaiHat_Click.Invoke(this, e);
+                LblTenBaiHat_Click?.Invoke(this, e);
             }    
+        }
+
+        private void picMediaItem_MouseDown(object sender, MouseEventArgs e)
+        {
+            Mouse_Click?.Invoke(this, e);   
         }
     }
 }

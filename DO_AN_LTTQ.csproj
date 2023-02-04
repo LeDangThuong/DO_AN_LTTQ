@@ -86,6 +86,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LocalFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalFiles.Designer.cs">
+      <DependentUpon>LocalFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MediaFiles.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +104,12 @@
     </Compile>
     <Compile Include="MediaItem.Designer.cs">
       <DependentUpon>MediaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyMusic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyMusic.Designer.cs">
+      <DependentUpon>MyMusic.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,12 +137,25 @@
     <Compile Include="uMyMusic.Designer.cs">
       <DependentUpon>uMyMusic.cs</DependentUpon>
     </Compile>
+    <Compile Include="SongIn4.cs" />
+    <Compile Include="SongItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SongItem.Designer.cs">
+      <DependentUpon>SongItem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="LocalFiles.resx">
+      <DependentUpon>LocalFiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MediaItem.resx">
       <DependentUpon>MediaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyMusic.resx">
+      <DependentUpon>MyMusic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -147,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uMyMusic.resx">
       <DependentUpon>uMyMusic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongItem.resx">
+      <DependentUpon>SongItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -200,11 +229,20 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pause_black.png" />
+    <None Include="Resources\previous1.png" />
+    <None Include="Resources\play12.png" />
+    <None Include="Resources\play11.png" />
+    <None Include="Resources\volume_white1.png" />
+    <None Include="Resources\volume-mute.png" />
     <None Include="Resources\moonlight.png" />
     <None Include="Resources\crescent-moon.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\musical-note.png" />
     <None Include="Resources\home11.png" />
+    <None Include="Resources\albumIcon2.png" />
+    <None Include="Resources\options-list.png" />
+    <None Include="Resources\DefaultMusic1.png" />
     <Content Include="Resources\pause.png" />
     <None Include="Resources\question.png" />
     <None Include="Resources\setting.png" />

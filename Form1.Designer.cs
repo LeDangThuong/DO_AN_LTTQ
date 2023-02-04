@@ -33,11 +33,10 @@ namespace DO_AN_LTTQ
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.TrangChu_Button = new Guna.UI2.WinForms.Guna2TileButton();
-            this.ThuVien_Button = new Guna.UI2.WinForms.Guna2TileButton();
             this.Album_Button = new Guna.UI2.WinForms.Guna2TileButton();
             this.YeuThich_Button = new Guna.UI2.WinForms.Guna2TileButton();
+            this.ThuVien_Button = new Guna.UI2.WinForms.Guna2TileButton();
             this.searching_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.searching_textbox = new Sipaa.Framework.STextBox();
             this.bottom_panel = new System.Windows.Forms.Panel();
@@ -58,32 +57,42 @@ namespace DO_AN_LTTQ
             this.panel2 = new System.Windows.Forms.Panel();
             this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
             this.btnTaiNhac = new System.Windows.Forms.Button();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.home_label = new System.Windows.Forms.Label();
             this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
             this.uMyMusic1 = new DO_AN_LTTQ.uMyMusic();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.uAbout = new DO_AN_LTTQ.uAbout();
+            this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
+            this.rotateTimer = new System.Windows.Forms.Timer(this.components);
+            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
+            this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.TrangChu_Button);
+            this.panel1.Controls.Add(this.Album_Button);
+            this.panel1.Controls.Add(this.YeuThich_Button);
+            this.panel1.Controls.Add(this.ThuVien_Button);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.searching_button);
             this.panel1.Controls.Add(this.searching_textbox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(251, 512);
+            this.panel1.Size = new System.Drawing.Size(307, 517);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -110,7 +119,7 @@ namespace DO_AN_LTTQ
             this.TrangChu_Button.ForeColor = System.Drawing.Color.Black;
             this.TrangChu_Button.Image = ((System.Drawing.Image)(resources.GetObject("TrangChu_Button.Image")));
             this.TrangChu_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TrangChu_Button.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.TrangChu_Button.ImageOffset = new System.Drawing.Point(0, 20);
             this.TrangChu_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.TrangChu_Button.Location = new System.Drawing.Point(3, 16);
             this.TrangChu_Button.Name = "TrangChu_Button";
@@ -120,7 +129,7 @@ namespace DO_AN_LTTQ
             this.TrangChu_Button.Text = "Trang chủ";
             this.TrangChu_Button.TextOffset = new System.Drawing.Point(0, -10);
             this.TrangChu_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.TrangChu_Button.Click += new System.EventHandler(this.guna2TileButton1_Click);
+            this.TrangChu_Button.Click += new System.EventHandler(this.TrangChu_Button_Click);
             // 
             // ThuVien_Button
             // 
@@ -167,7 +176,6 @@ namespace DO_AN_LTTQ
             this.Album_Button.Text = "Album";
             this.Album_Button.TextOffset = new System.Drawing.Point(0, -10);
             this.Album_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.Album_Button.Click += new System.EventHandler(this.guna2TileButton4_Click);
             // 
             // YeuThich_Button
             // 
@@ -190,7 +198,31 @@ namespace DO_AN_LTTQ
             this.YeuThich_Button.Text = "Yêu thích";
             this.YeuThich_Button.TextOffset = new System.Drawing.Point(0, -10);
             this.YeuThich_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.YeuThich_Button.Click += new System.EventHandler(this.guna2TileButton3_Click);
+            this.YeuThich_Button.Click += new System.EventHandler(this.YeuThich_Button_Click);
+            // 
+            // ThuVien_Button
+            // 
+            this.ThuVien_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ThuVien_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ThuVien_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ThuVien_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ThuVien_Button.FillColor = System.Drawing.SystemColors.Control;
+            this.ThuVien_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.ThuVien_Button.ForeColor = System.Drawing.Color.Black;
+            this.ThuVien_Button.Image = ((System.Drawing.Image)(resources.GetObject("ThuVien_Button.Image")));
+            this.ThuVien_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ThuVien_Button.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.ThuVien_Button.ImageSize = new System.Drawing.Size(30, 30);
+            this.ThuVien_Button.Location = new System.Drawing.Point(17, 148);
+            this.ThuVien_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.ThuVien_Button.Name = "ThuVien_Button";
+            this.ThuVien_Button.Padding = new System.Windows.Forms.Padding(0, 0, 4, 4);
+            this.ThuVien_Button.Size = new System.Drawing.Size(279, 49);
+            this.ThuVien_Button.TabIndex = 12;
+            this.ThuVien_Button.Text = "Thư viện";
+            this.ThuVien_Button.TextOffset = new System.Drawing.Point(0, -10);
+            this.ThuVien_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.ThuVien_Button.Click += new System.EventHandler(this.ThuVien_Button_Click);
             // 
             // searching_button
             // 
@@ -208,7 +240,7 @@ namespace DO_AN_LTTQ
             this.searching_button.TabIndex = 10;
             this.searching_button.Click += new System.EventHandler(this.searching_button_Click);
             // 
-            // searching_textbox
+            // picboxAvatar
             // 
             this.searching_textbox.BackColor = System.Drawing.SystemColors.Window;
             this.searching_textbox.BorderColor = System.Drawing.Color.Black;
@@ -605,7 +637,6 @@ namespace DO_AN_LTTQ
         private Sipaa.Framework.STextBox searching_textbox;
         private Guna.UI2.WinForms.Guna2ImageButton searching_button;
         private System.Windows.Forms.Label home_label;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2TileButton Album_Button;
         private Guna.UI2.WinForms.Guna2TileButton YeuThich_Button;
         private Guna.UI2.WinForms.Guna2TileButton ThuVien_Button;
@@ -613,7 +644,7 @@ namespace DO_AN_LTTQ
         private System.Windows.Forms.Button btnTaiNhac;
         public AxWMPLib.AxWindowsMediaPlayer player;
         public System.Windows.Forms.Label name_of_song;
-       
+        private System.Windows.Forms.Button btnAn;
         public System.Windows.Forms.Label lblTacGiaNhac;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -625,6 +656,15 @@ namespace DO_AN_LTTQ
         private Guna.UI2.WinForms.Guna2CirclePictureBox picboxAvatar;
         private uMyMusic uMyMusic1;
         private uAlbum uAlbum1;
+        private MyMusic My_Music;
+        private System.Windows.Forms.Timer autoNextSongTimer;
+        private System.Windows.Forms.Timer rotateTimer;
+        private System.Windows.Forms.Button btnAn;
+        private System.Windows.Forms.Button btnTaiNhac;
+        private MyMusic myMusic1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
     }
 }
 
