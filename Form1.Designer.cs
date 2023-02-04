@@ -180,6 +180,7 @@ namespace DO_AN_LTTQ
             this.ThuVien_Button.Text = "Thư viện";
             this.ThuVien_Button.TextOffset = new System.Drawing.Point(0, -10);
             this.ThuVien_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.ThuVien_Button.Click += new System.EventHandler(this.ThuVien_Button_Click);
             // 
             // searching_button
             // 
