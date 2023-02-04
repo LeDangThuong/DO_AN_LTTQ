@@ -61,8 +61,8 @@ namespace DO_AN_LTTQ
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
-            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
+            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
@@ -505,6 +505,13 @@ namespace DO_AN_LTTQ
             // 
             this.autoNextSongTimer.Tick += new System.EventHandler(this.autoNextSongTimer_Tick);
             // 
+            // flowPanelMedia
+            // 
+            this.flowPanelMedia.Location = new System.Drawing.Point(-12, 81);
+            this.flowPanelMedia.Name = "flowPanelMedia";
+            this.flowPanelMedia.Size = new System.Drawing.Size(980, 452);
+            this.flowPanelMedia.TabIndex = 1;
+            // 
             // myMusic1
             // 
             this.myMusic1.Location = new System.Drawing.Point(0, 81);
@@ -512,13 +519,6 @@ namespace DO_AN_LTTQ
             this.myMusic1.Size = new System.Drawing.Size(1109, 510);
             this.myMusic1.TabIndex = 0;
             this.myMusic1.Load += new System.EventHandler(this.myMusic1_Load);
-            // 
-            // flowPanelMedia
-            // 
-            this.flowPanelMedia.Location = new System.Drawing.Point(-12, 81);
-            this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(980, 452);
-            this.flowPanelMedia.TabIndex = 1;
             // 
             // Form1
             // 
