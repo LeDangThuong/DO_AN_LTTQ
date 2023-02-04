@@ -528,9 +528,14 @@ namespace DO_AN_LTTQ
         }
 
         private void ThuVien_Button_Click(object sender, EventArgs e)
-        {
+        {   
             
-            myMusic1.Show();
+            myMusic1.BringToFront();
+        }
+
+        private void TrangChu_Button_Click(object sender, EventArgs e)
+        {
+            flowPanelMedia.BringToFront();
         }
 
 

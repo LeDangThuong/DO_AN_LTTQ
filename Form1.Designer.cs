@@ -57,13 +57,13 @@ namespace DO_AN_LTTQ
             this.panel2 = new System.Windows.Forms.Panel();
             this.MusicPanel = new System.Windows.Forms.Panel();
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
-            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.btnAn = new System.Windows.Forms.Button();
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.home_label = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
+            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
@@ -111,6 +111,7 @@ namespace DO_AN_LTTQ
             this.TrangChu_Button.Text = "Trang chủ";
             this.TrangChu_Button.TextOffset = new System.Drawing.Point(0, -10);
             this.TrangChu_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.TrangChu_Button.Click += new System.EventHandler(this.TrangChu_Button_Click);
             // 
             // Album_Button
             // 
@@ -472,14 +473,6 @@ namespace DO_AN_LTTQ
             this.flowPanelMedia.Size = new System.Drawing.Size(968, 452);
             this.flowPanelMedia.TabIndex = 1;
             // 
-            // myMusic1
-            // 
-            this.myMusic1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.myMusic1.Location = new System.Drawing.Point(0, 0);
-            this.myMusic1.Name = "myMusic1";
-            this.myMusic1.Size = new System.Drawing.Size(968, 442);
-            this.myMusic1.TabIndex = 0;
-            // 
             // btnAn
             // 
             this.btnAn.BackColor = System.Drawing.Color.Gray;
@@ -526,6 +519,14 @@ namespace DO_AN_LTTQ
             // autoNextSongTimer
             // 
             this.autoNextSongTimer.Tick += new System.EventHandler(this.autoNextSongTimer_Tick);
+            // 
+            // myMusic1
+            // 
+            this.myMusic1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.myMusic1.Location = new System.Drawing.Point(0, 0);
+            this.myMusic1.Name = "myMusic1";
+            this.myMusic1.Size = new System.Drawing.Size(968, 442);
+            this.myMusic1.TabIndex = 0;
             // 
             // Form1
             // 
