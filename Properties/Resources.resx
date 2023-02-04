@@ -144,9 +144,10 @@
     <value>..\Resources\moonlight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 
-  <data name="repeat_infinity" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\repeat_infinity1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="albumIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+	<data name="repeat_infinity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\repeat_infinity1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	  <data name="albumIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\albumIcon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="random" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -161,9 +162,10 @@
   <data name="volume_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\volume_white1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="repeat-once" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\repeat-once1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+	<data name="repeat-once" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\repeat-once1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	  <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pause1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="repeat_infinity" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -188,9 +190,10 @@
 	<data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
 		<value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 	</data>
-  <data name="home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="DefaultMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+	  <data name="home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		  <value>..\Resources\home11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	  </data>
+	  <data name="DefaultMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DefaultMusic1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

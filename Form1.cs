@@ -29,14 +29,14 @@ namespace DO_AN_LTTQ
     {
         #region Properties
         private List<MediaItem> mediaItems = new List<MediaItem>();
-        
+
         //// LẤY TÊN FILE
         string[] files;
         //string filename;
         //string[] paths;
 
 
-        
+
 
         // SANG
         MediaItem itemPlay = new MediaItem();
@@ -46,12 +46,12 @@ namespace DO_AN_LTTQ
         string[] divideFilename = new string[2];
 
         //THUONG
-        private List<SongIn4> songIn4s= new List<SongIn4>();   
+        private List<SongIn4> songIn4s = new List<SongIn4>();
         private List<MediaItem> FullNhac = new List<MediaItem>();
         private List<MediaItem> NhacDangChay = new List<MediaItem>();
         private List<MediaItem> NhacTaiLen = new List<MediaItem>();
         private List<MediaItem> NhacDaNghe = new List<MediaItem>();
-        private List<MediaItem> NhacDuocChon = new List<MediaItem>();  
+        private List<MediaItem> NhacDuocChon = new List<MediaItem>();
         private List<string> DanhSach = new List<string>();
         private List<int> listIndex = new List<int>();
 
@@ -63,10 +63,10 @@ namespace DO_AN_LTTQ
         #endregion
         public Form1()
         {
-            
+
             InitializeComponent();
-            
-            
+
+
         }
 
         #region SETTINGS_SONG
@@ -122,16 +122,16 @@ namespace DO_AN_LTTQ
                 item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 item.Dock = DockStyle.Top;
-                uMyMusic.flowPanelMedia.Controls.Add(item); 
+                uMyMusic.flowPanelMedia.Controls.Add(item);
                 mediaItems.Add(item);
-         
+
             }
         }
         #endregion
         #region SETTING 
 
         int check_forplaybutton = 0;
- 
+
         private void item_MediaItem_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
@@ -184,16 +184,16 @@ namespace DO_AN_LTTQ
 
             player.Tag = item;
         }
-        
+
         private void btnAn_Click(object sender, EventArgs e)
         {
-            foreach(MediaItem item in mediaItems)
+            foreach (MediaItem item in mediaItems)
             {
-                if(item.Visible == true)     
+                if (item.Visible == true)
                     item.Visible = false;
-                else 
+                else
                     item.Visible = true;
-            }   
+            }
         }
         #endregion
         #region SETTING_COLORBACK
@@ -411,11 +411,11 @@ namespace DO_AN_LTTQ
             }
 
         }
-        
+
         // TUA NHANH ĐI 10s nhạc
         //
         int check_rewindbutton = 0;
-        
+
 
         //
         // THAY ĐỔI ICON SHUFFLE
@@ -423,7 +423,7 @@ namespace DO_AN_LTTQ
         int check_shuffle = 0;
         private void shuffle_button_Click(object sender, EventArgs e)
         {
-            if(check_shuffle == 0)
+            if (check_shuffle == 0)
             {
                 shuffle_button.Image = Properties.Resources.random;
                 check_shuffle = 1;
@@ -432,8 +432,8 @@ namespace DO_AN_LTTQ
             {
                 shuffle_button.Image = Properties.Resources.shuffle;
                 check_shuffle = 0;
-            } 
-                
+            }
+
         }
         //
         // Thay đổi ICON REPEAT
@@ -442,21 +442,21 @@ namespace DO_AN_LTTQ
 
         private void repeat_button_Click(object sender, EventArgs e)
         {
-            if( flag_repeat == 0)
+            if (flag_repeat == 0)
             {
                 repeat_button.Image = Properties.Resources.repeat_once;
                 flag_repeat = 1;
             }
-            else if(flag_repeat == 1)
+            else if (flag_repeat == 1)
             {
-                repeat_button.Image= Properties.Resources.repeat_infinity;
+                repeat_button.Image = Properties.Resources.repeat_infinity;
                 flag_repeat = 2;
-            }    
-            else if( flag_repeat == 2)
+            }
+            else if (flag_repeat == 2)
             {
                 repeat_button.Image = Properties.Resources.repeat;
                 flag_repeat = 0;
-            }    
+            }
         }
 
         #endregion
@@ -469,19 +469,19 @@ namespace DO_AN_LTTQ
         /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
                 guna2TrackBar1.Maximum = (int)player.Ctlcontrols.currentItem.duration;
                 guna2TrackBar1.Value = (int)player.Ctlcontrols.currentPosition;
-            }    
+            }
             try
             {
                 label1.Text = player.Ctlcontrols.currentPositionString;
                 label2.Text = player.Ctlcontrols.currentItem.durationString.ToString();
             }
-            catch 
+            catch
             {
-                    
+
             }
         }
         #endregion
@@ -532,18 +532,17 @@ namespace DO_AN_LTTQ
             }
         }
         // Thu Vien Click
-        private void guna2TileButton2_Click(object sender, EventArgs e)
+        private void ThuVien_Button_Click(object sender, EventArgs e)
         {
-            
             home_label.Text = "Thư viện";
             //flowPanelMedia.Controls.Clear();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
         }
         // Yeu Thich Click
-        private void guna2TileButton3_Click(object sender, EventArgs e)
+        private void YeuThich_Button_Click(object sender, EventArgs e)
         {
-            
+
             home_label.Text = "Yêu thích";
             //flowPanelMedia.Controls.Clear();
             SetSearch();
@@ -561,27 +560,30 @@ namespace DO_AN_LTTQ
             ChangeNormalColorOnPanelLeft(sender);
         }
         // Trang Chu Click
-        private void guna2TileButton1_Click(object sender, EventArgs e)
+        private void TrangChu_Button_Click(object sender, EventArgs e)
         {
-        }
+
             home_label.Text = TrangChu_Button.Text;
             uMyMusic.Controls.Clear();
-            foreach( MediaItem i in mediaItems)
+            foreach (MediaItem i in mediaItems)
             {
                 uMyMusic.Controls.Add(i);
+                flowPanelMedia.Controls.Add(i);
             }
             uMyMusic.BringToFront();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
-                flowPanelMedia.Controls.Add(i);
+            
+        }
+
         // Su Kien Tim Kiem
         private void searching_button_Click(object sender, EventArgs e)
         {
             home_label.Text = "Kết quả tìm kiếm";
             uMyMusic.Controls.Clear();
-            foreach(MediaItem i in mediaItems)
+            foreach (MediaItem i in mediaItems)
             {
-                if(string.Compare(i.lblTacGia.Text,searching_textbox.Texts) == 0)
+                if (string.Compare(i.lblTacGia.Text, searching_textbox.Texts) == 0)
                 {
                     uMyMusic.Controls.Add(i);
                 }
@@ -593,177 +595,66 @@ namespace DO_AN_LTTQ
             }
         }
         //Mau Button
-        Color ColorButton = new Color();
-        
-        
-     
+        System.Drawing.Color ColorButton = new System.Drawing.Color();
+
+
+        #endregion
+        #region HELLO
         public void ChangeNormalColorOnPanelLeft(object sender)
         {
             Guna2TileButton btn = sender as Guna2TileButton;
             btn.FillColor = ColorButton;
             foreach (Guna2TileButton item in panel3.Controls)
             {
-                if (item.Name != btn.Name && item.FillColor != Color.Gainsboro)
+                if (item.Name != btn.Name && item.FillColor != System.Drawing.Color.Gainsboro)
                 {
                     Guna2TileButton btn1 = item as Guna2TileButton;
-                    btn1.FillColor = Color.Gainsboro;
+                    btn1.FillColor = System.Drawing.Color.Gainsboro;
                 }
             }
         }
         private void SetSearch()
         {
             searching_textbox.Texts = "Tìm kiếm";
-            searching_textbox.ForeColor = Color.Silver;
+            searching_textbox.ForeColor = System.Drawing.Color.Silver;
         }
-        
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if(panel1.BackColor == System.Drawing.SystemColors.Control)
+            if (panel1.BackColor == System.Drawing.SystemColors.Control)
             {
-                panel1.BackColor = Color.DimGray;
-                bottom_panel.BackColor = Color.DimGray;
-                panel2.BackColor = Color.DimGray;
-                panel3.BackColor = Color.DimGray;
+                panel1.BackColor = System.Drawing.Color.DimGray;
+                bottom_panel.BackColor = System.Drawing.Color.DimGray;
+                panel2.BackColor = System.Drawing.Color.DimGray;
+                panel3.BackColor = System.Drawing.Color.DimGray;
                 pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
-                ColorButton = Color.White;
+                ColorButton = System.Drawing.Color.White;
             }
             else
             {
                 panel1.BackColor = System.Drawing.SystemColors.Control;
                 bottom_panel.BackColor = System.Drawing.SystemColors.Control;
-                
+
                 panel2.BackColor = System.Drawing.SystemColors.Control;
                 panel3.BackColor = System.Drawing.SystemColors.Control;
                 pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
-                ColorButton = Color.DarkGray;
+                ColorButton = System.Drawing.Color.DarkGray;
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ColorButton = Color.DarkGray;
+            ColorButton = System.Drawing.Color.DarkGray;
         }
 
-        #region Tiến Nhạc
-        private void next_button_Click(object sender, EventArgs e)
-        {
-            itemPlayed = (MediaItem) player.Tag;
 
-            getFilename = (string)itemPlayed.Tag;
-
-            divideFilename = getFilename.Split('|');
-
-            iPlay = Int32.Parse(divideFilename[1]);
-
-            if (iPlay < mediaItems.Count - 1)
-            {
-                itemPlay = mediaItems[++iPlay];
-            }
-            else
-            {
-                itemPlay = mediaItems[0];
-            }
-
-            getFilename = (string)itemPlay.Tag;
-            divideFilename = getFilename.Split('|');
-
-            player.URL = (string)divideFilename[0];
-            player.Ctlcontrols.play();
-
-
-            name_of_song.Text = itemPlay.lblTenBaiHat.Text;
-            lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
-
-            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
-            itemPlay.BackColor = Color.Gray;
-
-            try
-            {
-                
-                //var f = TagLib.File.Create((string)item.Tag);
-                var f = TagLib.File.Create(divideFilename[0]);
-                var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
-                picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
-
-            }
-            catch
-            {
-                picboxAvatar.Image = Properties.Resources.musical_note;
-            }
-
-            player.Tag = itemPlay;
-        }
-
-        #endregion
-
-        #region Lùi Nhạc
-        private void rewind_button_Click(object sender, EventArgs e)
-        {
-            itemPlayed = (MediaItem)player.Tag;
-
-            getFilename = (string)itemPlayed.Tag;
-
-            divideFilename = getFilename.Split('|');
-
-            iPlay = Int32.Parse(divideFilename[1]);
-
-            if (iPlay > 0)
-            {
-                itemPlay = mediaItems[--iPlay];
-            }
-            else
-            {
-                itemPlay = mediaItems[mediaItems.Count - 1];
-            }
-                        flowPanelMedia.Controls.Add(i);
-            getFilename = (string)itemPlay.Tag;
-            divideFilename = getFilename.Split('|');
-
-            player.URL = (string)divideFilename[0];
-            player.Ctlcontrols.play();
-
-
-            name_of_song.Text = itemPlay.lblTenBaiHat.Text;
-            lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
-
-            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
-            itemPlay.BackColor = Color.Gray;
-
-            try
-            {
-
-                //var f = TagLib.File.Create((string)item.Tag);
-                var f = TagLib.File.Create(divideFilename[0]);
-                var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
-                picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
-
-            }
-            catch
-            {
-                picboxAvatar.Image = Properties.Resources.repeat;
-            }
-        }
-
-        private void flowPanelMedia_Paint(object sender, PaintEventArgs e)
-        {
-        #endregion
-
-        private void guna2TrackBar1_Scroll(object sender, ScrollEventArgs e)
-            player.Tag = itemPlay;
-        }
-
-        private void userControl11_Load(object sender, EventArgs e)
-        {
-            
-                player.Ctlcontrols.currentPosition = e.NewValue;
-            
-        }
         #endregion
 
 
 
         // Thu Vien Click
-
+       
     }
 }
+
