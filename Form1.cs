@@ -25,28 +25,26 @@ namespace DO_AN_LTTQ
 {
     public partial class Form1 : Form
     {
+        #region Properties
         private List<MediaItem> mediaItems = new List<MediaItem>();
         
-        // LẤY TÊN FILE
+        //// LẤY TÊN FILE
         string[] files;
-        string filename;
-        string[] paths;
+        //string filename;
+        //string[] paths;
+
 
         
-        // LẤY GIÁ TRỊ INDEX CỦA FILE
-        private int iOfListIndex;
-        private int indexNow = -1;
-        private float angles = 0;
-        private int status;
 
-
+        // SANG
         MediaItem itemPlay = new MediaItem();
         MediaItem itemPlayed = new MediaItem();
         int iPlay;
         private string getFilename = null;
         string[] divideFilename = new string[2];
 
-
+        //THUONG
+        private List<SongIn4> songIn4s= new List<SongIn4>();   
         private List<MediaItem> FullNhac = new List<MediaItem>();
         private List<MediaItem> NhacDangChay = new List<MediaItem>();
         private List<MediaItem> NhacTaiLen = new List<MediaItem>();
@@ -55,12 +53,12 @@ namespace DO_AN_LTTQ
         private List<string> DanhSach = new List<string>();
         private List<int> listIndex = new List<int>();
 
-
+        //TINH
         private List<MediaItem> mediaItemsLove = new List<MediaItem>();
         private List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
         private List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
 
-        
+        #endregion
         public Form1()
         {
             
@@ -123,12 +121,16 @@ namespace DO_AN_LTTQ
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 item.Dock = DockStyle.Top;
                 flowPanelMedia.Controls.Add(item);
+                myMusic1.Controls.Add(item);
                 mediaItems.Add(item);
 
             }
         }
+        #endregion
+        #region SETTING 
+
         int check_forplaybutton = 0;
-        
+ 
         private void item_MediaItem_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
@@ -255,6 +257,7 @@ namespace DO_AN_LTTQ
         #endregion
 
 
+        #region SEARCHING
         // Xử lý khi click vào textbox, xóa chữ bên trong textbox;
         bool checking = false;
         private void searching_textbox_Click(object sender, EventArgs e)
@@ -273,7 +276,7 @@ namespace DO_AN_LTTQ
             return minute.ToString("00") + ":" + second.ToString("00");
         }
 
-
+        #endregion
         #region Tiến Nhạc
         private void next_button_Click(object sender, EventArgs e)
         {
@@ -501,9 +504,11 @@ namespace DO_AN_LTTQ
         //
         // CHỈNH VOLUME
         //
-  
+
         #endregion
         // Tim kiem doi mau
+
+        #region keyDown
         private void searching_textbox_Enter(object sender, EventArgs e)
         {
             if (searching_textbox.Texts.ToString() == "Tìm kiếm")
@@ -521,12 +526,19 @@ namespace DO_AN_LTTQ
                 searching_textbox.ForeColor = System.Drawing.Color.Silver;
             }
         }
+        #endregion
 
+
+        #region Song Time
         private void autoNextSongTimer_Tick(object sender, EventArgs e)
         {
 
         }
+        #endregion
 
+
+
+        #region Move to another one
         private void ThuVien_Button_Click(object sender, EventArgs e)
         {   
             
@@ -543,6 +555,11 @@ namespace DO_AN_LTTQ
 
         }
 
+        private void myMusic1_Load(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
 
 
 

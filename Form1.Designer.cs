@@ -55,8 +55,6 @@ namespace DO_AN_LTTQ
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.MusicPanel = new System.Windows.Forms.Panel();
-            this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAn = new System.Windows.Forms.Button();
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.home_label = new System.Windows.Forms.Label();
@@ -64,12 +62,12 @@ namespace DO_AN_LTTQ
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
             this.myMusic1 = new DO_AN_LTTQ.MyMusic();
+            this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.panel2.SuspendLayout();
-            this.MusicPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -374,6 +372,7 @@ namespace DO_AN_LTTQ
             this.next_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.next_button.Size = new System.Drawing.Size(64, 54);
             this.next_button.TabIndex = 5;
+            this.next_button.Click += new System.EventHandler(this.next_button_Click);
             this.next_button.MouseEnter += new System.EventHandler(this.next_button_MouseEnter);
             this.next_button.MouseLeave += new System.EventHandler(this.next_button_MouseLeave);
             // 
@@ -447,7 +446,8 @@ namespace DO_AN_LTTQ
             // 
             this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.panel2.Controls.Add(this.MusicPanel);
+            this.panel2.Controls.Add(this.flowPanelMedia);
+            this.panel2.Controls.Add(this.myMusic1);
             this.panel2.Controls.Add(this.btnAn);
             this.panel2.Controls.Add(this.btnTaiNhac);
             this.panel2.Controls.Add(this.home_label);
@@ -457,22 +457,6 @@ namespace DO_AN_LTTQ
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(968, 517);
             this.panel2.TabIndex = 2;
-            // 
-            // MusicPanel
-            // 
-            this.MusicPanel.Controls.Add(this.flowPanelMedia);
-            this.MusicPanel.Controls.Add(this.myMusic1);
-            this.MusicPanel.Location = new System.Drawing.Point(0, 75);
-            this.MusicPanel.Name = "MusicPanel";
-            this.MusicPanel.Size = new System.Drawing.Size(968, 442);
-            this.MusicPanel.TabIndex = 4;
-            // 
-            // flowPanelMedia
-            // 
-            this.flowPanelMedia.Location = new System.Drawing.Point(0, 0);
-            this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(968, 452);
-            this.flowPanelMedia.TabIndex = 1;
             // 
             // btnAn
             // 
@@ -523,11 +507,18 @@ namespace DO_AN_LTTQ
             // 
             // myMusic1
             // 
-            this.myMusic1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.myMusic1.Location = new System.Drawing.Point(0, 0);
+            this.myMusic1.Location = new System.Drawing.Point(0, 81);
             this.myMusic1.Name = "myMusic1";
-            this.myMusic1.Size = new System.Drawing.Size(968, 442);
+            this.myMusic1.Size = new System.Drawing.Size(1109, 510);
             this.myMusic1.TabIndex = 0;
+            this.myMusic1.Load += new System.EventHandler(this.myMusic1_Load);
+            // 
+            // flowPanelMedia
+            // 
+            this.flowPanelMedia.Location = new System.Drawing.Point(-12, 81);
+            this.flowPanelMedia.Name = "flowPanelMedia";
+            this.flowPanelMedia.Size = new System.Drawing.Size(980, 452);
+            this.flowPanelMedia.TabIndex = 1;
             // 
             // Form1
             // 
@@ -547,7 +538,6 @@ namespace DO_AN_LTTQ
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.MusicPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -582,10 +572,9 @@ namespace DO_AN_LTTQ
         private MyMusic My_Music;
         private System.Windows.Forms.Timer autoNextSongTimer;
         private System.Windows.Forms.Timer rotateTimer;
-        private System.Windows.Forms.Panel MusicPanel;
-        private MyMusic myMusic1;
         private System.Windows.Forms.Button btnAn;
         private System.Windows.Forms.Button btnTaiNhac;
+        private MyMusic myMusic1;
         private System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
     }
 }
