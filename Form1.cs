@@ -548,8 +548,10 @@ namespace DO_AN_LTTQ
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
         }
+        
         // Album Click
-        private void guna2TileButton4_Click(object sender, EventArgs e)
+
+        private void Album_Button_Click(object sender, EventArgs e)
         {
             uAlbum1.BringToFront();
             home_label.Text = "Album";
@@ -567,7 +569,7 @@ namespace DO_AN_LTTQ
             uMyMusic.Controls.Clear();
             foreach (MediaItem i in mediaItems)
             {
-                uMyMusic.Controls.Add(i);
+                
                 flowPanelMedia.Controls.Add(i);
             }
             uMyMusic.BringToFront();
@@ -648,13 +650,15 @@ namespace DO_AN_LTTQ
             ColorButton = System.Drawing.Color.DarkGray;
         }
 
+        
+
 
         #endregion
 
 
 
         // Thu Vien Click
-       
+
     }
 }
 
