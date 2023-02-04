@@ -158,6 +158,7 @@ namespace DO_AN_LTTQ
             this.YeuThich_Button.Text = "Yêu thích";
             this.YeuThich_Button.TextOffset = new System.Drawing.Point(0, -10);
             this.YeuThich_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.YeuThich_Button.Click += new System.EventHandler(this.YeuThich_Button_Click);
             // 
             // ThuVien_Button
             // 
