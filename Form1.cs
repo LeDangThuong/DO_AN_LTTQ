@@ -22,11 +22,13 @@ namespace DO_AN_LTTQ
 {
     public partial class Form1 : Form
     {
+        #region Properties 
         //Tao tug list cho moi trang
         List<MediaItem> mediaItems = new List<MediaItem>();
         List<MediaItem> mediaItemsLove = new List<MediaItem>();
         List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
         List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
+        #endregion
         public Form1()
         {
             
@@ -91,8 +93,7 @@ namespace DO_AN_LTTQ
                 item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 item.Dock = DockStyle.Top;
-                uMyMusic.Controls.Add(item);
-                uMyMusic.BringToFront();
+                uMyMusic.flowPanelMedia.Controls.Add(item); 
                 mediaItems.Add(item);
             }
 
@@ -236,7 +237,7 @@ namespace DO_AN_LTTQ
             
             
         }
-        //
+        
         // TUA NHANH ĐI 10s nhạc
         //
         int check_rewindbutton = 0;
