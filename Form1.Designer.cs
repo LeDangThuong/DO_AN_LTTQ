@@ -99,7 +99,7 @@ namespace DO_AN_LTTQ
             this.panel3.Controls.Add(this.YeuThich_Button);
             this.panel3.Location = new System.Drawing.Point(23, 122);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(332, 455);
+            this.panel3.Size = new System.Drawing.Size(347, 455);
             this.panel3.TabIndex = 6;
             // 
             // About_Button
@@ -119,7 +119,7 @@ namespace DO_AN_LTTQ
             this.About_Button.Margin = new System.Windows.Forms.Padding(5);
             this.About_Button.Name = "About_Button";
             this.About_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.About_Button.Size = new System.Drawing.Size(302, 60);
+            this.About_Button.Size = new System.Drawing.Size(327, 60);
             this.About_Button.TabIndex = 37;
             this.About_Button.Text = "About";
             this.About_Button.TextOffset = new System.Drawing.Point(0, -10);
@@ -144,7 +144,7 @@ namespace DO_AN_LTTQ
             this.TrangChu_Button.Margin = new System.Windows.Forms.Padding(5);
             this.TrangChu_Button.Name = "TrangChu_Button";
             this.TrangChu_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.TrangChu_Button.Size = new System.Drawing.Size(302, 60);
+            this.TrangChu_Button.Size = new System.Drawing.Size(327, 60);
             this.TrangChu_Button.TabIndex = 11;
             this.TrangChu_Button.Text = "Trang chủ";
             this.TrangChu_Button.TextOffset = new System.Drawing.Point(0, -10);
@@ -168,7 +168,7 @@ namespace DO_AN_LTTQ
             this.CaiDat_Button.Margin = new System.Windows.Forms.Padding(5);
             this.CaiDat_Button.Name = "CaiDat_Button";
             this.CaiDat_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.CaiDat_Button.Size = new System.Drawing.Size(302, 60);
+            this.CaiDat_Button.Size = new System.Drawing.Size(327, 60);
             this.CaiDat_Button.TabIndex = 36;
             this.CaiDat_Button.Text = "Cài đặt";
             this.CaiDat_Button.TextOffset = new System.Drawing.Point(0, -10);
@@ -193,7 +193,7 @@ namespace DO_AN_LTTQ
             this.ThuVien_Button.Margin = new System.Windows.Forms.Padding(5);
             this.ThuVien_Button.Name = "ThuVien_Button";
             this.ThuVien_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.ThuVien_Button.Size = new System.Drawing.Size(302, 60);
+            this.ThuVien_Button.Size = new System.Drawing.Size(327, 60);
             this.ThuVien_Button.TabIndex = 12;
             this.ThuVien_Button.Text = "Thư viện";
             this.ThuVien_Button.TextOffset = new System.Drawing.Point(0, -10);
@@ -217,7 +217,7 @@ namespace DO_AN_LTTQ
             this.Album_Button.Margin = new System.Windows.Forms.Padding(5);
             this.Album_Button.Name = "Album_Button";
             this.Album_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.Album_Button.Size = new System.Drawing.Size(302, 60);
+            this.Album_Button.Size = new System.Drawing.Size(327, 60);
             this.Album_Button.TabIndex = 14;
             this.Album_Button.Text = "Album";
             this.Album_Button.TextOffset = new System.Drawing.Point(0, -10);
@@ -241,7 +241,7 @@ namespace DO_AN_LTTQ
             this.YeuThich_Button.Margin = new System.Windows.Forms.Padding(5);
             this.YeuThich_Button.Name = "YeuThich_Button";
             this.YeuThich_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.YeuThich_Button.Size = new System.Drawing.Size(302, 60);
+            this.YeuThich_Button.Size = new System.Drawing.Size(327, 60);
             this.YeuThich_Button.TabIndex = 13;
             this.YeuThich_Button.Text = "Yêu thích";
             this.YeuThich_Button.TextOffset = new System.Drawing.Point(0, -10);
@@ -282,7 +282,7 @@ namespace DO_AN_LTTQ
             this.searching_textbox.PasswordChar = false;
             this.searching_textbox.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.searching_textbox.PlaceholderText = "";
-            this.searching_textbox.Size = new System.Drawing.Size(372, 50);
+            this.searching_textbox.Size = new System.Drawing.Size(374, 50);
             this.searching_textbox.TabIndex = 35;
             this.searching_textbox.Texts = "Tìm kiếm";
             this.searching_textbox.UnderlinedStyle = false;
