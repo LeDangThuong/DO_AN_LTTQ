@@ -363,7 +363,7 @@ namespace DO_AN_LTTQ
         // Album Click
         private void guna2TileButton4_Click(object sender, EventArgs e)
         {
-            
+            uAlbum1.BringToFront();
             home_label.Text = "Album";
             uMyMusic.Controls.Clear();
 

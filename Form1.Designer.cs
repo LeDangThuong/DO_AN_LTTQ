@@ -66,6 +66,7 @@ namespace DO_AN_LTTQ
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
             this.uAbout = new DO_AN_LTTQ.uAbout();
+            this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
@@ -613,7 +614,7 @@ namespace DO_AN_LTTQ
             // 
             // uMyMusic
             // 
-            this.uMyMusic.BackColor = System.Drawing.SystemColors.Control;
+            this.uMyMusic.BackColor = System.Drawing.SystemColors.ControlLight;
             this.uMyMusic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uMyMusic.Location = new System.Drawing.Point(0, 0);
             this.uMyMusic.Name = "uMyMusic";
@@ -628,6 +629,14 @@ namespace DO_AN_LTTQ
             this.uAbout.Size = new System.Drawing.Size(1575, 807);
             this.uAbout.TabIndex = 5;
             // 
+            // uAlbum1
+            // 
+            this.uAlbum1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uAlbum1.Location = new System.Drawing.Point(0, 0);
+            this.uAlbum1.Name = "uAlbum1";
+            this.uAlbum1.Size = new System.Drawing.Size(1575, 807);
+            this.uAlbum1.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -638,6 +647,7 @@ namespace DO_AN_LTTQ
             this.Controls.Add(this.bottom_panel);
             this.Controls.Add(this.uMyMusic);
             this.Controls.Add(this.uAbout);
+            this.Controls.Add(this.uAlbum1);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -691,6 +701,7 @@ namespace DO_AN_LTTQ
         private uAbout uAbout;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private uAlbum uAlbum1;
     }
 }
 
