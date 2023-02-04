@@ -32,13 +32,21 @@ namespace DO_AN_LTTQ
         string filename;
         string[] paths;
 
-        private string getFilename = null;
+        
         // LẤY GIÁ TRỊ INDEX CỦA FILE
         private int iOfListIndex;
         private int indexNow = -1;
         private float angles = 0;
         private int status;
-        
+
+
+        MediaItem itemPlay = new MediaItem();
+        MediaItem itemPlayed = new MediaItem();
+        int iPlay;
+        private string getFilename = null;
+        string[] divideFilename = new string[2];
+
+
         private List<MediaItem> FullNhac = new List<MediaItem>();
         private List<MediaItem> NhacDangChay = new List<MediaItem>();
         private List<MediaItem> NhacTaiLen = new List<MediaItem>();
@@ -297,7 +305,7 @@ namespace DO_AN_LTTQ
             lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
 
             itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
-            itemPlay.BackColor = Color.Gray;
+            itemPlay.BackColor = System.Drawing.Color.Gray;
 
             try
             {
@@ -349,7 +357,7 @@ namespace DO_AN_LTTQ
             lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
 
             itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
-            itemPlay.BackColor = Color.Gray;
+            itemPlay.BackColor = System.Drawing.Color.Gray;
 
             try
             {
