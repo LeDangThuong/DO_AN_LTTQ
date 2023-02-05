@@ -537,7 +537,7 @@ namespace DO_AN_LTTQ
             home_label.Text = "Thư viện";
             //flowPanelMedia.Controls.Clear();
             SetSearch();
-            MyMusic.TabControl1.BringToFront();
+            myMusic1.BringToFront();
         }
         // Yeu Thich Click
         private void YeuThich_Button_Click(object sender, EventArgs e)

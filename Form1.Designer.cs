@@ -56,17 +56,15 @@ namespace DO_AN_LTTQ
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.home_label = new System.Windows.Forms.Label();
-
             this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
-
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
+            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
@@ -253,6 +251,7 @@ namespace DO_AN_LTTQ
             this.bottom_panel.Controls.Add(this.guna2TrackBar1);
             this.bottom_panel.Controls.Add(this.lblTacGiaNhac);
             this.bottom_panel.Controls.Add(this.name_of_song);
+            this.bottom_panel.Controls.Add(this.myMusic1);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bottom_panel.Location = new System.Drawing.Point(0, 495);
             this.bottom_panel.Name = "bottom_panel";
@@ -462,10 +461,8 @@ namespace DO_AN_LTTQ
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-
             this.panel2.Controls.Add(this.btnTaiNhac);
             this.panel2.Controls.Add(this.home_label);
-
             this.panel2.Controls.Add(this.uAlbum1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(240, 0);
@@ -473,7 +470,6 @@ namespace DO_AN_LTTQ
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(961, 495);
             this.panel2.TabIndex = 2;
-       
             // 
             // btnTaiNhac
             // 
@@ -498,14 +494,13 @@ namespace DO_AN_LTTQ
             this.home_label.Size = new System.Drawing.Size(164, 45);
             this.home_label.TabIndex = 0;
             this.home_label.Text = "Trang chủ";
-          
             // 
             // uAlbum1
             // 
             this.uAlbum1.Location = new System.Drawing.Point(0, 80);
             this.uAlbum1.Margin = new System.Windows.Forms.Padding(2);
             this.uAlbum1.Name = "uAlbum1";
-            this.uAlbum1.Size = new System.Drawing.Size(884, 432);
+            this.uAlbum1.Size = new System.Drawing.Size(884, 426);
             this.uAlbum1.TabIndex = 9;
             // 
             // pictureBox1
@@ -523,7 +518,6 @@ namespace DO_AN_LTTQ
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-          
             // 
             // flowPanelMedia
             // 
@@ -531,6 +525,13 @@ namespace DO_AN_LTTQ
             this.flowPanelMedia.Name = "flowPanelMedia";
             this.flowPanelMedia.Size = new System.Drawing.Size(200, 100);
             this.flowPanelMedia.TabIndex = 0;
+            // 
+            // myMusic1
+            // 
+            this.myMusic1.Location = new System.Drawing.Point(236, -424);
+            this.myMusic1.Name = "myMusic1";
+            this.myMusic1.Size = new System.Drawing.Size(965, 463);
+            this.myMusic1.TabIndex = 10;
             // 
             // Form1
             // 
@@ -595,8 +596,7 @@ namespace DO_AN_LTTQ
 
 
         private System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
-    
-
+        private MyMusic myMusic1;
     }
 }
 
