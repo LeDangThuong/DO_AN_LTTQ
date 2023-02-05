@@ -16,5 +16,35 @@ namespace DO_AN_LTTQ
         {
             InitializeComponent();
         }
+
+        private void dalbum_pic_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void back_pic_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlayList_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddSong_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Rename_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Delete_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

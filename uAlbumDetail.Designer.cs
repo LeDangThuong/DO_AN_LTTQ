@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.paneldetail = new System.Windows.Forms.Panel();
-            this.panelAlbumDetail = new System.Windows.Forms.FlowLayoutPanel();
-            this.SLSong_lbl = new Krypton.Toolkit.KryptonLabel();
             this.NameSong_lbl = new System.Windows.Forms.Label();
+            this.SLSong_lbl = new Krypton.Toolkit.KryptonLabel();
+            this.panelAlbumDetail = new System.Windows.Forms.FlowLayoutPanel();
             this.AddSong_button = new Guna.UI2.WinForms.Guna2TileButton();
             this.Delete_button = new Guna.UI2.WinForms.Guna2TileButton();
             this.Rename_button = new Guna.UI2.WinForms.Guna2TileButton();
@@ -54,26 +54,8 @@
             this.paneldetail.Controls.Add(this.SLSong_lbl);
             this.paneldetail.Location = new System.Drawing.Point(226, 3);
             this.paneldetail.Name = "paneldetail";
-            this.paneldetail.Size = new System.Drawing.Size(795, 190);
+            this.paneldetail.Size = new System.Drawing.Size(795, 174);
             this.paneldetail.TabIndex = 2;
-            // 
-            // panelAlbumDetail
-            // 
-            this.panelAlbumDetail.AutoScroll = true;
-            this.panelAlbumDetail.Location = new System.Drawing.Point(0, 195);
-            this.panelAlbumDetail.Name = "panelAlbumDetail";
-            this.panelAlbumDetail.Size = new System.Drawing.Size(1024, 309);
-            this.panelAlbumDetail.TabIndex = 3;
-            // 
-            // SLSong_lbl
-            // 
-            this.SLSong_lbl.LabelStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.SLSong_lbl.Location = new System.Drawing.Point(37, 70);
-            this.SLSong_lbl.Name = "SLSong_lbl";
-            this.SLSong_lbl.PaletteMode = Krypton.Toolkit.PaletteMode.Office2010Silver;
-            this.SLSong_lbl.Size = new System.Drawing.Size(87, 27);
-            this.SLSong_lbl.TabIndex = 1;
-            this.SLSong_lbl.Values.Text = "0 Bài Hát";
             // 
             // NameSong_lbl
             // 
@@ -85,6 +67,23 @@
             this.NameSong_lbl.TabIndex = 2;
             this.NameSong_lbl.Text = "Name Album";
             this.NameSong_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SLSong_lbl
+            // 
+            this.SLSong_lbl.LabelStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.SLSong_lbl.Location = new System.Drawing.Point(37, 70);
+            this.SLSong_lbl.Name = "SLSong_lbl";
+            this.SLSong_lbl.PaletteMode = Krypton.Toolkit.PaletteMode.Office2010Silver;
+            this.SLSong_lbl.Size = new System.Drawing.Size(87, 27);
+            this.SLSong_lbl.TabIndex = 1;
+            this.SLSong_lbl.Values.Text = "0 Bài Hát";
+            // 
+            // panelAlbumDetail
+            // 
+            this.panelAlbumDetail.Location = new System.Drawing.Point(0, 174);
+            this.panelAlbumDetail.Name = "panelAlbumDetail";
+            this.panelAlbumDetail.Size = new System.Drawing.Size(1024, 330);
+            this.panelAlbumDetail.TabIndex = 3;
             // 
             // AddSong_button
             // 
@@ -103,13 +102,14 @@
             this.AddSong_button.Location = new System.Drawing.Point(278, 117);
             this.AddSong_button.Margin = new System.Windows.Forms.Padding(5);
             this.AddSong_button.Name = "AddSong_button";
-            this.AddSong_button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.AddSong_button.Padding = new System.Windows.Forms.Padding(0, 0, 15, 15);
             this.AddSong_button.Size = new System.Drawing.Size(164, 54);
             this.AddSong_button.TabIndex = 16;
             this.AddSong_button.Text = "Add To";
             this.AddSong_button.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.AddSong_button.TextOffset = new System.Drawing.Point(0, -10);
             this.AddSong_button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.AddSong_button.Click += new System.EventHandler(this.AddSong_button_Click);
             // 
             // Delete_button
             // 
@@ -125,16 +125,17 @@
             this.Delete_button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Delete_button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.Delete_button.ImageSize = new System.Drawing.Size(30, 30);
-            this.Delete_button.Location = new System.Drawing.Point(626, 117);
+            this.Delete_button.Location = new System.Drawing.Point(652, 117);
             this.Delete_button.Margin = new System.Windows.Forms.Padding(5);
             this.Delete_button.Name = "Delete_button";
-            this.Delete_button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.Delete_button.Padding = new System.Windows.Forms.Padding(0, 0, 15, 15);
             this.Delete_button.Size = new System.Drawing.Size(138, 54);
             this.Delete_button.TabIndex = 17;
             this.Delete_button.Text = "Xóa";
             this.Delete_button.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Delete_button.TextOffset = new System.Drawing.Point(0, -10);
             this.Delete_button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.Delete_button.Click += new System.EventHandler(this.Delete_button_Click);
             // 
             // Rename_button
             // 
@@ -153,13 +154,14 @@
             this.Rename_button.Location = new System.Drawing.Point(452, 117);
             this.Rename_button.Margin = new System.Windows.Forms.Padding(5);
             this.Rename_button.Name = "Rename_button";
-            this.Rename_button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.Rename_button.Size = new System.Drawing.Size(164, 54);
+            this.Rename_button.Padding = new System.Windows.Forms.Padding(0, 0, 15, 15);
+            this.Rename_button.Size = new System.Drawing.Size(173, 54);
             this.Rename_button.TabIndex = 16;
             this.Rename_button.Text = "ReName";
             this.Rename_button.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Rename_button.TextOffset = new System.Drawing.Point(0, -10);
             this.Rename_button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.Rename_button.Click += new System.EventHandler(this.Rename_button_Click);
             // 
             // PlayList_button
             // 
@@ -175,16 +177,17 @@
             this.PlayList_button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.PlayList_button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.PlayList_button.ImageSize = new System.Drawing.Size(30, 30);
-            this.PlayList_button.Location = new System.Drawing.Point(115, 117);
+            this.PlayList_button.Location = new System.Drawing.Point(101, 117);
             this.PlayList_button.Margin = new System.Windows.Forms.Padding(5);
             this.PlayList_button.Name = "PlayList_button";
-            this.PlayList_button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.PlayList_button.Size = new System.Drawing.Size(149, 54);
+            this.PlayList_button.Padding = new System.Windows.Forms.Padding(0, 0, 15, 15);
+            this.PlayList_button.Size = new System.Drawing.Size(167, 54);
             this.PlayList_button.TabIndex = 15;
             this.PlayList_button.Text = "Play All";
             this.PlayList_button.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.PlayList_button.TextOffset = new System.Drawing.Point(0, -10);
             this.PlayList_button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.PlayList_button.Click += new System.EventHandler(this.PlayList_button_Click);
             // 
             // back_pic
             // 
@@ -195,16 +198,18 @@
             this.back_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.back_pic.TabIndex = 3;
             this.back_pic.TabStop = false;
+            this.back_pic.Click += new System.EventHandler(this.back_pic_Click);
             // 
             // dalbum_pic
             // 
             this.dalbum_pic.Image = global::DO_AN_LTTQ.Properties.Resources.album;
             this.dalbum_pic.Location = new System.Drawing.Point(0, 0);
             this.dalbum_pic.Name = "dalbum_pic";
-            this.dalbum_pic.Size = new System.Drawing.Size(225, 193);
+            this.dalbum_pic.Size = new System.Drawing.Size(225, 177);
             this.dalbum_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.dalbum_pic.TabIndex = 1;
             this.dalbum_pic.TabStop = false;
+            this.dalbum_pic.Click += new System.EventHandler(this.dalbum_pic_Click);
             // 
             // uAlbumDetail
             // 
@@ -227,13 +232,13 @@
 
         private System.Windows.Forms.PictureBox dalbum_pic;
         private System.Windows.Forms.Panel paneldetail;
-        private System.Windows.Forms.FlowLayoutPanel panelAlbumDetail;
-        private Krypton.Toolkit.KryptonLabel SLSong_lbl;
-        private System.Windows.Forms.Label NameSong_lbl;
-        private System.Windows.Forms.PictureBox back_pic;
-        private Guna.UI2.WinForms.Guna2TileButton PlayList_button;
-        private Guna.UI2.WinForms.Guna2TileButton AddSong_button;
-        private Guna.UI2.WinForms.Guna2TileButton Delete_button;
-        private Guna.UI2.WinForms.Guna2TileButton Rename_button;
+        public System.Windows.Forms.PictureBox back_pic;
+        public Guna.UI2.WinForms.Guna2TileButton PlayList_button;
+        public Guna.UI2.WinForms.Guna2TileButton AddSong_button;
+        public Guna.UI2.WinForms.Guna2TileButton Delete_button;
+        public Guna.UI2.WinForms.Guna2TileButton Rename_button;
+        public Krypton.Toolkit.KryptonLabel SLSong_lbl;
+        public System.Windows.Forms.Label NameSong_lbl;
+        public System.Windows.Forms.FlowLayoutPanel panelAlbumDetail;
     }
 }

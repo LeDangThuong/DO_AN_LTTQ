@@ -151,11 +151,23 @@
     <Compile Include="SongItem.Designer.cs">
       <DependentUpon>SongItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="uNewAlbum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uNewAlbum.Designer.cs">
+      <DependentUpon>uNewAlbum.cs</DependentUpon>
+    </Compile>
     <Compile Include="uOneAlbum.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="uOneAlbum.Designer.cs">
       <DependentUpon>uOneAlbum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uReName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uReName.Designer.cs">
+      <DependentUpon>uReName.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -193,8 +205,14 @@
     <EmbeddedResource Include="SongItem.resx">
       <DependentUpon>SongItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uNewAlbum.resx">
+      <DependentUpon>uNewAlbum.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uOneAlbum.resx">
       <DependentUpon>uOneAlbum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uReName.resx">
+      <DependentUpon>uReName.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -271,6 +289,8 @@
     <None Include="Resources\album.png" />
     <None Include="Resources\back1.png" />
     <None Include="Resources\delete.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\checked.png" />
     <Content Include="Resources\pause.png" />
     <None Include="Resources\question.png" />
     <None Include="Resources\setting.png" />

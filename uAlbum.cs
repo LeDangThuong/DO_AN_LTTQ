@@ -17,9 +17,6 @@ namespace DO_AN_LTTQ
             InitializeComponent();
         }
 
-        private void NewAlbum_Button_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -35,21 +35,20 @@
             // 
             // lbl_onealbum
             // 
-            this.lbl_onealbum.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbl_onealbum.Location = new System.Drawing.Point(0, 211);
+            this.lbl_onealbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.134328F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_onealbum.Location = new System.Drawing.Point(0, 182);
             this.lbl_onealbum.Name = "lbl_onealbum";
-            this.lbl_onealbum.Size = new System.Drawing.Size(251, 26);
+            this.lbl_onealbum.Size = new System.Drawing.Size(251, 34);
             this.lbl_onealbum.TabIndex = 1;
             this.lbl_onealbum.Text = "Album";
             this.lbl_onealbum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // onealbum_pic
             // 
-            this.onealbum_pic.Dock = System.Windows.Forms.DockStyle.Top;
             this.onealbum_pic.Image = global::DO_AN_LTTQ.Properties.Resources.album;
             this.onealbum_pic.Location = new System.Drawing.Point(0, 0);
             this.onealbum_pic.Name = "onealbum_pic";
-            this.onealbum_pic.Size = new System.Drawing.Size(251, 208);
+            this.onealbum_pic.Size = new System.Drawing.Size(251, 179);
             this.onealbum_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.onealbum_pic.TabIndex = 0;
             this.onealbum_pic.TabStop = false;
@@ -61,15 +60,14 @@
             this.Controls.Add(this.lbl_onealbum);
             this.Controls.Add(this.onealbum_pic);
             this.Name = "uOneAlbum";
-            this.Size = new System.Drawing.Size(251, 237);
+            this.Size = new System.Drawing.Size(251, 216);
             ((System.ComponentModel.ISupportInitialize)(this.onealbum_pic)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox onealbum_pic;
         public System.Windows.Forms.Label lbl_onealbum;
+        public System.Windows.Forms.PictureBox onealbum_pic;
     }
 }

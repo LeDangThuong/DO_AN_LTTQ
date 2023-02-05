@@ -9,11 +9,11 @@ namespace DO_AN_LTTQ
     internal class cAlbum
     {
         public uOneAlbum OneAlbum { get; set; }
-        public uAlbumDetail albumDetail { get; set; }
+        public List<MediaItem> albumDetail { get; set; }
         public string NameAlbum()
         {
             return OneAlbum.lbl_onealbum.Text;
         }
-
+        
     }
 }
