@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DO_AN_LTTQ
 {
-    public partial class LocalFiles : Form
+    public partial class uHome : UserControl
     {
-        public LocalFiles()
+        public uHome()
         {
             InitializeComponent();
         }

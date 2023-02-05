@@ -122,7 +122,7 @@ namespace DO_AN_LTTQ
                 item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 item.Dock = DockStyle.Top;
-                uMyMusic.flowPanelMedia.Controls.Add(item);
+                uHome.flowPanelMedia.Controls.Add(item);
                 mediaItems.Add(item);
 
             }
@@ -537,7 +537,7 @@ namespace DO_AN_LTTQ
             home_label.Text = "Thư viện";
             //flowPanelMedia.Controls.Clear();
             SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
+            MyMusic.TabControl1.BringToFront();
         }
         // Yeu Thich Click
         private void YeuThich_Button_Click(object sender, EventArgs e)
@@ -546,7 +546,7 @@ namespace DO_AN_LTTQ
             home_label.Text = "Yêu thích";
             //flowPanelMedia.Controls.Clear();
             SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
+            
         }
         
         // Album Click
@@ -555,44 +555,41 @@ namespace DO_AN_LTTQ
         {
             uAlbum1.BringToFront();
             home_label.Text = "Album";
-            uMyMusic.Controls.Clear();
+            uHome.Controls.Clear();
 
             //flowPanelMedia.Visible = false;
             SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
         }
         // Trang Chu Click
         private void TrangChu_Button_Click(object sender, EventArgs e)
         {
 
             home_label.Text = TrangChu_Button.Text;
-            uMyMusic.Controls.Clear();
+            uHome.Controls.Clear();
             foreach (MediaItem i in mediaItems)
             {
                 
                 flowPanelMedia.Controls.Add(i);
             }
-            uMyMusic.BringToFront();
+            uHome.BringToFront();
             SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
-            
         }
 
         // Su Kien Tim Kiem
         private void searching_button_Click(object sender, EventArgs e)
         {
             home_label.Text = "Kết quả tìm kiếm";
-            uMyMusic.Controls.Clear();
+            uHome.Controls.Clear();
             foreach (MediaItem i in mediaItems)
             {
                 if (string.Compare(i.lblTacGia.Text, searching_textbox.Texts) == 0)
                 {
-                    uMyMusic.Controls.Add(i);
+                    uHome.Controls.Add(i);
                 }
                 else
                 {
                     if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0)
-                        uMyMusic.Controls.Add(i);
+                        uHome.Controls.Add(i);
                 }
             }
         }
