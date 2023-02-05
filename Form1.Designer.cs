@@ -58,34 +58,29 @@ namespace DO_AN_LTTQ
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picture_theme = new System.Windows.Forms.PictureBox();
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.home_label = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
-            this.uReName1 = new DO_AN_LTTQ.uReName();
-            this.uNewAlbum1 = new DO_AN_LTTQ.uNewAlbum();
-            this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
             this.uAlbumDetail1 = new DO_AN_LTTQ.uAlbumDetail();
             this.uAlbum = new DO_AN_LTTQ.uAlbum();
             this.uAbout = new DO_AN_LTTQ.uAbout();
             this.uCaiDat = new DO_AN_LTTQ.uCaiDat();
-            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
+            this.uReName1 = new DO_AN_LTTQ.uReName();
+            this.uNewAlbum1 = new DO_AN_LTTQ.uNewAlbum();
             this.uYeuThich1 = new DO_AN_LTTQ.uYeuThich();
             this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
-        
-            this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
-         
+            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_theme)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -542,32 +537,27 @@ namespace DO_AN_LTTQ
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.picture_theme);
             this.panel2.Controls.Add(this.btnTaiNhac);
             this.panel2.Controls.Add(this.home_label);
-            this.panel2.Controls.Add(this.uMyMusic);
-            this.panel2.Controls.Add(this.uMyMusic1);
-            this.panel2.Controls.Add(this.uAlbum1);
-
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(240, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(437, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(5);
             this.panel2.Name = "panel2";
-
             this.panel2.Size = new System.Drawing.Size(1076, 132);
-
             this.panel2.TabIndex = 2;
             // 
-            // pictureBox1
+            // picture_theme
             // 
-            this.pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
-            this.pictureBox1.Location = new System.Drawing.Point(805, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
+            this.picture_theme.Location = new System.Drawing.Point(819, 20);
+            this.picture_theme.Margin = new System.Windows.Forms.Padding(2);
+            this.picture_theme.Name = "picture_theme";
+            this.picture_theme.Size = new System.Drawing.Size(47, 46);
+            this.picture_theme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picture_theme.TabIndex = 6;
+            this.picture_theme.TabStop = false;
+            this.picture_theme.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnTaiNhac
             // 
@@ -594,17 +584,6 @@ namespace DO_AN_LTTQ
             this.home_label.TabIndex = 0;
             this.home_label.Text = "Trang chủ";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(828, 19);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -616,52 +595,6 @@ namespace DO_AN_LTTQ
             this.flowPanelMedia.Name = "flowPanelMedia";
             this.flowPanelMedia.Size = new System.Drawing.Size(200, 100);
             this.flowPanelMedia.TabIndex = 0;
-            // 
-            // uYeuThich1
-            // 
-            this.uYeuThich1.Location = new System.Drawing.Point(0, 94);
-            this.uYeuThich1.Name = "uYeuThich1";
-            this.uYeuThich1.Size = new System.Drawing.Size(1190, 537);
-            this.uYeuThich1.TabIndex = 10;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // flowPanelMedia
-            // 
-            this.flowPanelMedia.Location = new System.Drawing.Point(0, 0);
-            this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(200, 100);
-            this.flowPanelMedia.TabIndex = 0;
-            // 
-            // uReName1
-            // 
-            this.uReName1.BackColor = System.Drawing.Color.LightGray;
-            this.uReName1.Location = new System.Drawing.Point(647, 192);
-            this.uReName1.Name = "uReName1";
-            this.uReName1.Size = new System.Drawing.Size(521, 391);
-            this.uReName1.TabIndex = 14;
-            this.uReName1.Load += new System.EventHandler(this.uReName1_Load);
-            // 
-            // uNewAlbum1
-            // 
-            this.uNewAlbum1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uNewAlbum1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.uNewAlbum1.Location = new System.Drawing.Point(680, 192);
-            this.uNewAlbum1.Name = "uNewAlbum1";
-            this.uNewAlbum1.Size = new System.Drawing.Size(447, 372);
-            this.uNewAlbum1.TabIndex = 12;
-            this.uNewAlbum1.Load += new System.EventHandler(this.uNewAlbum1_Load);
-            // 
-            // uMyMusic
-            // 
-            this.uMyMusic.Location = new System.Drawing.Point(437, 132);
-            this.uMyMusic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uMyMusic.Name = "uMyMusic";
-            this.uMyMusic.Size = new System.Drawing.Size(1076, 498);
-            this.uMyMusic.TabIndex = 3;
             // 
             // uAlbumDetail1
             // 
@@ -694,6 +627,40 @@ namespace DO_AN_LTTQ
             this.uCaiDat.Size = new System.Drawing.Size(1076, 498);
             this.uCaiDat.TabIndex = 11;
             // 
+            // uReName1
+            // 
+            this.uReName1.BackColor = System.Drawing.Color.LightGray;
+            this.uReName1.Location = new System.Drawing.Point(647, 192);
+            this.uReName1.Name = "uReName1";
+            this.uReName1.Size = new System.Drawing.Size(521, 391);
+            this.uReName1.TabIndex = 14;
+            this.uReName1.Load += new System.EventHandler(this.uReName1_Load);
+            // 
+            // uNewAlbum1
+            // 
+            this.uNewAlbum1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.uNewAlbum1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.uNewAlbum1.Location = new System.Drawing.Point(680, 192);
+            this.uNewAlbum1.Name = "uNewAlbum1";
+            this.uNewAlbum1.Size = new System.Drawing.Size(447, 372);
+            this.uNewAlbum1.TabIndex = 12;
+            this.uNewAlbum1.Load += new System.EventHandler(this.uNewAlbum1_Load);
+            // 
+            // uYeuThich1
+            // 
+            this.uYeuThich1.Location = new System.Drawing.Point(437, 132);
+            this.uYeuThich1.Name = "uYeuThich1";
+            this.uYeuThich1.Size = new System.Drawing.Size(1076, 498);
+            this.uYeuThich1.TabIndex = 10;
+            // 
+            // uMyMusic
+            // 
+            this.uMyMusic.Location = new System.Drawing.Point(437, 132);
+            this.uMyMusic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uMyMusic.Name = "uMyMusic";
+            this.uMyMusic.Size = new System.Drawing.Size(1076, 498);
+            this.uMyMusic.TabIndex = 3;
+            // 
             // myMusic1
             // 
             this.myMusic1.Location = new System.Drawing.Point(0, 0);
@@ -710,14 +677,14 @@ namespace DO_AN_LTTQ
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottom_panel);
-            this.Controls.Add(this.uMyMusic);
-            this.Controls.Add(this.uAlbumDetail1);
             this.Controls.Add(this.uAlbum);
             this.Controls.Add(this.uAbout);
             this.Controls.Add(this.uCaiDat);
             this.Controls.Add(this.uReName1);
-            this.Controls.Add(this.uYeuThich1);
             this.Controls.Add(this.uNewAlbum1);
+            this.Controls.Add(this.uYeuThich1);
+            this.Controls.Add(this.uMyMusic);
+            this.Controls.Add(this.uAlbumDetail1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -730,7 +697,7 @@ namespace DO_AN_LTTQ
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_theme)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -756,7 +723,7 @@ namespace DO_AN_LTTQ
         private System.Windows.Forms.Button btnTaiNhac;
         public AxWMPLib.AxWindowsMediaPlayer player;
         public System.Windows.Forms.Label name_of_song;
-     
+
         public System.Windows.Forms.Label lblTacGiaNhac;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -773,17 +740,20 @@ namespace DO_AN_LTTQ
         private MyMusic myMusic1;
 
         private System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
+
         private uMyMusic uMyMusic;
         private uAbout uAbout;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Panel bottom_panel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picture_theme;
         private uCaiDat uCaiDat;
         private uNewAlbum uNewAlbum1;
         private uAlbumDetail uAlbumDetail1;
         private uReName uReName1;
+
         private uYeuThich uYeuThich1;
+
     }
 }
 

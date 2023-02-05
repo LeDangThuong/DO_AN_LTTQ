@@ -151,6 +151,7 @@
     <Compile Include="SongItem.Designer.cs">
       <DependentUpon>SongItem.cs</DependentUpon>
     </Compile>
+
     <Compile Include="uNewAlbum.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,14 +167,15 @@
     <Compile Include="uReName.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uReName.Designer.cs">
-      <DependentUpon>uReName.cs</DependentUpon>
-    </Compile>
+	  <Compile Include="uReName.Designer.cs">
+		  <DependentUpon>uReName.cs</DependentUpon>
+	  </Compile>
     <Compile Include="uYeuThich.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="uYeuThich.Designer.cs">
       <DependentUpon>uYeuThich.cs</DependentUpon>
+
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -211,17 +213,19 @@
     <EmbeddedResource Include="SongItem.resx">
       <DependentUpon>SongItem.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="uNewAlbum.resx">
       <DependentUpon>uNewAlbum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uOneAlbum.resx">
       <DependentUpon>uOneAlbum.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uReName.resx">
-      <DependentUpon>uReName.cs</DependentUpon>
-    </EmbeddedResource>
+	  <EmbeddedResource Include="uReName.resx">
+		  <DependentUpon>uReName.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="uYeuThich.resx">
       <DependentUpon>uYeuThich.cs</DependentUpon>
+
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -293,6 +297,7 @@
     <None Include="Resources\albumIcon2.png" />
     <None Include="Resources\options-list.png" />
     <None Include="Resources\DefaultMusic1.png" />
+
     <None Include="Resources\log-out.png" />
     <None Include="Resources\clock.png" />
     <None Include="Resources\album.png" />
@@ -300,9 +305,11 @@
     <None Include="Resources\delete.png" />
     <None Include="Resources\error.png" />
     <None Include="Resources\checked.png" />
+
     <None Include="Resources\heart_white.png" />
     <None Include="Resources\heart_white1.png" />
     <None Include="Resources\heart_red.png" />
+
     <Content Include="Resources\pause.png" />
     <None Include="Resources\question.png" />
     <None Include="Resources\setting.png" />

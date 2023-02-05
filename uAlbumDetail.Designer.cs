@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.paneldetail = new System.Windows.Forms.Panel();
-            this.NameSong_lbl = new System.Windows.Forms.Label();
-            this.SLSong_lbl = new Krypton.Toolkit.KryptonLabel();
-            this.panelAlbumDetail = new System.Windows.Forms.FlowLayoutPanel();
             this.AddSong_button = new Guna.UI2.WinForms.Guna2TileButton();
             this.Delete_button = new Guna.UI2.WinForms.Guna2TileButton();
             this.Rename_button = new Guna.UI2.WinForms.Guna2TileButton();
             this.PlayList_button = new Guna.UI2.WinForms.Guna2TileButton();
             this.back_pic = new System.Windows.Forms.PictureBox();
+            this.NameSong_lbl = new System.Windows.Forms.Label();
+            this.SLSong_lbl = new Krypton.Toolkit.KryptonLabel();
+            this.panelAlbumDetail = new System.Windows.Forms.FlowLayoutPanel();
             this.dalbum_pic = new System.Windows.Forms.PictureBox();
+            this.AlbumOkList_Button = new Guna.UI2.WinForms.Guna2TileButton();
             this.paneldetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dalbum_pic)).BeginInit();
@@ -45,6 +46,7 @@
             // 
             // paneldetail
             // 
+            this.paneldetail.Controls.Add(this.AlbumOkList_Button);
             this.paneldetail.Controls.Add(this.AddSong_button);
             this.paneldetail.Controls.Add(this.Delete_button);
             this.paneldetail.Controls.Add(this.Rename_button);
@@ -56,34 +58,6 @@
             this.paneldetail.Name = "paneldetail";
             this.paneldetail.Size = new System.Drawing.Size(795, 174);
             this.paneldetail.TabIndex = 2;
-            // 
-            // NameSong_lbl
-            // 
-            this.NameSong_lbl.Font = new System.Drawing.Font("Lucida Handwriting", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameSong_lbl.ForeColor = System.Drawing.Color.Maroon;
-            this.NameSong_lbl.Location = new System.Drawing.Point(5, 22);
-            this.NameSong_lbl.Name = "NameSong_lbl";
-            this.NameSong_lbl.Size = new System.Drawing.Size(310, 45);
-            this.NameSong_lbl.TabIndex = 2;
-            this.NameSong_lbl.Text = "Name Album";
-            this.NameSong_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SLSong_lbl
-            // 
-            this.SLSong_lbl.LabelStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.SLSong_lbl.Location = new System.Drawing.Point(37, 70);
-            this.SLSong_lbl.Name = "SLSong_lbl";
-            this.SLSong_lbl.PaletteMode = Krypton.Toolkit.PaletteMode.Office2010Silver;
-            this.SLSong_lbl.Size = new System.Drawing.Size(87, 27);
-            this.SLSong_lbl.TabIndex = 1;
-            this.SLSong_lbl.Values.Text = "0 Bài Hát";
-            // 
-            // panelAlbumDetail
-            // 
-            this.panelAlbumDetail.Location = new System.Drawing.Point(0, 174);
-            this.panelAlbumDetail.Name = "panelAlbumDetail";
-            this.panelAlbumDetail.Size = new System.Drawing.Size(1024, 330);
-            this.panelAlbumDetail.TabIndex = 3;
             // 
             // AddSong_button
             // 
@@ -200,6 +174,34 @@
             this.back_pic.TabStop = false;
             this.back_pic.Click += new System.EventHandler(this.back_pic_Click);
             // 
+            // NameSong_lbl
+            // 
+            this.NameSong_lbl.Font = new System.Drawing.Font("Lucida Handwriting", 16.1194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameSong_lbl.ForeColor = System.Drawing.Color.Maroon;
+            this.NameSong_lbl.Location = new System.Drawing.Point(5, 22);
+            this.NameSong_lbl.Name = "NameSong_lbl";
+            this.NameSong_lbl.Size = new System.Drawing.Size(310, 45);
+            this.NameSong_lbl.TabIndex = 2;
+            this.NameSong_lbl.Text = "Name Album";
+            this.NameSong_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SLSong_lbl
+            // 
+            this.SLSong_lbl.LabelStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.SLSong_lbl.Location = new System.Drawing.Point(37, 70);
+            this.SLSong_lbl.Name = "SLSong_lbl";
+            this.SLSong_lbl.PaletteMode = Krypton.Toolkit.PaletteMode.Office2010Silver;
+            this.SLSong_lbl.Size = new System.Drawing.Size(87, 27);
+            this.SLSong_lbl.TabIndex = 1;
+            this.SLSong_lbl.Values.Text = "0 Bài Hát";
+            // 
+            // panelAlbumDetail
+            // 
+            this.panelAlbumDetail.Location = new System.Drawing.Point(0, 183);
+            this.panelAlbumDetail.Name = "panelAlbumDetail";
+            this.panelAlbumDetail.Size = new System.Drawing.Size(1024, 321);
+            this.panelAlbumDetail.TabIndex = 3;
+            // 
             // dalbum_pic
             // 
             this.dalbum_pic.Image = global::DO_AN_LTTQ.Properties.Resources.album;
@@ -210,6 +212,33 @@
             this.dalbum_pic.TabIndex = 1;
             this.dalbum_pic.TabStop = false;
             this.dalbum_pic.Click += new System.EventHandler(this.dalbum_pic_Click);
+            // 
+            // AlbumOkList_Button
+            // 
+            this.AlbumOkList_Button.BackColor = System.Drawing.Color.White;
+            this.AlbumOkList_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AlbumOkList_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AlbumOkList_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AlbumOkList_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AlbumOkList_Button.FillColor = System.Drawing.SystemColors.Control;
+            this.AlbumOkList_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.AlbumOkList_Button.ForeColor = System.Drawing.Color.DarkRed;
+            this.AlbumOkList_Button.Image = global::DO_AN_LTTQ.Properties.Resources._checked;
+            this.AlbumOkList_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.AlbumOkList_Button.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.AlbumOkList_Button.ImageSize = new System.Drawing.Size(30, 30);
+            this.AlbumOkList_Button.Location = new System.Drawing.Point(626, 53);
+            this.AlbumOkList_Button.Margin = new System.Windows.Forms.Padding(5);
+            this.AlbumOkList_Button.Name = "AlbumOkList_Button";
+            this.AlbumOkList_Button.Padding = new System.Windows.Forms.Padding(0, 0, 15, 15);
+            this.AlbumOkList_Button.Size = new System.Drawing.Size(137, 54);
+            this.AlbumOkList_Button.TabIndex = 17;
+            this.AlbumOkList_Button.Text = "OK";
+            this.AlbumOkList_Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.AlbumOkList_Button.TextOffset = new System.Drawing.Point(0, -10);
+            this.AlbumOkList_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.AlbumOkList_Button.Visible = false;
+            this.AlbumOkList_Button.Click += new System.EventHandler(this.AlbumOkList_Button_Click);
             // 
             // uAlbumDetail
             // 
@@ -240,5 +269,6 @@
         public Krypton.Toolkit.KryptonLabel SLSong_lbl;
         public System.Windows.Forms.Label NameSong_lbl;
         public System.Windows.Forms.FlowLayoutPanel panelAlbumDetail;
+        public Guna.UI2.WinForms.Guna2TileButton AlbumOkList_Button;
     }
 }

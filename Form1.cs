@@ -22,6 +22,7 @@ using System.Web.UI;
 using TagLib;
 using Guna.UI2.WinForms;
 using Krypton.Toolkit;
+using static Guna.UI2.WinForms.Suite.Descriptions;
 
 namespace DO_AN_LTTQ
 {
@@ -59,7 +60,7 @@ namespace DO_AN_LTTQ
         //TINH
         private List<MediaItem> mediaItemsLove = new List<MediaItem>();
         private List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
-        private List<MediaItem> mediaItemsThuVien = new List<MediaItem>();
+        
 
         private List<cAlbum> albums = new List<cAlbum>();
         #endregion
@@ -131,6 +132,7 @@ namespace DO_AN_LTTQ
                 uMyMusic.flowPanelMedia.Controls.Add(item);
                 mediaItems.Add(item);
 
+               
             }
         }
 
@@ -143,7 +145,7 @@ namespace DO_AN_LTTQ
 
             if(item.checkYeuThich.Checked)
             {
-                item.picboxYeuThich.Image = Properties.Resources.heart_white;
+                item.picboxYeuThich.Image = Properties.Resources.add;
                 item.checkYeuThich.Checked = false;
 
                 string str1, str2;
@@ -673,23 +675,15 @@ namespace DO_AN_LTTQ
             //flowPanelMedia.Visible = false;
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
-          
+            
         }
         // Trang Chu Click
         private void TrangChu_Button_Click(object sender, EventArgs e)
         {
-
             home_label.Text = TrangChu_Button.Text;
-            uMyMusic.flowPanelMedia.Controls.Clear();
-            foreach (MediaItem i in mediaItems)
-            {
-                
-                uMyMusic.flowPanelMedia.Controls.Add(i);
-            }
             uMyMusic.BringToFront();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
-         
 
         }
 
@@ -702,14 +696,15 @@ namespace DO_AN_LTTQ
             {
                 if (string.Compare(i.lblTacGia.Text, searching_textbox.Texts) == 0)
                 {
-                    uMyMusic.flowPanelMedia.Controls.Clear();
+                    uMyMusic.flowPanelMedia.Controls.Add(i);
                 }
                 else
                 {
                     if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0)
-                        uMyMusic.flowPanelMedia.Controls.Clear();
+                        uMyMusic.flowPanelMedia.Controls.Add(i);
                 }
             }
+            uMyMusic.BringToFront();
         }
         //Mau Button
         System.Drawing.Color ColorButton = new System.Drawing.Color();
@@ -745,8 +740,10 @@ namespace DO_AN_LTTQ
                 bottom_panel.BackColor = System.Drawing.Color.DimGray;
                 panel2.BackColor = System.Drawing.Color.DimGray;
                 panel3.BackColor = System.Drawing.Color.DimGray;
-                pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
+                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
                 ColorButton = System.Drawing.Color.Gray;
+                uCaiDat.lbl_Theme.Text = "Tối";
+                uCaiDat.Theme_Switch.Checked = false;
             }
             else
             {
@@ -755,8 +752,10 @@ namespace DO_AN_LTTQ
 
                 panel2.BackColor = System.Drawing.SystemColors.Control;
                 panel3.BackColor = System.Drawing.SystemColors.Control;
-                pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
+                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
                 ColorButton = System.Drawing.Color.Gray;
+                uCaiDat.lbl_Theme.Text = "Sáng";
+                uCaiDat.Theme_Switch.Checked = true;
             }
         }
 
@@ -785,6 +784,7 @@ namespace DO_AN_LTTQ
             uAbout.BringToFront();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
+            UpdateAlbum();
         }
         // Cai Dat Click
         private void CaiDat_Button_Click(object sender, EventArgs e)
@@ -793,7 +793,7 @@ namespace DO_AN_LTTQ
             uCaiDat.BringToFront();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
-
+            
         }
         // Switch Theme
         private void Theme_Switch_CheckedChanged(object sender, EventArgs e)
@@ -804,7 +804,7 @@ namespace DO_AN_LTTQ
                 bottom_panel.BackColor = System.Drawing.Color.DimGray;
                 panel2.BackColor = System.Drawing.Color.DimGray;
                 panel3.BackColor = System.Drawing.Color.DimGray;
-                pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
+                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
                 uCaiDat.lbl_Theme.Text = "Tối";
             }
             else
@@ -814,7 +814,7 @@ namespace DO_AN_LTTQ
 
                 panel2.BackColor = System.Drawing.SystemColors.Control;
                 panel3.BackColor = System.Drawing.SystemColors.Control;
-                pictureBox1.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
+                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
                 uCaiDat.lbl_Theme.Text = "Sáng";
             }
         }
@@ -855,8 +855,9 @@ namespace DO_AN_LTTQ
                     uAlbum.panelalbum.Controls.Add(items.OneAlbum);
 
                 }
+                UpdateUName();
                 System.Windows.Forms.MessageBox.Show("Thêm Album Thành Công");
-               UpdateUName();
+             
             }
             catch(Exception ex)
             {
@@ -881,6 +882,7 @@ namespace DO_AN_LTTQ
             uAlbumDetail1.NameSong_lbl.Text = item.NameAlbum();
             uAlbumDetail1.SLSong_lbl.Text = item.albumDetail.Count + " Bài Hát";
             uAlbumDetail1.NameSong_lbl.Tag = vitri;
+            uAlbumDetail1.panelAlbumDetail.Controls.Clear();
             if (item.albumDetail.Count > 0)
             {
                 foreach (MediaItem filse in item.albumDetail)
@@ -889,7 +891,11 @@ namespace DO_AN_LTTQ
                         
                 }
             }
+            uAlbumDetail1.back_pic.Visible = uAlbumDetail1.PlayList_button.Visible = uAlbumDetail1.AddSong_button.Visible =
+                uAlbumDetail1.Delete_button.Visible = uAlbumDetail1.Rename_button.Visible = true;
+            uAlbumDetail1.AlbumOkList_Button.Visible = false;
             uAlbumDetail1.BringToFront();
+            UpdatelAlbumPic();
         }
         private void lbl_onealbum_Click(object sender, EventArgs e)
         {
@@ -900,6 +906,7 @@ namespace DO_AN_LTTQ
             uAlbumDetail1.NameSong_lbl.Text = item.NameAlbum();
             uAlbumDetail1.SLSong_lbl.Text = item.albumDetail.Count + " Bài Hát";
             uAlbumDetail1.NameSong_lbl.Tag = vitri;
+            uAlbumDetail1.panelAlbumDetail.Controls.Clear();
             if (item.albumDetail.Count > 0)
             {
                 foreach (MediaItem filse in item.albumDetail)
@@ -908,7 +915,11 @@ namespace DO_AN_LTTQ
 
                 }
             }
+            uAlbumDetail1.back_pic.Visible = uAlbumDetail1.PlayList_button.Visible = uAlbumDetail1.AddSong_button.Visible =
+                uAlbumDetail1.Delete_button.Visible = uAlbumDetail1.Rename_button.Visible = true;
+            uAlbumDetail1.AlbumOkList_Button.Visible = false;
             uAlbumDetail1.BringToFront();
+            UpdatelAlbumPic();
         }
         // Detail Album Load
         private void uAlbumDetail1_Load(object sender, EventArgs e)
@@ -918,28 +929,69 @@ namespace DO_AN_LTTQ
             uAlbumDetail1.Delete_button.Click += new System.EventHandler(this.Delete_button_Click);
             uAlbumDetail1.Rename_button.Click += new System.EventHandler(this.Rename_button_Click);
             uAlbumDetail1.PlayList_button.Click += new System.EventHandler(this.PlayList_button_Click);
+            uAlbumDetail1.AlbumOkList_Button.Click += new EventHandler(AlbumOkList_Button_Click);
         }
+        //
+
+        private void AlbumOkList_Button_Click(object sender, EventArgs e)
+        {
+            int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
+            uAlbumDetail1.SLSong_lbl.Text = albums[vitri].albumDetail.Count.ToString() + "Bài Hát";
+            uAlbumDetail1.back_pic.Visible = uAlbumDetail1.PlayList_button.Visible = uAlbumDetail1.AddSong_button.Visible =
+               uAlbumDetail1.Delete_button.Visible = uAlbumDetail1.Rename_button.Visible = true;
+            uAlbumDetail1.AlbumOkList_Button.Visible = false;
+            uAlbumDetail1.panelAlbumDetail.Controls.Clear();
+            foreach(MediaItem item in albums[vitri].albumDetail)
+            {
+                uAlbumDetail1.panelAlbumDetail.Controls.Add(item);
+            }
+            mediaItemsAlbum.Clear();
+        }
+
+        // Tro Lai
         private void back_pic_Click(object sender, EventArgs e)
         {
             uAlbum.BringToFront();
         }
 
+        // Play All
         private void PlayList_button_Click(object sender, EventArgs e)
         {
 
-        }
 
+        }
+        // Them Bai Hat Vao
         private void AddSong_button_Click(object sender, EventArgs e)
         {
+            uAlbumDetail1.back_pic.Visible = uAlbumDetail1.PlayList_button.Visible = uAlbumDetail1.AddSong_button.Visible =
+                uAlbumDetail1.Delete_button.Visible = uAlbumDetail1.Rename_button.Visible = false;
+            uAlbumDetail1.AlbumOkList_Button.Visible = true;
+            foreach(MediaItem item in mediaItemsAlbum)
+            {
+                uAlbumDetail1.panelAlbumDetail.Controls.Add(item);
+            }
+        }
+        //Su Kien Them Vao
+        private void picbox_itemnew_Click(object sender, EventArgs e)
+        {
+            MediaItem item = sender as MediaItem;
+            int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
+            albums[vitri].albumDetail.Add(item);
+            mediaItemsAlbum.Remove(item);
+            uAlbumDetail1.panelAlbumDetail.Controls.Clear();
+            foreach (MediaItem items in mediaItemsAlbum)
+            {
+                uAlbumDetail1.panelAlbumDetail.Controls.Add(items);
+            }
 
         }
-
+        // Doi Ten
         private void Rename_button_Click(object sender, EventArgs e)
         {
             uReName1.BringToFront();
            
         }
-
+        // Xoa
         private void Delete_button_Click(object sender, EventArgs e)
         {
             DialogResult h = System.Windows.Forms.MessageBox.Show
@@ -948,10 +1000,11 @@ namespace DO_AN_LTTQ
             {
                 int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
                 albums.RemoveAt(vitri);
+                UpdateAlbum();
                 System.Windows.Forms.MessageBox.Show("Xóa Thành Công");
             }
             j--;
-            UpdateAlbum();
+          
         }
         private void UpdateAlbum()
         {
@@ -962,10 +1015,28 @@ namespace DO_AN_LTTQ
             }
             uAlbum.BringToFront();
         }
-        private void UpdateDeTailAlbum(object sender)
+        // Su Kien Load Anh
+        private void UpdatelAlbumPic()
         {
-            
-            
+            foreach (MediaItem item in mediaItems)
+            {
+                MediaItem itemnew = new MediaItem();
+
+                itemnew.picMediaItem.Image = item.picMediaItem.Image;
+                itemnew.picboxYeuThich.Image = Properties.Resources.add;
+                itemnew.lblTenBaiHat.Text = item.lblTenBaiHat.Text;
+                itemnew.lblTacGia.Text = item.lblTacGia.Text;
+                itemnew.MediaItem_Click += new EventHandler(item_MediaItem_Click);
+                itemnew.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
+                itemnew.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
+
+                itemnew.PicboxYeuThich_Click += new EventHandler(picbox_itemnew_Click);
+
+                itemnew.Tag = item.Tag;
+                mediaItemsAlbum.Add(itemnew);
+            }
+
+
         }
         // Su Kien Doi Ten
         private void uReName1_Load(object sender, EventArgs e)
@@ -978,8 +1049,9 @@ namespace DO_AN_LTTQ
             int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
             albums[vitri].OneAlbum.lbl_onealbum.Text = uReName1.f_ReName_txt.Texts;
             uAlbumDetail1.NameSong_lbl.Text = albums[vitri].OneAlbum.lbl_onealbum.Text;
-            System.Windows.Forms.MessageBox.Show("Đổi Tên Thành Công");
             UpdateUReName();
+            System.Windows.Forms.MessageBox.Show("Đổi Tên Thành Công");
+            
         }
     
 

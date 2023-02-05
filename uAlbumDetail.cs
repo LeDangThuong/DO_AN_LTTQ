@@ -46,5 +46,10 @@ namespace DO_AN_LTTQ
         {
 
         }
+
+        private void AlbumOkList_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
