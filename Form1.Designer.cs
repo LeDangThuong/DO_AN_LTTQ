@@ -61,6 +61,7 @@ namespace DO_AN_LTTQ
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.home_label = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
@@ -73,6 +74,11 @@ namespace DO_AN_LTTQ
             this.uAbout = new DO_AN_LTTQ.uAbout();
             this.uCaiDat = new DO_AN_LTTQ.uCaiDat();
             this.myMusic1 = new DO_AN_LTTQ.MyMusic();
+            this.uYeuThich1 = new DO_AN_LTTQ.uYeuThich();
+            this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
+        
+            this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
+         
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
@@ -539,11 +545,17 @@ namespace DO_AN_LTTQ
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnTaiNhac);
             this.panel2.Controls.Add(this.home_label);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(437, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5);
+            this.panel2.Controls.Add(this.uMyMusic);
+            this.panel2.Controls.Add(this.uMyMusic1);
+            this.panel2.Controls.Add(this.uAlbum1);
+
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(240, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
+
             this.panel2.Size = new System.Drawing.Size(1076, 132);
+
             this.panel2.TabIndex = 2;
             // 
             // pictureBox1
@@ -581,6 +593,36 @@ namespace DO_AN_LTTQ
             this.home_label.Size = new System.Drawing.Size(226, 61);
             this.home_label.TabIndex = 0;
             this.home_label.Text = "Trang chủ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(828, 19);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // flowPanelMedia
+            // 
+            this.flowPanelMedia.Location = new System.Drawing.Point(0, 0);
+            this.flowPanelMedia.Name = "flowPanelMedia";
+            this.flowPanelMedia.Size = new System.Drawing.Size(200, 100);
+            this.flowPanelMedia.TabIndex = 0;
+            // 
+            // uYeuThich1
+            // 
+            this.uYeuThich1.Location = new System.Drawing.Point(0, 94);
+            this.uYeuThich1.Name = "uYeuThich1";
+            this.uYeuThich1.Size = new System.Drawing.Size(1190, 537);
+            this.uYeuThich1.TabIndex = 10;
             // 
             // timer1
             // 
@@ -674,6 +716,7 @@ namespace DO_AN_LTTQ
             this.Controls.Add(this.uAbout);
             this.Controls.Add(this.uCaiDat);
             this.Controls.Add(this.uReName1);
+            this.Controls.Add(this.uYeuThich1);
             this.Controls.Add(this.uNewAlbum1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
@@ -740,6 +783,7 @@ namespace DO_AN_LTTQ
         private uNewAlbum uNewAlbum1;
         private uAlbumDetail uAlbumDetail1;
         private uReName uReName1;
+        private uYeuThich uYeuThich1;
     }
 }
 

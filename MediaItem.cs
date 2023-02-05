@@ -17,6 +17,7 @@ namespace DO_AN_LTTQ
         public event EventHandler MediaItem_Click;
         public event EventHandler PicMediaItem_Click;
         public event EventHandler LblTenBaiHat_Click;
+        public event EventHandler PicboxYeuThich_Click;
 
         public event MouseEventHandler Mouse_Click;
         public MediaItem()
@@ -93,6 +94,14 @@ namespace DO_AN_LTTQ
         private void picMediaItem_MouseDown(object sender, MouseEventArgs e)
         {
             Mouse_Click?.Invoke(this, e);   
+        }
+
+        private void picboxYeuThich_Click(object sender, EventArgs e)
+        {
+            if (PicboxYeuThich_Click != null)
+            {
+                PicboxYeuThich_Click?.Invoke(this, e);
+            }    
         }
     }
 }
