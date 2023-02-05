@@ -507,7 +507,7 @@ namespace DO_AN_LTTQ
             this.uAlbum1.Location = new System.Drawing.Point(0, 80);
             this.uAlbum1.Margin = new System.Windows.Forms.Padding(2);
             this.uAlbum1.Name = "uAlbum1";
-            this.uAlbum1.Size = new System.Drawing.Size(884, 426);
+            this.uAlbum1.Size = new System.Drawing.Size(959, 426);
             this.uAlbum1.TabIndex = 9;
             // 
             // pictureBox1
@@ -597,6 +597,7 @@ namespace DO_AN_LTTQ
 
         private System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
         private MyMusic myMusic1;
+
     }
 }
 

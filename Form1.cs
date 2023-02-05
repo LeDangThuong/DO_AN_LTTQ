@@ -122,7 +122,7 @@ namespace DO_AN_LTTQ
                 item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 item.Dock = DockStyle.Top;
-                uHome.flowPanelMedia.Controls.Add(item);
+                
                 mediaItems.Add(item);
 
             }
