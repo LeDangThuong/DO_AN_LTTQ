@@ -37,7 +37,7 @@
             // 
             this.Arrange.Location = new System.Drawing.Point(4, 42);
             this.Arrange.Name = "Arrange";
-            this.Arrange.Size = new System.Drawing.Size(951, 411);
+            this.Arrange.Size = new System.Drawing.Size(957, 411);
             this.Arrange.TabIndex = 0;
             this.Arrange.Text = "Sắp xếp theo";
             // 
@@ -50,11 +50,11 @@
             this.TabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TabControl1.IsDerivedStyle = true;
             this.TabControl1.ItemSize = new System.Drawing.Size(100, 38);
-            this.TabControl1.Location = new System.Drawing.Point(3, 3);
+            this.TabControl1.Location = new System.Drawing.Point(0, 3);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
             this.TabControl1.SelectedTextColor = System.Drawing.Color.White;
-            this.TabControl1.Size = new System.Drawing.Size(959, 457);
+            this.TabControl1.Size = new System.Drawing.Size(965, 457);
             this.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.TabControl1.Speed = 100;
             this.TabControl1.Style = MetroSet_UI.Enums.Style.Light;

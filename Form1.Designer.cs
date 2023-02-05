@@ -55,8 +55,8 @@ namespace DO_AN_LTTQ
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
-            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.home_label = new System.Windows.Forms.Label();
             this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
@@ -64,7 +64,6 @@ namespace DO_AN_LTTQ
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
-            this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
@@ -251,7 +250,6 @@ namespace DO_AN_LTTQ
             this.bottom_panel.Controls.Add(this.guna2TrackBar1);
             this.bottom_panel.Controls.Add(this.lblTacGiaNhac);
             this.bottom_panel.Controls.Add(this.name_of_song);
-            this.bottom_panel.Controls.Add(this.myMusic1);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bottom_panel.Location = new System.Drawing.Point(0, 495);
             this.bottom_panel.Name = "bottom_panel";
@@ -458,16 +456,10 @@ namespace DO_AN_LTTQ
             this.name_of_song.TabIndex = 1;
             this.name_of_song.Text = "Tên bài hát";
             // 
-            // myMusic1
-            // 
-            this.myMusic1.Location = new System.Drawing.Point(236, -424);
-            this.myMusic1.Name = "myMusic1";
-            this.myMusic1.Size = new System.Drawing.Size(965, 463);
-            this.myMusic1.TabIndex = 10;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.panel2.Controls.Add(this.myMusic1);
             this.panel2.Controls.Add(this.btnTaiNhac);
             this.panel2.Controls.Add(this.home_label);
             this.panel2.Controls.Add(this.uAlbum1);
@@ -477,6 +469,14 @@ namespace DO_AN_LTTQ
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(961, 495);
             this.panel2.TabIndex = 2;
+            // 
+            // myMusic1
+            // 
+            this.myMusic1.Location = new System.Drawing.Point(0, 80);
+            this.myMusic1.Name = "myMusic1";
+            this.myMusic1.Size = new System.Drawing.Size(965, 537);
+            this.myMusic1.TabIndex = 10;
+            this.myMusic1.Visible = false;
             // 
             // btnTaiNhac
             // 
@@ -525,13 +525,6 @@ namespace DO_AN_LTTQ
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // flowPanelMedia
-            // 
-            this.flowPanelMedia.Location = new System.Drawing.Point(0, 0);
-            this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(200, 100);
-            this.flowPanelMedia.TabIndex = 0;
             // 
             // Form1
             // 
@@ -588,16 +581,12 @@ namespace DO_AN_LTTQ
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picboxAvatar;
-        private uAlbum uAlbum1;
 
         private System.Windows.Forms.Timer autoNextSongTimer;
         private System.Windows.Forms.Timer rotateTimer;
 
-
-
-        private System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
+        private uAlbum uAlbum1;
         private MyMusic myMusic1;
-
     }
 }
 

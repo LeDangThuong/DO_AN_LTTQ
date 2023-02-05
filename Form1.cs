@@ -1,27 +1,8 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using System.Windows;
-using DO_AN_LTTQ.Properties;
-using System.Resources;
-using System.Windows.Media.Animation;
-using System.Windows.Controls;
-using AxWMPLib;
-using System.Media;
-using WMPLib;
-using System.Runtime.CompilerServices;
-using System.Windows.Media;
-using System.Web.UI;
-using TagLib;
-using Guna.UI2.WinForms;
-using Krypton.Toolkit;
+using System.Windows.Forms;
 
 namespace DO_AN_LTTQ
 {
@@ -122,7 +103,8 @@ namespace DO_AN_LTTQ
                 item.PicMediaItem_Click += new EventHandler(item_MediaItem_Click);
                 item.LblTenBaiHat_Click += new EventHandler(item_MediaItem_Click);
                 item.Dock = DockStyle.Top;
-                
+                //flowPanelMedia.Controls.Add(item);
+                myMusic1.Arrange.Controls.Add(item);
                 mediaItems.Add(item);
 
             }
@@ -170,7 +152,7 @@ namespace DO_AN_LTTQ
             }
             catch
             {
-                picboxAvatar.Image = Properties.Resources.repeat;
+                picboxAvatar.Image = Properties.Resources.musical_note;
             }
 
             name_of_song.Text = item.lblTenBaiHat.Text;
@@ -414,7 +396,7 @@ namespace DO_AN_LTTQ
 
         // TUA NHANH ĐI 10s nhạc
         //
-        int check_rewindbutton = 0;
+       
 
 
         //
@@ -531,13 +513,31 @@ namespace DO_AN_LTTQ
                 searching_textbox.ForeColor = System.Drawing.Color.Silver;
             }
         }
+        // Trang Chu Click
+        private void TrangChu_Button_Click(object sender, EventArgs e)
+        {
+
+            home_label.Text = TrangChu_Button.Text;
+
+            foreach (MediaItem i in mediaItems)
+            {
+
+                //flowPanelMedia.Controls.Add(i);
+            }
+            //flowPanelMedia.BringToFront();
+            SetSearch();
+            myMusic1.Visible= false;   
+            uAlbum1.Visible= false;
+        }
         // Thu Vien Click
         private void ThuVien_Button_Click(object sender, EventArgs e)
         {
             home_label.Text = "Thư viện";
             //flowPanelMedia.Controls.Clear();
             SetSearch();
+            myMusic1.Visible = true;
             myMusic1.BringToFront();
+            
         }
         // Yeu Thich Click
         private void YeuThich_Button_Click(object sender, EventArgs e)
@@ -546,7 +546,8 @@ namespace DO_AN_LTTQ
             home_label.Text = "Yêu thích";
             //flowPanelMedia.Controls.Clear();
             SetSearch();
-            
+            myMusic1.Visible = false;
+            uAlbum1.Visible = false;
         }
         
         // Album Click
@@ -555,41 +556,29 @@ namespace DO_AN_LTTQ
         {
             uAlbum1.BringToFront();
             home_label.Text = "Album";
-            uHome.Controls.Clear();
+            
 
             //flowPanelMedia.Visible = false;
             SetSearch();
+            uAlbum1.Visible = true;
         }
-        // Trang Chu Click
-        private void TrangChu_Button_Click(object sender, EventArgs e)
-        {
-
-            home_label.Text = TrangChu_Button.Text;
-            uHome.Controls.Clear();
-            foreach (MediaItem i in mediaItems)
-            {
-                
-                flowPanelMedia.Controls.Add(i);
-            }
-            uHome.BringToFront();
-            SetSearch();
-        }
+        
 
         // Su Kien Tim Kiem
         private void searching_button_Click(object sender, EventArgs e)
         {
             home_label.Text = "Kết quả tìm kiếm";
-            uHome.Controls.Clear();
+            //flowPanelMedia.Controls.Clear();
             foreach (MediaItem i in mediaItems)
             {
                 if (string.Compare(i.lblTacGia.Text, searching_textbox.Texts) == 0)
                 {
-                    uHome.Controls.Add(i);
+                    //flowPanelMedia.Controls.Add(i);
                 }
                 else
                 {
-                    if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0)
-                        uHome.Controls.Add(i);
+                    if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0) ;
+                        //flowPanelMedia.Controls.Add(i);
                 }
             }
         }
