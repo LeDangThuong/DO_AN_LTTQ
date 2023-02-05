@@ -29,14 +29,27 @@
         private void InitializeComponent()
         {
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.flowPanelMedia.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowPanelMedia
             // 
-            this.flowPanelMedia.Location = new System.Drawing.Point(3, 3);
+            this.flowPanelMedia.Controls.Add(this.guna2VScrollBar1);
+            this.flowPanelMedia.Location = new System.Drawing.Point(6, 3);
             this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(846, 461);
+            this.flowPanelMedia.Size = new System.Drawing.Size(846, 472);
             this.flowPanelMedia.TabIndex = 0;
+            // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(3, 3);
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 18;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 300);
+            this.guna2VScrollBar1.TabIndex = 0;
             // 
             // uHome
             // 
@@ -45,12 +58,14 @@
             this.Controls.Add(this.flowPanelMedia);
             this.Name = "uHome";
             this.Size = new System.Drawing.Size(852, 478);
+            this.flowPanelMedia.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
+        public System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
     }
 }
