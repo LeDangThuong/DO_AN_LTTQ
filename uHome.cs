@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DO_AN_LTTQ
 {
-    public partial class uHome : UserControl
+    public partial class uCaiDat : UserControl
     {
-        public uHome()
+        public uCaiDat()
         {
             InitializeComponent();
         }

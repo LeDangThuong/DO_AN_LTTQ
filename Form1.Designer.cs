@@ -55,6 +55,7 @@ namespace DO_AN_LTTQ
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
+            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.home_label = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@ namespace DO_AN_LTTQ
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
-            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
@@ -458,6 +458,13 @@ namespace DO_AN_LTTQ
             this.name_of_song.TabIndex = 1;
             this.name_of_song.Text = "Tên bài hát";
             // 
+            // myMusic1
+            // 
+            this.myMusic1.Location = new System.Drawing.Point(236, -424);
+            this.myMusic1.Name = "myMusic1";
+            this.myMusic1.Size = new System.Drawing.Size(965, 463);
+            this.myMusic1.TabIndex = 10;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
@@ -525,13 +532,6 @@ namespace DO_AN_LTTQ
             this.flowPanelMedia.Name = "flowPanelMedia";
             this.flowPanelMedia.Size = new System.Drawing.Size(200, 100);
             this.flowPanelMedia.TabIndex = 0;
-            // 
-            // myMusic1
-            // 
-            this.myMusic1.Location = new System.Drawing.Point(236, -424);
-            this.myMusic1.Name = "myMusic1";
-            this.myMusic1.Size = new System.Drawing.Size(965, 463);
-            this.myMusic1.TabIndex = 10;
             // 
             // Form1
             // 

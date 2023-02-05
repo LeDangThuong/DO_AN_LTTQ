@@ -1,6 +1,6 @@
 ﻿namespace DO_AN_LTTQ
 {
-    partial class uHome
+    partial class uCaiDat
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,29 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // flowPanelMedia
+            // uCaiDat
             // 
-            this.flowPanelMedia.Location = new System.Drawing.Point(6, 3);
-            this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(846, 472);
-            this.flowPanelMedia.TabIndex = 0;
-            // 
-            // uHome
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowPanelMedia);
-            this.Name = "uHome";
-            this.Size = new System.Drawing.Size(852, 478);
+            this.Name = "uCaiDat";
+            this.Size = new System.Drawing.Size(1106, 537);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        public System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
     }
 }
