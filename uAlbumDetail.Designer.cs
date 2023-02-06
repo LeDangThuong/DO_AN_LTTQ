@@ -189,7 +189,7 @@
             // back_pic
             // 
             this.back_pic.Image = global::DO_AN_LTTQ.Properties.Resources.back;
-            this.back_pic.Location = new System.Drawing.Point(26, 140);
+            this.back_pic.Location = new System.Drawing.Point(26, 133);
             this.back_pic.Name = "back_pic";
             this.back_pic.Size = new System.Drawing.Size(67, 25);
             this.back_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
