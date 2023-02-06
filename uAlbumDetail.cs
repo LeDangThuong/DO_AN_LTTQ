@@ -26,30 +26,5 @@ namespace DO_AN_LTTQ
         {
 
         }
-
-        private void PlayList_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddSong_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Rename_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Delete_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AlbumOkList_Button_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

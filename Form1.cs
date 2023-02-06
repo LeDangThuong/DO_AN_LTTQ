@@ -145,7 +145,7 @@ namespace DO_AN_LTTQ
 
             if(item.checkYeuThich.Checked)
             {
-                item.picboxYeuThich.Image = Properties.Resources.add;
+                item.picboxYeuThich.Image = Properties.Resources.heart_white;
                 item.checkYeuThich.Checked = false;
 
                 string str1, str2;
@@ -516,8 +516,7 @@ namespace DO_AN_LTTQ
 
         // TUA NHANH ĐI 10s nhạc
         //
-        int check_rewindbutton = 0;
-
+      
 
         //
         // THAY ĐỔI ICON SHUFFLE
@@ -675,7 +674,8 @@ namespace DO_AN_LTTQ
             //flowPanelMedia.Visible = false;
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
-            
+            UpdateAlbum();
+
         }
         // Trang Chu Click
         private void TrangChu_Button_Click(object sender, EventArgs e)
@@ -734,12 +734,12 @@ namespace DO_AN_LTTQ
         // Theme
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (panel1.BackColor == System.Drawing.SystemColors.Control)
+            if (panel2.BackColor == System.Drawing.SystemColors.Control)
             {
-                panel1.BackColor = System.Drawing.Color.DimGray;
+                panel1.BackColor = System.Drawing.Color.DarkSlateGray;
                 bottom_panel.BackColor = System.Drawing.Color.DimGray;
                 panel2.BackColor = System.Drawing.Color.DimGray;
-                panel3.BackColor = System.Drawing.Color.DimGray;
+                panel3.BackColor = System.Drawing.Color.DarkSlateGray;
                 picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
                 ColorButton = System.Drawing.Color.Gray;
                 uCaiDat.lbl_Theme.Text = "Tối";
@@ -747,11 +747,11 @@ namespace DO_AN_LTTQ
             }
             else
             {
-                panel1.BackColor = System.Drawing.SystemColors.Control;
+                panel1.BackColor = System.Drawing.SystemColors.ControlLight;
                 bottom_panel.BackColor = System.Drawing.SystemColors.Control;
 
                 panel2.BackColor = System.Drawing.SystemColors.Control;
-                panel3.BackColor = System.Drawing.SystemColors.Control;
+                panel3.BackColor = System.Drawing.SystemColors.ControlLight;
                 picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
                 ColorButton = System.Drawing.Color.Gray;
                 uCaiDat.lbl_Theme.Text = "Sáng";
@@ -784,7 +784,7 @@ namespace DO_AN_LTTQ
             uAbout.BringToFront();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
-            UpdateAlbum();
+          
         }
         // Cai Dat Click
         private void CaiDat_Button_Click(object sender, EventArgs e)
@@ -800,22 +800,26 @@ namespace DO_AN_LTTQ
         {
             if (!uCaiDat.Theme_Switch.Checked)
             {
-                panel1.BackColor = System.Drawing.Color.DimGray;
-                bottom_panel.BackColor = System.Drawing.Color.DimGray;
-                panel2.BackColor = System.Drawing.Color.DimGray;
-                panel3.BackColor = System.Drawing.Color.DimGray;
-                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
-                uCaiDat.lbl_Theme.Text = "Tối";
+                    panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+                    bottom_panel.BackColor = System.Drawing.Color.DimGray;
+                    panel2.BackColor = System.Drawing.Color.DimGray;
+                    panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+                    picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
+                    ColorButton = System.Drawing.Color.Gray;
+                    uCaiDat.lbl_Theme.Text = "Tối";
+                   
             }
             else
             {
-                panel1.BackColor = System.Drawing.SystemColors.Control;
-                bottom_panel.BackColor = System.Drawing.SystemColors.Control;
+                    panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+                    bottom_panel.BackColor = System.Drawing.SystemColors.Control;
 
-                panel2.BackColor = System.Drawing.SystemColors.Control;
-                panel3.BackColor = System.Drawing.SystemColors.Control;
-                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
-                uCaiDat.lbl_Theme.Text = "Sáng";
+                    panel2.BackColor = System.Drawing.SystemColors.Control;
+                    panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+                    picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
+                    ColorButton = System.Drawing.Color.Gray;
+                    uCaiDat.lbl_Theme.Text = "Sáng";
+                   
             }
         }
         //Su Kien NewAbum Laod
@@ -895,7 +899,7 @@ namespace DO_AN_LTTQ
                 uAlbumDetail1.Delete_button.Visible = uAlbumDetail1.Rename_button.Visible = true;
             uAlbumDetail1.AlbumOkList_Button.Visible = false;
             uAlbumDetail1.BringToFront();
-            UpdatelAlbumPic();
+           
         }
         private void lbl_onealbum_Click(object sender, EventArgs e)
         {
@@ -919,7 +923,7 @@ namespace DO_AN_LTTQ
                 uAlbumDetail1.Delete_button.Visible = uAlbumDetail1.Rename_button.Visible = true;
             uAlbumDetail1.AlbumOkList_Button.Visible = false;
             uAlbumDetail1.BringToFront();
-            UpdatelAlbumPic();
+            
         }
         // Detail Album Load
         private void uAlbumDetail1_Load(object sender, EventArgs e)
@@ -936,7 +940,7 @@ namespace DO_AN_LTTQ
         private void AlbumOkList_Button_Click(object sender, EventArgs e)
         {
             int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
-            uAlbumDetail1.SLSong_lbl.Text = albums[vitri].albumDetail.Count.ToString() + "Bài Hát";
+            uAlbumDetail1.SLSong_lbl.Text = albums[vitri].albumDetail.Count.ToString() + " Bài Hát";
             uAlbumDetail1.back_pic.Visible = uAlbumDetail1.PlayList_button.Visible = uAlbumDetail1.AddSong_button.Visible =
                uAlbumDetail1.Delete_button.Visible = uAlbumDetail1.Rename_button.Visible = true;
             uAlbumDetail1.AlbumOkList_Button.Visible = false;
@@ -958,11 +962,64 @@ namespace DO_AN_LTTQ
         private void PlayList_button_Click(object sender, EventArgs e)
         {
 
+            int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
+            for(int i = albums[vitri].albumDetail.Count - 1; i>= 0;i--)
+            {
+                MediaItem item = albums[vitri].albumDetail[i];
+                string filename = (string)item.Tag;
+                string[] part;
+                part = filename.Split('|');
+                player.URL = part[0];
+                player.Ctlcontrols.play();
 
+
+                try
+                {
+                    play_button.Image = Properties.Resources.pause;
+                    check_forplaybutton = 1;
+                    timer1.Enabled = true;
+                    if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                    {
+                        guna2TrackBar1.Maximum = (int)player.Ctlcontrols.currentItem.duration;
+                        guna2TrackBar1.Value = (int)player.Ctlcontrols.currentPosition;
+                    }
+                    try
+                    {
+                        label1.Text = player.Ctlcontrols.currentPositionString;
+                        label2.Text = player.Ctlcontrols.currentItem.durationString.ToString();
+                    }
+                    catch
+                    {
+
+                    }
+                    //var f = TagLib.File.Create((string)item.Tag);
+                    var f = TagLib.File.Create(part[0]);
+                    var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
+                    picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+
+                }
+                catch
+                {
+                    picboxAvatar.Image = Properties.Resources.repeat;
+                }
+
+                name_of_song.Text = item.lblTenBaiHat.Text;
+                lblTacGiaNhac.Text = item.lblTacGia.Text;
+
+                MediaItem itemOld = (MediaItem)player.Tag;
+                if (itemOld != null)
+                    itemOld.BackColor = System.Drawing.SystemColors.ControlLight;
+
+                item.BackColor = System.Drawing.Color.Gray;
+
+                player.Tag = item;
+            }
         }
         // Them Bai Hat Vao
         private void AddSong_button_Click(object sender, EventArgs e)
         {
+            UpdatelAlbumPic();
+            uAlbumDetail1.panelAlbumDetail.Controls.Clear();
             uAlbumDetail1.back_pic.Visible = uAlbumDetail1.PlayList_button.Visible = uAlbumDetail1.AddSong_button.Visible =
                 uAlbumDetail1.Delete_button.Visible = uAlbumDetail1.Rename_button.Visible = false;
             uAlbumDetail1.AlbumOkList_Button.Visible = true;
@@ -976,6 +1033,17 @@ namespace DO_AN_LTTQ
         {
             MediaItem item = sender as MediaItem;
             int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
+            foreach(MediaItem item2 in albums[vitri].albumDetail)
+            {
+                if(string.Compare(item.lblTacGia.Text,item2.lblTacGia.Text)==0 &&
+                    string.Compare(item.lblTenBaiHat.Text, item2.lblTenBaiHat.Text) == 0)
+                {
+                    System.Windows.Forms.MessageBox.Show("Bài Hát Đã Tồn Tại Trong Album");
+                    return;
+                }
+            }
+            
+          
             albums[vitri].albumDetail.Add(item);
             mediaItemsAlbum.Remove(item);
             uAlbumDetail1.panelAlbumDetail.Controls.Clear();
@@ -1018,6 +1086,7 @@ namespace DO_AN_LTTQ
         // Su Kien Load Anh
         private void UpdatelAlbumPic()
         {
+            mediaItemsAlbum.Clear();
             foreach (MediaItem item in mediaItems)
             {
                 MediaItem itemnew = new MediaItem();
