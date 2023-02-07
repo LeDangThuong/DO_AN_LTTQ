@@ -37,10 +37,10 @@ namespace DO_AN_LTTQ
             // 
             // picMediaItem
             // 
-            this.picMediaItem.Location = new System.Drawing.Point(2, 2);
+            this.picMediaItem.Location = new System.Drawing.Point(2, 0);
             this.picMediaItem.Margin = new System.Windows.Forms.Padding(2);
             this.picMediaItem.Name = "picMediaItem";
-            this.picMediaItem.Size = new System.Drawing.Size(68, 73);
+            this.picMediaItem.Size = new System.Drawing.Size(68, 79);
             this.picMediaItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picMediaItem.TabIndex = 0;
             this.picMediaItem.TabStop = false;

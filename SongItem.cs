@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AxWMPLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,8 +21,11 @@ namespace DO_AN_LTTQ
             InitializeComponent();
             playButton.Image = Properties.Resources.pause_black;
         }
-        private event EventHandler ButtonPlay_Click;
-        internal event EventHandler ButtonOption_Click;
+
+        
+        AxWindowsMediaPlayer player = new AxWindowsMediaPlayer();
+        public event EventHandler ButtonPlay_Click;
+        public event EventHandler ButtonOption_Click;
         public event MouseEventHandler Mouse_Click;
         internal double Duration { get; set; }
         private string path;
@@ -93,6 +97,7 @@ namespace DO_AN_LTTQ
 
 
         #region CLICK
+        int check_playbutton = 0;
         private void playButton_Click(object sender, EventArgs e)
         {
             if (ButtonPlay_Click != null)
@@ -108,25 +113,6 @@ namespace DO_AN_LTTQ
 
         #region UPLOAD NHẠC
 
-        internal static SongItem CreateSong(MediaFiles file, SongIn4 info, EventHandler click, int i, ContextMenuStrip menuStripSong, MouseEventHandler mouseClick)
-        {
-            SongItem song = new SongItem();
-            info.SetPath(file.FilePath);
-            song.Path = file.FilePath;
-            info.SetPath(file.FilePath);
-            song.ImageSong = info.LoadImageSong;
-            song.TenBaiHat = info.BaiHat;
-            song.TenTacGia = info.TacGia;
-            
-            song.Duration = info.Duration;
-            song.TotalTime = Form1.ConvertToMinute(song.Duration);
-            song.BackColor = (i % 2 == 0) ? Color.Silver : Color.Gainsboro;
-            song.ButtonPlay_Click += click;
-            song.Mouse_Click += mouseClick;
-            song.ContextMenuStrip = menuStripSong;
-            song.Album = info.Album;
-            return song;
-        }
         #endregion
 
         #region Mouse
@@ -134,6 +120,9 @@ namespace DO_AN_LTTQ
         {
             Mouse_Click?.Invoke(this, e);
         }
+
         #endregion
+
+        
     }
 }

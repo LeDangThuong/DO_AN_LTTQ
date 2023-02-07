@@ -15,6 +15,28 @@ namespace DO_AN_LTTQ
         public MyMusic()
         {
             InitializeComponent();
+            ScrollSongs.Value = PanelMusic.VerticalScroll.Value;
+            ScrollSongs.Minimum = PanelMusic.VerticalScroll.Minimum;
+            ScrollSongs.Maximum = PanelMusic.VerticalScroll.Maximum;    
+
+            PanelMusic.ControlAdded+= PanelMusic_ControlAdded;
+            PanelMusic.ControlRemoved+= PanelMusic_ControlRemoved;
+        }
+
+        private void PanelMusic_ControlAdded(object sender, ControlEventArgs e)
+        {
+            //ScrollSongs.Minimum = PanelMusic.VerticalScroll.Minimum;
+        }
+
+        private void PanelMusic_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            //ScrollSongs.Maximum = PanelMusic.VerticalScroll.Maximum;
+        }
+
+        private void ScrollSongs_Scroll(object sender, ScrollEventArgs e)
+        {
+            PanelMusic.VerticalScroll.Value = ScrollSongs.Value;
         }
     }
+        
 }

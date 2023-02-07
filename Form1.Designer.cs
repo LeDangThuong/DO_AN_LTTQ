@@ -56,14 +56,15 @@ namespace DO_AN_LTTQ
             this.lblTacGiaNhac = new System.Windows.Forms.Label();
             this.name_of_song = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
             this.btnTaiNhac = new System.Windows.Forms.Button();
             this.home_label = new System.Windows.Forms.Label();
-            this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
+            this.uHome_Main = new DO_AN_LTTQ.uHome();
+            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
+            this.uAlbum1 = new DO_AN_LTTQ.uAlbum();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
@@ -112,10 +113,10 @@ namespace DO_AN_LTTQ
             this.TrangChu_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TrangChu_Button.ImageOffset = new System.Drawing.Point(0, 20);
             this.TrangChu_Button.ImageSize = new System.Drawing.Size(30, 30);
-            this.TrangChu_Button.Location = new System.Drawing.Point(3, 26);
+            this.TrangChu_Button.Location = new System.Drawing.Point(0, 14);
             this.TrangChu_Button.Name = "TrangChu_Button";
             this.TrangChu_Button.Padding = new System.Windows.Forms.Padding(0, 0, 3, 3);
-            this.TrangChu_Button.Size = new System.Drawing.Size(211, 40);
+            this.TrangChu_Button.Size = new System.Drawing.Size(213, 49);
             this.TrangChu_Button.TabIndex = 11;
             this.TrangChu_Button.Text = "Trang chủ";
             this.TrangChu_Button.TextOffset = new System.Drawing.Point(0, -10);
@@ -183,10 +184,10 @@ namespace DO_AN_LTTQ
             this.YeuThich_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.YeuThich_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.YeuThich_Button.ImageSize = new System.Drawing.Size(30, 30);
-            this.YeuThich_Button.Location = new System.Drawing.Point(-1, 129);
+            this.YeuThich_Button.Location = new System.Drawing.Point(0, 129);
             this.YeuThich_Button.Name = "YeuThich_Button";
             this.YeuThich_Button.Padding = new System.Windows.Forms.Padding(0, 0, 3, 3);
-            this.YeuThich_Button.Size = new System.Drawing.Size(215, 40);
+            this.YeuThich_Button.Size = new System.Drawing.Size(214, 40);
             this.YeuThich_Button.TabIndex = 13;
             this.YeuThich_Button.Text = "Yêu thích";
             this.YeuThich_Button.TextOffset = new System.Drawing.Point(0, -10);
@@ -459,6 +460,7 @@ namespace DO_AN_LTTQ
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.panel2.Controls.Add(this.uHome_Main);
             this.panel2.Controls.Add(this.myMusic1);
             this.panel2.Controls.Add(this.btnTaiNhac);
             this.panel2.Controls.Add(this.home_label);
@@ -469,14 +471,6 @@ namespace DO_AN_LTTQ
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(961, 495);
             this.panel2.TabIndex = 2;
-            // 
-            // myMusic1
-            // 
-            this.myMusic1.Location = new System.Drawing.Point(0, 80);
-            this.myMusic1.Name = "myMusic1";
-            this.myMusic1.Size = new System.Drawing.Size(965, 537);
-            this.myMusic1.TabIndex = 10;
-            this.myMusic1.Visible = false;
             // 
             // btnTaiNhac
             // 
@@ -502,14 +496,6 @@ namespace DO_AN_LTTQ
             this.home_label.TabIndex = 0;
             this.home_label.Text = "Trang chủ";
             // 
-            // uAlbum1
-            // 
-            this.uAlbum1.Location = new System.Drawing.Point(0, 80);
-            this.uAlbum1.Margin = new System.Windows.Forms.Padding(2);
-            this.uAlbum1.Name = "uAlbum1";
-            this.uAlbum1.Size = new System.Drawing.Size(959, 426);
-            this.uAlbum1.TabIndex = 9;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(828, 19);
@@ -525,6 +511,29 @@ namespace DO_AN_LTTQ
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // uHome_Main
+            // 
+            this.uHome_Main.Location = new System.Drawing.Point(0, 80);
+            this.uHome_Main.Name = "uHome_Main";
+            this.uHome_Main.Size = new System.Drawing.Size(965, 426);
+            this.uHome_Main.TabIndex = 11;
+            // 
+            // myMusic1
+            // 
+            this.myMusic1.Location = new System.Drawing.Point(0, 80);
+            this.myMusic1.Name = "myMusic1";
+            this.myMusic1.Size = new System.Drawing.Size(965, 537);
+            this.myMusic1.TabIndex = 10;
+            this.myMusic1.Visible = false;
+            // 
+            // uAlbum1
+            // 
+            this.uAlbum1.Location = new System.Drawing.Point(0, 80);
+            this.uAlbum1.Margin = new System.Windows.Forms.Padding(2);
+            this.uAlbum1.Name = "uAlbum1";
+            this.uAlbum1.Size = new System.Drawing.Size(959, 426);
+            this.uAlbum1.TabIndex = 9;
             // 
             // Form1
             // 
@@ -566,9 +575,7 @@ namespace DO_AN_LTTQ
         private Guna.UI2.WinForms.Guna2ImageButton searching_button;
         private System.Windows.Forms.Label home_label;
         private Guna.UI2.WinForms.Guna2TileButton Album_Button;
-        private Guna.UI2.WinForms.Guna2TileButton YeuThich_Button;
         private Guna.UI2.WinForms.Guna2TileButton ThuVien_Button;
-        private Guna.UI2.WinForms.Guna2TileButton TrangChu_Button;
         private System.Windows.Forms.Button btnTaiNhac;
         public AxWMPLib.AxWindowsMediaPlayer player;
         public System.Windows.Forms.Label name_of_song;
@@ -587,6 +594,9 @@ namespace DO_AN_LTTQ
 
         private uAlbum uAlbum1;
         private MyMusic myMusic1;
+        private uHome uHome_Main;
+        private Guna.UI2.WinForms.Guna2TileButton TrangChu_Button;
+        private Guna.UI2.WinForms.Guna2TileButton YeuThich_Button;
     }
 }
 
