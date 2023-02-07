@@ -122,12 +122,17 @@ namespace DO_AN_LTTQ
                     item.picMediaItem.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
 
                     //Thuong
-                    songItem.pictureBoxSong.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+                    var f1 = TagLib.File.Create(file);
+                    var bin1 = (byte[])(f1.Tag.Pictures[0].Data.Data);
+                    songItem.pictureBoxSong.Image = System.Drawing.Image.FromStream(new MemoryStream(bin1));
                 }
                 catch
                 {
                     item.picMediaItem.BackgroundImage = Properties.Resources.DefaultMusic;
                     item.picMediaItem.BackgroundImageLayout = ImageLayout.Zoom;
+
+                    songItem.pictureBoxSong.BackgroundImage = Properties.Resources.DefaultMusic;
+                    songItem.pictureBoxSong.BackgroundImageLayout = ImageLayout.Zoom;
                 }
 
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
