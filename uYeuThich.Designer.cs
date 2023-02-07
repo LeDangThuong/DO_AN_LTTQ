@@ -35,6 +35,7 @@
             // 
             // flowPnelYeuThich
             // 
+            this.flowPnelYeuThich.AutoScroll = true;
             this.flowPnelYeuThich.Controls.Add(this.lblTrong);
             this.flowPnelYeuThich.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowPnelYeuThich.Location = new System.Drawing.Point(0, 0);
@@ -49,7 +50,7 @@
             this.lblTrong.Location = new System.Drawing.Point(300, 250);
             this.lblTrong.Margin = new System.Windows.Forms.Padding(300, 250, 3, 0);
             this.lblTrong.Name = "lblTrong";
-            this.lblTrong.Size = new System.Drawing.Size(417, 29);
+            this.lblTrong.Size = new System.Drawing.Size(445, 30);
             this.lblTrong.TabIndex = 0;
             this.lblTrong.Text = "Chưa có bài hát nào được yêu thích";
             this.lblTrong.Visible = false;

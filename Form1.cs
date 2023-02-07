@@ -77,18 +77,18 @@ namespace DO_AN_LTTQ
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Multiselect = true;
-
-
+            ofd.Filter = "Zing Music|*.mp3";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 files = ofd.FileNames;
             }
-
+           
             MediaItem item;
             string[] tenBaiHat;
             string[] tenTacGia;
-
+            if (files == null)
+                return;
             int i = -1;
             foreach (string file in files)
             {
@@ -687,6 +687,24 @@ namespace DO_AN_LTTQ
 
         }
 
+        // About Click
+        private void About_Button_Click(object sender, EventArgs e)
+        {
+            home_label.Text = About_Button.Text;
+            uAbout.BringToFront();
+            SetSearch();
+            ChangeNormalColorOnPanelLeft(sender);
+
+        }
+        // Cai Dat Click
+        private void CaiDat_Button_Click(object sender, EventArgs e)
+        {
+            home_label.Text = CaiDat_Button.Text;
+            uCaiDat.BringToFront();
+            SetSearch();
+            ChangeNormalColorOnPanelLeft(sender);
+
+        }
         // Su Kien Tim Kiem
         private void searching_button_Click(object sender, EventArgs e)
         {
@@ -708,10 +726,6 @@ namespace DO_AN_LTTQ
         }
         //Mau Button
         System.Drawing.Color ColorButton = new System.Drawing.Color();
-
-
-        #endregion
-        #region HELLO
         public void ChangeNormalColorOnPanelLeft(object sender)
         {
             Guna2TileButton btn = sender as Guna2TileButton;
@@ -730,6 +744,11 @@ namespace DO_AN_LTTQ
             searching_textbox.Texts = "Tìm kiếm";
             searching_textbox.ForeColor = System.Drawing.Color.Silver;
         }
+        #endregion
+       
+       // Mau Nen
+        #region Theme
+
 
         // Theme
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -758,12 +777,33 @@ namespace DO_AN_LTTQ
                 uCaiDat.Theme_Switch.Checked = true;
             }
         }
-
-        // Tao Album
-        private void NewAlbum_Button_Click(object sender, EventArgs e)
+        private void Theme_Switch_CheckedChanged(object sender, EventArgs e)
         {
-            uNewAlbum1.BringToFront();
+            if (!uCaiDat.Theme_Switch.Checked)
+            {
+                panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+                bottom_panel.BackColor = System.Drawing.Color.DimGray;
+                panel2.BackColor = System.Drawing.Color.DimGray;
+                panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
+                ColorButton = System.Drawing.Color.Gray;
+                uCaiDat.lbl_Theme.Text = "Tối";
+
+            }
+            else
+            {
+                panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+                bottom_panel.BackColor = System.Drawing.SystemColors.Control;
+
+                panel2.BackColor = System.Drawing.SystemColors.Control;
+                panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
+                ColorButton = System.Drawing.Color.Gray;
+                uCaiDat.lbl_Theme.Text = "Sáng";
+
+            }
         }
+
         // Form Load
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -771,57 +811,23 @@ namespace DO_AN_LTTQ
             uCaiDat.Theme_Switch.CheckedChanged += new System.EventHandler(Theme_Switch_CheckedChanged);
 
         }
-        //Su Kien Cai Dat
+        #endregion
+        // Tao Album
+        #region Album
+        // Tao Album
+        private void NewAlbum_Button_Click(object sender, EventArgs e)
+        {
+            uNewAlbum1.BringToFront();
+        }
+        
         private void uAlbum1_Load(object sender, EventArgs e)
         {
             uAlbum.NewAlbum_Button.Click += new System.EventHandler(this.NewAlbum_Button_Click);
             
         }
-        // About Click
-        private void About_Button_Click(object sender, EventArgs e)
-        {
-            home_label.Text = About_Button.Text;
-            uAbout.BringToFront();
-            SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
-          
-        }
-        // Cai Dat Click
-        private void CaiDat_Button_Click(object sender, EventArgs e)
-        {
-            home_label.Text = CaiDat_Button.Text;
-            uCaiDat.BringToFront();
-            SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
-            
-        }
-        // Switch Theme
-        private void Theme_Switch_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!uCaiDat.Theme_Switch.Checked)
-            {
-                    panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-                    bottom_panel.BackColor = System.Drawing.Color.DimGray;
-                    panel2.BackColor = System.Drawing.Color.DimGray;
-                    panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-                    picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
-                    ColorButton = System.Drawing.Color.Gray;
-                    uCaiDat.lbl_Theme.Text = "Tối";
-                   
-            }
-            else
-            {
-                    panel1.BackColor = System.Drawing.SystemColors.ControlLight;
-                    bottom_panel.BackColor = System.Drawing.SystemColors.Control;
-
-                    panel2.BackColor = System.Drawing.SystemColors.Control;
-                    panel3.BackColor = System.Drawing.SystemColors.ControlLight;
-                    picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
-                    ColorButton = System.Drawing.Color.Gray;
-                    uCaiDat.lbl_Theme.Text = "Sáng";
-                   
-            }
-        }
+        
+    
+        
         //Su Kien NewAbum Laod
         private void uNewAlbum1_Load(object sender, EventArgs e)
         {
@@ -876,6 +882,9 @@ namespace DO_AN_LTTQ
             uNewAlbum1.f_Name_txt.Texts = "Nhập Tên Album";
             uNewAlbum1.f_Name_txt.ForeColor = System.Drawing.Color.Silver;
         }
+        #endregion
+        // Chi tiet Album
+        #region AlbumDetail
         int j = -1;
         // One Album Click
         private void onealbum_pic_Click(object sender, EventArgs e)
@@ -1063,7 +1072,7 @@ namespace DO_AN_LTTQ
         private void Delete_button_Click(object sender, EventArgs e)
         {
             DialogResult h = System.Windows.Forms.MessageBox.Show
-                ("Bạn có chắc muốn xóa không?", "Question", MessageBoxButtons.OKCancel);
+                ("Bạn có chắc muốn xóa album không?", "Question", MessageBoxButtons.OKCancel);
             if (h == DialogResult.OK)
             {
                 int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
@@ -1107,6 +1116,9 @@ namespace DO_AN_LTTQ
 
 
         }
+        #endregion
+        // Doi Ten Album
+        #region AlbumReName
         // Su Kien Doi Ten
         private void uReName1_Load(object sender, EventArgs e)
         {

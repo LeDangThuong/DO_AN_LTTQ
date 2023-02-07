@@ -220,6 +220,8 @@
             // 
             // panelAlbumDetail
             // 
+            this.panelAlbumDetail.AutoScroll = true;
+            this.panelAlbumDetail.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelAlbumDetail.Location = new System.Drawing.Point(0, 194);
             this.panelAlbumDetail.Name = "panelAlbumDetail";
             this.panelAlbumDetail.Size = new System.Drawing.Size(1024, 310);

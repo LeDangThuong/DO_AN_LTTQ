@@ -42,7 +42,7 @@
             this.panelalbumtile.Location = new System.Drawing.Point(0, 0);
             this.panelalbumtile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelalbumtile.Name = "panelalbumtile";
-            this.panelalbumtile.Size = new System.Drawing.Size(1107, 55);
+            this.panelalbumtile.Size = new System.Drawing.Size(1107, 78);
             this.panelalbumtile.TabIndex = 15;
             // 
             // NewAlbum_Button
@@ -72,9 +72,10 @@
             // 
             // panelalbum
             // 
-            this.panelalbum.Location = new System.Drawing.Point(0, 67);
+            this.panelalbum.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelalbum.Location = new System.Drawing.Point(0, 133);
             this.panelalbum.Name = "panelalbum";
-            this.panelalbum.Size = new System.Drawing.Size(1107, 454);
+            this.panelalbum.Size = new System.Drawing.Size(1107, 404);
             this.panelalbum.TabIndex = 16;
             // 
             // uAlbum

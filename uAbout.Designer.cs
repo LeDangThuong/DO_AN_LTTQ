@@ -75,10 +75,10 @@
             this.linkLabel1.Location = new System.Drawing.Point(225, 237);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(195, 27);
+            this.linkLabel1.Size = new System.Drawing.Size(162, 27);
             this.linkLabel1.TabIndex = 91;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "ndc07.it@gmail.com";
+            this.linkLabel1.Text = "tst.it@gmail.com";
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             // 
             // label4

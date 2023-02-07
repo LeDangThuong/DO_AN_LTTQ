@@ -33,10 +33,12 @@
             // 
             // flowPanelMedia
             // 
+            this.flowPanelMedia.AutoScroll = true;
+            this.flowPanelMedia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowPanelMedia.Location = new System.Drawing.Point(0, 0);
-            this.flowPanelMedia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowPanelMedia.Margin = new System.Windows.Forms.Padding(4);
             this.flowPanelMedia.Name = "flowPanelMedia";
-            this.flowPanelMedia.Size = new System.Drawing.Size(1103, 537);
+            this.flowPanelMedia.Size = new System.Drawing.Size(1107, 537);
             this.flowPanelMedia.TabIndex = 0;
             // 
             // uMyMusic

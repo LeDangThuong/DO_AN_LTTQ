@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel_time = new System.Windows.Forms.Panel();
+            this.cbMinute = new System.Windows.Forms.ComboBox();
+            this.lbl_time = new Krypton.Toolkit.KryptonLabel();
+            this.TimeOut_lbl = new Krypton.Toolkit.KryptonLabel();
+            this.lbl_Minute = new Krypton.Toolkit.KryptonLabel();
+            this.TimeOut_Switch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.TimeOut_Button = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.TimeOut_Switch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.lbl_Minute = new Krypton.Toolkit.KryptonLabel();
-            this.TimeOut_lbl = new Krypton.Toolkit.KryptonLabel();
             this.Out_timer = new System.Windows.Forms.Timer(this.components);
-            this.lbl_time = new Krypton.Toolkit.KryptonLabel();
             this.theme_panel = new System.Windows.Forms.Panel();
             this.lbl_Theme = new Krypton.Toolkit.KryptonLabel();
             this.Theme_Switch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.Theme_Button = new Guna.UI2.WinForms.Guna2TileButton();
-            this.cbMinute = new System.Windows.Forms.ComboBox();
             this.panel_time.SuspendLayout();
             this.theme_panel.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,69 @@
             this.panel_time.Name = "panel_time";
             this.panel_time.Size = new System.Drawing.Size(413, 129);
             this.panel_time.TabIndex = 15;
+            // 
+            // cbMinute
+            // 
+            this.cbMinute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMinute.Enabled = false;
+            this.cbMinute.FormattingEnabled = true;
+            this.cbMinute.Items.AddRange(new object[] {
+            "15",
+            "30",
+            "45",
+            "60",
+            "120"});
+            this.cbMinute.Location = new System.Drawing.Point(26, 83);
+            this.cbMinute.Name = "cbMinute";
+            this.cbMinute.Size = new System.Drawing.Size(121, 24);
+            this.cbMinute.TabIndex = 17;
+            this.cbMinute.SelectedIndexChanged += new System.EventHandler(this.cbMinute_SelectedIndexChanged);
+            // 
+            // lbl_time
+            // 
+            this.lbl_time.AutoSize = false;
+            this.lbl_time.LabelStyle = Krypton.Toolkit.LabelStyle.BoldControl;
+            this.lbl_time.Location = new System.Drawing.Point(272, 83);
+            this.lbl_time.Name = "lbl_time";
+            this.lbl_time.Size = new System.Drawing.Size(95, 27);
+            this.lbl_time.TabIndex = 18;
+            this.lbl_time.Values.Text = "00:00";
+            // 
+            // TimeOut_lbl
+            // 
+            this.TimeOut_lbl.AutoSize = false;
+            this.TimeOut_lbl.LabelStyle = Krypton.Toolkit.LabelStyle.BoldControl;
+            this.TimeOut_lbl.Location = new System.Drawing.Point(341, 22);
+            this.TimeOut_lbl.Name = "TimeOut_lbl";
+            this.TimeOut_lbl.Size = new System.Drawing.Size(56, 27);
+            this.TimeOut_lbl.TabIndex = 17;
+            this.TimeOut_lbl.Values.Text = "Off";
+            // 
+            // lbl_Minute
+            // 
+            this.lbl_Minute.AutoSize = false;
+            this.lbl_Minute.LabelStyle = Krypton.Toolkit.LabelStyle.BoldControl;
+            this.lbl_Minute.Location = new System.Drawing.Point(164, 83);
+            this.lbl_Minute.Name = "lbl_Minute";
+            this.lbl_Minute.Size = new System.Drawing.Size(56, 27);
+            this.lbl_Minute.TabIndex = 17;
+            this.lbl_Minute.Values.Text = "Phút";
+            // 
+            // TimeOut_Switch
+            // 
+            this.TimeOut_Switch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TimeOut_Switch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TimeOut_Switch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.TimeOut_Switch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.TimeOut_Switch.Location = new System.Drawing.Point(262, 19);
+            this.TimeOut_Switch.Name = "TimeOut_Switch";
+            this.TimeOut_Switch.Size = new System.Drawing.Size(60, 30);
+            this.TimeOut_Switch.TabIndex = 17;
+            this.TimeOut_Switch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.TimeOut_Switch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.TimeOut_Switch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.TimeOut_Switch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.TimeOut_Switch.CheckedChanged += new System.EventHandler(this.TimeOut_Switch_CheckedChanged);
             // 
             // TimeOut_Button
             // 
@@ -76,7 +139,7 @@
             this.TimeOut_Button.Location = new System.Drawing.Point(4, 4);
             this.TimeOut_Button.Margin = new System.Windows.Forms.Padding(4);
             this.TimeOut_Button.Name = "TimeOut_Button";
-            this.TimeOut_Button.Padding = new System.Windows.Forms.Padding(0, 0, 7, 6);
+            this.TimeOut_Button.Padding = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.TimeOut_Button.Size = new System.Drawing.Size(270, 60);
             this.TimeOut_Button.TabIndex = 16;
             this.TimeOut_Button.Text = "Thời Gian Tắt";
@@ -97,66 +160,20 @@
             this.guna2TileButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2TileButton1.ImageOffset = new System.Drawing.Point(0, 20);
             this.guna2TileButton1.ImageSize = new System.Drawing.Size(35, 35);
-            this.guna2TileButton1.Location = new System.Drawing.Point(117, 315);
+            this.guna2TileButton1.Location = new System.Drawing.Point(121, 315);
             this.guna2TileButton1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TileButton1.Name = "guna2TileButton1";
-            this.guna2TileButton1.Padding = new System.Windows.Forms.Padding(0, 0, 7, 6);
-            this.guna2TileButton1.Size = new System.Drawing.Size(231, 52);
+            this.guna2TileButton1.Padding = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.guna2TileButton1.Size = new System.Drawing.Size(231, 45);
             this.guna2TileButton1.TabIndex = 14;
             this.guna2TileButton1.Text = "Thoát";
             this.guna2TileButton1.TextOffset = new System.Drawing.Point(0, -10);
             this.guna2TileButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.guna2TileButton1.Click += new System.EventHandler(this.guna2TileButton1_Click);
             // 
-            // TimeOut_Switch
-            // 
-            this.TimeOut_Switch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TimeOut_Switch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TimeOut_Switch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.TimeOut_Switch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.TimeOut_Switch.Location = new System.Drawing.Point(272, 31);
-            this.TimeOut_Switch.Name = "TimeOut_Switch";
-            this.TimeOut_Switch.Size = new System.Drawing.Size(60, 30);
-            this.TimeOut_Switch.TabIndex = 17;
-            this.TimeOut_Switch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.TimeOut_Switch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.TimeOut_Switch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.TimeOut_Switch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.TimeOut_Switch.CheckedChanged += new System.EventHandler(this.TimeOut_Switch_CheckedChanged);
-            // 
-            // lbl_Minute
-            // 
-            this.lbl_Minute.AutoSize = false;
-            this.lbl_Minute.LabelStyle = Krypton.Toolkit.LabelStyle.BoldControl;
-            this.lbl_Minute.Location = new System.Drawing.Point(164, 83);
-            this.lbl_Minute.Name = "lbl_Minute";
-            this.lbl_Minute.Size = new System.Drawing.Size(56, 27);
-            this.lbl_Minute.TabIndex = 17;
-            this.lbl_Minute.Values.Text = "Phút";
-            // 
-            // TimeOut_lbl
-            // 
-            this.TimeOut_lbl.AutoSize = false;
-            this.TimeOut_lbl.LabelStyle = Krypton.Toolkit.LabelStyle.BoldControl;
-            this.TimeOut_lbl.Location = new System.Drawing.Point(357, 34);
-            this.TimeOut_lbl.Name = "TimeOut_lbl";
-            this.TimeOut_lbl.Size = new System.Drawing.Size(56, 27);
-            this.TimeOut_lbl.TabIndex = 17;
-            this.TimeOut_lbl.Values.Text = "Off";
-            // 
             // Out_timer
             // 
             this.Out_timer.Tick += new System.EventHandler(this.Out_timer_Tick);
-            // 
-            // lbl_time
-            // 
-            this.lbl_time.AutoSize = false;
-            this.lbl_time.LabelStyle = Krypton.Toolkit.LabelStyle.BoldControl;
-            this.lbl_time.Location = new System.Drawing.Point(272, 83);
-            this.lbl_time.Name = "lbl_time";
-            this.lbl_time.Size = new System.Drawing.Size(95, 27);
-            this.lbl_time.TabIndex = 18;
-            this.lbl_time.Values.Text = "00:00";
             // 
             // theme_panel
             // 
@@ -208,33 +225,16 @@
             this.Theme_Button.Image = global::DO_AN_LTTQ.Properties.Resources.theme;
             this.Theme_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Theme_Button.ImageOffset = new System.Drawing.Point(0, 20);
-            this.Theme_Button.ImageSize = new System.Drawing.Size(40, 40);
-            this.Theme_Button.Location = new System.Drawing.Point(0, 19);
+            this.Theme_Button.ImageSize = new System.Drawing.Size(45, 45);
+            this.Theme_Button.Location = new System.Drawing.Point(0, 18);
             this.Theme_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Theme_Button.Name = "Theme_Button";
-            this.Theme_Button.Padding = new System.Windows.Forms.Padding(0, 0, 15, 20);
+            this.Theme_Button.Padding = new System.Windows.Forms.Padding(0, 0, 20, 20);
             this.Theme_Button.Size = new System.Drawing.Size(265, 60);
             this.Theme_Button.TabIndex = 17;
             this.Theme_Button.Text = "Chủ Đề";
             this.Theme_Button.TextOffset = new System.Drawing.Point(0, -10);
             this.Theme_Button.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            // 
-            // cbMinute
-            // 
-            this.cbMinute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMinute.Enabled = false;
-            this.cbMinute.FormattingEnabled = true;
-            this.cbMinute.Items.AddRange(new object[] {
-            "15",
-            "30",
-            "45",
-            "60",
-            "120"});
-            this.cbMinute.Location = new System.Drawing.Point(26, 83);
-            this.cbMinute.Name = "cbMinute";
-            this.cbMinute.Size = new System.Drawing.Size(121, 24);
-            this.cbMinute.TabIndex = 17;
-            this.cbMinute.SelectedIndexChanged += new System.EventHandler(this.cbMinute_SelectedIndexChanged);
             // 
             // uCaiDat
             // 
