@@ -755,10 +755,10 @@ namespace DO_AN_LTTQ
         {
             if (panel2.BackColor == System.Drawing.SystemColors.Control)
             {
-                panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+                panel1.BackColor = System.Drawing.Color.DimGray;
                 bottom_panel.BackColor = System.Drawing.Color.DimGray;
                 panel2.BackColor = System.Drawing.Color.DimGray;
-                panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+                panel3.BackColor = System.Drawing.Color.DimGray;
                 picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
                 ColorButton = System.Drawing.Color.Gray;
                 uCaiDat.lbl_Theme.Text = "Tối";
@@ -766,11 +766,11 @@ namespace DO_AN_LTTQ
             }
             else
             {
-                panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+                panel1.BackColor = System.Drawing.SystemColors.Control;
                 bottom_panel.BackColor = System.Drawing.SystemColors.Control;
 
                 panel2.BackColor = System.Drawing.SystemColors.Control;
-                panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+                panel3.BackColor = System.Drawing.SystemColors.Control;
                 picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
                 ColorButton = System.Drawing.Color.Gray;
                 uCaiDat.lbl_Theme.Text = "Sáng";
@@ -781,10 +781,10 @@ namespace DO_AN_LTTQ
         {
             if (!uCaiDat.Theme_Switch.Checked)
             {
-                panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+                panel1.BackColor = System.Drawing.Color.DimGray;
                 bottom_panel.BackColor = System.Drawing.Color.DimGray;
                 panel2.BackColor = System.Drawing.Color.DimGray;
-                panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+                panel3.BackColor = System.Drawing.Color.DimGray;
                 picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
                 ColorButton = System.Drawing.Color.Gray;
                 uCaiDat.lbl_Theme.Text = "Tối";
@@ -792,11 +792,11 @@ namespace DO_AN_LTTQ
             }
             else
             {
-                panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+                panel1.BackColor = System.Drawing.SystemColors.Control;
                 bottom_panel.BackColor = System.Drawing.SystemColors.Control;
 
                 panel2.BackColor = System.Drawing.SystemColors.Control;
-                panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+                panel3.BackColor = System.Drawing.SystemColors.Control;
                 picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
                 ColorButton = System.Drawing.Color.Gray;
                 uCaiDat.lbl_Theme.Text = "Sáng";
