@@ -118,7 +118,7 @@ namespace DO_AN_LTTQ
                 }
                 catch
                 {
-                    item.picMediaItem.Image = Properties.Resources.musical_note;
+                    item.picMediaItem.Image = Properties.Resources.DefaultMusic;
                 }
 
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
@@ -271,7 +271,7 @@ namespace DO_AN_LTTQ
             }
             catch
             {
-                picboxAvatar.Image = Properties.Resources.repeat;
+                picboxAvatar.Image = Properties.Resources.DefaultMusic;
             }
 
             name_of_song.Text = item.lblTenBaiHat.Text;
@@ -424,7 +424,7 @@ namespace DO_AN_LTTQ
             }
             catch
             {
-                picboxAvatar.Image = Properties.Resources.musical_note;
+                picboxAvatar.Image = Properties.Resources.DefaultMusic;
             }
 
             player.Tag = itemPlay;
@@ -476,7 +476,7 @@ namespace DO_AN_LTTQ
             }
             catch
             {
-                picboxAvatar.Image = Properties.Resources.musical_note;
+                picboxAvatar.Image = Properties.Resources.DefaultMusic;
             }
 
             player.Tag = itemPlay;
