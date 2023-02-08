@@ -73,7 +73,6 @@ namespace DO_AN_LTTQ
             this.uYeuThich1 = new DO_AN_LTTQ.uYeuThich();
             this.uReName1 = new DO_AN_LTTQ.uReName();
             this.uNewAlbum1 = new DO_AN_LTTQ.uNewAlbum();
-            
             this.myMusic2 = new DO_AN_LTTQ.MyMusic();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -315,7 +314,7 @@ namespace DO_AN_LTTQ
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bottom_panel.Location = new System.Drawing.Point(0, 490);
             this.bottom_panel.Name = "bottom_panel";
-            this.bottom_panel.Size = new System.Drawing.Size(1257, 144);
+            this.bottom_panel.Size = new System.Drawing.Size(1252, 144);
             this.bottom_panel.TabIndex = 1;
             // 
             // picboxAvatar
@@ -528,7 +527,7 @@ namespace DO_AN_LTTQ
             this.panel2.Location = new System.Drawing.Point(304, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(953, 89);
+            this.panel2.Size = new System.Drawing.Size(948, 89);
             this.panel2.TabIndex = 2;
             // 
             // picture_theme
@@ -650,7 +649,6 @@ namespace DO_AN_LTTQ
             this.uNewAlbum1.Size = new System.Drawing.Size(355, 335);
             this.uNewAlbum1.TabIndex = 12;
             this.uNewAlbum1.Load += new System.EventHandler(this.uNewAlbum1_Load);
-           
             // 
             // myMusic2
             // 
@@ -663,7 +661,7 @@ namespace DO_AN_LTTQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1257, 634);
+            this.ClientSize = new System.Drawing.Size(1252, 634);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottom_panel);

@@ -16,5 +16,10 @@ namespace DO_AN_LTTQ
         {
             InitializeComponent();
         }
+
+        private void MyMusic_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

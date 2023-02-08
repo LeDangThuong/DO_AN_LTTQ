@@ -43,7 +43,7 @@ namespace DO_AN_LTTQ
         // SANG
         MediaItem itemPlay = new MediaItem();
         MediaItem itemPlayed = new MediaItem();
-
+        private MediaItem itemRecent = new MediaItem();
         int iPlay;
         private string getFilename = null;
         string[] divideFilename = new string[2];
@@ -158,7 +158,6 @@ namespace DO_AN_LTTQ
                 songItems.Add(songItem);
                 myMusic2.PanelSongs.Controls.Add(songItem);
 
-               
             }
         }
         
@@ -168,12 +167,47 @@ namespace DO_AN_LTTQ
         #region SongItem 
         private void item_SongItem_Click (object sender, EventArgs e)
         {
-            SongItem songItem = (SongItem)sender;  
+            string song_item;
+            string media_item;
+            SongItem songItem = (SongItem)sender; 
+            
+
+            if(SongRecent != null)
+            {
+                SongRecent.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+                
+            }
+
+            song_item = (string)songItem.Tag;
+
+            //
+            if (itemRecent != null)
+            {
+                itemRecent.BackColor = System.Drawing.SystemColors.Control;
+            }    
+
+            //done
+            foreach (MediaItem mediaItem in mediaItems)
+            {
+                media_item = (string)mediaItem.Tag;
+
+                if (String.Compare(song_item,media_item,true) == 0)
+                {
+                    
+                    mediaItem.BackColor = System.Drawing.Color.Gray;
+                    itemRecent = mediaItem;
+                    player.Tag = itemRecent;
+                }    
+            }    
+            SongRecent = songItem;
+            songItem.BackColor = System.Drawing.Color.LightGray;
             string filename = (string)songItem.Tag;
             string[] part;
             part = filename.Split('|');
             player.URL = part[0];
             player.Ctlcontrols.play();
+
+            
             try
             {
                 play_button.Image = Properties.Resources.pause;
@@ -206,12 +240,7 @@ namespace DO_AN_LTTQ
 
             name_of_song.Text = songItem.lblSongName.Text;
             lblTacGiaNhac.Text = songItem.lblArtistName.Text;
-            SongItem songitemOld = new SongItem();
-            if (songitemOld != null)
-                songitemOld.BackColor = System.Drawing.SystemColors.ControlLight;
-
-            songitemOld.BackColor = System.Drawing.Color.Gray;
-            player.Tag = songItem;
+            
         }
 
         
@@ -314,7 +343,36 @@ namespace DO_AN_LTTQ
         private void item_MediaItem_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
-            
+
+            string song_item;
+            string media_item;
+            media_item = (string)item.Tag;
+
+            //
+            if (SongRecent != null)
+            {
+                SongRecent.BackColor = System.Drawing.SystemColors.Control;
+            }
+
+            //done
+            foreach (SongItem songItem in songItems)
+            {
+                song_item = (string)songItem.Tag;
+
+                if (String.Compare(song_item, media_item, true) == 0)
+                {
+
+                    songItem.BackColor = System.Drawing.Color.Gray;
+                    SongRecent = songItem;
+ 
+                }
+            }
+            if (itemRecent != null)
+            {
+                itemRecent.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            }
+            item.BackColor = System.Drawing.Color.Gray;
+            itemRecent = item;
             string filename = (string)item.Tag;
             string[] part;
             part = filename.Split('|');
@@ -353,11 +411,7 @@ namespace DO_AN_LTTQ
             name_of_song.Text = item.lblTenBaiHat.Text;
             lblTacGiaNhac.Text = item.lblTacGia.Text;
 
-            MediaItem itemOld = (MediaItem)player.Tag;
-            if (itemOld != null)
-                itemOld.BackColor = System.Drawing.SystemColors.ControlLight;
-
-            item.BackColor = System.Drawing.Color.Gray;
+            
             player.Tag = item;  
         }
 
@@ -485,7 +539,7 @@ namespace DO_AN_LTTQ
             name_of_song.Text = itemPlay.lblTenBaiHat.Text;
             lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
 
-            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
+            itemPlayed.BackColor = System.Drawing.SystemColors.Control;
             itemPlay.BackColor = System.Drawing.Color.Gray;
 
             try
@@ -537,7 +591,7 @@ namespace DO_AN_LTTQ
             name_of_song.Text = itemPlay.lblTenBaiHat.Text;
             lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
 
-            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
+            itemPlayed.BackColor = System.Drawing.SystemColors.Control;
             itemPlay.BackColor = System.Drawing.Color.Gray;
 
             try
@@ -807,11 +861,12 @@ namespace DO_AN_LTTQ
         public void ChangeColorSongItem(object sender)
         {
             SongItem songItem = sender as SongItem;
+            songItem.BackColor = ColorButton;
             foreach(SongItem item in myMusic2.PanelSongs.Controls)
             {
-                if (item.Name != songItem.Name && item.BackColor != System.Drawing.Color.Gray)
+                if (item.Name != songItem.Name && item.BackColor != System.Drawing.SystemColors.Control)
                 { 
-                    item.BackColor = System.Drawing.Color.Gray;
+                    item.BackColor = System.Drawing.SystemColors.Control;
                 }
             }    
         }
