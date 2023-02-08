@@ -18,7 +18,7 @@ namespace DO_AN_LTTQ
         public SongItem()
         {
             InitializeComponent();
-            playButton.Image = Properties.Resources.pause_black;
+            
         }
         public event EventHandler SongItem_Click;
         public event EventHandler LblSongName_Click;
@@ -79,17 +79,7 @@ namespace DO_AN_LTTQ
                 pictureBoxSong.Image = value;
             }
         }
-        internal System.Drawing.Image ImageButton
-        {
-            get
-            {
-                return playButton.Image;
-            }
-            set
-            {
-                playButton.Image = value;
-            }
-        }
+        
         internal string Album
         {
             get; set;
@@ -150,6 +140,7 @@ namespace DO_AN_LTTQ
             {
                 SongItem_Click?.Invoke(this, e);
             }
+            
         }
         private void lblSongName_Click(object sender, EventArgs e)
         {

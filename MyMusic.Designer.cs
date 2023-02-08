@@ -75,9 +75,9 @@
             // 
             // PanelSongs
             // 
-            this.PanelSongs.Location = new System.Drawing.Point(10, 75);
+            this.PanelSongs.Location = new System.Drawing.Point(3, 75);
             this.PanelSongs.Name = "PanelSongs";
-            this.PanelSongs.Size = new System.Drawing.Size(933, 322);
+            this.PanelSongs.Size = new System.Drawing.Size(947, 329);
             this.PanelSongs.TabIndex = 3;
             // 
             // PanelName
@@ -86,9 +86,9 @@
             this.PanelName.Controls.Add(this.lblTime);
             this.PanelName.Controls.Add(this.lblArtist);
             this.PanelName.Controls.Add(this.lblSong);
-            this.PanelName.Location = new System.Drawing.Point(10, 48);
+            this.PanelName.Location = new System.Drawing.Point(3, 48);
             this.PanelName.Name = "PanelName";
-            this.PanelName.Size = new System.Drawing.Size(933, 33);
+            this.PanelName.Size = new System.Drawing.Size(947, 33);
             this.PanelName.TabIndex = 4;
             // 
             // lblOptions
@@ -134,7 +134,7 @@
             this.guna2VScrollBar1.Location = new System.Drawing.Point(940, 45);
             this.guna2VScrollBar1.Name = "guna2VScrollBar1";
             this.guna2VScrollBar1.ScrollbarSize = 10;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(10, 358);
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(10, 359);
             this.guna2VScrollBar1.TabIndex = 5;
             // 
             // MyMusic

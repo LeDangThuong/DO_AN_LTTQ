@@ -50,14 +50,8 @@ namespace DO_AN_LTTQ
 
         //THUONG
         private List<SongIn4> songIn4s = new List<SongIn4>();
-        private List<MediaItem> FullNhac = new List<MediaItem>();
-        private List<MediaItem> NhacDangChay = new List<MediaItem>();
-        private List<MediaItem> NhacTaiLen = new List<MediaItem>();
-        private List<MediaItem> NhacDaNghe = new List<MediaItem>();
-        private List<MediaItem> NhacDuocChon = new List<MediaItem>();
-        private List<string> DanhSach = new List<string>();
-        private List<int> listIndex = new List<int>();
-
+        private SongItem SongRecent = new SongItem();   
+             
         //TINH
         private List<MediaItem> mediaItemsLove = new List<MediaItem>();
         private List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
@@ -108,7 +102,7 @@ namespace DO_AN_LTTQ
                 //Thuong
                 songItem.lblSongName.Text = tenBaiHat[0];
                 songItem.lblArtistName.Text = tenTacGia[0];
-                songItem.playButton.Image = Properties.Resources.play1;
+                
 
                 i++;
                 item.Tag = (string)file + "|" + i;
@@ -154,11 +148,12 @@ namespace DO_AN_LTTQ
                 mediaItems.Add(item);
 
                 //Thuong
+               
                 songItem.SongItem_Click += new EventHandler(item_SongItem_Click);
                 //songItem.PictureBoxSong_Click += new EventHandler(item_SongItem_Click);
                 //songItem.LblArtistName_Click += new EventHandler(item_SongItem_Click);
                 //songItem.LblSongName_Click += new EventHandler(item_SongItem_Click);
-                songItem.ButtonPlay_Click += new EventHandler(songItem_playButton_Click);
+                
                 songItem.Dock = DockStyle.Top;
                 songItems.Add(songItem);
                 myMusic2.PanelSongs.Controls.Add(songItem);
@@ -169,10 +164,11 @@ namespace DO_AN_LTTQ
         
 
         #endregion
+
         #region SongItem 
         private void item_SongItem_Click (object sender, EventArgs e)
         {
-            SongItem songItem = (SongItem)sender;
+            SongItem songItem = (SongItem)sender;  
             string filename = (string)songItem.Tag;
             string[] part;
             part = filename.Split('|');
@@ -181,12 +177,12 @@ namespace DO_AN_LTTQ
             try
             {
                 play_button.Image = Properties.Resources.pause;
-                songItem.playButton.Image = Properties.Resources.pause_black;
                 timer1.Enabled = true;
                 if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
                     guna2TrackBar1.Maximum = (int)player.Ctlcontrols.currentItem.duration;
                     guna2TrackBar1.Value = (int)player.Ctlcontrols.currentPosition;
+                    
                 }
                 try
                 {
@@ -210,21 +206,15 @@ namespace DO_AN_LTTQ
 
             name_of_song.Text = songItem.lblSongName.Text;
             lblTacGiaNhac.Text = songItem.lblArtistName.Text;
+            SongItem songitemOld = new SongItem();
+            if (songitemOld != null)
+                songitemOld.BackColor = System.Drawing.SystemColors.ControlLight;
 
-            SongItem songItemOld = (SongItem)player.Tag;
-            if (songItemOld != null)
-                songItemOld.BackColor = System.Drawing.SystemColors.ControlLight;
-            songItem.BackColor = System.Drawing.Color.Gray;
+            songitemOld.BackColor = System.Drawing.Color.Gray;
             player.Tag = songItem;
-
-
-
         }
 
-        private void songItem_playButton_Click (object sender, EventArgs e)
-        {
-            
-        }
+        
         #endregion
         #region pictureboxYeuThich
         private void item_picboxYeuThich_Click(object sender, EventArgs e)
@@ -813,6 +803,18 @@ namespace DO_AN_LTTQ
         }
         //Mau Button
         System.Drawing.Color ColorButton = new System.Drawing.Color();
+        
+        public void ChangeColorSongItem(object sender)
+        {
+            SongItem songItem = sender as SongItem;
+            foreach(SongItem item in myMusic2.PanelSongs.Controls)
+            {
+                if (item.Name != songItem.Name && item.BackColor != System.Drawing.Color.Gray)
+                { 
+                    item.BackColor = System.Drawing.Color.Gray;
+                }
+            }    
+        }
         public void ChangeNormalColorOnPanelLeft(object sender)
         {
             Guna2TileButton btn = sender as Guna2TileButton;
@@ -1234,11 +1236,6 @@ namespace DO_AN_LTTQ
             uReName1.f_ReName_txt.ForeColor = System.Drawing.Color.Silver;
         }
         #endregion
-
-
-
-
-
     }
 }
 
