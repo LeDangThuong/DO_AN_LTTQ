@@ -134,12 +134,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBoxSong;
-        private System.Windows.Forms.Label lblSongName;
-        private System.Windows.Forms.Label lblArtistName;
-        private System.Windows.Forms.Label lblTotalTime;
         private Guna.UI2.WinForms.Guna2ImageButton playButton;
-        private Guna.UI2.WinForms.Guna2ImageButton OptionButton;
+        public System.Windows.Forms.PictureBox pictureBoxSong;
+        public System.Windows.Forms.Label lblSongName;
+        public System.Windows.Forms.Label lblArtistName;
+        public System.Windows.Forms.Label lblTotalTime;
+        public Guna.UI2.WinForms.Guna2ImageButton OptionButton;
     }
 }

@@ -30,6 +30,7 @@ namespace DO_AN_LTTQ
     {
         #region Properties
         private List<MediaItem> mediaItems = new List<MediaItem>();
+        private List<SongItem> songItems = new List<SongItem>();    
 
         //// LẤY TÊN FILE
         string[] files;
@@ -93,20 +94,32 @@ namespace DO_AN_LTTQ
             foreach (string file in files)
             {
                 item = new MediaItem();
+                SongItem songItem = new SongItem();
                 getFilename = Path.GetFileName(file);
 
 
                 tenBaiHat = getFilename.Split('-');
                 item.lblTenBaiHat.Text = tenBaiHat[0];
 
+                
                 tenTacGia = tenBaiHat[1].Split('.');
                 item.lblTacGia.Text = tenTacGia[0];
+
+                //Thuong
+                songItem.lblSongName.Text = tenBaiHat[0];
+                songItem.lblArtistName.Text = tenBaiHat[0];
 
                 i++;
                 item.Tag = (string)file + "|" + i;
                 item.picMediaItem.Tag = (string)file + "|" + i;
                 item.lblTenBaiHat.Tag = (string)file + "|" + i;
                 item.lblTacGia.Tag = (string)file + "|" + i;
+
+                songItem.Tag = (string)file + "|" + i;
+                songItem.lblSongName.Tag = (string)file + "|" + i;    
+                songItem.lblArtistName.Tag = (string)file + "|" + i;
+                songItem.pictureBoxSong.Tag = (string)file + "|" + i;
+
 
                 try
                 {
