@@ -32,10 +32,10 @@
             this.Songs = new System.Windows.Forms.TabPage();
             this.PanelSongs = new System.Windows.Forms.Panel();
             this.PanelName = new System.Windows.Forms.Panel();
-            this.lblSong = new System.Windows.Forms.Label();
-            this.lblArtist = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
             this.lblOptions = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblArtist = new System.Windows.Forms.Label();
+            this.lblSong = new System.Windows.Forms.Label();
             this.TabControl1.SuspendLayout();
             this.PanelName.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
             this.TabControl1.SelectedTextColor = System.Drawing.Color.White;
-            this.TabControl1.Size = new System.Drawing.Size(959, 391);
+            this.TabControl1.Size = new System.Drawing.Size(947, 401);
             this.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.TabControl1.Speed = 100;
             this.TabControl1.Style = MetroSet_UI.Enums.Style.Light;
@@ -68,7 +68,7 @@
             // 
             this.Songs.Location = new System.Drawing.Point(4, 42);
             this.Songs.Name = "Songs";
-            this.Songs.Size = new System.Drawing.Size(951, 345);
+            this.Songs.Size = new System.Drawing.Size(939, 355);
             this.Songs.TabIndex = 0;
             this.Songs.Text = "Bài hát";
             // 
@@ -76,7 +76,7 @@
             // 
             this.PanelSongs.Location = new System.Drawing.Point(10, 92);
             this.PanelSongs.Name = "PanelSongs";
-            this.PanelSongs.Size = new System.Drawing.Size(945, 295);
+            this.PanelSongs.Size = new System.Drawing.Size(933, 305);
             this.PanelSongs.TabIndex = 3;
             // 
             // PanelName
@@ -87,26 +87,17 @@
             this.PanelName.Controls.Add(this.lblSong);
             this.PanelName.Location = new System.Drawing.Point(10, 48);
             this.PanelName.Name = "PanelName";
-            this.PanelName.Size = new System.Drawing.Size(945, 38);
+            this.PanelName.Size = new System.Drawing.Size(933, 38);
             this.PanelName.TabIndex = 4;
             // 
-            // lblSong
+            // lblOptions
             // 
-            this.lblSong.AutoSize = true;
-            this.lblSong.Location = new System.Drawing.Point(233, 12);
-            this.lblSong.Name = "lblSong";
-            this.lblSong.Size = new System.Drawing.Size(61, 13);
-            this.lblSong.TabIndex = 0;
-            this.lblSong.Text = "Tên bài hát";
-            // 
-            // lblArtist
-            // 
-            this.lblArtist.AutoSize = true;
-            this.lblArtist.Location = new System.Drawing.Point(441, 12);
-            this.lblArtist.Name = "lblArtist";
-            this.lblArtist.Size = new System.Drawing.Size(61, 13);
-            this.lblArtist.TabIndex = 1;
-            this.lblArtist.Text = "Tên bài hát";
+            this.lblOptions.AutoSize = true;
+            this.lblOptions.Location = new System.Drawing.Point(828, 13);
+            this.lblOptions.Name = "lblOptions";
+            this.lblOptions.Size = new System.Drawing.Size(52, 13);
+            this.lblOptions.TabIndex = 4;
+            this.lblOptions.Text = "Lựa chọn";
             // 
             // lblTime
             // 
@@ -117,14 +108,23 @@
             this.lblTime.TabIndex = 2;
             this.lblTime.Text = "Thời lượng";
             // 
-            // lblOptions
+            // lblArtist
             // 
-            this.lblOptions.AutoSize = true;
-            this.lblOptions.Location = new System.Drawing.Point(828, 13);
-            this.lblOptions.Name = "lblOptions";
-            this.lblOptions.Size = new System.Drawing.Size(52, 13);
-            this.lblOptions.TabIndex = 4;
-            this.lblOptions.Text = "Lựa chọn";
+            this.lblArtist.AutoSize = true;
+            this.lblArtist.Location = new System.Drawing.Point(441, 12);
+            this.lblArtist.Name = "lblArtist";
+            this.lblArtist.Size = new System.Drawing.Size(61, 13);
+            this.lblArtist.TabIndex = 1;
+            this.lblArtist.Text = "Tên bài hát";
+            // 
+            // lblSong
+            // 
+            this.lblSong.AutoSize = true;
+            this.lblSong.Location = new System.Drawing.Point(233, 12);
+            this.lblSong.Name = "lblSong";
+            this.lblSong.Size = new System.Drawing.Size(61, 13);
+            this.lblSong.TabIndex = 0;
+            this.lblSong.Text = "Tên bài hát";
             // 
             // MyMusic
             // 

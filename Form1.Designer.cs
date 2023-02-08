@@ -65,15 +65,16 @@ namespace DO_AN_LTTQ
             this.autoNextSongTimer = new System.Windows.Forms.Timer(this.components);
             this.rotateTimer = new System.Windows.Forms.Timer(this.components);
             this.flowPanelMedia = new System.Windows.Forms.FlowLayoutPanel();
-            this.uCaiDat = new DO_AN_LTTQ.uCaiDat();
-            this.uYeuThich1 = new DO_AN_LTTQ.uYeuThich();
-            this.uReName1 = new DO_AN_LTTQ.uReName();
-            this.uNewAlbum1 = new DO_AN_LTTQ.uNewAlbum();
             this.uMyMusic = new DO_AN_LTTQ.uMyMusic();
             this.uAlbumDetail1 = new DO_AN_LTTQ.uAlbumDetail();
             this.uAlbum = new DO_AN_LTTQ.uAlbum();
             this.uAbout = new DO_AN_LTTQ.uAbout();
+            this.uCaiDat = new DO_AN_LTTQ.uCaiDat();
+            this.uYeuThich1 = new DO_AN_LTTQ.uYeuThich();
+            this.uReName1 = new DO_AN_LTTQ.uReName();
+            this.uNewAlbum1 = new DO_AN_LTTQ.uNewAlbum();
             this.myMusic1 = new DO_AN_LTTQ.MyMusic();
+            this.myMusic2 = new DO_AN_LTTQ.MyMusic();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
@@ -91,7 +92,7 @@ namespace DO_AN_LTTQ
             this.panel1.Controls.Add(this.searching_textbox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(304, 490);
             this.panel1.TabIndex = 0;
@@ -123,7 +124,7 @@ namespace DO_AN_LTTQ
             this.About_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.About_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.About_Button.Location = new System.Drawing.Point(-1, 320);
-            this.About_Button.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.About_Button.Margin = new System.Windows.Forms.Padding(5);
             this.About_Button.Name = "About_Button";
             this.About_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
             this.About_Button.Size = new System.Drawing.Size(290, 52);
@@ -171,7 +172,7 @@ namespace DO_AN_LTTQ
             this.CaiDat_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.CaiDat_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.CaiDat_Button.Location = new System.Drawing.Point(0, 258);
-            this.CaiDat_Button.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.CaiDat_Button.Margin = new System.Windows.Forms.Padding(5);
             this.CaiDat_Button.Name = "CaiDat_Button";
             this.CaiDat_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
             this.CaiDat_Button.Size = new System.Drawing.Size(290, 52);
@@ -196,7 +197,7 @@ namespace DO_AN_LTTQ
             this.ThuVien_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.ThuVien_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.ThuVien_Button.Location = new System.Drawing.Point(-1, 74);
-            this.ThuVien_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ThuVien_Button.Margin = new System.Windows.Forms.Padding(4);
             this.ThuVien_Button.Name = "ThuVien_Button";
             this.ThuVien_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
             this.ThuVien_Button.Size = new System.Drawing.Size(290, 52);
@@ -220,7 +221,7 @@ namespace DO_AN_LTTQ
             this.Album_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.Album_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.Album_Button.Location = new System.Drawing.Point(0, 197);
-            this.Album_Button.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Album_Button.Margin = new System.Windows.Forms.Padding(5);
             this.Album_Button.Name = "Album_Button";
             this.Album_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
             this.Album_Button.Size = new System.Drawing.Size(289, 52);
@@ -244,7 +245,7 @@ namespace DO_AN_LTTQ
             this.YeuThich_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.YeuThich_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.YeuThich_Button.Location = new System.Drawing.Point(0, 135);
-            this.YeuThich_Button.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.YeuThich_Button.Margin = new System.Windows.Forms.Padding(5);
             this.YeuThich_Button.Name = "YeuThich_Button";
             this.YeuThich_Button.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
             this.YeuThich_Button.Size = new System.Drawing.Size(289, 52);
@@ -280,7 +281,7 @@ namespace DO_AN_LTTQ
             this.searching_textbox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.searching_textbox.ForeColor = System.Drawing.Color.Silver;
             this.searching_textbox.Location = new System.Drawing.Point(9, 13);
-            this.searching_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searching_textbox.Margin = new System.Windows.Forms.Padding(4);
             this.searching_textbox.Multiline = false;
             this.searching_textbox.Name = "searching_textbox";
             this.searching_textbox.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -321,7 +322,7 @@ namespace DO_AN_LTTQ
             // 
             this.picboxAvatar.ImageRotate = 0F;
             this.picboxAvatar.Location = new System.Drawing.Point(28, 16);
-            this.picboxAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picboxAvatar.Margin = new System.Windows.Forms.Padding(2);
             this.picboxAvatar.Name = "picboxAvatar";
             this.picboxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picboxAvatar.Size = new System.Drawing.Size(109, 118);
@@ -525,7 +526,7 @@ namespace DO_AN_LTTQ
             this.panel2.Controls.Add(this.home_label);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(304, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(953, 89);
             this.panel2.TabIndex = 2;
@@ -548,7 +549,7 @@ namespace DO_AN_LTTQ
             this.btnTaiNhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiNhac.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnTaiNhac.Location = new System.Drawing.Point(743, 20);
-            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTaiNhac.Margin = new System.Windows.Forms.Padding(2);
             this.btnTaiNhac.Name = "btnTaiNhac";
             this.btnTaiNhac.Size = new System.Drawing.Size(134, 42);
             this.btnTaiNhac.TabIndex = 3;
@@ -578,40 +579,6 @@ namespace DO_AN_LTTQ
             this.flowPanelMedia.Size = new System.Drawing.Size(200, 100);
             this.flowPanelMedia.TabIndex = 0;
             // 
-            // uCaiDat
-            // 
-            this.uCaiDat.Location = new System.Drawing.Point(306, 89);
-            this.uCaiDat.Name = "uCaiDat";
-            this.uCaiDat.Size = new System.Drawing.Size(956, 401);
-            this.uCaiDat.TabIndex = 11;
-            // 
-            // uYeuThich1
-            // 
-            this.uYeuThich1.AutoScroll = true;
-            this.uYeuThich1.Location = new System.Drawing.Point(304, 89);
-            this.uYeuThich1.Name = "uYeuThich1";
-            this.uYeuThich1.Size = new System.Drawing.Size(950, 401);
-            this.uYeuThich1.TabIndex = 10;
-            // 
-            // uReName1
-            // 
-            this.uReName1.BackColor = System.Drawing.Color.LightGray;
-            this.uReName1.Location = new System.Drawing.Point(605, 97);
-            this.uReName1.Name = "uReName1";
-            this.uReName1.Size = new System.Drawing.Size(400, 364);
-            this.uReName1.TabIndex = 14;
-            this.uReName1.Load += new System.EventHandler(this.uReName1_Load);
-            // 
-            // uNewAlbum1
-            // 
-            this.uNewAlbum1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uNewAlbum1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.uNewAlbum1.Location = new System.Drawing.Point(616, 97);
-            this.uNewAlbum1.Name = "uNewAlbum1";
-            this.uNewAlbum1.Size = new System.Drawing.Size(355, 335);
-            this.uNewAlbum1.TabIndex = 12;
-            this.uNewAlbum1.Load += new System.EventHandler(this.uNewAlbum1_Load);
-            // 
             // uMyMusic
             // 
             this.uMyMusic.Location = new System.Drawing.Point(307, 89);
@@ -623,6 +590,7 @@ namespace DO_AN_LTTQ
             // uAlbumDetail1
             // 
             this.uAlbumDetail1.Location = new System.Drawing.Point(304, 89);
+            this.uAlbumDetail1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uAlbumDetail1.Name = "uAlbumDetail1";
             this.uAlbumDetail1.Size = new System.Drawing.Size(952, 401);
             this.uAlbumDetail1.TabIndex = 13;
@@ -640,9 +608,48 @@ namespace DO_AN_LTTQ
             // uAbout
             // 
             this.uAbout.Location = new System.Drawing.Point(305, 89);
+            this.uAbout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uAbout.Name = "uAbout";
             this.uAbout.Size = new System.Drawing.Size(956, 401);
             this.uAbout.TabIndex = 10;
+            // 
+            // uCaiDat
+            // 
+            this.uCaiDat.Location = new System.Drawing.Point(306, 89);
+            this.uCaiDat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uCaiDat.Name = "uCaiDat";
+            this.uCaiDat.Size = new System.Drawing.Size(956, 401);
+            this.uCaiDat.TabIndex = 11;
+            // 
+            // uYeuThich1
+            // 
+            this.uYeuThich1.AutoScroll = true;
+            this.uYeuThich1.Location = new System.Drawing.Point(304, 89);
+            this.uYeuThich1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uYeuThich1.Name = "uYeuThich1";
+            this.uYeuThich1.Size = new System.Drawing.Size(950, 401);
+            this.uYeuThich1.TabIndex = 10;
+            // 
+            // uReName1
+            // 
+            this.uReName1.BackColor = System.Drawing.Color.LightGray;
+            this.uReName1.Location = new System.Drawing.Point(605, 97);
+            this.uReName1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uReName1.Name = "uReName1";
+            this.uReName1.Size = new System.Drawing.Size(400, 364);
+            this.uReName1.TabIndex = 14;
+            this.uReName1.Load += new System.EventHandler(this.uReName1_Load);
+            // 
+            // uNewAlbum1
+            // 
+            this.uNewAlbum1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.uNewAlbum1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.uNewAlbum1.Location = new System.Drawing.Point(616, 97);
+            this.uNewAlbum1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uNewAlbum1.Name = "uNewAlbum1";
+            this.uNewAlbum1.Size = new System.Drawing.Size(355, 335);
+            this.uNewAlbum1.TabIndex = 12;
+            this.uNewAlbum1.Load += new System.EventHandler(this.uNewAlbum1_Load);
             // 
             // myMusic1
             // 
@@ -652,11 +659,19 @@ namespace DO_AN_LTTQ
             this.myMusic1.Size = new System.Drawing.Size(965, 453);
             this.myMusic1.TabIndex = 0;
             // 
+            // myMusic2
+            // 
+            this.myMusic2.Location = new System.Drawing.Point(304, 89);
+            this.myMusic2.Name = "myMusic2";
+            this.myMusic2.Size = new System.Drawing.Size(957, 411);
+            this.myMusic2.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1257, 634);
+            this.Controls.Add(this.myMusic2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottom_panel);
@@ -739,7 +754,7 @@ namespace DO_AN_LTTQ
         private uReName uReName1;
 
         private uYeuThich uYeuThich1;
-
+        private MyMusic myMusic2;
     }
 }
 

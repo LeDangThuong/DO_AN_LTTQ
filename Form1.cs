@@ -156,6 +156,7 @@ namespace DO_AN_LTTQ
                 songItem.SongItem_Click += new EventHandler(item_SongItem_Click);
                 songItem.Dock = DockStyle.Top;
                 songItems.Add(songItem);
+                myMusic1.PanelSongs.Controls.Add(songItem);
 
                
             }
@@ -710,9 +711,11 @@ namespace DO_AN_LTTQ
         private void ThuVien_Button_Click(object sender, EventArgs e)
         {
             home_label.Text = "Thư viện";
+            myMusic1.BringToFront();
             //flowPanelMedia.Controls.Clear();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
+            
          
         }
         // Yeu Thich Click
