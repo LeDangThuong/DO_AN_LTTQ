@@ -37,7 +37,7 @@ namespace DO_AN_LTTQ
         //string filename;
         //string[] paths;
 
-
+        
 
 
         // SANG
@@ -107,7 +107,8 @@ namespace DO_AN_LTTQ
 
                 //Thuong
                 songItem.lblSongName.Text = tenBaiHat[0];
-                songItem.lblArtistName.Text = tenBaiHat[0];
+                songItem.lblArtistName.Text = tenTacGia[0];
+                songItem.playButton.Image = Properties.Resources.play1;
 
                 i++;
                 item.Tag = (string)file + "|" + i;
@@ -131,7 +132,7 @@ namespace DO_AN_LTTQ
                     var f1 = TagLib.File.Create(file);
                     var bin1 = (byte[])(f1.Tag.Pictures[0].Data.Data);
                     songItem.pictureBoxSong.Image = System.Drawing.Image.FromStream(new MemoryStream(bin1));
-
+                    
 
                 }
                 catch
@@ -154,14 +155,18 @@ namespace DO_AN_LTTQ
 
                 //Thuong
                 songItem.SongItem_Click += new EventHandler(item_SongItem_Click);
+                //songItem.PictureBoxSong_Click += new EventHandler(item_SongItem_Click);
+                //songItem.LblArtistName_Click += new EventHandler(item_SongItem_Click);
+                //songItem.LblSongName_Click += new EventHandler(item_SongItem_Click);
+                songItem.ButtonPlay_Click += new EventHandler(songItem_playButton_Click);
                 songItem.Dock = DockStyle.Top;
                 songItems.Add(songItem);
-                myMusic1.PanelSongs.Controls.Add(songItem);
+                myMusic2.PanelSongs.Controls.Add(songItem);
 
                
             }
         }
-
+        
 
         #endregion
         #region SongItem 
@@ -176,7 +181,7 @@ namespace DO_AN_LTTQ
             try
             {
                 play_button.Image = Properties.Resources.pause;
-                check_forplaybutton = 1;
+                songItem.playButton.Image = Properties.Resources.pause_black;
                 timer1.Enabled = true;
                 if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
@@ -190,7 +195,7 @@ namespace DO_AN_LTTQ
                 }
                 catch
                 {
-
+                    
                 }
                 //var f = TagLib.File.Create((string)item.Tag);
                 var f = TagLib.File.Create(part[0]);
@@ -203,16 +208,22 @@ namespace DO_AN_LTTQ
                 picboxAvatar.Image = Properties.Resources.DefaultMusic;
             }
 
-            //name_of_song.Text = item.lblTenBaiHat.Text;
-            //lblTacGiaNhac.Text = item.lblTacGia.Text;
+            name_of_song.Text = songItem.lblSongName.Text;
+            lblTacGiaNhac.Text = songItem.lblArtistName.Text;
 
-            //MediaItem itemOld = (MediaItem)player.Tag;
-            //if (itemOld != null)
-            //    itemOld.BackColor = System.Drawing.SystemColors.ControlLight;
+            SongItem songItemOld = (SongItem)player.Tag;
+            if (songItemOld != null)
+                songItemOld.BackColor = System.Drawing.SystemColors.ControlLight;
+            songItem.BackColor = System.Drawing.Color.Gray;
+            player.Tag = songItem;
 
-            //item.BackColor = System.Drawing.Color.Gray;
 
-            //player.Tag = item;
+
+        }
+
+        private void songItem_playButton_Click (object sender, EventArgs e)
+        {
+            
         }
         #endregion
         #region pictureboxYeuThich
@@ -313,7 +324,7 @@ namespace DO_AN_LTTQ
         private void item_MediaItem_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
-
+            
             string filename = (string)item.Tag;
             string[] part;
             part = filename.Split('|');
@@ -357,8 +368,7 @@ namespace DO_AN_LTTQ
                 itemOld.BackColor = System.Drawing.SystemColors.ControlLight;
 
             item.BackColor = System.Drawing.Color.Gray;
-
-            player.Tag = item;
+            player.Tag = item;  
         }
 
       
@@ -711,7 +721,7 @@ namespace DO_AN_LTTQ
         private void ThuVien_Button_Click(object sender, EventArgs e)
         {
             home_label.Text = "Thư viện";
-            myMusic1.BringToFront();
+            myMusic2.BringToFront();
             //flowPanelMedia.Controls.Clear();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);

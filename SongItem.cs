@@ -21,12 +21,12 @@ namespace DO_AN_LTTQ
             playButton.Image = Properties.Resources.pause_black;
         }
         public event EventHandler SongItem_Click;
-        public event EventHandler lblSongName_Click;
-        public event EventHandler lblArtistName_Click;
-        public event EventHandler lblTotalTime_Click;
-
-
-        private event EventHandler ButtonPlay_Click;
+        public event EventHandler LblSongName_Click;
+        public event EventHandler LblArtistName_Click;
+        public event EventHandler LblTotalTime_Click;
+        public event EventHandler PictureBoxSong_Click;
+        public event EventHandler ButtonPlay_Click;
+        
         internal event EventHandler ButtonOption_Click;
         public event MouseEventHandler Mouse_Click;
         internal double Duration { get; set; }
@@ -139,6 +139,36 @@ namespace DO_AN_LTTQ
         private void pictureBoxSong_MouseDown(object sender, MouseEventArgs e)
         {
             Mouse_Click?.Invoke(this, e);
+        }
+        #endregion
+
+        #region Event
+
+        private void songItem_Click(object sender, EventArgs e)
+        {
+            if (SongItem_Click != null)
+            {
+                SongItem_Click?.Invoke(this, e);
+            }
+        }
+        private void lblSongName_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void lblArtistName_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void lblTotalTime_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void pictureBoxSong_Click(object sender, EventArgs e)
+        {
+            if (PictureBoxSong_Click != null)
+            {
+                PictureBoxSong_Click(sender, e);
+            }
         }
         #endregion
     }

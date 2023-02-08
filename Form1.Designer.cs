@@ -73,7 +73,7 @@ namespace DO_AN_LTTQ
             this.uYeuThich1 = new DO_AN_LTTQ.uYeuThich();
             this.uReName1 = new DO_AN_LTTQ.uReName();
             this.uNewAlbum1 = new DO_AN_LTTQ.uNewAlbum();
-            this.myMusic1 = new DO_AN_LTTQ.MyMusic();
+            
             this.myMusic2 = new DO_AN_LTTQ.MyMusic();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -650,14 +650,7 @@ namespace DO_AN_LTTQ
             this.uNewAlbum1.Size = new System.Drawing.Size(355, 335);
             this.uNewAlbum1.TabIndex = 12;
             this.uNewAlbum1.Load += new System.EventHandler(this.uNewAlbum1_Load);
-            // 
-            // myMusic1
-            // 
-            this.myMusic1.Location = new System.Drawing.Point(0, 0);
-            this.myMusic1.Margin = new System.Windows.Forms.Padding(4);
-            this.myMusic1.Name = "myMusic1";
-            this.myMusic1.Size = new System.Drawing.Size(965, 453);
-            this.myMusic1.TabIndex = 0;
+           
             // 
             // myMusic2
             // 
@@ -738,7 +731,7 @@ namespace DO_AN_LTTQ
         private System.Windows.Forms.Timer autoNextSongTimer;
         private System.Windows.Forms.Timer rotateTimer;
       
-        private MyMusic myMusic1;
+        
 
         private System.Windows.Forms.FlowLayoutPanel flowPanelMedia;
 

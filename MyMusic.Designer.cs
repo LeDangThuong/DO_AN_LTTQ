@@ -36,6 +36,7 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblArtist = new System.Windows.Forms.Label();
             this.lblSong = new System.Windows.Forms.Label();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.TabControl1.SuspendLayout();
             this.PanelName.SuspendLayout();
             this.SuspendLayout();
@@ -74,9 +75,9 @@
             // 
             // PanelSongs
             // 
-            this.PanelSongs.Location = new System.Drawing.Point(10, 92);
+            this.PanelSongs.Location = new System.Drawing.Point(10, 75);
             this.PanelSongs.Name = "PanelSongs";
-            this.PanelSongs.Size = new System.Drawing.Size(933, 305);
+            this.PanelSongs.Size = new System.Drawing.Size(933, 322);
             this.PanelSongs.TabIndex = 3;
             // 
             // PanelName
@@ -87,13 +88,13 @@
             this.PanelName.Controls.Add(this.lblSong);
             this.PanelName.Location = new System.Drawing.Point(10, 48);
             this.PanelName.Name = "PanelName";
-            this.PanelName.Size = new System.Drawing.Size(933, 38);
+            this.PanelName.Size = new System.Drawing.Size(933, 33);
             this.PanelName.TabIndex = 4;
             // 
             // lblOptions
             // 
             this.lblOptions.AutoSize = true;
-            this.lblOptions.Location = new System.Drawing.Point(828, 13);
+            this.lblOptions.Location = new System.Drawing.Point(826, 11);
             this.lblOptions.Name = "lblOptions";
             this.lblOptions.Size = new System.Drawing.Size(52, 13);
             this.lblOptions.TabIndex = 4;
@@ -102,7 +103,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(624, 12);
+            this.lblTime.Location = new System.Drawing.Point(674, 11);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(57, 13);
             this.lblTime.TabIndex = 2;
@@ -111,25 +112,36 @@
             // lblArtist
             // 
             this.lblArtist.AutoSize = true;
-            this.lblArtist.Location = new System.Drawing.Point(441, 12);
+            this.lblArtist.Location = new System.Drawing.Point(436, 11);
             this.lblArtist.Name = "lblArtist";
-            this.lblArtist.Size = new System.Drawing.Size(61, 13);
+            this.lblArtist.Size = new System.Drawing.Size(74, 13);
             this.lblArtist.TabIndex = 1;
-            this.lblArtist.Text = "Tên bài hát";
+            this.lblArtist.Text = "Ca sĩ thể hiện";
             // 
             // lblSong
             // 
             this.lblSong.AutoSize = true;
-            this.lblSong.Location = new System.Drawing.Point(233, 12);
+            this.lblSong.Location = new System.Drawing.Point(231, 11);
             this.lblSong.Name = "lblSong";
             this.lblSong.Size = new System.Drawing.Size(61, 13);
             this.lblSong.TabIndex = 0;
             this.lblSong.Text = "Tên bài hát";
             // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(940, 45);
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 10;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(10, 358);
+            this.guna2VScrollBar1.TabIndex = 5;
+            // 
             // MyMusic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.guna2VScrollBar1);
             this.Controls.Add(this.PanelName);
             this.Controls.Add(this.PanelSongs);
             this.Controls.Add(this.TabControl1);
@@ -151,5 +163,6 @@
         public System.Windows.Forms.Label lblArtist;
         private System.Windows.Forms.Label lblSong;
         public MetroSet_UI.Controls.MetroSetTabControl TabControl1;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
     }
 }
