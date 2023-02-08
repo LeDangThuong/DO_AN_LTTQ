@@ -374,6 +374,7 @@ namespace DO_AN_LTTQ
             this.volumn_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.volumn_button.Size = new System.Drawing.Size(64, 54);
             this.volumn_button.TabIndex = 9;
+            this.volumn_button.Click += new System.EventHandler(this.volumn_button_Click);
             this.volumn_button.MouseEnter += new System.EventHandler(this.volumn_button_MouseEnter);
             this.volumn_button.MouseLeave += new System.EventHandler(this.volumn_button_MouseLeave);
             // 

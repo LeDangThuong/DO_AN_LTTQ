@@ -430,22 +430,22 @@ namespace DO_AN_LTTQ
         #region SETTING_COLORBACK
         private void next_button_MouseEnter(object sender, EventArgs e)
         {
-            next_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            next_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void next_button_MouseLeave(object sender, EventArgs e)
         {
-            next_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            next_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void play_button_MouseEnter(object sender, EventArgs e)
         {
-            play_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            play_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void play_button_MouseLeave(object sender, EventArgs e)
         {
-            play_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            play_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void shuffle_button_MouseEnter(object sender, EventArgs e)
@@ -455,36 +455,36 @@ namespace DO_AN_LTTQ
 
         private void shuffle_button_MouseLeave(object sender, EventArgs e)
         {
-            shuffle_button.BackColor = System.Drawing.SystemColors.Control;
+            shuffle_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void repeat_button_MouseEnter(object sender, EventArgs e)
         {
-            repeat_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            repeat_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void repeat_button_MouseLeave(object sender, EventArgs e)
         {
-            repeat_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            repeat_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void volumn_button_MouseEnter(object sender, EventArgs e)
         {
-            volumn_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            volumn_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void volumn_button_MouseLeave(object sender, EventArgs e)
         {
-            volumn_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            volumn_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
         private void Rewind_MouseEnter(object sender, EventArgs e)
         {
-            rewind_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            rewind_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void Rewind_MouseLeave(object sender, EventArgs e)
         {
-            rewind_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            rewind_button.BackColor = System.Drawing.Color.FromArgb(240,240,240);
         }
         #endregion
 
@@ -652,6 +652,29 @@ namespace DO_AN_LTTQ
         // ĐỔI ICON PLAY BUTTON
         //
         #region SETTING_BUTTON
+        //
+        // VOLUME
+        //
+        int check_volume = 0;
+        private void volumn_button_Click(object sender, EventArgs e)
+        {
+            if (check_volume == 0)
+            {
+                volumn_button.Image = Properties.Resources.volume_mute;
+                player.settings.volume = 0;
+                metroSetTrackBar1.Enabled= false;
+                check_volume = 1;
+
+            }
+            else if (check_volume == 1)
+            {
+                volumn_button.Image = Properties.Resources.volume_white;
+                player.settings.volume = metroSetTrackBar1.Value;
+                metroSetTrackBar1.Enabled = true;
+                check_volume = 0;
+            }
+
+        }
         private void play_button_Click(object sender, EventArgs e)
         {
             if (check_forplaybutton == 0)
@@ -758,6 +781,15 @@ namespace DO_AN_LTTQ
         private void metroSetTrackBar1_Scroll(object sender)
         {
             player.settings.volume = metroSetTrackBar1.Value;
+            if(metroSetTrackBar1.Value == 0)
+            {
+                volumn_button.Image = Properties.Resources.volume_mute;
+            }
+            else
+            {
+                volumn_button.Image = Properties.Resources.volume_white;
+            } 
+                
         }
 
 
@@ -1372,6 +1404,8 @@ namespace DO_AN_LTTQ
                 uMyMusic.BringToFront();
             }
         }
+
+        
     }
 }
 
