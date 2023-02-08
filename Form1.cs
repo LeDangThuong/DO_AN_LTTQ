@@ -127,11 +127,17 @@ namespace DO_AN_LTTQ
                     var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                     item.picMediaItem.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
 
+                    //Thuong
+                    var f1 = TagLib.File.Create(file);
+                    var bin1 = (byte[])(f1.Tag.Pictures[0].Data.Data);
+                    songItem.pictureBoxSong.Image = System.Drawing.Image.FromStream(new MemoryStream(bin1));
+
 
                 }
                 catch
                 {
                     item.picMediaItem.Image = Properties.Resources.DefaultMusic;
+                    songItem.pictureBoxSong.Image = Properties.Resources.DefaultMusic;
                 }
 
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
@@ -141,9 +147,15 @@ namespace DO_AN_LTTQ
                 //item.picboxYeuThich.Tag = item;
                 item.PicboxYeuThich_Click += new EventHandler(item_picboxYeuThich_Click);
 
+                
                 item.Dock = DockStyle.Top;
                 uMyMusic.flowPanelMedia.Controls.Add(item);
                 mediaItems.Add(item);
+
+                //Thuong
+                songItem.SongItem_Click += new EventHandler(item_SongItem_Click);
+                songItem.Dock = DockStyle.Top;
+                songItems.Add(songItem);
 
                
             }
@@ -151,7 +163,58 @@ namespace DO_AN_LTTQ
 
 
         #endregion
+        #region SongItem 
+        private void item_SongItem_Click (object sender, EventArgs e)
+        {
+            SongItem songItem = (SongItem)sender;
+            string filename = (string)songItem.Tag;
+            string[] part;
+            part = filename.Split('|');
+            player.URL = part[0];
+            player.Ctlcontrols.play();
+            try
+            {
+                play_button.Image = Properties.Resources.pause;
+                check_forplaybutton = 1;
+                timer1.Enabled = true;
+                if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                {
+                    guna2TrackBar1.Maximum = (int)player.Ctlcontrols.currentItem.duration;
+                    guna2TrackBar1.Value = (int)player.Ctlcontrols.currentPosition;
+                }
+                try
+                {
+                    label1.Text = player.Ctlcontrols.currentPositionString;
+                    label2.Text = player.Ctlcontrols.currentItem.durationString.ToString();
+                }
+                catch
+                {
 
+                }
+                //var f = TagLib.File.Create((string)item.Tag);
+                var f = TagLib.File.Create(part[0]);
+                var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
+                picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+
+            }
+            catch
+            {
+                picboxAvatar.Image = Properties.Resources.DefaultMusic;
+            }
+
+            //name_of_song.Text = item.lblTenBaiHat.Text;
+            //lblTacGiaNhac.Text = item.lblTacGia.Text;
+
+            //MediaItem itemOld = (MediaItem)player.Tag;
+            //if (itemOld != null)
+            //    itemOld.BackColor = System.Drawing.SystemColors.ControlLight;
+
+            //item.BackColor = System.Drawing.Color.Gray;
+
+            //player.Tag = item;
+        }
+        #endregion
+        #region pictureboxYeuThich
         private void item_picboxYeuThich_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
@@ -241,7 +304,7 @@ namespace DO_AN_LTTQ
                 uYeuThich1.lblTrong.Visible = true;
             }
         }
-
+        #endregion
         #region SETTING 
 
         int check_forplaybutton = 0;
@@ -255,8 +318,6 @@ namespace DO_AN_LTTQ
             part = filename.Split('|');
             player.URL = part[0];
             player.Ctlcontrols.play();
-
-
             try
             {
                 play_button.Image = Properties.Resources.pause;

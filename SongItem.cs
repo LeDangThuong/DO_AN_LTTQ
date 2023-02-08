@@ -20,6 +20,12 @@ namespace DO_AN_LTTQ
             InitializeComponent();
             playButton.Image = Properties.Resources.pause_black;
         }
+        public event EventHandler SongItem_Click;
+        public event EventHandler lblSongName_Click;
+        public event EventHandler lblArtistName_Click;
+        public event EventHandler lblTotalTime_Click;
+
+
         private event EventHandler ButtonPlay_Click;
         internal event EventHandler ButtonOption_Click;
         public event MouseEventHandler Mouse_Click;
