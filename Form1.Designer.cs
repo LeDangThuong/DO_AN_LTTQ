@@ -339,7 +339,7 @@ namespace DO_AN_LTTQ
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 21);
             this.label2.TabIndex = 13;
-            this.label2.Text = "5:00";
+            this.label2.Text = "0:00";
             // 
             // label1
             // 
@@ -399,7 +399,7 @@ namespace DO_AN_LTTQ
             this.metroSetTrackBar1.Text = "metroSetTrackBar1";
             this.metroSetTrackBar1.ThemeAuthor = "Narwin";
             this.metroSetTrackBar1.ThemeName = "MetroLite";
-            this.metroSetTrackBar1.Value = 30;
+            this.metroSetTrackBar1.Value = 15;
             this.metroSetTrackBar1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.metroSetTrackBar1.Scroll += new MetroSet_UI.Controls.MetroSetTrackBar.ScrollEventHandler(this.metroSetTrackBar1_Scroll);
             // 
