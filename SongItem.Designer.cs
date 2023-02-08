@@ -101,6 +101,7 @@
             this.pictureBoxSong.Location = new System.Drawing.Point(17, 7);
             this.pictureBoxSong.Name = "pictureBoxSong";
             this.pictureBoxSong.Size = new System.Drawing.Size(54, 54);
+            this.pictureBoxSong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxSong.TabIndex = 0;
             this.pictureBoxSong.TabStop = false;
             this.pictureBoxSong.Click += new System.EventHandler(this.songItem_Click);

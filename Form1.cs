@@ -93,15 +93,15 @@ namespace DO_AN_LTTQ
 
 
                 tenBaiHat = getFilename.Split('-');
-                item.lblTenBaiHat.Text = tenBaiHat[0];
+                item.lblTenBaiHat.Text = tenBaiHat[0].Trim();
 
                 
                 tenTacGia = tenBaiHat[1].Split('.');
-                item.lblTacGia.Text = tenTacGia[0];
+                item.lblTacGia.Text = tenTacGia[0].Trim();
 
                 //Thuong
-                songItem.lblSongName.Text = tenBaiHat[0];
-                songItem.lblArtistName.Text = tenTacGia[0];
+                songItem.lblSongName.Text = tenBaiHat[0].Trim();
+                songItem.lblArtistName.Text = tenTacGia[0].Trim();
                 
 
                 i++;
@@ -450,12 +450,12 @@ namespace DO_AN_LTTQ
 
         private void shuffle_button_MouseEnter(object sender, EventArgs e)
         {
-            shuffle_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            shuffle_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void shuffle_button_MouseLeave(object sender, EventArgs e)
         {
-            shuffle_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            shuffle_button.BackColor = System.Drawing.SystemColors.Control;
         }
 
         private void repeat_button_MouseEnter(object sender, EventArgs e)
@@ -512,6 +512,10 @@ namespace DO_AN_LTTQ
         #region Tiến Nhạc
         private void next_button_Click(object sender, EventArgs e)
         {
+            if (mediaItems.Count == 0)
+            {
+                return;
+            }
             itemPlayed = (MediaItem)player.Tag;
 
             getFilename = (string)itemPlayed.Tag;
@@ -542,6 +546,20 @@ namespace DO_AN_LTTQ
             itemPlayed.BackColor = System.Drawing.SystemColors.Control;
             itemPlay.BackColor = System.Drawing.Color.Gray;
 
+
+            string strSongItem;
+            string strMediaItem;
+            strMediaItem = (string)itemPlay.Tag;
+            foreach(SongItem songItem in songItems)
+            {
+                strSongItem = (string)songItem.Tag;
+                if(String.Compare(strMediaItem, strSongItem, true) == 0)
+                {
+                    SongRecent.BackColor = System.Drawing.SystemColors.Control;
+                    songItem.BackColor = System.Drawing.Color.LightGray;
+                    SongRecent = songItem;
+                }    
+            }    
             try
             {
 
@@ -564,6 +582,10 @@ namespace DO_AN_LTTQ
         #region Lùi Nhạc
         private void rewind_button_Click(object sender, EventArgs e)
         {
+            if(mediaItems.Count == 0)
+            {
+                return;
+            }    
             itemPlayed = (MediaItem)player.Tag;
 
             getFilename = (string)itemPlayed.Tag;
@@ -594,6 +616,19 @@ namespace DO_AN_LTTQ
             itemPlayed.BackColor = System.Drawing.SystemColors.Control;
             itemPlay.BackColor = System.Drawing.Color.Gray;
 
+            string strSongItem;
+            string strMediaItem;
+            strMediaItem = (string)itemPlay.Tag;
+            foreach (SongItem songItem in songItems)
+            {
+                strSongItem = (string)songItem.Tag;
+                if (String.Compare(strMediaItem, strSongItem, true) == 0)
+                {
+                    SongRecent.BackColor = System.Drawing.SystemColors.Control;
+                    songItem.BackColor = System.Drawing.Color.LightGray;
+                    SongRecent = songItem;
+                }
+            }
             try
             {
 
@@ -812,6 +847,11 @@ namespace DO_AN_LTTQ
         private void TrangChu_Button_Click(object sender, EventArgs e)
         {
             home_label.Text = TrangChu_Button.Text;
+            uMyMusic.flowPanelMedia.Controls.Clear();
+            foreach(MediaItem item in mediaItems)
+            {
+                uMyMusic.flowPanelMedia.Controls.Add(item);
+            }    
             uMyMusic.BringToFront();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
@@ -840,18 +880,21 @@ namespace DO_AN_LTTQ
         private void searching_button_Click(object sender, EventArgs e)
         {
             home_label.Text = "Kết quả tìm kiếm";
+            
             uMyMusic.flowPanelMedia.Controls.Clear();
+
+            
             foreach (MediaItem i in mediaItems)
             {
-                if (string.Compare(i.lblTacGia.Text, searching_textbox.Texts) == 0)
+                
+                if (String.Compare(i.lblTacGia.Text, searching_textbox.Texts, true) == 0)
                 {
+                    
                     uMyMusic.flowPanelMedia.Controls.Add(i);
                 }
-                else
-                {
-                    if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0)
+                else if (String.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts, true) == 0)
                         uMyMusic.flowPanelMedia.Controls.Add(i);
-                }
+               
             }
             uMyMusic.BringToFront();
         }
@@ -1291,6 +1334,44 @@ namespace DO_AN_LTTQ
             uReName1.f_ReName_txt.ForeColor = System.Drawing.Color.Silver;
         }
         #endregion
+
+        private void searching_textbox__TextChanged(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(searching_textbox.Texts))
+            {
+                foreach(MediaItem mediaItem in mediaItems)
+                {
+                    uMyMusic.flowPanelMedia.Controls.Add(mediaItem);
+                }
+
+                uMyMusic.BringToFront();
+            }    
+        }
+
+        private void searching_textbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                home_label.Text = "Kết quả tìm kiếm";
+
+                uMyMusic.flowPanelMedia.Controls.Clear();
+
+
+                foreach (MediaItem i in mediaItems)
+                {
+
+                    if (String.Compare(i.lblTacGia.Text, searching_textbox.Texts, true) == 0)
+                    {
+
+                        uMyMusic.flowPanelMedia.Controls.Add(i);
+                    }
+                    else if (String.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts, true) == 0)
+                        uMyMusic.flowPanelMedia.Controls.Add(i);
+
+                }
+                uMyMusic.BringToFront();
+            }
+        }
     }
 }
 

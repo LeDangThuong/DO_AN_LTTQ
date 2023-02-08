@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel_time = new System.Windows.Forms.Panel();
             this.cbMinute = new System.Windows.Forms.ComboBox();
             this.lbl_time = new Krypton.Toolkit.KryptonLabel();
@@ -37,7 +36,6 @@
             this.TimeOut_Switch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.TimeOut_Button = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.Out_timer = new System.Windows.Forms.Timer(this.components);
             this.theme_panel = new System.Windows.Forms.Panel();
             this.lbl_Theme = new Krypton.Toolkit.KryptonLabel();
             this.Theme_Switch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
@@ -54,9 +52,10 @@
             this.panel_time.Controls.Add(this.lbl_Minute);
             this.panel_time.Controls.Add(this.TimeOut_Switch);
             this.panel_time.Controls.Add(this.TimeOut_Button);
-            this.panel_time.Location = new System.Drawing.Point(117, 179);
+            this.panel_time.Location = new System.Drawing.Point(88, 145);
+            this.panel_time.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_time.Name = "panel_time";
-            this.panel_time.Size = new System.Drawing.Size(413, 129);
+            this.panel_time.Size = new System.Drawing.Size(310, 105);
             this.panel_time.TabIndex = 15;
             // 
             // cbMinute
@@ -70,9 +69,10 @@
             "45",
             "60",
             "120"});
-            this.cbMinute.Location = new System.Drawing.Point(26, 83);
+            this.cbMinute.Location = new System.Drawing.Point(20, 67);
+            this.cbMinute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbMinute.Name = "cbMinute";
-            this.cbMinute.Size = new System.Drawing.Size(121, 24);
+            this.cbMinute.Size = new System.Drawing.Size(92, 21);
             this.cbMinute.TabIndex = 17;
             this.cbMinute.SelectedIndexChanged += new System.EventHandler(this.cbMinute_SelectedIndexChanged);
             // 
@@ -80,9 +80,10 @@
             // 
             this.lbl_time.AutoSize = false;
             this.lbl_time.LabelStyle = Krypton.Toolkit.LabelStyle.BoldControl;
-            this.lbl_time.Location = new System.Drawing.Point(272, 83);
+            this.lbl_time.Location = new System.Drawing.Point(204, 67);
+            this.lbl_time.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbl_time.Name = "lbl_time";
-            this.lbl_time.Size = new System.Drawing.Size(95, 27);
+            this.lbl_time.Size = new System.Drawing.Size(71, 22);
             this.lbl_time.TabIndex = 18;
             this.lbl_time.Values.Text = "00:00";
             // 
@@ -90,9 +91,10 @@
             // 
             this.TimeOut_lbl.AutoSize = false;
             this.TimeOut_lbl.LabelStyle = Krypton.Toolkit.LabelStyle.BoldControl;
-            this.TimeOut_lbl.Location = new System.Drawing.Point(341, 22);
+            this.TimeOut_lbl.Location = new System.Drawing.Point(256, 18);
+            this.TimeOut_lbl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TimeOut_lbl.Name = "TimeOut_lbl";
-            this.TimeOut_lbl.Size = new System.Drawing.Size(56, 27);
+            this.TimeOut_lbl.Size = new System.Drawing.Size(42, 22);
             this.TimeOut_lbl.TabIndex = 17;
             this.TimeOut_lbl.Values.Text = "Off";
             // 
@@ -100,9 +102,10 @@
             // 
             this.lbl_Minute.AutoSize = false;
             this.lbl_Minute.LabelStyle = Krypton.Toolkit.LabelStyle.BoldControl;
-            this.lbl_Minute.Location = new System.Drawing.Point(164, 83);
+            this.lbl_Minute.Location = new System.Drawing.Point(123, 67);
+            this.lbl_Minute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbl_Minute.Name = "lbl_Minute";
-            this.lbl_Minute.Size = new System.Drawing.Size(56, 27);
+            this.lbl_Minute.Size = new System.Drawing.Size(42, 22);
             this.lbl_Minute.TabIndex = 17;
             this.lbl_Minute.Values.Text = "Phút";
             // 
@@ -112,9 +115,10 @@
             this.TimeOut_Switch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TimeOut_Switch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.TimeOut_Switch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.TimeOut_Switch.Location = new System.Drawing.Point(262, 19);
+            this.TimeOut_Switch.Location = new System.Drawing.Point(196, 15);
+            this.TimeOut_Switch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TimeOut_Switch.Name = "TimeOut_Switch";
-            this.TimeOut_Switch.Size = new System.Drawing.Size(60, 30);
+            this.TimeOut_Switch.Size = new System.Drawing.Size(45, 24);
             this.TimeOut_Switch.TabIndex = 17;
             this.TimeOut_Switch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.TimeOut_Switch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -136,11 +140,10 @@
             this.TimeOut_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TimeOut_Button.ImageOffset = new System.Drawing.Point(0, 20);
             this.TimeOut_Button.ImageSize = new System.Drawing.Size(30, 30);
-            this.TimeOut_Button.Location = new System.Drawing.Point(4, 4);
-            this.TimeOut_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.TimeOut_Button.Location = new System.Drawing.Point(3, 3);
             this.TimeOut_Button.Name = "TimeOut_Button";
-            this.TimeOut_Button.Padding = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.TimeOut_Button.Size = new System.Drawing.Size(270, 60);
+            this.TimeOut_Button.Padding = new System.Windows.Forms.Padding(0, 0, 8, 8);
+            this.TimeOut_Button.Size = new System.Drawing.Size(202, 49);
             this.TimeOut_Button.TabIndex = 16;
             this.TimeOut_Button.Text = "Thời Gian Tắt";
             this.TimeOut_Button.TextOffset = new System.Drawing.Point(0, -10);
@@ -160,38 +163,35 @@
             this.guna2TileButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2TileButton1.ImageOffset = new System.Drawing.Point(0, 20);
             this.guna2TileButton1.ImageSize = new System.Drawing.Size(35, 35);
-            this.guna2TileButton1.Location = new System.Drawing.Point(121, 315);
-            this.guna2TileButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2TileButton1.Location = new System.Drawing.Point(91, 256);
             this.guna2TileButton1.Name = "guna2TileButton1";
-            this.guna2TileButton1.Padding = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.guna2TileButton1.Size = new System.Drawing.Size(231, 45);
+            this.guna2TileButton1.Padding = new System.Windows.Forms.Padding(0, 0, 8, 8);
+            this.guna2TileButton1.Size = new System.Drawing.Size(173, 37);
             this.guna2TileButton1.TabIndex = 14;
             this.guna2TileButton1.Text = "Thoát";
             this.guna2TileButton1.TextOffset = new System.Drawing.Point(0, -10);
             this.guna2TileButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.guna2TileButton1.Click += new System.EventHandler(this.guna2TileButton1_Click);
             // 
-            // Out_timer
-            // 
-            this.Out_timer.Tick += new System.EventHandler(this.Out_timer_Tick);
-            // 
             // theme_panel
             // 
             this.theme_panel.Controls.Add(this.lbl_Theme);
             this.theme_panel.Controls.Add(this.Theme_Switch);
             this.theme_panel.Controls.Add(this.Theme_Button);
-            this.theme_panel.Location = new System.Drawing.Point(117, 73);
+            this.theme_panel.Location = new System.Drawing.Point(88, 59);
+            this.theme_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.theme_panel.Name = "theme_panel";
-            this.theme_panel.Size = new System.Drawing.Size(413, 100);
+            this.theme_panel.Size = new System.Drawing.Size(310, 81);
             this.theme_panel.TabIndex = 16;
             // 
             // lbl_Theme
             // 
             this.lbl_Theme.AutoSize = false;
             this.lbl_Theme.LabelStyle = Krypton.Toolkit.LabelStyle.BoldControl;
-            this.lbl_Theme.Location = new System.Drawing.Point(354, 41);
+            this.lbl_Theme.Location = new System.Drawing.Point(266, 33);
+            this.lbl_Theme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbl_Theme.Name = "lbl_Theme";
-            this.lbl_Theme.Size = new System.Drawing.Size(56, 27);
+            this.lbl_Theme.Size = new System.Drawing.Size(42, 22);
             this.lbl_Theme.TabIndex = 19;
             this.lbl_Theme.Values.Text = "Sáng";
             // 
@@ -202,9 +202,10 @@
             this.Theme_Switch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Theme_Switch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.Theme_Switch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.Theme_Switch.Location = new System.Drawing.Point(272, 38);
+            this.Theme_Switch.Location = new System.Drawing.Point(204, 31);
+            this.Theme_Switch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Theme_Switch.Name = "Theme_Switch";
-            this.Theme_Switch.Size = new System.Drawing.Size(60, 30);
+            this.Theme_Switch.Size = new System.Drawing.Size(45, 24);
             this.Theme_Switch.TabIndex = 18;
             this.Theme_Switch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.Theme_Switch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -226,11 +227,10 @@
             this.Theme_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Theme_Button.ImageOffset = new System.Drawing.Point(0, 20);
             this.Theme_Button.ImageSize = new System.Drawing.Size(45, 45);
-            this.Theme_Button.Location = new System.Drawing.Point(0, 18);
-            this.Theme_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.Theme_Button.Location = new System.Drawing.Point(0, 15);
             this.Theme_Button.Name = "Theme_Button";
-            this.Theme_Button.Padding = new System.Windows.Forms.Padding(0, 0, 20, 20);
-            this.Theme_Button.Size = new System.Drawing.Size(265, 60);
+            this.Theme_Button.Padding = new System.Windows.Forms.Padding(0, 0, 15, 16);
+            this.Theme_Button.Size = new System.Drawing.Size(199, 49);
             this.Theme_Button.TabIndex = 17;
             this.Theme_Button.Text = "Chủ Đề";
             this.Theme_Button.TextOffset = new System.Drawing.Point(0, -10);
@@ -238,13 +238,14 @@
             // 
             // uCaiDat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.theme_panel);
             this.Controls.Add(this.panel_time);
             this.Controls.Add(this.guna2TileButton1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "uCaiDat";
-            this.Size = new System.Drawing.Size(1106, 537);
+            this.Size = new System.Drawing.Size(830, 436);
             this.Load += new System.EventHandler(this.uCaiDat_Load);
             this.panel_time.ResumeLayout(false);
             this.theme_panel.ResumeLayout(false);
@@ -260,7 +261,6 @@
         private Krypton.Toolkit.KryptonLabel lbl_Minute;
         private Krypton.Toolkit.KryptonLabel TimeOut_lbl;
         private Krypton.Toolkit.KryptonLabel lbl_time;
-        private System.Windows.Forms.Timer Out_timer;
         private System.Windows.Forms.Panel theme_panel;
         public Guna.UI2.WinForms.Guna2ToggleSwitch Theme_Switch;
         private Guna.UI2.WinForms.Guna2TileButton Theme_Button;

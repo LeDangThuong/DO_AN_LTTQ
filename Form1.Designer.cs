@@ -71,9 +71,9 @@ namespace DO_AN_LTTQ
             this.uAbout = new DO_AN_LTTQ.uAbout();
             this.uCaiDat = new DO_AN_LTTQ.uCaiDat();
             this.uYeuThich1 = new DO_AN_LTTQ.uYeuThich();
+            this.myMusic2 = new DO_AN_LTTQ.MyMusic();
             this.uReName1 = new DO_AN_LTTQ.uReName();
             this.uNewAlbum1 = new DO_AN_LTTQ.uNewAlbum();
-            this.myMusic2 = new DO_AN_LTTQ.MyMusic();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.bottom_panel.SuspendLayout();
@@ -291,7 +291,9 @@ namespace DO_AN_LTTQ
             this.searching_textbox.TabIndex = 35;
             this.searching_textbox.Texts = "Tìm kiếm";
             this.searching_textbox.UnderlinedStyle = false;
+            this.searching_textbox._TextChanged += new System.EventHandler(this.searching_textbox__TextChanged);
             this.searching_textbox.Enter += new System.EventHandler(this.searching_textbox_Enter);
+            this.searching_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searching_textbox_KeyDown);
             this.searching_textbox.Leave += new System.EventHandler(this.searching_textbox_Leave);
             // 
             // bottom_panel
@@ -580,6 +582,9 @@ namespace DO_AN_LTTQ
             // 
             // uMyMusic
             // 
+            this.uMyMusic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uMyMusic.Location = new System.Drawing.Point(307, 89);
             this.uMyMusic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uMyMusic.Name = "uMyMusic";
@@ -588,6 +593,9 @@ namespace DO_AN_LTTQ
             // 
             // uAlbumDetail1
             // 
+            this.uAlbumDetail1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uAlbumDetail1.Location = new System.Drawing.Point(304, 89);
             this.uAlbumDetail1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uAlbumDetail1.Name = "uAlbumDetail1";
@@ -597,6 +605,9 @@ namespace DO_AN_LTTQ
             // 
             // uAlbum
             // 
+            this.uAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uAlbum.Location = new System.Drawing.Point(305, 89);
             this.uAlbum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uAlbum.Name = "uAlbum";
@@ -606,6 +617,9 @@ namespace DO_AN_LTTQ
             // 
             // uAbout
             // 
+            this.uAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uAbout.Location = new System.Drawing.Point(305, 89);
             this.uAbout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uAbout.Name = "uAbout";
@@ -614,20 +628,36 @@ namespace DO_AN_LTTQ
             // 
             // uCaiDat
             // 
+            this.uCaiDat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uCaiDat.Location = new System.Drawing.Point(306, 89);
-            this.uCaiDat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uCaiDat.Margin = new System.Windows.Forms.Padding(2);
             this.uCaiDat.Name = "uCaiDat";
             this.uCaiDat.Size = new System.Drawing.Size(956, 401);
             this.uCaiDat.TabIndex = 11;
             // 
             // uYeuThich1
             // 
+            this.uYeuThich1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.uYeuThich1.AutoScroll = true;
             this.uYeuThich1.Location = new System.Drawing.Point(304, 89);
-            this.uYeuThich1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uYeuThich1.Margin = new System.Windows.Forms.Padding(2);
             this.uYeuThich1.Name = "uYeuThich1";
             this.uYeuThich1.Size = new System.Drawing.Size(950, 401);
             this.uYeuThich1.TabIndex = 10;
+            // 
+            // myMusic2
+            // 
+            this.myMusic2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.myMusic2.Location = new System.Drawing.Point(304, 89);
+            this.myMusic2.Name = "myMusic2";
+            this.myMusic2.Size = new System.Drawing.Size(957, 401);
+            this.myMusic2.TabIndex = 15;
             // 
             // uReName1
             // 
@@ -650,13 +680,6 @@ namespace DO_AN_LTTQ
             this.uNewAlbum1.TabIndex = 12;
             this.uNewAlbum1.Load += new System.EventHandler(this.uNewAlbum1_Load);
             // 
-            // myMusic2
-            // 
-            this.myMusic2.Location = new System.Drawing.Point(304, 89);
-            this.myMusic2.Name = "myMusic2";
-            this.myMusic2.Size = new System.Drawing.Size(957, 411);
-            this.myMusic2.TabIndex = 15;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -671,12 +694,15 @@ namespace DO_AN_LTTQ
             this.Controls.Add(this.uAbout);
             this.Controls.Add(this.uCaiDat);
             this.Controls.Add(this.uYeuThich1);
+            this.Controls.Add(this.myMusic2);
             this.Controls.Add(this.uReName1);
             this.Controls.Add(this.uNewAlbum1);
-            this.Controls.Add(this.myMusic2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TST Player";

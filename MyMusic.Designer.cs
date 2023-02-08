@@ -30,12 +30,12 @@
         {
             this.TabControl1 = new MetroSet_UI.Controls.MetroSetTabControl();
             this.Songs = new System.Windows.Forms.TabPage();
-            this.PanelSongs = new System.Windows.Forms.Panel();
             this.PanelName = new System.Windows.Forms.Panel();
             this.lblOptions = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblArtist = new System.Windows.Forms.Label();
             this.lblSong = new System.Windows.Forms.Label();
+            this.PanelSongs = new System.Windows.Forms.FlowLayoutPanel();
             this.TabControl1.SuspendLayout();
             this.PanelName.SuspendLayout();
             this.SuspendLayout();
@@ -71,14 +71,6 @@
             this.Songs.Size = new System.Drawing.Size(939, 355);
             this.Songs.TabIndex = 0;
             this.Songs.Text = "Bài hát";
-            // 
-            // PanelSongs
-            // 
-            this.PanelSongs.AutoScroll = true;
-            this.PanelSongs.Location = new System.Drawing.Point(3, 75);
-            this.PanelSongs.Name = "PanelSongs";
-            this.PanelSongs.Size = new System.Drawing.Size(947, 329);
-            this.PanelSongs.TabIndex = 3;
             // 
             // PanelName
             // 
@@ -127,12 +119,20 @@
             this.lblSong.TabIndex = 0;
             this.lblSong.Text = "Tên bài hát";
             // 
+            // PanelSongs
+            // 
+            this.PanelSongs.AutoScroll = true;
+            this.PanelSongs.Location = new System.Drawing.Point(3, 75);
+            this.PanelSongs.Name = "PanelSongs";
+            this.PanelSongs.Size = new System.Drawing.Size(947, 329);
+            this.PanelSongs.TabIndex = 5;
+            // 
             // MyMusic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.PanelName);
             this.Controls.Add(this.PanelSongs);
+            this.Controls.Add(this.PanelName);
             this.Controls.Add(this.TabControl1);
             this.Name = "MyMusic";
             this.Size = new System.Drawing.Size(965, 560);
@@ -146,12 +146,12 @@
 
         #endregion
         private System.Windows.Forms.TabPage Songs;
-        public System.Windows.Forms.Panel PanelSongs;
         public System.Windows.Forms.Panel PanelName;
         public System.Windows.Forms.Label lblOptions;
         public System.Windows.Forms.Label lblTime;
         public System.Windows.Forms.Label lblArtist;
         private System.Windows.Forms.Label lblSong;
         public MetroSet_UI.Controls.MetroSetTabControl TabControl1;
+        public System.Windows.Forms.FlowLayoutPanel PanelSongs;
     }
 }
