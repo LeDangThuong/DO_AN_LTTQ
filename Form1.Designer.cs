@@ -671,7 +671,6 @@ namespace DO_AN_LTTQ
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1257, 634);
-            this.Controls.Add(this.myMusic2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottom_panel);
@@ -683,6 +682,7 @@ namespace DO_AN_LTTQ
             this.Controls.Add(this.uYeuThich1);
             this.Controls.Add(this.uReName1);
             this.Controls.Add(this.uNewAlbum1);
+            this.Controls.Add(this.myMusic2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
