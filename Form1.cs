@@ -1415,7 +1415,7 @@ namespace DO_AN_LTTQ
             uReName1.f_ReName_txt.Texts = "Nhập Tên Album Mới";
             uReName1.f_ReName_txt.ForeColor = System.Drawing.Color.Silver;
         }
-
+        #endregion
 
         #region SEARCHING
         private void searching_textbox__TextChanged(object sender, EventArgs e)
