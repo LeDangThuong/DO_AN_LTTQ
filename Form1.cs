@@ -1361,6 +1361,11 @@ namespace DO_AN_LTTQ
         }
         private void f_ReOk_Album_Click(object sender, EventArgs e)
         {
+            if(uReName1.f_ReName_txt.Texts == "Nhập tên Album mới")
+            {
+                System.Windows.Forms.MessageBox.Show("Vui lòng nhập tên Album mới");
+                return;
+            }    
             int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
             albums[vitri].OneAlbum.lbl_onealbum.Text = uReName1.f_ReName_txt.Texts;
             uAlbumDetail1.NameSong_lbl.Text = albums[vitri].OneAlbum.lbl_onealbum.Text;
