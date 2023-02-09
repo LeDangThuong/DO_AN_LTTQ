@@ -419,8 +419,6 @@ namespace DO_AN_LTTQ
 
             name_of_song.Text = item.lblTenBaiHat.Text;
             lblTacGiaNhac.Text = item.lblTacGia.Text;
-
-            
             player.Tag = item;  
         }
 
@@ -532,14 +530,21 @@ namespace DO_AN_LTTQ
             divideFilename = getFilename.Split('|');
 
             iPlay = Int32.Parse(divideFilename[1]);
-
-            if (iPlay < mediaItems.Count - 1)
+            if(player.Ctlcontrols.currentPosition.ToString() == player.Ctlcontrols.currentItem.durationString.ToString())
             {
                 itemPlay = mediaItems[++iPlay];
             }
+
             else
             {
-                itemPlay = mediaItems[0];
+                if (iPlay < mediaItems.Count - 1)
+                {
+                    itemPlay = mediaItems[++iPlay];
+                }
+                else
+                {
+                    itemPlay = mediaItems[0];
+                }
             }
 
             getFilename = (string)itemPlay.Tag;
