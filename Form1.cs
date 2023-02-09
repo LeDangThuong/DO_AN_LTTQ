@@ -126,7 +126,13 @@ namespace DO_AN_LTTQ
                     var f1 = TagLib.File.Create(file);
                     var bin1 = (byte[])(f1.Tag.Pictures[0].Data.Data);
                     songItem.pictureBoxSong.Image = System.Drawing.Image.FromStream(new MemoryStream(bin1));
-                    
+
+
+                    var duration = (int)f.Properties.Duration.TotalSeconds;
+                    int minute = (int)duration / 60;
+                    int second = (int)duration % 60;
+
+                    songItem.lblTotalTime.Text = minute.ToString("00") + ":" + second.ToString("00");
 
                 }
                 catch
