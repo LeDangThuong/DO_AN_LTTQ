@@ -114,6 +114,13 @@ namespace DO_AN_LTTQ
                 songItem.lblSongName.Tag = (string)file + "|" + i;    
                 songItem.lblArtistName.Tag = (string)file + "|" + i;
                 songItem.pictureBoxSong.Tag = (string)file + "|" + i;
+                TagLib.File time = TagLib.File.Create(file, TagLib.ReadStyle.Average);
+
+                var duration = time.Properties.Duration.TotalSeconds;
+                int minute = (int)duration / 60;
+                float second = (float)duration % 60;
+
+                songItem.lblTotalTime.Text = minute.ToString("00") + ":" + second.ToString("00");
 
 
                 try
@@ -126,6 +133,7 @@ namespace DO_AN_LTTQ
                     var f1 = TagLib.File.Create(file);
                     var bin1 = (byte[])(f1.Tag.Pictures[0].Data.Data);
                     songItem.pictureBoxSong.Image = System.Drawing.Image.FromStream(new MemoryStream(bin1));
+
                     
 
                 }
@@ -175,7 +183,7 @@ namespace DO_AN_LTTQ
             if(SongRecent != null)
             {
                 SongRecent.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-                
+                SongRecent.playButton_image.Image = Properties.Resources.play1;
             }
 
             song_item = (string)songItem.Tag;
@@ -211,6 +219,7 @@ namespace DO_AN_LTTQ
             try
             {
                 play_button.Image = Properties.Resources.pause;
+                songItem.playButton_image.Image = Properties.Resources.pause_black;
                 timer1.Enabled = true;
                 if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
@@ -410,8 +419,6 @@ namespace DO_AN_LTTQ
 
             name_of_song.Text = item.lblTenBaiHat.Text;
             lblTacGiaNhac.Text = item.lblTacGia.Text;
-
-            
             player.Tag = item;  
         }
 
@@ -523,14 +530,21 @@ namespace DO_AN_LTTQ
             divideFilename = getFilename.Split('|');
 
             iPlay = Int32.Parse(divideFilename[1]);
-
-            if (iPlay < mediaItems.Count - 1)
+            if(player.Ctlcontrols.currentPosition.ToString() == player.Ctlcontrols.currentItem.durationString.ToString())
             {
                 itemPlay = mediaItems[++iPlay];
             }
+
             else
             {
-                itemPlay = mediaItems[0];
+                if (iPlay < mediaItems.Count - 1)
+                {
+                    itemPlay = mediaItems[++iPlay];
+                }
+                else
+                {
+                    itemPlay = mediaItems[0];
+                }
             }
 
             getFilename = (string)itemPlay.Tag;
@@ -738,11 +752,13 @@ namespace DO_AN_LTTQ
             else if (flag_repeat == 1)
             {
                 repeat_button.Image = Properties.Resources.repeat_infinity;
+                
                 flag_repeat = 2;
             }
             else if (flag_repeat == 2)
             {
                 repeat_button.Image = Properties.Resources.repeat;
+                
                 flag_repeat = 0;
             }
         }
@@ -797,6 +813,12 @@ namespace DO_AN_LTTQ
         private void guna2TrackBar1_MouseDown(object sender, MouseEventArgs e)
         {
             player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / guna2TrackBar1.Width;
+        }
+        private void metroSetTrackBar1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            metroSetTrackBar1.Value = e.X;
+            player.settings.volume = metroSetTrackBar1.Value;
         }
 
         private void guna2TrackBar1_Scroll(object sender, ScrollEventArgs e)
@@ -1369,13 +1391,11 @@ namespace DO_AN_LTTQ
         }
         private void f_ReOk_Album_Click(object sender, EventArgs e)
         {
-            //
-            if(uReName1.f_ReName_txt.Texts == "Nhập Tên Album Mới")
+            if(uReName1.f_ReName_txt.Texts == "Nhập tên Album mới")
             {
-                System.Windows.Forms.MessageBox.Show("Vui Lòng Nhập Tên Album mới");
+                System.Windows.Forms.MessageBox.Show("Vui lòng nhập tên Album mới");
                 return;
-            }
-            //
+            }    
             int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
             albums[vitri].OneAlbum.lbl_onealbum.Text = uReName1.f_ReName_txt.Texts;
             uAlbumDetail1.NameSong_lbl.Text = albums[vitri].OneAlbum.lbl_onealbum.Text;
@@ -1397,6 +1417,7 @@ namespace DO_AN_LTTQ
         }
 
 
+        #region SEARCHING
         private void searching_textbox__TextChanged(object sender, EventArgs e)
         {
             if(String.IsNullOrEmpty(searching_textbox.Texts))
@@ -1434,8 +1455,8 @@ namespace DO_AN_LTTQ
                 uMyMusic.BringToFront();
             }
         }
-
         #endregion
+
     }
 }
 

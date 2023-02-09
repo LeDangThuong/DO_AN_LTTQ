@@ -392,7 +392,7 @@ namespace DO_AN_LTTQ
             this.metroSetTrackBar1.Maximum = 100;
             this.metroSetTrackBar1.Minimum = 0;
             this.metroSetTrackBar1.Name = "metroSetTrackBar1";
-            this.metroSetTrackBar1.Size = new System.Drawing.Size(140, 16);
+            this.metroSetTrackBar1.Size = new System.Drawing.Size(88, 16);
             this.metroSetTrackBar1.Style = MetroSet_UI.Enums.Style.Light;
             this.metroSetTrackBar1.StyleManager = null;
             this.metroSetTrackBar1.TabIndex = 8;
@@ -402,6 +402,7 @@ namespace DO_AN_LTTQ
             this.metroSetTrackBar1.Value = 15;
             this.metroSetTrackBar1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.metroSetTrackBar1.Scroll += new MetroSet_UI.Controls.MetroSetTrackBar.ScrollEventHandler(this.metroSetTrackBar1_Scroll);
+            this.metroSetTrackBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.metroSetTrackBar1_MouseDown);
             // 
             // repeat_button
             // 
