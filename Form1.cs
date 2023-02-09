@@ -589,8 +589,19 @@ namespace DO_AN_LTTQ
             }
 
             player.Tag = itemPlay;
+            //
+            if (albums.Count > 0)
+            {
+                for (int i = 0; i < albums.Count; i++)
+                {
+                    foreach (MediaItem item in albums[i].albumDetail)
+                    {
+                        
+                    }
+                }
+            }
         }
-
+        
         #endregion
 
         #region Lùi Nhạc

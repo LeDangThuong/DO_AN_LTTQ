@@ -28,71 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.f_ReCancel_Album = new Guna.UI2.WinForms.Guna2TileButton();
-            this.f_ReOk_Album = new Guna.UI2.WinForms.Guna2TileButton();
-            this.dalbum_pic_f = new System.Windows.Forms.PictureBox();
             this.f_ReName_txt = new Sipaa.Framework.STextBox();
+            this.f_ReCancel_Album = new Guna.UI2.WinForms.Guna2TileButton();
+            this.dalbum_pic_f = new System.Windows.Forms.PictureBox();
+            this.f_ReOk_Album = new DO_AN_LTTQ.VButton();
             ((System.ComponentModel.ISupportInitialize)(this.dalbum_pic_f)).BeginInit();
             this.SuspendLayout();
-            // 
-            // f_ReCancel_Album
-            // 
-            this.f_ReCancel_Album.BackColor = System.Drawing.Color.White;
-            this.f_ReCancel_Album.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.f_ReCancel_Album.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.f_ReCancel_Album.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.f_ReCancel_Album.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.f_ReCancel_Album.FillColor = System.Drawing.Color.White;
-            this.f_ReCancel_Album.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.f_ReCancel_Album.ForeColor = System.Drawing.Color.Black;
-            this.f_ReCancel_Album.Image = global::DO_AN_LTTQ.Properties.Resources.error;
-            this.f_ReCancel_Album.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.f_ReCancel_Album.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.f_ReCancel_Album.ImageSize = new System.Drawing.Size(30, 30);
-            this.f_ReCancel_Album.Location = new System.Drawing.Point(132, 334);
-            this.f_ReCancel_Album.Margin = new System.Windows.Forms.Padding(5);
-            this.f_ReCancel_Album.Name = "f_ReCancel_Album";
-            this.f_ReCancel_Album.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.f_ReCancel_Album.Size = new System.Drawing.Size(251, 44);
-            this.f_ReCancel_Album.TabIndex = 24;
-            this.f_ReCancel_Album.Text = "Cancel";
-            this.f_ReCancel_Album.TextOffset = new System.Drawing.Point(0, -10);
-            this.f_ReCancel_Album.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            // 
-            // f_ReOk_Album
-            // 
-            this.f_ReOk_Album.BackColor = System.Drawing.Color.White;
-            this.f_ReOk_Album.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.f_ReOk_Album.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.f_ReOk_Album.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.f_ReOk_Album.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.f_ReOk_Album.FillColor = System.Drawing.Color.White;
-            this.f_ReOk_Album.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.f_ReOk_Album.ForeColor = System.Drawing.Color.Black;
-            this.f_ReOk_Album.Image = global::DO_AN_LTTQ.Properties.Resources._checked;
-            this.f_ReOk_Album.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.f_ReOk_Album.ImageOffset = new System.Drawing.Point(-3, 20);
-            this.f_ReOk_Album.ImageSize = new System.Drawing.Size(30, 30);
-            this.f_ReOk_Album.Location = new System.Drawing.Point(132, 280);
-            this.f_ReOk_Album.Margin = new System.Windows.Forms.Padding(5);
-            this.f_ReOk_Album.Name = "f_ReOk_Album";
-            this.f_ReOk_Album.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.f_ReOk_Album.Size = new System.Drawing.Size(251, 44);
-            this.f_ReOk_Album.TabIndex = 23;
-            this.f_ReOk_Album.Text = "OK";
-            this.f_ReOk_Album.TextOffset = new System.Drawing.Point(0, -10);
-            this.f_ReOk_Album.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.f_ReOk_Album.Click += new System.EventHandler(this.f_ReOk_Album_Click);
-            // 
-            // dalbum_pic_f
-            // 
-            this.dalbum_pic_f.Image = global::DO_AN_LTTQ.Properties.Resources.album;
-            this.dalbum_pic_f.Location = new System.Drawing.Point(144, 19);
-            this.dalbum_pic_f.Name = "dalbum_pic_f";
-            this.dalbum_pic_f.Size = new System.Drawing.Size(225, 193);
-            this.dalbum_pic_f.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.dalbum_pic_f.TabIndex = 21;
-            this.dalbum_pic_f.TabStop = false;
             // 
             // f_ReName_txt
             // 
@@ -118,14 +59,70 @@
             this.f_ReName_txt.Enter += new System.EventHandler(this.f_ReName_txt_Enter);
             this.f_ReName_txt.Leave += new System.EventHandler(this.f_ReName_txt_Leave);
             // 
+            // f_ReCancel_Album
+            // 
+            this.f_ReCancel_Album.BackColor = System.Drawing.Color.White;
+            this.f_ReCancel_Album.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.f_ReCancel_Album.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.f_ReCancel_Album.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.f_ReCancel_Album.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.f_ReCancel_Album.FillColor = System.Drawing.Color.White;
+            this.f_ReCancel_Album.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.f_ReCancel_Album.ForeColor = System.Drawing.Color.Black;
+            this.f_ReCancel_Album.Image = global::DO_AN_LTTQ.Properties.Resources.error;
+            this.f_ReCancel_Album.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.f_ReCancel_Album.ImageOffset = new System.Drawing.Point(-3, 20);
+            this.f_ReCancel_Album.ImageSize = new System.Drawing.Size(30, 30);
+            this.f_ReCancel_Album.Location = new System.Drawing.Point(132, 334);
+            this.f_ReCancel_Album.Margin = new System.Windows.Forms.Padding(5);
+            this.f_ReCancel_Album.Name = "f_ReCancel_Album";
+            this.f_ReCancel_Album.Padding = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.f_ReCancel_Album.Size = new System.Drawing.Size(251, 44);
+            this.f_ReCancel_Album.TabIndex = 24;
+            this.f_ReCancel_Album.Text = "Cancel";
+            this.f_ReCancel_Album.TextOffset = new System.Drawing.Point(0, -10);
+            this.f_ReCancel_Album.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            // 
+            // dalbum_pic_f
+            // 
+            this.dalbum_pic_f.Image = global::DO_AN_LTTQ.Properties.Resources.album;
+            this.dalbum_pic_f.Location = new System.Drawing.Point(144, 19);
+            this.dalbum_pic_f.Name = "dalbum_pic_f";
+            this.dalbum_pic_f.Size = new System.Drawing.Size(225, 193);
+            this.dalbum_pic_f.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.dalbum_pic_f.TabIndex = 21;
+            this.dalbum_pic_f.TabStop = false;
+            // 
+            // f_ReOk_Album
+            // 
+            this.f_ReOk_Album.BackColor = System.Drawing.Color.White;
+            this.f_ReOk_Album.BackgroundColor = System.Drawing.Color.White;
+            this.f_ReOk_Album.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.f_ReOk_Album.BorderRadius = 20;
+            this.f_ReOk_Album.BorderSize = 0;
+            this.f_ReOk_Album.FlatAppearance.BorderSize = 0;
+            this.f_ReOk_Album.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.f_ReOk_Album.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.20895F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.f_ReOk_Album.ForeColor = System.Drawing.Color.Black;
+            this.f_ReOk_Album.Image = global::DO_AN_LTTQ.Properties.Resources.checked1;
+            this.f_ReOk_Album.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.f_ReOk_Album.Location = new System.Drawing.Point(144, 278);
+            this.f_ReOk_Album.Name = "f_ReOk_Album";
+            this.f_ReOk_Album.Size = new System.Drawing.Size(225, 47);
+            this.f_ReOk_Album.TabIndex = 37;
+            this.f_ReOk_Album.Text = "OK";
+            this.f_ReOk_Album.TextColor = System.Drawing.Color.Black;
+            this.f_ReOk_Album.UseVisualStyleBackColor = false;
+            this.f_ReOk_Album.Click += new System.EventHandler(this.f_ReOk_Album_Click);
+            // 
             // uReName
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
+            this.Controls.Add(this.f_ReOk_Album);
             this.Controls.Add(this.f_ReName_txt);
             this.Controls.Add(this.f_ReCancel_Album);
-            this.Controls.Add(this.f_ReOk_Album);
             this.Controls.Add(this.dalbum_pic_f);
             this.Name = "uReName";
             this.Size = new System.Drawing.Size(521, 391);
@@ -137,8 +134,8 @@
         #endregion
 
         public Guna.UI2.WinForms.Guna2TileButton f_ReCancel_Album;
-        public Guna.UI2.WinForms.Guna2TileButton f_ReOk_Album;
         private System.Windows.Forms.PictureBox dalbum_pic_f;
         public Sipaa.Framework.STextBox f_ReName_txt;
+        public VButton f_ReOk_Album;
     }
 }

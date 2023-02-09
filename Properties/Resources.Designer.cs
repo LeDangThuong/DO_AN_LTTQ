@@ -83,6 +83,16 @@ namespace DO_AN_LTTQ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add1 {
+            get {
+                object obj = ResourceManager.GetObject("add1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap album {
             get {
                 object obj = ResourceManager.GetObject("album", resourceCulture);
@@ -106,6 +116,16 @@ namespace DO_AN_LTTQ.Properties {
         internal static System.Drawing.Bitmap back {
             get {
                 object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checked1 {
+            get {
+                object obj = ResourceManager.GetObject("checked1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
