@@ -680,6 +680,10 @@ namespace DO_AN_LTTQ
         // Trang Chu Click
         private void TrangChu_Button_Click(object sender, EventArgs e)
         {
+            foreach(MediaItem item in uMyMusic.flowPanelMedia.Controls)
+            {
+
+            }
             home_label.Text = TrangChu_Button.Text;
             uMyMusic.BringToFront();
             SetSearch();
@@ -1146,12 +1150,16 @@ namespace DO_AN_LTTQ
             uReName1.f_ReName_txt.Texts = "Nhập Tên Album Mới";
             uReName1.f_ReName_txt.ForeColor = System.Drawing.Color.Silver;
         }
+
+
+
+
         #endregion
 
+        private void searching_textbox__TextChanged(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }
 

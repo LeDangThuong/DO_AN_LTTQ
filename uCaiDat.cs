@@ -12,6 +12,7 @@ namespace DO_AN_LTTQ
 {
     public partial class uCaiDat : UserControl
     {
+        private Timer Out_timer;
         public uCaiDat()
         {
             InitializeComponent();
@@ -28,8 +29,11 @@ namespace DO_AN_LTTQ
         {
             if(TimeOut_Switch.Checked)
             {
+               
                 TimeOut_lbl.Text = "On";
                 cbMinute.Enabled = true;
+                Out_timer = new Timer();
+                Out_timer.Interval = 1000;
                 Out_timer.Start();
                 Out_timer.Tick += Out_timer_Tick;
                 i = int.Parse(cbMinute.Text) * 60;

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel_time = new System.Windows.Forms.Panel();
             this.cbMinute = new System.Windows.Forms.ComboBox();
             this.lbl_time = new Krypton.Toolkit.KryptonLabel();
@@ -37,7 +36,6 @@
             this.TimeOut_Switch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.TimeOut_Button = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.Out_timer = new System.Windows.Forms.Timer(this.components);
             this.theme_panel = new System.Windows.Forms.Panel();
             this.lbl_Theme = new Krypton.Toolkit.KryptonLabel();
             this.Theme_Switch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
@@ -171,10 +169,6 @@
             this.guna2TileButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.guna2TileButton1.Click += new System.EventHandler(this.guna2TileButton1_Click);
             // 
-            // Out_timer
-            // 
-            this.Out_timer.Tick += new System.EventHandler(this.Out_timer_Tick);
-            // 
             // theme_panel
             // 
             this.theme_panel.Controls.Add(this.lbl_Theme);
@@ -260,7 +254,7 @@
         private Krypton.Toolkit.KryptonLabel lbl_Minute;
         private Krypton.Toolkit.KryptonLabel TimeOut_lbl;
         private Krypton.Toolkit.KryptonLabel lbl_time;
-        private System.Windows.Forms.Timer Out_timer;
+     
         private System.Windows.Forms.Panel theme_panel;
         public Guna.UI2.WinForms.Guna2ToggleSwitch Theme_Switch;
         private Guna.UI2.WinForms.Guna2TileButton Theme_Button;
