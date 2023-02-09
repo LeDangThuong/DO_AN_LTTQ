@@ -183,7 +183,7 @@ namespace DO_AN_LTTQ
             if(SongRecent != null)
             {
                 SongRecent.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-                
+                SongRecent.playButton_image.Image = Properties.Resources.play1;
             }
 
             song_item = (string)songItem.Tag;
@@ -219,6 +219,7 @@ namespace DO_AN_LTTQ
             try
             {
                 play_button.Image = Properties.Resources.pause;
+                songItem.playButton_image.Image = Properties.Resources.pause_black;
                 timer1.Enabled = true;
                 if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {

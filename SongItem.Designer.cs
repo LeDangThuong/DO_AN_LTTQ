@@ -32,7 +32,9 @@
             this.lblArtistName = new System.Windows.Forms.Label();
             this.lblTotalTime = new System.Windows.Forms.Label();
             this.pictureBoxSong = new System.Windows.Forms.PictureBox();
+            this.playButton_image = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playButton_image)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSongName
@@ -91,10 +93,23 @@
             this.pictureBoxSong.Click += new System.EventHandler(this.songItem_Click);
             this.pictureBoxSong.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSong_MouseDown);
             // 
+            // playButton_image
+            // 
+            this.playButton_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.playButton_image.Image = global::DO_AN_LTTQ.Properties.Resources.play1;
+            this.playButton_image.Location = new System.Drawing.Point(98, 27);
+            this.playButton_image.Name = "playButton_image";
+            this.playButton_image.Size = new System.Drawing.Size(20, 20);
+            this.playButton_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.playButton_image.TabIndex = 59;
+            this.playButton_image.TabStop = false;
+            this.playButton_image.Click += new System.EventHandler(this.songItem_Click);
+            // 
             // SongItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.playButton_image);
             this.Controls.Add(this.lblTotalTime);
             this.Controls.Add(this.lblArtistName);
             this.Controls.Add(this.lblSongName);
@@ -103,6 +118,7 @@
             this.Size = new System.Drawing.Size(921, 64);
             this.Click += new System.EventHandler(this.songItem_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playButton_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +129,6 @@
         public System.Windows.Forms.Label lblSongName;
         public System.Windows.Forms.Label lblArtistName;
         public System.Windows.Forms.Label lblTotalTime;
+        public System.Windows.Forms.PictureBox playButton_image;
     }
 }

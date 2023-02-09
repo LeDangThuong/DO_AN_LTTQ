@@ -79,7 +79,18 @@ namespace DO_AN_LTTQ
                 pictureBoxSong.Image = value;
             }
         }
-        
+        internal System.Drawing.Image ImageButton
+        {
+            get
+            {
+                return playButton_image.Image;
+            }
+            set
+            {
+                playButton_image.Image = value;
+            }
+        }
+
         internal string Album
         {
             get; set;
@@ -160,6 +171,13 @@ namespace DO_AN_LTTQ
             {
                 PictureBoxSong_Click(sender, e);
             }
+        }
+        private void playButton_image_Click(object sender, EventArgs e)
+        {
+            if(ButtonPlay_Click != null)
+            {
+                ButtonPlay_Click(sender, e);
+            }    
         }
         #endregion
     }
