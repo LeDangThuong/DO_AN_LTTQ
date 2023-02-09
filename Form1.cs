@@ -114,6 +114,13 @@ namespace DO_AN_LTTQ
                 songItem.lblSongName.Tag = (string)file + "|" + i;    
                 songItem.lblArtistName.Tag = (string)file + "|" + i;
                 songItem.pictureBoxSong.Tag = (string)file + "|" + i;
+                TagLib.File time = TagLib.File.Create(file, TagLib.ReadStyle.Average);
+
+                var duration = time.Properties.Duration.TotalSeconds;
+                int minute = (int)duration / 60;
+                float second = (float)duration % 60;
+
+                songItem.lblTotalTime.Text = minute.ToString("00") + ":" + second.ToString("00");
 
 
                 try
@@ -126,12 +133,8 @@ namespace DO_AN_LTTQ
                     var f1 = TagLib.File.Create(file);
                     var bin1 = (byte[])(f1.Tag.Pictures[0].Data.Data);
                     songItem.pictureBoxSong.Image = System.Drawing.Image.FromStream(new MemoryStream(bin1));
-                    TagLib.File time = TagLib.File.Create(file, TagLib.ReadStyle.Average);         
-                    var duration = (int)time.Properties.Duration.TotalSeconds;
-                    int minute = (int)duration / 60;
-                    int second = (int)duration % 60;
 
-                    songItem.lblTotalTime.Text = minute.ToString("00") + ":" + second.ToString("00");
+                    
 
                 }
                 catch
