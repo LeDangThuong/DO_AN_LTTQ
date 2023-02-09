@@ -82,6 +82,7 @@
             this.f_ReOk_Album.Text = "OK";
             this.f_ReOk_Album.TextOffset = new System.Drawing.Point(0, -10);
             this.f_ReOk_Album.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.f_ReOk_Album.Click += new System.EventHandler(this.f_ReOk_Album_Click);
             // 
             // dalbum_pic_f
             // 

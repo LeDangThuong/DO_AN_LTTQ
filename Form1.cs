@@ -1063,7 +1063,14 @@ namespace DO_AN_LTTQ
         }
         private void f_Ok_Album_Click(object sender, EventArgs e)
         {
-            if(uNewAlbum1.f_Name_txt.Texts == string.Empty)
+            //
+            if (uNewAlbum1.f_Name_txt.Texts == "Nhập Tên Album")
+            {
+                System.Windows.Forms.MessageBox.Show("Vui Lòng Nhập Tên Album");
+                return;
+            }
+            //
+            if (uNewAlbum1.f_Name_txt.Texts == string.Empty)
             {
                 System.Windows.Forms.MessageBox.Show("Tên Album Còn Trống");
 
@@ -1072,6 +1079,18 @@ namespace DO_AN_LTTQ
             try 
             {
                 j++;
+                if(albums.Count > 0) 
+                {
+                    for(int i = 0; i< albums.Count; i++)
+                    {
+                        if (string.Compare(uNewAlbum1.f_Name_txt.Texts, albums[i].NameAlbum() )==0)
+                        {
+                            System.Windows.Forms.MessageBox.Show("Tên Album Đã Tồn Tại");
+                            return;
+                        }
+                    }
+                }
+                
                 cAlbum item = new cAlbum();
                 item.OneAlbum = new uOneAlbum();
                 item.albumDetail = new List<MediaItem>();
@@ -1350,6 +1369,13 @@ namespace DO_AN_LTTQ
         }
         private void f_ReOk_Album_Click(object sender, EventArgs e)
         {
+            //
+            if(uReName1.f_ReName_txt.Texts == "Nhập Tên Album Mới")
+            {
+                System.Windows.Forms.MessageBox.Show("Vui Lòng Nhập Tên Album mới");
+                return;
+            }
+            //
             int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
             albums[vitri].OneAlbum.lbl_onealbum.Text = uReName1.f_ReName_txt.Texts;
             uAlbumDetail1.NameSong_lbl.Text = albums[vitri].OneAlbum.lbl_onealbum.Text;
@@ -1409,7 +1435,7 @@ namespace DO_AN_LTTQ
             }
         }
 
-        
+        #endregion
     }
 }
 

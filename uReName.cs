@@ -34,5 +34,10 @@ namespace DO_AN_LTTQ
                 f_ReName_txt.ForeColor = System.Drawing.Color.Silver;
             }
         }
+
+        private void f_ReOk_Album_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
