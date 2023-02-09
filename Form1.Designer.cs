@@ -357,6 +357,16 @@ namespace DO_AN_LTTQ
             this.label1.TabIndex = 12;
             this.label1.Text = "0:00";
             // 
+            // player
+            // 
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(445, 0);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(333, 23);
+            this.player.TabIndex = 10;
+            this.player.Visible = false;
+            // 
             // volumn_button
             // 
             this.volumn_button.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
@@ -610,6 +620,7 @@ namespace DO_AN_LTTQ
             this.uMyMusic.Name = "uMyMusic";
             this.uMyMusic.Size = new System.Drawing.Size(1263, 494);
             this.uMyMusic.TabIndex = 3;
+            this.uMyMusic.Load += new System.EventHandler(this.uMyMusic_Load);
             // 
             // uAlbumDetail1
             // 

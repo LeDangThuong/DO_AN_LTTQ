@@ -102,8 +102,7 @@ namespace DO_AN_LTTQ
         #region CLICK
         private void playButton_Click(object sender, EventArgs e)
         {
-            if (ButtonPlay_Click != null)
-                ButtonPlay_Click(this, e);
+
         }
 
         private void OptionButton_Click(object sender, EventArgs e)
