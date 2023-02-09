@@ -360,7 +360,6 @@ namespace DO_AN_LTTQ
             this.player.Size = new System.Drawing.Size(333, 23);
             this.player.TabIndex = 10;
             this.player.Visible = false;
-            //this.player.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.player_PlayStateChange);
             // 
             // volumn_button
             // 
@@ -593,6 +592,7 @@ namespace DO_AN_LTTQ
             this.uMyMusic.Name = "uMyMusic";
             this.uMyMusic.Size = new System.Drawing.Size(947, 401);
             this.uMyMusic.TabIndex = 3;
+            this.uMyMusic.Load += new System.EventHandler(this.uMyMusic_Load);
             // 
             // uAlbumDetail1
             // 

@@ -142,17 +142,48 @@ namespace DO_AN_LTTQ
                 //songItem.PictureBoxSong_Click += new EventHandler(item_SongItem_Click);
                 //songItem.LblArtistName_Click += new EventHandler(item_SongItem_Click);
                 //songItem.LblSongName_Click += new EventHandler(item_SongItem_Click);
-                
+                songItem.ButtonPlay_Click += new EventHandler(play_ministyle_Click);
                 songItem.Dock = DockStyle.Top;
                 songItems.Add(songItem);
                 myMusic2.PanelSongs.Controls.Add(songItem);
 
             }
         }
-        
+
+
+
 
         #endregion
 
+        #region  miniPlayButton_SONG ITEM
+        private void play_ministyle_Click(object sender, EventArgs e)
+        {
+            SongItem songItem = sender as SongItem;
+            if (check_forplaybutton == 0)
+            {
+                songItem.playButton_image.Image = Properties.Resources.pause_black;
+                play_button.Image = Properties.Resources.pause;
+                //
+                // CHẠY NHẠC 
+                //
+                player.Ctlcontrols.play();
+                check_forplaybutton = 1;
+                timer1.Enabled = true;
+            }
+            else if (check_forplaybutton == 1)
+            {
+                songItem.playButton_image.Image = Properties.Resources.play1;
+                play_button.Image = Properties.Resources.play_rounded_button;
+                //
+                // DỪNG NHẠC
+                //
+                player.Ctlcontrols.pause();
+                //
+                check_forplaybutton = 0;
+                timer1.Enabled = false;
+            }
+        }
+        #endregion
         #region SongItem 
         private void item_SongItem_Click (object sender, EventArgs e)
         {
@@ -666,9 +697,20 @@ namespace DO_AN_LTTQ
         }
         private void play_button_Click(object sender, EventArgs e)
         {
+            MediaItem mediaItem = (MediaItem)player.Tag;
+            SongItem SONG_ITEM = new SongItem();
+            foreach(SongItem songItem in myMusic2.PanelSongs.Controls)
+            {
+                if(String.Compare(mediaItem.lblTenBaiHat.Text, songItem.lblSongName.Text)== 0)
+                {
+                    SONG_ITEM = songItem;
+                }
+            }
             if (check_forplaybutton == 0)
             {
                 play_button.Image = Properties.Resources.pause;
+                SONG_ITEM.playButton_image.Image = Properties.Resources.pause_black;
+                
                 //
                 // CHẠY NHẠC 
                 //
@@ -679,6 +721,7 @@ namespace DO_AN_LTTQ
             else if (check_forplaybutton == 1)
             {
                 play_button.Image = Properties.Resources.play_rounded_button;
+                SONG_ITEM.playButton_image.Image = Properties.Resources.play1;
                 //
                 // DỪNG NHẠC
                 //
@@ -1415,16 +1458,20 @@ namespace DO_AN_LTTQ
                 uMyMusic.BringToFront();
             }
         }
+
+        private void uMyMusic_Load(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         //private void player_PlayStateChange(object sender, _WMPOCXEvents_PlayStateChangeEvent e)
         //{
         //    if (player.playState == WMPLib.WMPPlayState.wmppsStopped)
         //    {
-                
-                
+
+
         //    }
         //}
     }
 }
-
