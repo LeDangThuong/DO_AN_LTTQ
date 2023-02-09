@@ -312,6 +312,7 @@ namespace DO_AN_LTTQ
             {
                 uYeuThich1.lblTrong.Visible = true;
             }    
+
         }
 
         private void picbox_itemYeuThich_Click(object sender, EventArgs e)
