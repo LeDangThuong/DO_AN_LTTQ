@@ -806,6 +806,12 @@ namespace DO_AN_LTTQ
         {
             player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / guna2TrackBar1.Width;
         }
+        private void metroSetTrackBar1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            metroSetTrackBar1.Value = e.X;
+            player.settings.volume = metroSetTrackBar1.Value;
+        }
 
         private void guna2TrackBar1_Scroll(object sender, ScrollEventArgs e)
         {
