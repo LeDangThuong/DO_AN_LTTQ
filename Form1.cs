@@ -595,6 +595,7 @@ namespace DO_AN_LTTQ
                     mediaItem.BackColor = System.Drawing.SystemColors.Control;
                 }
             }
+            //
             foreach (SongItem songItem in myMusic2.PanelSongs.Controls)
             {
                 if (String.Compare(songItem.lblSongName.Text, itemPlay.lblTenBaiHat.Text, true) == 0)
@@ -606,6 +607,45 @@ namespace DO_AN_LTTQ
                 {
                     songItem.BackColor = System.Drawing.SystemColors.Control;
                     songItem.playButton_image.Image = Properties.Resources.play1;
+                }
+            }
+            // Tinh fix
+            if (albums.Count > 0)
+            {
+                for (int i = 0; i < albums.Count; i++)
+                {
+                    foreach (MediaItem itemAlblum in albums[i].albumDetail)
+                    {
+                        if (String.Compare(itemPlay.lblTenBaiHat.Text, itemAlblum.lblTenBaiHat.Text) == 0)
+                        {
+                            itemAlblum.BackColor = System.Drawing.Color.Gray;
+                        }
+                        else
+                        {
+                            itemAlblum.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+                        }
+                    }
+                }
+            }
+            if (mediaItemsLove.Count > 0)
+            {
+                foreach (Control i in uYeuThich1.flowPnelYeuThich.Controls)
+                {
+
+                    try
+                    {
+                        MediaItem mediaItemmedia = (MediaItem)i;
+                        if (String.Compare(itemPlay.lblTenBaiHat.Text, mediaItemmedia.lblTenBaiHat.Text) == 0)
+                        {
+                            i.BackColor = System.Drawing.Color.Gray;
+                        }
+                        else
+                        {
+                            i.BackColor = System.Drawing.SystemColors.Control;
+
+                        }
+                    }
+                    catch { }
                 }
             }
             try
@@ -688,6 +728,45 @@ namespace DO_AN_LTTQ
                 {
                     songItem.BackColor = System.Drawing.SystemColors.Control;
                     songItem.playButton_image.Image = Properties.Resources.play1;
+                }
+            }
+            //Tinh fix
+            if (albums.Count > 0)
+            {
+                for (int i = 0; i < albums.Count; i++)
+                {
+                    foreach (MediaItem itemAlblum in albums[i].albumDetail)
+                    {
+                        if (String.Compare(itemPlay.lblTenBaiHat.Text, itemAlblum.lblTenBaiHat.Text) == 0)
+                        {
+                            itemAlblum.BackColor = System.Drawing.Color.Gray;
+                        }
+                        else
+                        {
+                            itemAlblum.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+                        }
+                    }
+                }
+            }
+            if (mediaItemsLove.Count > 0)
+            {
+                foreach (Control i in uYeuThich1.flowPnelYeuThich.Controls)
+                {
+
+                    try
+                    {
+                        MediaItem mediaItemmedia = (MediaItem)i;
+                        if (String.Compare(itemPlay.lblTenBaiHat.Text, mediaItemmedia.lblTenBaiHat.Text) == 0)
+                        {
+                            i.BackColor = System.Drawing.Color.Gray;
+                        }
+                        else
+                        {
+                            i.BackColor = System.Drawing.SystemColors.Control;
+
+                        }
+                    }
+                    catch { }
                 }
             }
             try
