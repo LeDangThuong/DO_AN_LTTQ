@@ -752,11 +752,13 @@ namespace DO_AN_LTTQ
             else if (flag_repeat == 1)
             {
                 repeat_button.Image = Properties.Resources.repeat_infinity;
+                
                 flag_repeat = 2;
             }
             else if (flag_repeat == 2)
             {
                 repeat_button.Image = Properties.Resources.repeat;
+                
                 flag_repeat = 0;
             }
         }
@@ -1392,6 +1394,7 @@ namespace DO_AN_LTTQ
         }
         #endregion
 
+        #region SEARCHING
         private void searching_textbox__TextChanged(object sender, EventArgs e)
         {
             if(String.IsNullOrEmpty(searching_textbox.Texts))
@@ -1429,8 +1432,8 @@ namespace DO_AN_LTTQ
                 uMyMusic.BringToFront();
             }
         }
+        #endregion
 
-        
     }
 }
 
