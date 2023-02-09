@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using TagLib.Tiff;
 
 namespace DO_AN_LTTQ
 {
@@ -345,7 +346,7 @@ namespace DO_AN_LTTQ
             }
         }
         #endregion
-        #region SETTING 
+        #region MEDIA ITEM
 
         int check_forplaybutton = 0;
 
@@ -409,7 +410,47 @@ namespace DO_AN_LTTQ
 
             name_of_song.Text = item.lblTenBaiHat.Text;
             lblTacGiaNhac.Text = item.lblTacGia.Text;
-            player.Tag = item;  
+            player.Tag = item;
+            if (albums.Count > 0)
+            {
+                for (int i = 0; i < albums.Count; i++)
+                {
+                    foreach (MediaItem itemAlblum in albums[i].albumDetail)
+                    {
+                        if(String.Compare(item.lblTenBaiHat.Text, itemAlblum.lblTenBaiHat.Text) == 0)
+                        {
+                            itemAlblum.BackColor = System.Drawing.Color.Gray;
+                        }
+                        else
+                        {
+                            itemAlblum.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+                        }
+                    }
+                }
+            }
+            if(mediaItemsLove.Count > 0)
+            {
+                foreach (Control i in uYeuThich1.flowPnelYeuThich.Controls)
+                {
+                    
+                    try
+                    {
+                        MediaItem mediaItemmedia = (MediaItem)i;
+                        if (String.Compare(item.lblTenBaiHat.Text, mediaItemmedia.lblTenBaiHat.Text) == 0)
+                        {
+                            i.BackColor = System.Drawing.Color.Gray;
+                        }
+                        else
+                        {
+                            i.BackColor = System.Drawing.SystemColors.Control;
+
+                        }
+                    }
+                    catch { }
+                }
+            }
+            
+            
         }
 
       
