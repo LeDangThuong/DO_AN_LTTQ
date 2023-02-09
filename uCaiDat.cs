@@ -27,7 +27,7 @@ namespace DO_AN_LTTQ
         private int i = 0;
         private void TimeOut_Switch_CheckedChanged(object sender, EventArgs e)
         {
-            if(TimeOut_Switch.Checked)
+            if (TimeOut_Switch.Checked)
             {
                
                 TimeOut_lbl.Text = "On";

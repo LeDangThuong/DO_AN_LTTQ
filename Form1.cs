@@ -30,33 +30,28 @@ namespace DO_AN_LTTQ
     {
         #region Properties
         private List<MediaItem> mediaItems = new List<MediaItem>();
+        private List<SongItem> songItems = new List<SongItem>();    
 
         //// LẤY TÊN FILE
         string[] files;
         //string filename;
         //string[] paths;
 
-
+        
 
 
         // SANG
         MediaItem itemPlay = new MediaItem();
         MediaItem itemPlayed = new MediaItem();
-
+        private MediaItem itemRecent = new MediaItem();
         int iPlay;
         private string getFilename = null;
         string[] divideFilename = new string[2];
 
         //THUONG
         private List<SongIn4> songIn4s = new List<SongIn4>();
-        private List<MediaItem> FullNhac = new List<MediaItem>();
-        private List<MediaItem> NhacDangChay = new List<MediaItem>();
-        private List<MediaItem> NhacTaiLen = new List<MediaItem>();
-        private List<MediaItem> NhacDaNghe = new List<MediaItem>();
-        private List<MediaItem> NhacDuocChon = new List<MediaItem>();
-        private List<string> DanhSach = new List<string>();
-        private List<int> listIndex = new List<int>();
-
+        private SongItem SongRecent = new SongItem();   
+             
         //TINH
         private List<MediaItem> mediaItemsLove = new List<MediaItem>();
         private List<MediaItem> mediaItemsAlbum = new List<MediaItem>();
@@ -93,14 +88,21 @@ namespace DO_AN_LTTQ
             foreach (string file in files)
             {
                 item = new MediaItem();
+                SongItem songItem = new SongItem();
                 getFilename = Path.GetFileName(file);
 
 
                 tenBaiHat = getFilename.Split('-');
-                item.lblTenBaiHat.Text = tenBaiHat[0];
+                item.lblTenBaiHat.Text = tenBaiHat[0].Trim();
 
+                
                 tenTacGia = tenBaiHat[1].Split('.');
-                item.lblTacGia.Text = tenTacGia[0];
+                item.lblTacGia.Text = tenTacGia[0].Trim();
+
+                //Thuong
+                songItem.lblSongName.Text = tenBaiHat[0].Trim();
+                songItem.lblArtistName.Text = tenTacGia[0].Trim();
+                
 
                 i++;
                 item.Tag = (string)file + "|" + i;
@@ -108,17 +110,29 @@ namespace DO_AN_LTTQ
                 item.lblTenBaiHat.Tag = (string)file + "|" + i;
                 item.lblTacGia.Tag = (string)file + "|" + i;
 
+                songItem.Tag = (string)file + "|" + i;
+                songItem.lblSongName.Tag = (string)file + "|" + i;    
+                songItem.lblArtistName.Tag = (string)file + "|" + i;
+                songItem.pictureBoxSong.Tag = (string)file + "|" + i;
+
+
                 try
                 {
                     var f = TagLib.File.Create(file);
                     var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
                     item.picMediaItem.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
 
+                    //Thuong
+                    var f1 = TagLib.File.Create(file);
+                    var bin1 = (byte[])(f1.Tag.Pictures[0].Data.Data);
+                    songItem.pictureBoxSong.Image = System.Drawing.Image.FromStream(new MemoryStream(bin1));
+                    
 
                 }
                 catch
                 {
-                    item.picMediaItem.Image = Properties.Resources.musical_note;
+                    item.picMediaItem.Image = Properties.Resources.DefaultMusic;
+                    songItem.pictureBoxSong.Image = Properties.Resources.DefaultMusic;
                 }
 
                 item.MediaItem_Click += new EventHandler(item_MediaItem_Click);
@@ -128,17 +142,110 @@ namespace DO_AN_LTTQ
                 //item.picboxYeuThich.Tag = item;
                 item.PicboxYeuThich_Click += new EventHandler(item_picboxYeuThich_Click);
 
+                
                 item.Dock = DockStyle.Top;
                 uMyMusic.flowPanelMedia.Controls.Add(item);
                 mediaItems.Add(item);
 
+                //Thuong
                
+                songItem.SongItem_Click += new EventHandler(item_SongItem_Click);
+                //songItem.PictureBoxSong_Click += new EventHandler(item_SongItem_Click);
+                //songItem.LblArtistName_Click += new EventHandler(item_SongItem_Click);
+                //songItem.LblSongName_Click += new EventHandler(item_SongItem_Click);
+                
+                songItem.Dock = DockStyle.Top;
+                songItems.Add(songItem);
+                myMusic2.PanelSongs.Controls.Add(songItem);
+
             }
         }
-
+        
 
         #endregion
 
+        #region SongItem 
+        private void item_SongItem_Click (object sender, EventArgs e)
+        {
+            string song_item;
+            string media_item;
+            SongItem songItem = (SongItem)sender; 
+            
+
+            if(SongRecent != null)
+            {
+                SongRecent.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+                
+            }
+
+            song_item = (string)songItem.Tag;
+
+            //
+            if (itemRecent != null)
+            {
+                itemRecent.BackColor = System.Drawing.SystemColors.Control;
+            }    
+
+            //done
+            foreach (MediaItem mediaItem in mediaItems)
+            {
+                media_item = (string)mediaItem.Tag;
+
+                if (String.Compare(song_item,media_item,true) == 0)
+                {
+                    
+                    mediaItem.BackColor = System.Drawing.Color.Gray;
+                    itemRecent = mediaItem;
+                    player.Tag = itemRecent;
+                }    
+            }    
+            SongRecent = songItem;
+            songItem.BackColor = System.Drawing.Color.LightGray;
+            string filename = (string)songItem.Tag;
+            string[] part;
+            part = filename.Split('|');
+            player.URL = part[0];
+            player.Ctlcontrols.play();
+
+            
+            try
+            {
+                play_button.Image = Properties.Resources.pause;
+                timer1.Enabled = true;
+                if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                {
+                    guna2TrackBar1.Maximum = (int)player.Ctlcontrols.currentItem.duration;
+                    guna2TrackBar1.Value = (int)player.Ctlcontrols.currentPosition;
+                    
+                }
+                try
+                {
+                    label1.Text = player.Ctlcontrols.currentPositionString;
+                    label2.Text = player.Ctlcontrols.currentItem.durationString.ToString();
+                }
+                catch
+                {
+                    
+                }
+                //var f = TagLib.File.Create((string)item.Tag);
+                var f = TagLib.File.Create(part[0]);
+                var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
+                picboxAvatar.Image = System.Drawing.Image.FromStream(new MemoryStream(bin));
+
+            }
+            catch
+            {
+                picboxAvatar.Image = Properties.Resources.DefaultMusic;
+            }
+
+            name_of_song.Text = songItem.lblSongName.Text;
+            lblTacGiaNhac.Text = songItem.lblArtistName.Text;
+            
+        }
+
+        
+        #endregion
+        #region pictureboxYeuThich
         private void item_picboxYeuThich_Click(object sender, EventArgs e)
         {
             MediaItem item = (MediaItem)sender;
@@ -228,7 +335,7 @@ namespace DO_AN_LTTQ
                 uYeuThich1.lblTrong.Visible = true;
             }
         }
-
+        #endregion
         #region SETTING 
 
         int check_forplaybutton = 0;
@@ -237,13 +344,40 @@ namespace DO_AN_LTTQ
         {
             MediaItem item = (MediaItem)sender;
 
+            string song_item;
+            string media_item;
+            media_item = (string)item.Tag;
+
+            //
+            if (SongRecent != null)
+            {
+                SongRecent.BackColor = System.Drawing.SystemColors.Control;
+            }
+
+            //done
+            foreach (SongItem songItem in songItems)
+            {
+                song_item = (string)songItem.Tag;
+
+                if (String.Compare(song_item, media_item, true) == 0)
+                {
+
+                    songItem.BackColor = System.Drawing.Color.Gray;
+                    SongRecent = songItem;
+ 
+                }
+            }
+            if (itemRecent != null)
+            {
+                itemRecent.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            }
+            item.BackColor = System.Drawing.Color.Gray;
+            itemRecent = item;
             string filename = (string)item.Tag;
             string[] part;
             part = filename.Split('|');
             player.URL = part[0];
             player.Ctlcontrols.play();
-
-
             try
             {
                 play_button.Image = Properties.Resources.pause;
@@ -271,19 +405,14 @@ namespace DO_AN_LTTQ
             }
             catch
             {
-                picboxAvatar.Image = Properties.Resources.repeat;
+                picboxAvatar.Image = Properties.Resources.DefaultMusic;
             }
 
             name_of_song.Text = item.lblTenBaiHat.Text;
             lblTacGiaNhac.Text = item.lblTacGia.Text;
 
-            MediaItem itemOld = (MediaItem)player.Tag;
-            if (itemOld != null)
-                itemOld.BackColor = System.Drawing.SystemColors.ControlLight;
-
-            item.BackColor = System.Drawing.Color.Gray;
-
-            player.Tag = item;
+            
+            player.Tag = item;  
         }
 
       
@@ -301,61 +430,61 @@ namespace DO_AN_LTTQ
         #region SETTING_COLORBACK
         private void next_button_MouseEnter(object sender, EventArgs e)
         {
-            next_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            next_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void next_button_MouseLeave(object sender, EventArgs e)
         {
-            next_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            next_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void play_button_MouseEnter(object sender, EventArgs e)
         {
-            play_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            play_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void play_button_MouseLeave(object sender, EventArgs e)
         {
-            play_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            play_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void shuffle_button_MouseEnter(object sender, EventArgs e)
         {
-            shuffle_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            shuffle_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void shuffle_button_MouseLeave(object sender, EventArgs e)
         {
-            shuffle_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            shuffle_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void repeat_button_MouseEnter(object sender, EventArgs e)
         {
-            repeat_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            repeat_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void repeat_button_MouseLeave(object sender, EventArgs e)
         {
-            repeat_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            repeat_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
 
         private void volumn_button_MouseEnter(object sender, EventArgs e)
         {
-            volumn_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            volumn_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void volumn_button_MouseLeave(object sender, EventArgs e)
         {
-            volumn_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            volumn_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
         }
         private void Rewind_MouseEnter(object sender, EventArgs e)
         {
-            rewind_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            rewind_button.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void Rewind_MouseLeave(object sender, EventArgs e)
         {
-            rewind_button.BackColor = System.Drawing.Color.FromArgb(249, 249, 249);
+            rewind_button.BackColor = System.Drawing.Color.FromArgb(240,240,240);
         }
         #endregion
 
@@ -383,6 +512,10 @@ namespace DO_AN_LTTQ
         #region Tiến Nhạc
         private void next_button_Click(object sender, EventArgs e)
         {
+            if (mediaItems.Count == 0)
+            {
+                return;
+            }
             itemPlayed = (MediaItem)player.Tag;
 
             getFilename = (string)itemPlayed.Tag;
@@ -410,9 +543,23 @@ namespace DO_AN_LTTQ
             name_of_song.Text = itemPlay.lblTenBaiHat.Text;
             lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
 
-            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
+            itemPlayed.BackColor = System.Drawing.SystemColors.Control;
             itemPlay.BackColor = System.Drawing.Color.Gray;
 
+
+            string strSongItem;
+            string strMediaItem;
+            strMediaItem = (string)itemPlay.Tag;
+            foreach(SongItem songItem in songItems)
+            {
+                strSongItem = (string)songItem.Tag;
+                if(String.Compare(strMediaItem, strSongItem, true) == 0)
+                {
+                    SongRecent.BackColor = System.Drawing.SystemColors.Control;
+                    songItem.BackColor = System.Drawing.Color.LightGray;
+                    SongRecent = songItem;
+                }    
+            }    
             try
             {
 
@@ -424,7 +571,7 @@ namespace DO_AN_LTTQ
             }
             catch
             {
-                picboxAvatar.Image = Properties.Resources.musical_note;
+                picboxAvatar.Image = Properties.Resources.DefaultMusic;
             }
 
             player.Tag = itemPlay;
@@ -435,6 +582,10 @@ namespace DO_AN_LTTQ
         #region Lùi Nhạc
         private void rewind_button_Click(object sender, EventArgs e)
         {
+            if(mediaItems.Count == 0)
+            {
+                return;
+            }    
             itemPlayed = (MediaItem)player.Tag;
 
             getFilename = (string)itemPlayed.Tag;
@@ -462,9 +613,22 @@ namespace DO_AN_LTTQ
             name_of_song.Text = itemPlay.lblTenBaiHat.Text;
             lblTacGiaNhac.Text = itemPlay.lblTacGia.Text;
 
-            itemPlayed.BackColor = System.Drawing.SystemColors.ControlLight;
+            itemPlayed.BackColor = System.Drawing.SystemColors.Control;
             itemPlay.BackColor = System.Drawing.Color.Gray;
 
+            string strSongItem;
+            string strMediaItem;
+            strMediaItem = (string)itemPlay.Tag;
+            foreach (SongItem songItem in songItems)
+            {
+                strSongItem = (string)songItem.Tag;
+                if (String.Compare(strMediaItem, strSongItem, true) == 0)
+                {
+                    SongRecent.BackColor = System.Drawing.SystemColors.Control;
+                    songItem.BackColor = System.Drawing.Color.LightGray;
+                    SongRecent = songItem;
+                }
+            }
             try
             {
 
@@ -476,7 +640,7 @@ namespace DO_AN_LTTQ
             }
             catch
             {
-                picboxAvatar.Image = Properties.Resources.musical_note;
+                picboxAvatar.Image = Properties.Resources.DefaultMusic;
             }
 
             player.Tag = itemPlay;
@@ -488,6 +652,29 @@ namespace DO_AN_LTTQ
         // ĐỔI ICON PLAY BUTTON
         //
         #region SETTING_BUTTON
+        //
+        // VOLUME
+        //
+        int check_volume = 0;
+        private void volumn_button_Click(object sender, EventArgs e)
+        {
+            if (check_volume == 0)
+            {
+                volumn_button.Image = Properties.Resources.volume_mute;
+                player.settings.volume = 0;
+                metroSetTrackBar1.Enabled= false;
+                check_volume = 1;
+
+            }
+            else if (check_volume == 1)
+            {
+                volumn_button.Image = Properties.Resources.volume_white;
+                player.settings.volume = metroSetTrackBar1.Value;
+                metroSetTrackBar1.Enabled = true;
+                check_volume = 0;
+            }
+
+        }
         private void play_button_Click(object sender, EventArgs e)
         {
             if (check_forplaybutton == 0)
@@ -594,6 +781,15 @@ namespace DO_AN_LTTQ
         private void metroSetTrackBar1_Scroll(object sender)
         {
             player.settings.volume = metroSetTrackBar1.Value;
+            if(metroSetTrackBar1.Value == 0)
+            {
+                volumn_button.Image = Properties.Resources.volume_mute;
+            }
+            else
+            {
+                volumn_button.Image = Properties.Resources.volume_white;
+            } 
+                
         }
 
 
@@ -636,9 +832,11 @@ namespace DO_AN_LTTQ
         private void ThuVien_Button_Click(object sender, EventArgs e)
         {
             home_label.Text = "Thư viện";
+            myMusic2.BringToFront();
             //flowPanelMedia.Controls.Clear();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
+            
          
         }
         // Yeu Thich Click
@@ -685,6 +883,11 @@ namespace DO_AN_LTTQ
 
             }
             home_label.Text = TrangChu_Button.Text;
+            uMyMusic.flowPanelMedia.Controls.Clear();
+            foreach(MediaItem item in mediaItems)
+            {
+                uMyMusic.flowPanelMedia.Controls.Add(item);
+            }    
             uMyMusic.BringToFront();
             SetSearch();
             ChangeNormalColorOnPanelLeft(sender);
@@ -713,23 +916,39 @@ namespace DO_AN_LTTQ
         private void searching_button_Click(object sender, EventArgs e)
         {
             home_label.Text = "Kết quả tìm kiếm";
+            
             uMyMusic.flowPanelMedia.Controls.Clear();
+
+            
             foreach (MediaItem i in mediaItems)
             {
-                if (string.Compare(i.lblTacGia.Text, searching_textbox.Texts) == 0)
+                
+                if (String.Compare(i.lblTacGia.Text, searching_textbox.Texts, true) == 0)
                 {
+                    
                     uMyMusic.flowPanelMedia.Controls.Add(i);
                 }
-                else
-                {
-                    if (string.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts) == 0)
+                else if (String.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts, true) == 0)
                         uMyMusic.flowPanelMedia.Controls.Add(i);
-                }
+               
             }
             uMyMusic.BringToFront();
         }
         //Mau Button
         System.Drawing.Color ColorButton = new System.Drawing.Color();
+        
+        public void ChangeColorSongItem(object sender)
+        {
+            SongItem songItem = sender as SongItem;
+            songItem.BackColor = ColorButton;
+            foreach(SongItem item in myMusic2.PanelSongs.Controls)
+            {
+                if (item.Name != songItem.Name && item.BackColor != System.Drawing.SystemColors.Control)
+                { 
+                    item.BackColor = System.Drawing.SystemColors.Control;
+                }
+            }    
+        }
         public void ChangeNormalColorOnPanelLeft(object sender)
         {
             Guna2TileButton btn = sender as Guna2TileButton;
@@ -1152,14 +1371,45 @@ namespace DO_AN_LTTQ
         }
 
 
-
-
-        #endregion
-
         private void searching_textbox__TextChanged(object sender, EventArgs e)
         {
+            if(String.IsNullOrEmpty(searching_textbox.Texts))
+            {
+                foreach(MediaItem mediaItem in mediaItems)
+                {
+                    uMyMusic.flowPanelMedia.Controls.Add(mediaItem);
+                }
 
+                uMyMusic.BringToFront();
+            }    
         }
+
+        private void searching_textbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                home_label.Text = "Kết quả tìm kiếm";
+
+                uMyMusic.flowPanelMedia.Controls.Clear();
+
+
+                foreach (MediaItem i in mediaItems)
+                {
+
+                    if (String.Compare(i.lblTacGia.Text, searching_textbox.Texts, true) == 0)
+                    {
+
+                        uMyMusic.flowPanelMedia.Controls.Add(i);
+                    }
+                    else if (String.Compare(i.lblTenBaiHat.Text, searching_textbox.Texts, true) == 0)
+                        uMyMusic.flowPanelMedia.Controls.Add(i);
+
+                }
+                uMyMusic.BringToFront();
+            }
+        }
+
+        
     }
 }
 
