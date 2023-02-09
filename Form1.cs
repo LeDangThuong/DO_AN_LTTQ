@@ -879,7 +879,7 @@ namespace DO_AN_LTTQ
         // CHỈNH THANH TRACK_BAR CÓ THỂ NHẤN ĐƯỢC
         private void guna2TrackBar1_MouseDown(object sender, MouseEventArgs e)
         {
-            player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / guna2TrackBar1.Width;
+                player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / guna2TrackBar1.Width;         
         }
         private void metroSetTrackBar1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -1148,15 +1148,30 @@ namespace DO_AN_LTTQ
         }
         private void f_Ok_Album_Click(object sender, EventArgs e)
         {
-            if(uNewAlbum1.f_Name_txt.Texts == string.Empty)
+            if (uNewAlbum1.f_Name_txt.Texts == "Nhập Tên Album")
             {
-                System.Windows.Forms.MessageBox.Show("Tên Album Còn Trống");
-
+                System.Windows.Forms.MessageBox.Show("Vui lòng nhập tên album");
+                return;
+            }
+            if (uNewAlbum1.f_Name_txt.Texts == string.Empty)
+            {
+                System.Windows.Forms.MessageBox.Show("Vui lòng nhập tên album");
                 return;
             }
             try 
             {
                 j++;
+                if(albums.Count > 0) 
+                { 
+                    for(int i = 0; i < albums.Count; i++)
+                    {
+                        if (string.Compare(uNewAlbum1.f_Name_txt.Texts, albums[i].NameAlbum()) == 0)
+                        {
+                            System.Windows.Forms.MessageBox.Show("Tên Album Đã Tồn Tại");
+                            return;
+                        }
+                    }
+                }
                 cAlbum item = new cAlbum();
                 item.OneAlbum = new uOneAlbum();
                 item.albumDetail = new List<MediaItem>();
@@ -1435,11 +1450,19 @@ namespace DO_AN_LTTQ
         }
         private void f_ReOk_Album_Click(object sender, EventArgs e)
         {
-            if(uReName1.f_ReName_txt.Texts == "Nhập tên Album mới")
+            if(uReName1.f_ReName_txt.Texts == "Nhập Tên Album Mới")
             {
                 System.Windows.Forms.MessageBox.Show("Vui lòng nhập tên Album mới");
                 return;
             }    
+            for(int i = 0; i <= albums.Count; i++)
+            {
+                if (string.Compare(uReName1.f_ReName_txt.Texts, albums[i].NameAlbum()) == 0)
+                {
+                    System.Windows.Forms.MessageBox.Show("Tên Album Đã Tồn Tại");
+                    return;
+                }
+            }
             int vitri = Int32.Parse(uAlbumDetail1.NameSong_lbl.Tag.ToString());
             albums[vitri].OneAlbum.lbl_onealbum.Text = uReName1.f_ReName_txt.Texts;
             uAlbumDetail1.NameSong_lbl.Text = albums[vitri].OneAlbum.lbl_onealbum.Text;
