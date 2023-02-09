@@ -91,7 +91,7 @@ namespace DO_AN_LTTQ
             this.panel1.Controls.Add(this.searching_textbox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(405, 603);
             this.panel1.TabIndex = 0;
@@ -105,7 +105,7 @@ namespace DO_AN_LTTQ
             this.panel3.Controls.Add(this.Album_Button);
             this.panel3.Controls.Add(this.YeuThich_Button);
             this.panel3.Location = new System.Drawing.Point(13, 71);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(387, 510);
             this.panel3.TabIndex = 6;
@@ -149,7 +149,7 @@ namespace DO_AN_LTTQ
             this.TrangChu_Button.ImageOffset = new System.Drawing.Point(0, 20);
             this.TrangChu_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.TrangChu_Button.Location = new System.Drawing.Point(0, 14);
-            this.TrangChu_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TrangChu_Button.Margin = new System.Windows.Forms.Padding(4);
             this.TrangChu_Button.Name = "TrangChu_Button";
             this.TrangChu_Button.Padding = new System.Windows.Forms.Padding(0, 0, 7, 6);
             this.TrangChu_Button.Size = new System.Drawing.Size(385, 64);
@@ -198,7 +198,7 @@ namespace DO_AN_LTTQ
             this.ThuVien_Button.ImageOffset = new System.Drawing.Point(-3, 20);
             this.ThuVien_Button.ImageSize = new System.Drawing.Size(30, 30);
             this.ThuVien_Button.Location = new System.Drawing.Point(-1, 91);
-            this.ThuVien_Button.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ThuVien_Button.Margin = new System.Windows.Forms.Padding(5);
             this.ThuVien_Button.Name = "ThuVien_Button";
             this.ThuVien_Button.Padding = new System.Windows.Forms.Padding(0, 0, 7, 6);
             this.ThuVien_Button.Size = new System.Drawing.Size(387, 64);
@@ -266,7 +266,7 @@ namespace DO_AN_LTTQ
             this.searching_button.ImageRotate = 0F;
             this.searching_button.ImageSize = new System.Drawing.Size(25, 25);
             this.searching_button.Location = new System.Drawing.Point(353, 20);
-            this.searching_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searching_button.Margin = new System.Windows.Forms.Padding(4);
             this.searching_button.Name = "searching_button";
             this.searching_button.PressedState.ImageSize = new System.Drawing.Size(28, 28);
             this.searching_button.Size = new System.Drawing.Size(35, 34);
@@ -283,7 +283,7 @@ namespace DO_AN_LTTQ
             this.searching_textbox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.searching_textbox.ForeColor = System.Drawing.Color.Silver;
             this.searching_textbox.Location = new System.Drawing.Point(12, 16);
-            this.searching_textbox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.searching_textbox.Margin = new System.Windows.Forms.Padding(5);
             this.searching_textbox.Multiline = false;
             this.searching_textbox.Name = "searching_textbox";
             this.searching_textbox.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
@@ -317,7 +317,7 @@ namespace DO_AN_LTTQ
             this.bottom_panel.Controls.Add(this.name_of_song);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bottom_panel.Location = new System.Drawing.Point(0, 603);
-            this.bottom_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bottom_panel.Margin = new System.Windows.Forms.Padding(4);
             this.bottom_panel.Name = "bottom_panel";
             this.bottom_panel.Size = new System.Drawing.Size(1676, 177);
             this.bottom_panel.TabIndex = 1;
@@ -360,7 +360,7 @@ namespace DO_AN_LTTQ
             // 
             this.player.Enabled = true;
             this.player.Location = new System.Drawing.Point(435, 3);
-            this.player.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.player.Margin = new System.Windows.Forms.Padding(4);
             this.player.Name = "player";
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
             this.player.Size = new System.Drawing.Size(333, 23);
@@ -376,7 +376,7 @@ namespace DO_AN_LTTQ
             this.volumn_button.ImageRotate = 0F;
             this.volumn_button.ImageSize = new System.Drawing.Size(32, 32);
             this.volumn_button.Location = new System.Drawing.Point(1323, 76);
-            this.volumn_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.volumn_button.Margin = new System.Windows.Forms.Padding(4);
             this.volumn_button.Name = "volumn_button";
             this.volumn_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.volumn_button.Size = new System.Drawing.Size(85, 66);
@@ -395,7 +395,7 @@ namespace DO_AN_LTTQ
             this.metroSetTrackBar1.HandlerColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.metroSetTrackBar1.IsDerivedStyle = true;
             this.metroSetTrackBar1.Location = new System.Drawing.Point(1415, 100);
-            this.metroSetTrackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroSetTrackBar1.Margin = new System.Windows.Forms.Padding(4);
             this.metroSetTrackBar1.Maximum = 100;
             this.metroSetTrackBar1.Minimum = 0;
             this.metroSetTrackBar1.Name = "metroSetTrackBar1";
@@ -419,7 +419,7 @@ namespace DO_AN_LTTQ
             this.repeat_button.ImageRotate = 0F;
             this.repeat_button.ImageSize = new System.Drawing.Size(33, 33);
             this.repeat_button.Location = new System.Drawing.Point(1065, 76);
-            this.repeat_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.repeat_button.Margin = new System.Windows.Forms.Padding(4);
             this.repeat_button.Name = "repeat_button";
             this.repeat_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.repeat_button.Size = new System.Drawing.Size(85, 66);
@@ -437,7 +437,7 @@ namespace DO_AN_LTTQ
             this.shuffle_button.ImageRotate = 0F;
             this.shuffle_button.ImageSize = new System.Drawing.Size(32, 32);
             this.shuffle_button.Location = new System.Drawing.Point(561, 76);
-            this.shuffle_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.shuffle_button.Margin = new System.Windows.Forms.Padding(4);
             this.shuffle_button.Name = "shuffle_button";
             this.shuffle_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.shuffle_button.Size = new System.Drawing.Size(85, 66);
@@ -455,7 +455,7 @@ namespace DO_AN_LTTQ
             this.next_button.ImageRotate = 0F;
             this.next_button.ImageSize = new System.Drawing.Size(40, 40);
             this.next_button.Location = new System.Drawing.Point(931, 76);
-            this.next_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.next_button.Margin = new System.Windows.Forms.Padding(4);
             this.next_button.Name = "next_button";
             this.next_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.next_button.Size = new System.Drawing.Size(85, 66);
@@ -473,7 +473,7 @@ namespace DO_AN_LTTQ
             this.rewind_button.ImageRotate = 0F;
             this.rewind_button.ImageSize = new System.Drawing.Size(40, 40);
             this.rewind_button.Location = new System.Drawing.Point(683, 76);
-            this.rewind_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rewind_button.Margin = new System.Windows.Forms.Padding(4);
             this.rewind_button.Name = "rewind_button";
             this.rewind_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.rewind_button.Size = new System.Drawing.Size(85, 66);
@@ -491,7 +491,7 @@ namespace DO_AN_LTTQ
             this.play_button.ImageRotate = 0F;
             this.play_button.ImageSize = new System.Drawing.Size(40, 40);
             this.play_button.Location = new System.Drawing.Point(807, 76);
-            this.play_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.play_button.Margin = new System.Windows.Forms.Padding(4);
             this.play_button.Name = "play_button";
             this.play_button.PressedState.ImageSize = new System.Drawing.Size(48, 48);
             this.play_button.Size = new System.Drawing.Size(85, 66);
@@ -503,7 +503,7 @@ namespace DO_AN_LTTQ
             // guna2TrackBar1
             // 
             this.guna2TrackBar1.Location = new System.Drawing.Point(313, 20);
-            this.guna2TrackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TrackBar1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TrackBar1.Maximum = 300;
             this.guna2TrackBar1.Name = "guna2TrackBar1";
             this.guna2TrackBar1.Size = new System.Drawing.Size(1200, 28);
@@ -543,7 +543,7 @@ namespace DO_AN_LTTQ
             this.panel2.Controls.Add(this.home_label);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(405, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1271, 110);
             this.panel2.TabIndex = 2;
@@ -600,7 +600,7 @@ namespace DO_AN_LTTQ
             // uCaiDat
             // 
             this.uCaiDat.Location = new System.Drawing.Point(408, 110);
-            this.uCaiDat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uCaiDat.Margin = new System.Windows.Forms.Padding(4);
             this.uCaiDat.Name = "uCaiDat";
             this.uCaiDat.Size = new System.Drawing.Size(1275, 494);
             this.uCaiDat.TabIndex = 11;
@@ -609,7 +609,7 @@ namespace DO_AN_LTTQ
             // 
             this.uYeuThich1.AutoScroll = true;
             this.uYeuThich1.Location = new System.Drawing.Point(405, 110);
-            this.uYeuThich1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uYeuThich1.Margin = new System.Windows.Forms.Padding(4);
             this.uYeuThich1.Name = "uYeuThich1";
             this.uYeuThich1.Size = new System.Drawing.Size(1267, 494);
             this.uYeuThich1.TabIndex = 10;
@@ -618,7 +618,7 @@ namespace DO_AN_LTTQ
             // 
             this.uReName1.BackColor = System.Drawing.Color.LightGray;
             this.uReName1.Location = new System.Drawing.Point(807, 119);
-            this.uReName1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uReName1.Margin = new System.Windows.Forms.Padding(4);
             this.uReName1.Name = "uReName1";
             this.uReName1.Size = new System.Drawing.Size(533, 448);
             this.uReName1.TabIndex = 14;
@@ -629,7 +629,7 @@ namespace DO_AN_LTTQ
             this.uNewAlbum1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.uNewAlbum1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uNewAlbum1.Location = new System.Drawing.Point(821, 119);
-            this.uNewAlbum1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uNewAlbum1.Margin = new System.Windows.Forms.Padding(4);
             this.uNewAlbum1.Name = "uNewAlbum1";
             this.uNewAlbum1.Size = new System.Drawing.Size(472, 411);
             this.uNewAlbum1.TabIndex = 12;
@@ -646,7 +646,7 @@ namespace DO_AN_LTTQ
             // uAlbumDetail1
             // 
             this.uAlbumDetail1.Location = new System.Drawing.Point(405, 110);
-            this.uAlbumDetail1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uAlbumDetail1.Margin = new System.Windows.Forms.Padding(4);
             this.uAlbumDetail1.Name = "uAlbumDetail1";
             this.uAlbumDetail1.Size = new System.Drawing.Size(1269, 494);
             this.uAlbumDetail1.TabIndex = 13;
@@ -664,7 +664,7 @@ namespace DO_AN_LTTQ
             // uAbout
             // 
             this.uAbout.Location = new System.Drawing.Point(407, 110);
-            this.uAbout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uAbout.Margin = new System.Windows.Forms.Padding(4);
             this.uAbout.Name = "uAbout";
             this.uAbout.Size = new System.Drawing.Size(1275, 494);
             this.uAbout.TabIndex = 10;
@@ -672,7 +672,7 @@ namespace DO_AN_LTTQ
             // myMusic1
             // 
             this.myMusic1.Location = new System.Drawing.Point(0, 0);
-            this.myMusic1.Margin = new System.Windows.Forms.Padding(4);
+            this.myMusic1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.myMusic1.Name = "myMusic1";
             this.myMusic1.Size = new System.Drawing.Size(965, 453);
             this.myMusic1.TabIndex = 0;
@@ -696,7 +696,7 @@ namespace DO_AN_LTTQ
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TST Player";
