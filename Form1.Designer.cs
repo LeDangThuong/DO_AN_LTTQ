@@ -354,12 +354,13 @@ namespace DO_AN_LTTQ
             // player
             // 
             this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(435, 3);
+            this.player.Location = new System.Drawing.Point(445, 0);
             this.player.Name = "player";
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
             this.player.Size = new System.Drawing.Size(333, 23);
             this.player.TabIndex = 10;
             this.player.Visible = false;
+            //this.player.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.player_PlayStateChange);
             // 
             // volumn_button
             // 
