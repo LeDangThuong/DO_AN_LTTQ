@@ -851,18 +851,15 @@ namespace DO_AN_LTTQ
             {
                 repeat_button.Image = Properties.Resources.repeat_once;
                 flag_repeat = 1;
+                player.settings.setMode("loop", true);
             }
+            
             else if (flag_repeat == 1)
-            {
-                repeat_button.Image = Properties.Resources.repeat_infinity;
-                
-                flag_repeat = 2;
-            }
-            else if (flag_repeat == 2)
             {
                 repeat_button.Image = Properties.Resources.repeat;
                 
                 flag_repeat = 0;
+                player.settings.setMode("loop", false);
             }
         }
 
