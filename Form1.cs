@@ -1091,6 +1091,7 @@ namespace DO_AN_LTTQ
 
             if (checkSangToi == 0)
             {
+                uCaiDat.Theme_Switch.Checked = false;
                 colorLeTrai = System.Drawing.Color.FromArgb(29, 35, 41);
                 colorVungLamViec = System.Drawing.Color.FromArgb(58, 70, 82);
                 colorText = System.Drawing.Color.FromArgb(240, 240, 240);
@@ -1132,6 +1133,7 @@ namespace DO_AN_LTTQ
             }
             else
             {
+                uCaiDat.Theme_Switch.Checked = true;
                 colorLeTrai = System.Drawing.Color.FromArgb(240, 240, 240);
                 colorVungLamViec = System.Drawing.Color.FromArgb(240, 240, 240);
                 colorText = System.Drawing.Color.FromArgb(15, 15, 15);
@@ -1214,8 +1216,44 @@ namespace DO_AN_LTTQ
             {
                 
                 picture_theme.Image = Properties.Resources.crescent_moon;
-                pictureBox1_Click(sender, e);
-           
+                colorLeTrai = System.Drawing.Color.FromArgb(29, 35, 41);
+                colorVungLamViec = System.Drawing.Color.FromArgb(58, 70, 82);
+                colorText = System.Drawing.Color.FromArgb(240, 240, 240);
+                colorMedia = System.Drawing.Color.FromArgb(68, 69, 69);
+
+                TrangChu_Button.Image = Properties.Resources.home_white;
+                ThuVien_Button.Image = Properties.Resources.musical_white;
+                YeuThich_Button.Image = Properties.Resources.hear_removetoWhite;
+                Album_Button.Image = Properties.Resources.music_album_white;
+                About_Button.Image = Properties.Resources.aboutwhite;
+                CaiDat_Button.Image = Properties.Resources.settingwhite;
+                picture_theme.Image = Properties.Resources.crescent_moon;
+
+                if (check_forplaybutton == 0)
+                {
+                    play_button.Image = Properties.Resources.play_buttonwhite;
+                }
+                else
+                {
+                    play_button.Image = Properties.Resources.pause_white;
+                }
+
+                next_button.Image = Properties.Resources.next_white;
+                rewind_button.Image = Properties.Resources.back_White;
+
+                if (check_volume == 0)
+                {
+                    volumn_button.Image = Properties.Resources.volume_white1;
+                }
+                else
+                {
+                    volumn_button.Image = Properties.Resources.volume_mute_white;
+                }
+
+
+
+                checkSangToi = 0;
+
                 uCaiDat.lbl_Theme.Text = "Tối";
 
             }
@@ -1224,10 +1262,47 @@ namespace DO_AN_LTTQ
                 
                 picture_theme.Image = Properties.Resources.moonlight;
 
-                pictureBox1_Click(sender, e);
+                colorLeTrai = System.Drawing.Color.FromArgb(240, 240, 240);
+                colorVungLamViec = System.Drawing.Color.FromArgb(240, 240, 240);
+                colorText = System.Drawing.Color.FromArgb(15, 15, 15);
+                colorMedia = System.Drawing.Color.FromArgb(240, 240, 240);
+
+                TrangChu_Button.Image = Properties.Resources.home1;
+                ThuVien_Button.Image = Properties.Resources.musical_note;
+                YeuThich_Button.Image = Properties.Resources.heart_white;
+                Album_Button.Image = Properties.Resources.albumIcon;
+                About_Button.Image = Properties.Resources.question;
+                CaiDat_Button.Image = Properties.Resources.setting;
+                picture_theme.Image = Properties.Resources.moonlight;
+
+                if (check_forplaybutton == 0)
+                {
+                    play_button.Image = Properties.Resources.play_rounded_button;
+                }
+                else
+                {
+                    play_button.Image = Properties.Resources.pause;
+                }
+
+                next_button.Image = Properties.Resources.next;
+                rewind_button.Image = Properties.Resources.back1;
+
+                if (check_volume == 0)
+                {
+                    volumn_button.Image = Properties.Resources.volume_black;
+                }
+                else
+                {
+                    volumn_button.Image = Properties.Resources.volum_mute_black;
+                }
+
+
+
+                checkSangToi = 1;
                 uCaiDat.lbl_Theme.Text = "Sáng";
 
             }
+            DoiMau();
         }
 
         // Form Load
