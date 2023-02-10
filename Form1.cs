@@ -228,6 +228,7 @@ namespace DO_AN_LTTQ
                     guna2TrackBar1.Value = (int)player.Ctlcontrols.currentPosition;
                     
                 }
+                
                 try
                 {
                     label1.Text = player.Ctlcontrols.currentPositionString;
@@ -822,7 +823,7 @@ namespace DO_AN_LTTQ
             SongItem SONG_ITEM = new SongItem();
             foreach(SongItem songItem in myMusic2.PanelSongs.Controls)
             {
-                if(String.Compare(mediaItem.lblTenBaiHat.Text, songItem.lblSongName.Text)== 0)
+                if(String.Compare(mediaItem.lblTenBaiHat.Text, songItem.lblSongName.Text) == 0)
                 {
                     SONG_ITEM = songItem;
                 }
