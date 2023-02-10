@@ -188,17 +188,18 @@ namespace DO_AN_LTTQ
         #region SongItem 
         private void item_SongItem_Click (object sender, EventArgs e)
         {
+            
             SongItem songItem = (SongItem)sender;
+            
             foreach (SongItem song in myMusic2.PanelSongs.Controls)
             {
                 song.BackColor = System.Drawing.SystemColors.Control;
                 song.playButton_image.Image = Properties.Resources.play1;
+              
             }
-            check_forplaybutton = 1;
             songItem.BackColor = System.Drawing.Color.LightGray;
             songItem.playButton_image.Image = Properties.Resources.pause_black;
-            
-            
+
 
             foreach (MediaItem i in uMyMusic.flowPanelMedia.Controls)
             {
@@ -222,7 +223,7 @@ namespace DO_AN_LTTQ
             
             try
             {
-                
+                play_button.Image = Properties.Resources.pause;
                 timer1.Enabled = true;
                 if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
@@ -253,7 +254,15 @@ namespace DO_AN_LTTQ
 
             name_of_song.Text = songItem.lblSongName.Text;
             lblTacGiaNhac.Text = songItem.lblArtistName.Text;
-            
+            MediaItem mediaItem = new MediaItem();
+            foreach (MediaItem media in uMyMusic.flowPanelMedia.Controls)
+            {
+                if (String.Compare(media.lblTenBaiHat.Text, songItem.lblSongName.Text) == 0)
+                {
+                    mediaItem = media;
+                }
+            }
+            player.Tag = mediaItem;
         }
 
         
@@ -606,11 +615,13 @@ namespace DO_AN_LTTQ
                 {
                     songItem.BackColor = System.Drawing.Color.LightGray;
                     songItem.playButton_image.Image = Properties.Resources.pause_black;
+                    
                 }
                 else
                 {
                     songItem.BackColor = System.Drawing.SystemColors.Control;
                     songItem.playButton_image.Image = Properties.Resources.play1;
+                    
                 }
             }
             // Tinh fix
@@ -654,7 +665,8 @@ namespace DO_AN_LTTQ
             }
             try
             {
-
+                play_button.Image = Properties.Resources.pause;
+                check_forplaybutton = 1;
                 //var f = TagLib.File.Create((string)item.Tag);
                 var f = TagLib.File.Create(divideFilename[0]);
                 var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
@@ -775,7 +787,8 @@ namespace DO_AN_LTTQ
             }
             try
             {
-
+                play_button.Image = Properties.Resources.pause;
+                check_forplaybutton = 1;
                 //var f = TagLib.File.Create((string)item.Tag);
                 var f = TagLib.File.Create(divideFilename[0]);
                 var bin = (byte[])(f.Tag.Pictures[0].Data.Data);
