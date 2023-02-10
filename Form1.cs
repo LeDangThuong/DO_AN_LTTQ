@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using TagLib.Tiff;
 
@@ -832,11 +833,17 @@ namespace DO_AN_LTTQ
             {
                 shuffle_button.Image = Properties.Resources.random;
                 check_shuffle = 1;
+                var rnd = new Random();
+                mediaItems = mediaItems.OrderBy(item => rnd.Next()).ToList();
+                player.settings.setMode("shuffle", true);
+
             }
             else
             {
+                mediaItems = mediaItems.OrderBy(item => 10000).ToList();
                 shuffle_button.Image = Properties.Resources.shuffle;
                 check_shuffle = 0;
+                player.settings.setMode("shuffle", true);
             }
 
         }
