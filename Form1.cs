@@ -193,9 +193,19 @@ namespace DO_AN_LTTQ
             {
                 song.BackColor = System.Drawing.SystemColors.Control;
                 song.playButton_image.Image = Properties.Resources.play1;
+                check_forplaybutton = 0;
             }
             songItem.BackColor = System.Drawing.Color.LightGray;
             songItem.playButton_image.Image = Properties.Resources.pause_black;
+            if(songItem.playButton_image.Image == Properties.Resources.pause_black)
+            {
+                check_forplaybutton = 1;
+            }
+            else
+            {
+                check_forplaybutton = 0;
+            }
+            
 
             foreach (MediaItem i in uMyMusic.flowPanelMedia.Controls)
             {
@@ -219,7 +229,6 @@ namespace DO_AN_LTTQ
             
             try
             {
-                play_button.Image = Properties.Resources.pause;
                 
                 timer1.Enabled = true;
                 if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
