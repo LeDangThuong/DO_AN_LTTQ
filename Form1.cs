@@ -197,14 +197,7 @@ namespace DO_AN_LTTQ
             }
             songItem.BackColor = System.Drawing.Color.LightGray;
             songItem.playButton_image.Image = Properties.Resources.pause_black;
-            if(songItem.playButton_image.Image == Properties.Resources.pause_black)
-            {
-                check_forplaybutton = 1;
-            }
-            else
-            {
-                check_forplaybutton = 0;
-            }
+            
             
 
             foreach (MediaItem i in uMyMusic.flowPanelMedia.Controls)
