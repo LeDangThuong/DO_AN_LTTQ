@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Media;
+using System.Threading;
 using System.Windows.Forms;
 using TagLib.Tiff;
 
@@ -879,15 +882,23 @@ namespace DO_AN_LTTQ
         int check_shuffle = 0;
         private void shuffle_button_Click(object sender, EventArgs e)
         {
+            
+            
             if (check_shuffle == 0)
             {
                 shuffle_button.Image = Properties.Resources.random;
                 check_shuffle = 1;
+                var rnd = new Random();
+                mediaItems = mediaItems.OrderBy(item => rnd.Next()).ToList();
+                player.settings.setMode("shuffle", true) ;
+                
             }
             else
             {
+                mediaItems = mediaItems.OrderBy(item=>10000).ToList();
                 shuffle_button.Image = Properties.Resources.shuffle;
                 check_shuffle = 0;
+                player.settings.setMode("shuffle", true);
             }
 
         }
@@ -895,24 +906,32 @@ namespace DO_AN_LTTQ
         // Thay đổi ICON REPEAT
         //
         int flag_repeat = 0;
-
+        private bool Repeat(bool a)
+        {
+            if (a == true)
+                return false;
+            return a;
+        }
+        
         private void repeat_button_Click(object sender, EventArgs e)
         {
             if (flag_repeat == 0)
             {
-                repeat_button.Image = Properties.Resources.repeat_once;
+                repeat_button.Image = Properties.Resources.repeat_once;             
                 flag_repeat = 1;
+               
             }
             else if (flag_repeat == 1)
             {
+                bool check = true;
                 repeat_button.Image = Properties.Resources.repeat_infinity;
-                
                 flag_repeat = 2;
+                player.settings.setMode("loop", Repeat(check));
             }
             else if (flag_repeat == 2)
             {
                 repeat_button.Image = Properties.Resources.repeat;
-                
+                player.settings.setMode("loop", false);
                 flag_repeat = 0;
             }
         }
