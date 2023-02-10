@@ -479,64 +479,7 @@ namespace DO_AN_LTTQ
         }
         #endregion
         #region SETTING_COLORBACK
-        private void next_button_MouseEnter(object sender, EventArgs e)
-        {
-            next_button.BackColor = System.Drawing.Color.LightGray;
-        }
-
-        private void next_button_MouseLeave(object sender, EventArgs e)
-        {
-            next_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-        }
-
-        private void play_button_MouseEnter(object sender, EventArgs e)
-        {
-            play_button.BackColor = System.Drawing.Color.LightGray;
-        }
-
-        private void play_button_MouseLeave(object sender, EventArgs e)
-        {
-            play_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-        }
-
-        private void shuffle_button_MouseEnter(object sender, EventArgs e)
-        {
-            shuffle_button.BackColor = System.Drawing.Color.LightGray;
-        }
-
-        private void shuffle_button_MouseLeave(object sender, EventArgs e)
-        {
-            shuffle_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-        }
-
-        private void repeat_button_MouseEnter(object sender, EventArgs e)
-        {
-            repeat_button.BackColor = System.Drawing.Color.LightGray;
-        }
-
-        private void repeat_button_MouseLeave(object sender, EventArgs e)
-        {
-            repeat_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-        }
-
-        private void volumn_button_MouseEnter(object sender, EventArgs e)
-        {
-            volumn_button.BackColor = System.Drawing.Color.LightGray;
-        }
-
-        private void volumn_button_MouseLeave(object sender, EventArgs e)
-        {
-            volumn_button.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-        }
-        private void Rewind_MouseEnter(object sender, EventArgs e)
-        {
-            rewind_button.BackColor = System.Drawing.Color.LightGray;
-        }
-
-        private void Rewind_MouseLeave(object sender, EventArgs e)
-        {
-            rewind_button.BackColor = System.Drawing.Color.FromArgb(240,240,240);
-        }
+        
         #endregion
 
 
@@ -817,7 +760,10 @@ namespace DO_AN_LTTQ
         {
             if (check_volume == 0)
             {
-                volumn_button.Image = Properties.Resources.volume_mute;
+                if (checkSangToi == 0)
+                    volumn_button.Image = Properties.Resources.volume_mute;
+                else
+                    volumn_button.Image = Properties.Resources.volume_mute_white;
                 player.settings.volume = 0;
                 metroSetTrackBar1.Enabled= false;
                 check_volume = 1;
@@ -825,7 +771,10 @@ namespace DO_AN_LTTQ
             }
             else if (check_volume == 1)
             {
-                volumn_button.Image = Properties.Resources.volume_white;
+                if (checkSangToi == 0)
+                    volumn_button.Image = Properties.Resources.volume_white;
+                else
+                    volumn_button.Image = Properties.Resources.volume_white1;
                 player.settings.volume = metroSetTrackBar1.Value;
                 metroSetTrackBar1.Enabled = true;
                 check_volume = 0;
@@ -1019,7 +968,7 @@ namespace DO_AN_LTTQ
             myMusic2.BringToFront();
             //flowPanelMedia.Controls.Clear();
             SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
+            //ChangeNormalColorOnPanelLeft(sender);
             
          
         }
@@ -1041,7 +990,7 @@ namespace DO_AN_LTTQ
             }
 
             SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
+            //ChangeNormalColorOnPanelLeft(sender);
         
         }
         
@@ -1055,7 +1004,7 @@ namespace DO_AN_LTTQ
 
             //flowPanelMedia.Visible = false;
             SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
+            //ChangeNormalColorOnPanelLeft(sender);
             UpdateAlbum();
 
         }
@@ -1070,7 +1019,7 @@ namespace DO_AN_LTTQ
             }    
             uMyMusic.BringToFront();
             SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
+            //ChangeNormalColorOnPanelLeft(sender);
 
         }
 
@@ -1080,7 +1029,7 @@ namespace DO_AN_LTTQ
             home_label.Text = About_Button.Text;
             uAbout.BringToFront();
             SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
+            //ChangeNormalColorOnPanelLeft(sender);
 
         }
         // Cai Dat Click
@@ -1089,7 +1038,7 @@ namespace DO_AN_LTTQ
             home_label.Text = CaiDat_Button.Text;
             uCaiDat.BringToFront();
             SetSearch();
-            ChangeNormalColorOnPanelLeft(sender);
+           // ChangeNormalColorOnPanelLeft(sender);
 
         }
         // Su Kien Tim Kiem
@@ -1115,33 +1064,10 @@ namespace DO_AN_LTTQ
             uMyMusic.BringToFront();
         }
         //Mau Button
-        System.Drawing.Color ColorButton = new System.Drawing.Color();
+       
         
-        public void ChangeColorSongItem(object sender)
-        {
-            SongItem songItem = sender as SongItem;
-            songItem.BackColor = ColorButton;
-            foreach(SongItem item in myMusic2.PanelSongs.Controls)
-            {
-                if (item.Name != songItem.Name && item.BackColor != System.Drawing.SystemColors.Control)
-                { 
-                    item.BackColor = System.Drawing.SystemColors.Control;
-                }
-            }    
-        }
-        public void ChangeNormalColorOnPanelLeft(object sender)
-        {
-            Guna2TileButton btn = sender as Guna2TileButton;
-            btn.FillColor = ColorButton;
-            foreach (Guna2TileButton item in panel3.Controls)
-            {
-                if (item.Name != btn.Name && item.FillColor != System.Drawing.SystemColors.Control)
-                {
-                    Guna2TileButton btn1 = item as Guna2TileButton;
-                    btn1.FillColor = System.Drawing.SystemColors.Control;
-                }
-            }
-        }
+        
+        
         private void SetSearch()
         {
             searching_textbox.Texts = "Tìm kiếm";
@@ -1153,55 +1079,24 @@ namespace DO_AN_LTTQ
         #region Theme
 
 
-        // Theme
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            if (panel2.BackColor == System.Drawing.SystemColors.Control)
-            {
-                panel1.BackColor = System.Drawing.Color.DimGray;
-                bottom_panel.BackColor = System.Drawing.Color.DimGray;
-                panel2.BackColor = System.Drawing.Color.DimGray;
-                panel3.BackColor = System.Drawing.Color.DimGray;
-                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
-                ColorButton = System.Drawing.Color.Gray;
-                uCaiDat.lbl_Theme.Text = "Tối";
-                uCaiDat.Theme_Switch.Checked = false;
-            }
-            else
-            {
-                panel1.BackColor = System.Drawing.SystemColors.Control;
-                bottom_panel.BackColor = System.Drawing.SystemColors.Control;
-
-                panel2.BackColor = System.Drawing.SystemColors.Control;
-                panel3.BackColor = System.Drawing.SystemColors.Control;
-                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
-                ColorButton = System.Drawing.Color.Gray;
-                uCaiDat.lbl_Theme.Text = "Sáng";
-                uCaiDat.Theme_Switch.Checked = true;
-            }
-        }
+   
         private void Theme_Switch_CheckedChanged(object sender, EventArgs e)
         {
             if (!uCaiDat.Theme_Switch.Checked)
             {
-                panel1.BackColor = System.Drawing.Color.DimGray;
-                bottom_panel.BackColor = System.Drawing.Color.DimGray;
-                panel2.BackColor = System.Drawing.Color.DimGray;
-                panel3.BackColor = System.Drawing.Color.DimGray;
-                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.crescent_moon;
-                ColorButton = System.Drawing.Color.Gray;
+                
+                picture_theme.Image = Properties.Resources.crescent_moon;
+                pictureBox1_Click(sender, e);
+           
                 uCaiDat.lbl_Theme.Text = "Tối";
 
             }
             else
             {
-                panel1.BackColor = System.Drawing.SystemColors.Control;
-                bottom_panel.BackColor = System.Drawing.SystemColors.Control;
+                
+                picture_theme.Image = Properties.Resources.moonlight;
 
-                panel2.BackColor = System.Drawing.SystemColors.Control;
-                panel3.BackColor = System.Drawing.SystemColors.Control;
-                picture_theme.Image = global::DO_AN_LTTQ.Properties.Resources.moonlight;
-                ColorButton = System.Drawing.Color.Gray;
+                pictureBox1_Click(sender, e);
                 uCaiDat.lbl_Theme.Text = "Sáng";
 
             }
@@ -1210,7 +1105,7 @@ namespace DO_AN_LTTQ
         // Form Load
         private void Form1_Load(object sender, EventArgs e)
         {
-            ColorButton = System.Drawing.Color.Gray;
+            
             uCaiDat.Theme_Switch.CheckedChanged += new System.EventHandler(Theme_Switch_CheckedChanged);
 
         }
@@ -1577,6 +1472,134 @@ namespace DO_AN_LTTQ
             uReName1.f_ReName_txt.Texts = "Nhập Tên Album Mới";
             uReName1.f_ReName_txt.ForeColor = System.Drawing.Color.Silver;
         }
+        #endregion
+
+        #region DoiMau
+        private int checkSangToi = 0;
+        private System.Drawing.Color colorLeTrai = System.Drawing.Color.FromArgb(240, 240, 240);
+        private System.Drawing.Color colorVungLamViec = System.Drawing.Color.FromArgb(240, 240, 240);
+        private System.Drawing.Color colorText = System.Drawing.Color.FromArgb(15, 15, 15);
+        private System.Drawing.Color colorMedia = System.Drawing.Color.FromArgb(240, 240, 240);
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            if (checkSangToi == 0)
+            {
+                colorLeTrai = System.Drawing.Color.FromArgb(29, 35, 41);
+                colorVungLamViec = System.Drawing.Color.FromArgb(58, 70, 82);
+                colorText = System.Drawing.Color.FromArgb(240, 240, 240);
+                colorMedia = System.Drawing.Color.FromArgb(68, 69, 69);
+
+                TrangChu_Button.Image = Properties.Resources.home_white;
+                ThuVien_Button.Image = Properties.Resources.musical_white;
+                YeuThich_Button.Image = Properties.Resources.hear_removetoWhite;
+                Album_Button.Image = Properties.Resources.music_album_white;
+                About_Button.Image = Properties.Resources.aboutwhite;
+                CaiDat_Button.Image = Properties.Resources.settingwhite;
+                picture_theme.Image = Properties.Resources.crescent_moon;
+
+                if(check_forplaybutton == 0)
+                {
+                    play_button.Image = Properties.Resources.play_buttonwhite;
+                }
+                else
+                {
+                    play_button.Image = Properties.Resources.pause_white;
+                }
+
+                next_button.Image = Properties.Resources.next_white;
+                rewind_button.Image = Properties.Resources.back_White;
+                
+                if (check_volume == 0)
+                {
+                    volumn_button.Image = Properties.Resources.volume_white1;
+                }
+                else
+                {
+                    volumn_button.Image = Properties.Resources.volume_mute_white;
+                }
+
+                
+
+                checkSangToi = 1;
+
+            }
+            else
+            {
+                colorLeTrai = System.Drawing.Color.FromArgb(240, 240, 240);
+                colorVungLamViec = System.Drawing.Color.FromArgb(240, 240, 240);
+                colorText = System.Drawing.Color.FromArgb(15, 15, 15);
+                colorMedia = System.Drawing.Color.FromArgb(240, 240, 240);
+
+                TrangChu_Button.Image = Properties.Resources.home1;
+                ThuVien_Button.Image = Properties.Resources.musical_note;
+                YeuThich_Button.Image = Properties.Resources.heart_white;
+                Album_Button.Image = Properties.Resources.albumIcon;
+                About_Button.Image = Properties.Resources.question;
+                CaiDat_Button.Image = Properties.Resources.setting;
+                picture_theme.Image = Properties.Resources.moonlight;
+
+                if (check_forplaybutton == 0)
+                {
+                    play_button.Image = Properties.Resources.play_rounded_button;
+                }
+                else
+                {
+                    play_button.Image = Properties.Resources.pause;
+                }
+
+                next_button.Image = Properties.Resources.next;
+                rewind_button.Image = Properties.Resources.back1;
+
+                if (check_volume == 0)
+                {
+                    volumn_button.Image = Properties.Resources.volume_black;
+                }
+                else
+                {
+                    volumn_button.Image = Properties.Resources.volum_mute_black;
+                }
+
+               
+
+                checkSangToi = 0;
+            }
+
+            DoiMau();
+
+
+        }
+        private void DoiMau()
+        {
+            panel1.BackColor = colorLeTrai;
+            panel2.BackColor = colorVungLamViec;
+            bottom_panel.BackColor = colorVungLamViec;
+            uMyMusic.BackColor = colorVungLamViec;
+            TrangChu_Button.FillColor = colorLeTrai;
+            ThuVien_Button.FillColor = colorLeTrai;
+            YeuThich_Button.FillColor = colorLeTrai;
+            Album_Button.FillColor = colorLeTrai;
+            CaiDat_Button.FillColor = colorLeTrai;
+            About_Button.FillColor = colorLeTrai;
+            
+            
+
+            this.ForeColor = colorText;
+            TrangChu_Button.ForeColor = colorText;
+            ThuVien_Button.ForeColor = colorText;
+            YeuThich_Button.ForeColor = colorText;
+            Album_Button.ForeColor = colorText;
+            CaiDat_Button.ForeColor = colorText;
+            About_Button.ForeColor = colorText;
+            myMusic2.ForeColor = System.Drawing.SystemColors.ControlText;
+
+            foreach (MediaItem item in uMyMusic.flowPanelMedia.Controls)
+            {
+                
+                item.ForeColor = System.Drawing.SystemColors.ControlText; ;
+            }
+        }
+
         #endregion
 
         #region SEARCHING

@@ -118,115 +118,208 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="volume-mute" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\volume-mute.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="play_rounded_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play_rounded_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="musical-note" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\musical-note.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="repeat_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repeat_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="log-out" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\log-out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rename" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rename.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="play1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="moonlight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\moonlight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="repeat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\repeat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="volume_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\volume_white1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="repeat-once" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\repeat-once1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="albumIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\albumIcon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="random" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\random1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pause1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-	<data name="heart_white1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-		<value>..\Resources\heart_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-	</data>
-  <data name="heart_white2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\heart_white1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="repeat_infinity" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\repeat_infinity1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\previous1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="shuffle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shuffle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="options-list" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\options-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="play11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="play-rounded-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play-rounded-button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="play-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pause_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pause_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="heart_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\heart_white1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-	  <data name="theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\theme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="music_album_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\music_album_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settingwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settingwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="question" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\question1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="play-rounded-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play-rounded-button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="play_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="crescent-moon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\crescent-moon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hear_removetoWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hear_removetoWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DefaultMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DefaultMusic1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="repeat_once_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repeat_once_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-	  <data name="heart_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\heart_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="backwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play-buttonwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play-buttonwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="musical_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\musical_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="repeat-once" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repeat-once1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="log-out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log-out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="renamewhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\renamewhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="album" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\album.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="play1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="volume-mute" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volume-mute.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aboutwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aboutwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shuffle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shuffle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="log_out_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log_out_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moonlight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moonlight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="musical-note" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\musical-note.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause_round_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause_round_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="next_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="volume_mute_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volume_mute_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="random" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\random1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\previous1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="heart_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heart_white1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="heart_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heart_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\theme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="repeat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repeat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rename" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rename.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkedwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkedwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="repeat_infinity_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repeat_infinity_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="heart_white2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heart_white1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_White1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="question" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\question1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="volume_white1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volume_white2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deletewhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deletewhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="volume_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volume_white1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="random_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\random_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="options-list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\options-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crescent-moon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crescent-moon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="repeat_infinity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repeat_infinity1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="albumIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\albumIcon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="albumwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\albumwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="heart_white1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heart_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clockwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clockwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DefaultMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DefaultMusic1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="volume_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volume_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="volum_mute black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volum_mute black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
