@@ -834,7 +834,6 @@ namespace DO_AN_LTTQ
             {
                 play_button.Image = Properties.Resources.pause;
                 SONG_ITEM.playButton_image.Image = Properties.Resources.pause_black;
-                
                 //
                 // CHẠY NHẠC 
                 //
