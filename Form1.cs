@@ -840,7 +840,7 @@ namespace DO_AN_LTTQ
             }
             else
             {
-                mediaItems = mediaItems.OrderBy(item => 10000).ToList();
+                mediaItems = mediaItems.OrderBy(item => item.lblTenBaiHat.Text).ToList();
                 shuffle_button.Image = Properties.Resources.shuffle;
                 check_shuffle = 0;
                 player.settings.setMode("shuffle", false);
