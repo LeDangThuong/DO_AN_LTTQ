@@ -1207,7 +1207,6 @@ namespace DO_AN_LTTQ
         }
 
         #endregion
-
         #region Theme
         private void Theme_Switch_CheckedChanged(object sender, EventArgs e)
         {
