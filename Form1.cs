@@ -193,8 +193,8 @@ namespace DO_AN_LTTQ
             {
                 song.BackColor = System.Drawing.SystemColors.Control;
                 song.playButton_image.Image = Properties.Resources.play1;
-                check_forplaybutton = 0;
             }
+            check_forplaybutton = 1;
             songItem.BackColor = System.Drawing.Color.LightGray;
             songItem.playButton_image.Image = Properties.Resources.pause_black;
             
