@@ -843,7 +843,7 @@ namespace DO_AN_LTTQ
                 mediaItems = mediaItems.OrderBy(item => 10000).ToList();
                 shuffle_button.Image = Properties.Resources.shuffle;
                 check_shuffle = 0;
-                player.settings.setMode("shuffle", true);
+                player.settings.setMode("shuffle", false);
             }
 
         }
