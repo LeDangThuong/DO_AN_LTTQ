@@ -76,9 +76,9 @@
             this.PanelName.Controls.Add(this.lblTime);
             this.PanelName.Controls.Add(this.lblArtist);
             this.PanelName.Controls.Add(this.lblSong);
-            this.PanelName.Location = new System.Drawing.Point(3, 48);
+            this.PanelName.Location = new System.Drawing.Point(3, 45);
             this.PanelName.Name = "PanelName";
-            this.PanelName.Size = new System.Drawing.Size(947, 33);
+            this.PanelName.Size = new System.Drawing.Size(947, 36);
             this.PanelName.TabIndex = 4;
             // 
             // lblTime
@@ -124,7 +124,7 @@
             this.Controls.Add(this.PanelName);
             this.Controls.Add(this.TabControl1);
             this.Name = "MyMusic";
-            this.Size = new System.Drawing.Size(965, 560);
+            this.Size = new System.Drawing.Size(954, 560);
             this.Load += new System.EventHandler(this.MyMusic_Load);
             this.TabControl1.ResumeLayout(false);
             this.PanelName.ResumeLayout(false);
