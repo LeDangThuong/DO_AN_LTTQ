@@ -1648,7 +1648,7 @@ namespace DO_AN_LTTQ
                 System.Windows.Forms.MessageBox.Show("Vui lòng nhập tên Album mới");
                 return;
             }    
-            for(int i = 0; i <= albums.Count; i++)
+            for(int i = 0; i < albums.Count; i++)
             {
                 if (string.Compare(uReName1.f_ReName_txt.Texts, albums[i].NameAlbum()) == 0)
                 {
