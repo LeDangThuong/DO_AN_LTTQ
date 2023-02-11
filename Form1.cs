@@ -253,7 +253,6 @@ namespace DO_AN_LTTQ
             {
                 picboxAvatar.Image = Properties.Resources.DefaultMusic;
             }
-
             name_of_song.Text = songItem.lblSongName.Text;
             lblTacGiaNhac.Text = songItem.lblArtistName.Text;
             MediaItem mediaItem = new MediaItem();
@@ -372,7 +371,14 @@ namespace DO_AN_LTTQ
             MediaItem item = (MediaItem)sender;
             foreach(MediaItem i in uMyMusic.flowPanelMedia.Controls)
             {
-                i.BackColor = System.Drawing.SystemColors.Control;
+                if (string.Compare(item.lblTenBaiHat.Text, i.lblTenBaiHat.Text) == 0)
+                {
+                    i.BackColor = System.Drawing.Color.Gray;
+                }
+                else
+                {
+                    i.BackColor = System.Drawing.SystemColors.Control;
+                }
             }
             item.BackColor = System.Drawing.Color.Gray;
 

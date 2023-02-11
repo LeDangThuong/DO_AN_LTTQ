@@ -275,21 +275,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\volum_mute black.png" />
-    <None Include="Resources\volume_black.png" />
-    <None Include="Resources\settingwhite.png" />
-    <None Include="Resources\renamewhite.png" />
-    <None Include="Resources\play-buttonwhite.png" />
-    <None Include="Resources\volume_white2.png" />
-    <None Include="Resources\volume_mute_white.png" />
-    <None Include="Resources\repeat_white.png" />
-    <None Include="Resources\repeat_once_white.png" />
-    <None Include="Resources\repeat_infinity_white.png" />
-    <None Include="Resources\random_white.png" />
-    <None Include="Resources\play_white.png" />
-    <None Include="Resources\play_rounded_white.png" />
-    <None Include="Resources\pause_white.png" />
-    <None Include="Resources\pause_round_white.png" />
     <None Include="Resources\rename.png" />
     <None Include="Resources\play-button.png" />
     <None Include="Resources\theme.png" />
@@ -318,22 +303,8 @@
     <None Include="Resources\heart_white.png" />
     <None Include="Resources\heart_white1.png" />
     <None Include="Resources\heart_red.png" />
-    <None Include="Resources\back_White1.png" />
-    <None Include="Resources\home_white.png" />
-    <None Include="Resources\musical_white.png" />
-    <None Include="Resources\next_white.png" />
-    <None Include="Resources\aboutwhite.png" />
-    <None Include="Resources\albumwhite.png" />
-    <None Include="Resources\backwhite.png" />
-    <None Include="Resources\checkedwhite.png" />
-    <None Include="Resources\clockwhite.png" />
-    <None Include="Resources\deletewhite.png" />
-    <None Include="Resources\music_album_white.png" />
-    <None Include="Resources\add_white.png" />
-    <None Include="Resources\log_out_white.png" />
-    <None Include="Resources\hear_removetoWhite.png" />
-    <None Include="Resources\back2.png" />
-    <None Include="Resources\next1.png" />
+    <None Include="Resources\add1.png" />
+    <None Include="Resources\checked1.png" />
     <Content Include="Resources\pause.png" />
     <None Include="Resources\question.png" />
     <None Include="Resources\setting.png" />
